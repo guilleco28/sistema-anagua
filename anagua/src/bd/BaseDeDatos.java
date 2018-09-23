@@ -1,30 +1,37 @@
 package bd;
 
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Properties;
 
 public class BaseDeDatos {
 	
-	/*
-	private Properties prop = Config.getInstance().getProp();
-	private String usuario=prop.getProperty("dbuser");
-	private String pwd=prop.getProperty("pwdbuser");
-	private String bd= prop.getProperty("db");
-	*/
+	private String url="jdbc:mysql:";
 	
-	private String usuario="root";
-	private String pwd="bingo123";
-	private String bd="anagua";
+	static Connection con = null;
+	Properties p = new Properties();
 	
-	private String url="jdbc:mysql://localhost/"+bd;
+	public BaseDeDatos() {
+		try {
+			//p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties"));
+			//p.load(new FileReader("W:\\ANAGUA\\sistema-anagua\\config.properties"));
+			p.load(new FileReader("C:\\Users\\Guillermo\\Dropbox\\PROYECTO_ANAGUA\\config.properties"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		url = url+p.getProperty("bd");
+	}
 
 	public Connection abrirConexion() {
 		Connection oConnection = null;
 		try{
 			Class.forName("com.mysql.jdbc.Connection");
-			oConnection = DriverManager.getConnection(url, usuario, pwd);
+			oConnection = DriverManager.getConnection(url, p.getProperty("usuario"), p.getProperty("pwd"));
 		}catch(SQLException ex){
 			System.out.println("Hubo un problema al conectarse a la bd.");
 		}catch(ClassNotFoundException ex){
