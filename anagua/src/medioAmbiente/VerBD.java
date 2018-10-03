@@ -3,6 +3,7 @@ package medioAmbiente;
 import java.awt.Color;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,6 +12,7 @@ import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Properties;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFDataFormat;
@@ -30,19 +32,24 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.VerticalAlignment;
 import org.apache.poi.ss.usermodel.Workbook;
 
+import bd.BaseDeDatos;
+
 public class VerBD {
 	
 	private int highestModifiedCol = -1;
+	private static Properties p = new Properties();
 	
     public static void main(String[] args) {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost/anagua", "root", "bingo123");
-            String rutaExcel = "C:\\Users\\Guillermo\\Documents\\sistema-anagua-nuevo";
-            String nombreExcel = "exceldb.xls";
+        	p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties"));
+			//p.load(new FileReader("W:\\ANAGUA\\sistema-anagua\\config.properties"));
+			//p.load(new FileReader("C:\\Users\\Guillermo\\Dropbox\\PROYECTO_ANAGUA\\config.properties"));
+        	BaseDeDatos baseDeDatos = new BaseDeDatos();
+        	Connection con = baseDeDatos.abrirConexion();
+            String rutaExcel = p.getProperty("ruta_excel");
+            String nombreExcel = p.getProperty("nombre_excel");
             Statement stmt = con.createStatement();
-            ResultSet resultSet = stmt.executeQuery("select * from datos");
+            ResultSet resultSet = stmt.executeQuery("SELECT * FROM datos");
             HSSFWorkbook workbook = new HSSFWorkbook();
             HSSFSheet spreadsheet = workbook.createSheet("datos");
             spreadsheet.createFreezePane(0, 1);

@@ -9,8 +9,12 @@ import java.awt.event.TextEvent;
 import java.awt.event.TextListener;
 import java.sql.SQLException;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.EventListener;
 
 import javax.swing.JButton;
@@ -28,6 +32,7 @@ import barros.DatosDAO;
 import industrias.Industria;
 import industrias.IndustriasDAO;
 import java.beans.PropertyChangeListener;
+import java.io.IOException;
 import java.beans.PropertyChangeEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -1153,14 +1158,29 @@ public class CrearInformeBarros {
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+
+				final String pattern = "dd/MM/yyyy";				
+				
 				ArrayList <AnalisisBarro> analisisParaInforme = new ArrayList <AnalisisBarro>();
 				if (!String.valueOf(nroAnalisis1.getSelectedItem()).equals("-- Sin especificar --")){
-					AnalisisBarro analisisBarro = new AnalisisBarro (industria.getText(), departamento.getText(), localidad.getText(), descargaEn.getText(), String.valueOf(nroAnalisis1.getSelectedItem()),
-							lugarExtraccion1.getText(), extraidoPor1.getText(), null, horaExtraccion1.getText(), aspecto1.getText(), pH1.getText(),
+					//System.out.println(fechaExtraccion1.getText());
+					String dateString = fechaExtraccion1.getText();
+					DateFormat df = new SimpleDateFormat(pattern);
+					Date date = null;
+					try {
+						date = df.parse(dateString);
+						System.out.println(date);
+					} catch (ParseException e2) {
+						// TODO Auto-generated catch block
+						e2.printStackTrace();
+					}			
+
+					AnalisisBarro analisisBarro = null;
+					analisisBarro = new AnalisisBarro (industria.getText(), departamento.getText(), localidad.getText(), descargaEn.getText(), String.valueOf(nroAnalisis1.getSelectedItem()),
+							lugarExtraccion1.getText(), extraidoPor1.getText(), date, horaExtraccion1.getText(), aspecto1.getText(), pH1.getText(),
 							temperatura1.getText(), solidosTotales1.getText(), humedad1.getText(), solidosTotalesVolatiles1.getText(), liquidosLibres1.getText(), sulfuro1.getText(),
 							cromoEnLixiviado1.getText(), plomoEnLixiviado1.getText(), materiaOrganica1.getText(), hidrocarburosTotales1.getText(), conductividad1.getText(),
 							relacionCN1.getText(), otros1.getText(), null);
-					System.out.println(analisisBarro.getAspecto());
 					analisisParaInforme.add(analisisBarro);
 				}
 				
@@ -1192,6 +1212,12 @@ public class CrearInformeBarros {
 					
 				}
 				datosDAO.generarTablaParaInformeBarros(analisisParaInforme);
+				try {
+					Runtime.getRuntime().exec("java -jar C:\\Users\\estudiop.PITTAMIGLIO\\Desktop\\RealizarInformeBarros.jar");
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));

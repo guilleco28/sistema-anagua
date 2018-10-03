@@ -18,9 +18,9 @@ public class BaseDeDatos {
 	
 	public BaseDeDatos() {
 		try {
-			//p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties"));
+			p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties"));
 			//p.load(new FileReader("W:\\ANAGUA\\sistema-anagua\\config.properties"));
-			p.load(new FileReader("C:\\Users\\Guillermo\\Dropbox\\PROYECTO_ANAGUA\\config.properties"));
+			//p.load(new FileReader("C:\\Users\\Guillermo\\Dropbox\\PROYECTO_ANAGUA\\config.properties"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

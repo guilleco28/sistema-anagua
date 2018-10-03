@@ -283,7 +283,7 @@ public class DatosDAO {
 			preparedStmt.execute();
 			query = "CREATE TABLE informe_barros (nro_analisis VARCHAR(255), industria VARCHAR(255), departamento VARCHAR(255), "
 					+ "localidad VARCHAR(255), descarga_en VARCHAR(255), lugar_extraccion VARCHAR(255), extraido_por VARCHAR(255), "
-					+ "fecha_extraccion DATE, hora_extraccion VARCHAR(255), aspecto VARCHAR(255), ph VARCHAR(255), temperatura VARCHAR(255),"
+					+ "fecha_extraccion TIMESTAMP, hora_extraccion VARCHAR(255), aspecto VARCHAR(255), ph VARCHAR(255), temperatura VARCHAR(255),"
 					+ " solidos_totales VARCHAR(255), humedad VARCHAR(255), stv VARCHAR(255), liquidos_libres VARCHAR(255), "
 					+ "sulfuro VARCHAR(255), cromo_en_lixiviado VARCHAR(255), plomo_en_lixiviado VARCHAR(255), materia_organica VARCHAR(255), "
 					+ "hidrocarburos_totales VARCHAR(255), conductividad VARCHAR(255), relacion_CN VARCHAR(255), otros VARCHAR(255));";		
@@ -301,7 +301,10 @@ public class DatosDAO {
 				preparedStmt.setString(5, analisisAAgregar.getDescargaEn());
 				preparedStmt.setString(6, analisisAAgregar.getLugarExtraccion());
 				preparedStmt.setString(7, analisisAAgregar.getExtraidoPor());
-				preparedStmt.setDate(8, null);
+				System.out.println(analisisAAgregar.getFechaExtraccion());
+				Timestamp fechaExtraccionSQL = new java.sql.Timestamp(analisisAAgregar.getFechaExtraccion().getTime());
+				System.out.println(fechaExtraccionSQL);
+				preparedStmt.setTimestamp(8, fechaExtraccionSQL);
 				preparedStmt.setString(9, analisisAAgregar.getHoraExtraccion());
 				preparedStmt.setString(10, analisisAAgregar.getAspecto());
 				preparedStmt.setString(11, analisisAAgregar.getpH());
