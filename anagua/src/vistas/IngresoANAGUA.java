@@ -63,6 +63,7 @@ public class IngresoANAGUA {
 		frame.setSize(width/2, height/2);
 		frame.setLocationRelativeTo(null);
 		frame.setTitle("ANAGUA S.R.L.");
+		frame.setResizable(false);
 		
 		JLabel lblUsuario = new JLabel("Usuario");
 		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 30));

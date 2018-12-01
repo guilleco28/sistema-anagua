@@ -1,5 +1,6 @@
 package vistas;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -31,6 +32,8 @@ import barros.AnalisisBarro;
 import barros.DatosDAO;
 import industrias.Industria;
 import industrias.IndustriasDAO;
+import prueba.ExcelBarros;
+
 import java.beans.PropertyChangeListener;
 import java.io.IOException;
 import java.beans.PropertyChangeEvent;
@@ -38,6 +41,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class CrearInformeBarros {
 
@@ -181,6 +186,7 @@ public class CrearInformeBarros {
 		frame.getContentPane().setLayout(null);
 		frame.setTitle("Formulario de creaci髇 de informes de barros - ANAGUA");
 		frame.setVisible(true);
+		frame.setResizable(false);
 		
 		JLabel lblIndustria = new JLabel("INDUSTRIA");
 		lblIndustria.setBounds(300, 20, 75, 16);
@@ -202,11 +208,11 @@ public class CrearInformeBarros {
 		separator.setBounds(26, 106, 1155, 12);
 		frame.getContentPane().add(separator);
 		
-		JLabel lblNroAnalisis = new JLabel("N煤mero de an谩lisis");
+		JLabel lblNroAnalisis = new JLabel("N鷐ero de an醠isis");
 		lblNroAnalisis.setBounds(37, 130, 150, 16);
 		frame.getContentPane().add(lblNroAnalisis);
 		
-		JLabel lblLugarExtraccion = new JLabel("Lugar de extracci贸n");
+		JLabel lblLugarExtraccion = new JLabel("Lugar de extracci髇");
 		lblLugarExtraccion.setBounds(37, 160, 150, 16);
 		frame.getContentPane().add(lblLugarExtraccion);
 		
@@ -214,11 +220,11 @@ public class CrearInformeBarros {
 		lblExtraidoPor.setBounds(37, 190, 150, 16);
 		frame.getContentPane().add(lblExtraidoPor);
 		
-		JLabel lblFechaExtraccion = new JLabel("Fecha de extracci贸n");
+		JLabel lblFechaExtraccion = new JLabel("Fecha de extracci髇");
 		lblFechaExtraccion.setBounds(37, 220, 150, 16);
 		frame.getContentPane().add(lblFechaExtraccion);
 		
-		JLabel lblHoraExtraccion = new JLabel("Hora de extracci贸n");
+		JLabel lblHoraExtraccion = new JLabel("Hora de extracci髇");
 		lblHoraExtraccion.setBounds(37, 250, 150, 16);
 		frame.getContentPane().add(lblHoraExtraccion);
 		
@@ -234,7 +240,7 @@ public class CrearInformeBarros {
 		lblTemperatura.setBounds(37, 340, 150, 16);
 		frame.getContentPane().add(lblTemperatura);
 		
-		JLabel lblSolidosTotales = new JLabel("S贸lidos totales");
+		JLabel lblSolidosTotales = new JLabel("S髄idos totales");
 		lblSolidosTotales.setBounds(37, 370, 150, 16);
 		frame.getContentPane().add(lblSolidosTotales);
 		
@@ -242,11 +248,11 @@ public class CrearInformeBarros {
 		lblHumedad.setBounds(37, 400, 150, 16);
 		frame.getContentPane().add(lblHumedad);
 		
-		JLabel lblSolidosTotalesVolatiles = new JLabel("S贸lidos totales vol谩tiles");
+		JLabel lblSolidosTotalesVolatiles = new JLabel("S髄idos totales vol醫iles");
 		lblSolidosTotalesVolatiles.setBounds(37, 430, 150, 16);
 		frame.getContentPane().add(lblSolidosTotalesVolatiles);
 		
-		JLabel lblLiquidosLibres = new JLabel("L铆quidos libres");
+		JLabel lblLiquidosLibres = new JLabel("L韖uidos libres");
 		lblLiquidosLibres.setBounds(37, 460, 150, 16);
 		frame.getContentPane().add(lblLiquidosLibres);
 		
@@ -262,7 +268,7 @@ public class CrearInformeBarros {
 		lblPlomoEnLixiviado.setBounds(37, 550, 150, 16);
 		frame.getContentPane().add(lblPlomoEnLixiviado);
 		
-		JLabel lblMateriaOrganica = new JLabel("Materia org谩nica");
+		JLabel lblMateriaOrganica = new JLabel("Materia org醤ica");
 		lblMateriaOrganica.setBounds(37, 580, 150, 16);
 		frame.getContentPane().add(lblMateriaOrganica);
 		
@@ -274,7 +280,7 @@ public class CrearInformeBarros {
 		lblConductividad.setBounds(37, 640, 150, 16);
 		frame.getContentPane().add(lblConductividad);
 		
-		JLabel lblRelacionCN = new JLabel("Relaci贸n C/N");
+		JLabel lblRelacionCN = new JLabel("Relaci髇 C/N");
 		lblRelacionCN.setBounds(37, 670, 150, 16);
 		frame.getContentPane().add(lblRelacionCN);
 		
@@ -285,8 +291,20 @@ public class CrearInformeBarros {
 		nroAnalisis1 = new JComboBox();
 		nroAnalisis1.setBounds(190, 125, 130, 26);
 		frame.getContentPane().add(nroAnalisis1);
+		nroAnalisis2 = new JComboBox();
+		nroAnalisis2.setBounds(370, 126, 130, 26);
+		frame.getContentPane().add(nroAnalisis2);
+		nroAnalisis3 = new JComboBox();
+		nroAnalisis3.setBounds(550, 126, 130, 26);
+		frame.getContentPane().add(nroAnalisis3);
+		nroAnalisis4 = new JComboBox();
+		nroAnalisis4.setBounds(730, 126, 130, 26);
+		frame.getContentPane().add(nroAnalisis4);
 		for (AnalisisBarro analisisBarro : datosDAO.obtenerTodosLosAnalisisBarros()){
 			nroAnalisis1.addItem(analisisBarro.getNroAnalisis());
+			nroAnalisis2.addItem(analisisBarro.getNroAnalisis());
+			nroAnalisis3.addItem(analisisBarro.getNroAnalisis());
+			nroAnalisis4.addItem(analisisBarro.getNroAnalisis());
 		}
 		nroAnalisis1.addItemListener(new ItemListener(){
 			public void itemStateChanged(ItemEvent arg0){
@@ -514,12 +532,12 @@ public class CrearInformeBarros {
 		btnVolver.setBounds(959, 34, 175, 51);
 		frame.getContentPane().add(btnVolver);
 		
-		JComboBox nroAnalisis2 = new JComboBox();
+		/*JComboBox nroAnalisis2 = new JComboBox();
 		nroAnalisis2.setBounds(370, 126, 130, 26);
 		frame.getContentPane().add(nroAnalisis2);
 		for (AnalisisBarro analisisBarro : datosDAO.obtenerTodosLosAnalisisBarros()){
 			nroAnalisis2.addItem(analisisBarro.getNroAnalisis());
-		}
+		}*/
 		nroAnalisis2.addItemListener(new ItemListener(){
 			public void itemStateChanged(ItemEvent arg0){
 				AnalisisBarro analisisBarroSeleccionado = datosDAO.obtenerAnalisisBarroPorNumero(String.valueOf(nroAnalisis2.getSelectedItem()));
@@ -550,12 +568,12 @@ public class CrearInformeBarros {
 			}
 		});
 		
-		JComboBox nroAnalisis3 = new JComboBox();
+		/*JComboBox nroAnalisis3 = new JComboBox();
 		nroAnalisis3.setBounds(550, 126, 130, 26);
 		frame.getContentPane().add(nroAnalisis3);
 		for (AnalisisBarro analisisBarro : datosDAO.obtenerTodosLosAnalisisBarros()){
 			nroAnalisis3.addItem(analisisBarro.getNroAnalisis());
-		}
+		}*/
 		nroAnalisis3.addItemListener(new ItemListener(){
 			public void itemStateChanged(ItemEvent arg0){
 				AnalisisBarro analisisBarroSeleccionado = datosDAO.obtenerAnalisisBarroPorNumero(String.valueOf(nroAnalisis3.getSelectedItem()));
@@ -586,12 +604,12 @@ public class CrearInformeBarros {
 			}
 		});
 		
-		JComboBox nroAnalisis4 = new JComboBox();
+		/*JComboBox nroAnalisis4 = new JComboBox();
 		nroAnalisis4.setBounds(730, 126, 130, 26);
 		frame.getContentPane().add(nroAnalisis4);
 		for (AnalisisBarro analisisBarro : datosDAO.obtenerTodosLosAnalisisBarros()){
 			nroAnalisis4.addItem(analisisBarro.getNroAnalisis());
-		}
+		}*/
 		nroAnalisis4.addItemListener(new ItemListener(){
 			public void itemStateChanged(ItemEvent arg0){
 				AnalisisBarro analisisBarroSeleccionado = datosDAO.obtenerAnalisisBarroPorNumero(String.valueOf(nroAnalisis4.getSelectedItem()));
@@ -1155,6 +1173,9 @@ public class CrearInformeBarros {
 		frame.getContentPane().add(otros4);
 		
 		JButton btnNewButton = new JButton("Crear informe");
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnNewButton.setBounds(902, 334, 232, 82);
+		frame.getContentPane().add(btnNewButton);
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -1183,10 +1204,21 @@ public class CrearInformeBarros {
 							relacionCN1.getText(), otros1.getText(), null);
 					analisisParaInforme.add(analisisBarro);
 				}
+
+
 				
 				if (!String.valueOf(nroAnalisis2.getSelectedItem()).equals("-- Sin especificar --")){
+					String dateString2 = fechaExtraccion2.getText();
+					DateFormat df = new SimpleDateFormat(pattern);
+					Date date2 = null;
+					try {
+						date2 = df.parse(dateString2);
+					} catch (ParseException e2) {
+						// TODO Auto-generated catch block
+						e2.printStackTrace();
+					}			
 					AnalisisBarro analisisBarro = new AnalisisBarro (industria.getText(), departamento.getText(), localidad.getText(), descargaEn.getText(), String.valueOf(nroAnalisis2.getSelectedItem()),
-							lugarExtraccion2.getText(), extraidoPor2.getText(), null, horaExtraccion2.getText(), aspecto2.getText(), pH2.getText(),
+							lugarExtraccion2.getText(), extraidoPor2.getText(), date2, horaExtraccion2.getText(), aspecto2.getText(), pH2.getText(),
 							temperatura2.getText(), solidosTotales2.getText(), humedad2.getText(), solidosTotalesVolatiles2.getText(), liquidosLibres2.getText(), sulfuro2.getText(),
 							cromoEnLixiviado2.getText(), plomoEnLixiviado2.getText(), materiaOrganica2.getText(), hidrocarburosTotales2.getText(), conductividad2.getText(),
 							relacionCN2.getText(), otros2.getText(), null);
@@ -1194,8 +1226,17 @@ public class CrearInformeBarros {
 				}
 				
 				if (!String.valueOf(nroAnalisis3.getSelectedItem()).equals("-- Sin especificar --")){
+					String dateString3 = fechaExtraccion3.getText();
+					DateFormat df = new SimpleDateFormat(pattern);
+					Date date3 = null;
+					try {
+						date3 = df.parse(dateString3);
+					} catch (ParseException e2) {
+						// TODO Auto-generated catch block
+						e2.printStackTrace();
+					}			
 					AnalisisBarro analisisBarro = new AnalisisBarro (industria.getText(), departamento.getText(), localidad.getText(), descargaEn.getText(), String.valueOf(nroAnalisis3.getSelectedItem()),
-							lugarExtraccion3.getText(), extraidoPor3.getText(), null, horaExtraccion3.getText(), aspecto3.getText(), pH3.getText(),
+							lugarExtraccion3.getText(), extraidoPor3.getText(), date3, horaExtraccion3.getText(), aspecto3.getText(), pH3.getText(),
 							temperatura3.getText(), solidosTotales3.getText(), humedad3.getText(), solidosTotalesVolatiles3.getText(), liquidosLibres3.getText(), sulfuro3.getText(),
 							cromoEnLixiviado3.getText(), plomoEnLixiviado3.getText(), materiaOrganica3.getText(), hidrocarburosTotales3.getText(), conductividad3.getText(),
 							relacionCN3.getText(), otros3.getText(), null);
@@ -1203,25 +1244,38 @@ public class CrearInformeBarros {
 				}
 				
 				if (!String.valueOf(nroAnalisis4.getSelectedItem()).equals("-- Sin especificar --")){
+					String dateString4 = fechaExtraccion4.getText();
+					DateFormat df = new SimpleDateFormat(pattern);
+					Date date4 = null;
+					try {
+						date4 = df.parse(dateString4);
+					} catch (ParseException e2) {
+						// TODO Auto-generated catch block
+						e2.printStackTrace();
+					}			
 					AnalisisBarro analisisBarro = new AnalisisBarro (industria.getText(), departamento.getText(), localidad.getText(), descargaEn.getText(), String.valueOf(nroAnalisis4.getSelectedItem()),
-							lugarExtraccion4.getText(), extraidoPor4.getText(), null, horaExtraccion4.getText(), aspecto4.getText(), pH4.getText(),
+							lugarExtraccion4.getText(), extraidoPor4.getText(), date4, horaExtraccion4.getText(), aspecto4.getText(), pH4.getText(),
 							temperatura4.getText(), solidosTotales4.getText(), humedad4.getText(), solidosTotalesVolatiles4.getText(), liquidosLibres4.getText(), sulfuro4.getText(),
 							cromoEnLixiviado4.getText(), plomoEnLixiviado4.getText(), materiaOrganica4.getText(), hidrocarburosTotales4.getText(), conductividad4.getText(),
 							relacionCN4.getText(), otros4.getText(), null);
 					analisisParaInforme.add(analisisBarro);
 					
 				}
-				datosDAO.generarTablaParaInformeBarros(analisisParaInforme);
 				try {
-					Runtime.getRuntime().exec("java -jar C:\\Users\\estudiop.PITTAMIGLIO\\Desktop\\RealizarInformeBarros.jar");
-				} catch (IOException e1) {
+					datosDAO.generarTablaParaInformeBarros(analisisParaInforme);
+				} catch (SQLException e2) {
 					// TODO Auto-generated catch block
-					e1.printStackTrace();
+					e2.printStackTrace();
 				}
+				//Process p = pb.start();
+				ExcelBarros excelBarros = new ExcelBarros();
+				ExcelBarros.realizarInforme();
 			}
 		});
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(902, 334, 232, 82);
-		frame.getContentPane().add(btnNewButton);
+		
+		
+
 	}
+	
+
 }

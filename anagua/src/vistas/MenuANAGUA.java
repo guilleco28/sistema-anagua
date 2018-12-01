@@ -9,6 +9,9 @@ import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JLabel;
+
+import medioAmbiente.VerBD;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
@@ -52,9 +55,10 @@ public class MenuANAGUA {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		int height = screenSize.height;
 		int width = screenSize.width;
-		frame.setSize(width/2, height/2);
+		frame.setSize(960, 596);
 		frame.setLocationRelativeTo(null);
 		frame.setTitle("ANAGUA S.R.L.");
+		frame.setResizable(false);
 		
 		JButton btnSeccinAguas = new JButton("Sección AGUAS");
 		btnSeccinAguas.setFont(new Font("Tahoma", Font.PLAIN, 30));
@@ -81,12 +85,21 @@ public class MenuANAGUA {
 		btnVerBaseDe.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		btnVerBaseDe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				VerBD verBD = new VerBD();
+				verBD.verBD();
 			}
 		});
 		btnVerBaseDe.setBounds(268, 240, 386, 78);
 		frame.getContentPane().add(btnVerBaseDe);
 		
 		JButton btnAltamodificacinDeIndustrias = new JButton("Alta/Modificación de industrias");
+		btnAltamodificacinDeIndustrias.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				MenuIndustrias menuIndustrias = new MenuIndustrias();
+				frame.dispose();
+			}
+		});
 		btnAltamodificacinDeIndustrias.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		btnAltamodificacinDeIndustrias.setBounds(268, 340, 386, 82);
 		frame.getContentPane().add(btnAltamodificacinDeIndustrias);

@@ -4,9 +4,13 @@ import java.awt.Dimension;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.IOException;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Toolkit;
@@ -55,7 +59,13 @@ public class Bienvenido {
 		frame.setSize(width/2, height/2);
 		frame.setLocationRelativeTo(null);
 		frame.setTitle("ANAGUA S.R.L.");
-	
+		frame.setResizable(false);
+		/*try {
+			frame.setIconImage(ImageIO.read(new File("C:\\Users\\Guillermo\\Dropbox\\PROYECTO_ANAGUA\\logo.jpeg")));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}*/
 		
 		JButton btnAnagua = new JButton("ANAGUA");
 		btnAnagua.setFont(new Font("Tahoma", Font.PLAIN, 28));

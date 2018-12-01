@@ -39,7 +39,7 @@ public class VerBD {
 	private int highestModifiedCol = -1;
 	private static Properties p = new Properties();
 	
-    public static void main(String[] args) {
+    public static void verBD() {
         try {
         	p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties"));
 			//p.load(new FileReader("W:\\ANAGUA\\sistema-anagua\\config.properties"));

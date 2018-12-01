@@ -55,8 +55,9 @@ public class MenuBarrosANAGUA {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		int height = screenSize.height;
 		int width = screenSize.width;
-		frame.setSize(width/2, height/2);
+		frame.setSize(960, 618);
 		frame.setLocationRelativeTo(null);
+		frame.setResizable(false);
 		
 		JButton btnSeccinAguas = new JButton("Ingresar nuevos an\u00E1lisis");
 		btnSeccinAguas.setFont(new Font("Tahoma", Font.PLAIN, 30));

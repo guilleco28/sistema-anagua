@@ -1,5 +1,6 @@
 package vistas;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -94,11 +95,12 @@ public class FormularioModificacionBarros {
 		IndustriasDAO industriasDAO = new IndustriasDAO();
 		
 		frame = new JFrame();
-		frame.setBounds(100, 100, 600, 800);
+		frame.setBounds(100, 100, 623, 827);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		frame.setTitle("Formulario de modificaciÃ³n de anÃ¡lisis de barros - ANAGUA");
+		frame.setTitle("Formulario de modificación de análisis de barros - ANAGUA");
 		frame.setVisible(true);
+		frame.setResizable(false);
 		
 		JLabel lblIndustria = new JLabel("INDUSTRIA");
 		lblIndustria.setBounds(37, 20, 75, 16);
@@ -120,7 +122,7 @@ public class FormularioModificacionBarros {
 		separator.setBounds(6, 108, 588, 24);
 		frame.getContentPane().add(separator);
 		
-		JLabel lblNroAnalisis = new JLabel("NÃºmero de anÃ¡lisis");
+		JLabel lblNroAnalisis = new JLabel("Número de análisis");
 		lblNroAnalisis.setBounds(37, 130, 150, 16);
 		frame.getContentPane().add(lblNroAnalisis);
 		
@@ -128,19 +130,19 @@ public class FormularioModificacionBarros {
 		lblEstado.setBounds(37, 160, 150, 16);
 		frame.getContentPane().add(lblEstado);
 		
-		JLabel lblLugarExtraccion = new JLabel("Lugar de extracciÃ³n");
+		JLabel lblLugarExtraccion = new JLabel("Lugar de extracción");
 		lblLugarExtraccion.setBounds(37, 190, 150, 16);
 		frame.getContentPane().add(lblLugarExtraccion);
 		
-		JLabel lblExtraidoPor = new JLabel("ExtraÃ­do por");
+		JLabel lblExtraidoPor = new JLabel("Extraído por");
 		lblExtraidoPor.setBounds(37, 220, 150, 16);
 		frame.getContentPane().add(lblExtraidoPor);
 		
-		JLabel lblFechaExtraccion = new JLabel("Fecha de extracciÃ³n");
+		JLabel lblFechaExtraccion = new JLabel("Fecha de extracción");
 		lblFechaExtraccion.setBounds(37, 250, 150, 16);
 		frame.getContentPane().add(lblFechaExtraccion);
 		
-		JLabel lblHoraExtraccion = new JLabel("Hora de extracciÃ³n");
+		JLabel lblHoraExtraccion = new JLabel("Hora de extracción");
 		lblHoraExtraccion.setBounds(37, 280, 150, 16);
 		frame.getContentPane().add(lblHoraExtraccion);
 		
@@ -156,7 +158,7 @@ public class FormularioModificacionBarros {
 		lblTemperatura.setBounds(37, 370, 150, 16);
 		frame.getContentPane().add(lblTemperatura);
 		
-		JLabel lblSolidosTotales = new JLabel("SÃ³lidos totales");
+		JLabel lblSolidosTotales = new JLabel("Sólidos totales");
 		lblSolidosTotales.setBounds(37, 400, 150, 16);
 		frame.getContentPane().add(lblSolidosTotales);
 		
@@ -164,11 +166,11 @@ public class FormularioModificacionBarros {
 		lblHumedad.setBounds(37, 430, 150, 16);
 		frame.getContentPane().add(lblHumedad);
 		
-		JLabel lblSolidosTotalesVolatiles = new JLabel("SÃ³lidos totales volÃ¡tiles");
+		JLabel lblSolidosTotalesVolatiles = new JLabel("Sólidos totales volátiles");
 		lblSolidosTotalesVolatiles.setBounds(37, 460, 150, 16);
 		frame.getContentPane().add(lblSolidosTotalesVolatiles);
 		
-		JLabel lblLiquidosLibres = new JLabel("LÃ­quidos libres");
+		JLabel lblLiquidosLibres = new JLabel("Líquidos libres");
 		lblLiquidosLibres.setBounds(37, 490, 150, 16);
 		frame.getContentPane().add(lblLiquidosLibres);
 		
@@ -184,7 +186,7 @@ public class FormularioModificacionBarros {
 		lblPlomoEnLixiviado.setBounds(37, 580, 150, 16);
 		frame.getContentPane().add(lblPlomoEnLixiviado);
 		
-		JLabel lblMateriaOrganica = new JLabel("Materia orgÃ¡nica");
+		JLabel lblMateriaOrganica = new JLabel("Materia orgánica");
 		lblMateriaOrganica.setBounds(37, 610, 150, 16);
 		frame.getContentPane().add(lblMateriaOrganica);
 		
@@ -391,15 +393,20 @@ public class FormularioModificacionBarros {
 		
 		descargaEn1 = new JTextField();
 		descargaEn1.setColumns(10);
-		descargaEn1.setBounds(420, 45, 163, 26);
+		descargaEn1.setBounds(431, 45, 163, 26);
 		frame.getContentPane().add(descargaEn1);
 		
 		JButton btnValidar = new JButton("Validar");
 		btnValidar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				datosDAO.validarAnalisis(String.valueOf(nroAnalisis.getSelectedItem()));
-				estado1.setText("Validado");
+				String pw = JOptionPane.showInputDialog("Ingrese la contraseña");
+				if (pw.equals("1234")){
+					datosDAO.validarAnalisis(String.valueOf(nroAnalisis.getSelectedItem()));
+					estado1.setText("Validado");
+				} else {
+					JOptionPane.showMessageDialog(null, "Contraseña incorrecta. Intente nuevamente.");
+				}
 			}
 		});
 		btnValidar.setBounds(325, 155, 117, 29);
@@ -409,21 +416,26 @@ public class FormularioModificacionBarros {
 		btnDesvalidar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				datosDAO.desvalidarAnalisis(String.valueOf(nroAnalisis.getSelectedItem()));
-				estado1.setText("En proceso");
+				String pw = JOptionPane.showInputDialog("Ingrese la contraseña");
+				if (pw.equals("1234")){
+					datosDAO.desvalidarAnalisis(String.valueOf(nroAnalisis.getSelectedItem()));
+					estado1.setText("En proceso");
+				} else {
+					JOptionPane.showMessageDialog(null, "Contraseña incorrecta. Intente nuevamente.");
+				}
 			}
 		});
 		btnDesvalidar.setBounds(443, 155, 117, 29);
 		frame.getContentPane().add(btnDesvalidar);
 		
-		JButton btnModificarAnlisis = new JButton("Modificar anÃ¡lisis");
+		JButton btnModificarAnlisis = new JButton("Modificar análisis");
 		
 		btnModificarAnlisis.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
 				if (estado1.getText().equals("Validado")){
-					JOptionPane.showMessageDialog(null, "No es posible modificar un anÃ¡lisis validado. Debe desvalidarlo para poder modificarlo.");
+					JOptionPane.showMessageDialog(null, "No es posible modificar un análisis validado. Debe desvalidarlo para poder modificarlo.");
 				} else {
 					AnalisisBarro analisisBarro = new AnalisisBarro (String.valueOf(industria.getSelectedItem()), departamento1.getText(), localidad1.getText(), descargaEn1.getText(), String.valueOf(nroAnalisis.getSelectedItem()),
 							lugarExtraccion1.getText(), extraidoPor1.getText(), null, horaExtraccion1.getText(), aspecto1.getText(), pH1.getText(),
@@ -431,7 +443,10 @@ public class FormularioModificacionBarros {
 							cromoEnLixiviado1.getText(), plomoEnLixiviado1.getText(), materiaOrganica1.getText(), hidrocarburosTotales1.getText(), conductividad1.getText(),
 							relacionCN1.getText(), otros1.getText(), "En proceso");
 					try {
+						
 						datosDAO.modificarBarro(analisisBarro);
+						JOptionPane.showMessageDialog(null, "Se modificó correctamente el análisis "+String.valueOf(nroAnalisis.getSelectedItem()));
+												
 					} catch (MySQLIntegrityConstraintViolationException e1) {
 						// no tiene sentido, es UPDATE
 						e1.printStackTrace();

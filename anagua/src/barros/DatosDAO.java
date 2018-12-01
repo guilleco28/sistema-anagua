@@ -1,5 +1,8 @@
 package barros;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -216,13 +219,14 @@ public class DatosDAO {
 			preparedStmt.setString(1, nroAnalisis);
 			oResultSet = preparedStmt.executeQuery();
 			
+			
 			while (oResultSet.next()){
 				analisisBarro = new AnalisisBarro (oResultSet.getString(1), oResultSet.getString(2), oResultSet.getString(3), oResultSet.getString(4),
 						oResultSet.getString(5), oResultSet.getString(6), oResultSet.getString(7), oResultSet.getTimestamp(8), oResultSet.getString(9),
 						oResultSet.getString(10), oResultSet.getString(11), oResultSet.getString(12), oResultSet.getString(13), oResultSet.getString(14),
 						oResultSet.getString(15), oResultSet.getString(16), oResultSet.getString(17), oResultSet.getString(18), oResultSet.getString(19), 
 						oResultSet.getString(20), oResultSet.getString(21), oResultSet.getString(22), oResultSet.getString(23), oResultSet.getString(24), oResultSet.getString(25));
-
+				
 				
 			}			
 			
@@ -271,7 +275,7 @@ public class DatosDAO {
 		}		
 	}
 	
-	public void generarTablaParaInformeBarros(ArrayList<AnalisisBarro> analisisParaInforme) {
+	public void generarTablaParaInformeBarros(ArrayList<AnalisisBarro> analisisParaInforme) throws SQLException {
 		
 		PreparedStatement preparedStmt;
 		BaseDeDatos baseDeDatos = new BaseDeDatos();
@@ -301,9 +305,7 @@ public class DatosDAO {
 				preparedStmt.setString(5, analisisAAgregar.getDescargaEn());
 				preparedStmt.setString(6, analisisAAgregar.getLugarExtraccion());
 				preparedStmt.setString(7, analisisAAgregar.getExtraidoPor());
-				System.out.println(analisisAAgregar.getFechaExtraccion());
 				Timestamp fechaExtraccionSQL = new java.sql.Timestamp(analisisAAgregar.getFechaExtraccion().getTime());
-				System.out.println(fechaExtraccionSQL);
 				preparedStmt.setTimestamp(8, fechaExtraccionSQL);
 				preparedStmt.setString(9, analisisAAgregar.getHoraExtraccion());
 				preparedStmt.setString(10, analisisAAgregar.getAspecto());
@@ -329,6 +331,41 @@ public class DatosDAO {
 			e.printStackTrace();
 		}
 		
+		String query = "SELECT * FROM informe_barros";
+		preparedStmt = (PreparedStatement) oConnection.prepareStatement(query);
+		ResultSet oResultSet = preparedStmt.executeQuery();
+		int rowcount = 0;
+		if (oResultSet.last()) {
+			rowcount = oResultSet.getRow();
+			oResultSet.beforeFirst();
+		}
+		
+		//int cantidadColumnasABorrar = 0;
+		ArrayList <String> columnasABorrar = new ArrayList <String> ();
+		for (int i=4; i<oResultSet.getMetaData().getColumnCount(); i++) {
+			oResultSet.first();
+			int cantidadNulos = 0;
+			for (int j=0; j<rowcount; j++) {
+				if (oResultSet.getObject(i+1).equals("") || oResultSet.getObject(i+1).equals(null)) {
+					cantidadNulos +=1;
+					if (cantidadNulos == rowcount) {
+						String columnaABorrar = oResultSet.getMetaData().getColumnName(i+1);
+						columnasABorrar.add(columnaABorrar);					
+					}
+				}
+				oResultSet.next();
+			}
+		}
+		
+		
+		
+		for (int i=0; i<columnasABorrar.size(); i++) {
+			query = "ALTER TABLE informe_barros DROP COLUMN "+columnasABorrar.get(i);
+			preparedStmt = (PreparedStatement) oConnection.prepareStatement(query);
+			preparedStmt.execute();
+		}
+		
+
 		
 	}
 
