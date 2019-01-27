@@ -18,17 +18,21 @@ public class BaseDeDatos {
 	
 	public BaseDeDatos() {
 		try {
-			p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties"));
+			//p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties"));
 			//p.load(new FileReader("W:\\ANAGUA\\sistema-anagua\\config.properties"));
-			//p.load(new FileReader("C:\\Users\\Guillermo\\Dropbox\\PROYECTO_ANAGUA\\config.properties"));
+			p.load(new FileReader("C:\\Users\\Guillermo\\Dropbox\\PROYECTO_ANAGUA\\config.properties"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		url = url+p.getProperty("bd");
+		
 	}
 
 	public Connection abrirConexion() {
 		Connection oConnection = null;
+		System.out.println("usuario: "+p.getProperty("usuario"));
+		System.out.println("pwd: "+p.getProperty("pwd"));
+		System.out.println("url: "+url);
 		try{
 			Class.forName("com.mysql.jdbc.Connection");
 			oConnection = DriverManager.getConnection(url, p.getProperty("usuario"), p.getProperty("pwd"));

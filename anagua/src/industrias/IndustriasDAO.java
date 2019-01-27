@@ -36,7 +36,7 @@ public class IndustriasDAO {
 		return industrias;
 	}
 	
-	/*public void agregarIndustria (Industria industria) {
+	public void agregarIndustria (Industria industria) {
 		PreparedStatement preparedStmt;
 		BaseDeDatos baseDeDatos = new BaseDeDatos();
 		Connection oConnection = null;
@@ -44,26 +44,25 @@ public class IndustriasDAO {
 			oConnection = baseDeDatos.abrirConexion();
 			String query = "INSERT INTO industrias VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 			preparedStmt = (PreparedStatement) oConnection.prepareStatement(query);
-			preparedStmt.setInt(1, 2);
-			preparedStmt.setString(2, "PEDRO BERRO");
-			preparedStmt.setString(3, "ABORGAMA");
-			preparedStmt.setString(4, "Montevideo");
-			preparedStmt.setString(5, "Punta Carretas");
-			preparedStmt.setString(6, "ABORGAMA");
-			preparedStmt.setString(7, "ABORGAMA");
-			preparedStmt.setString(8, "ABORGAMA");
-			preparedStmt.setString(9, "ABORGAMA");
-			preparedStmt.setString(10, "ABORGAMA");
-			preparedStmt.setString(11, "ABORGAMA");
-			preparedStmt.setString(12, "Cañada");
-			
+			preparedStmt.setInt(1, industria.getId());
+			preparedStmt.setString(2, industria.getCliente());
+			preparedStmt.setString(3, industria.getResponsable());
+			preparedStmt.setString(4, industria.getDepartamento());
+			preparedStmt.setString(5, industria.getLocalidad());
+			preparedStmt.setString(6, industria.getDireccion());
+			preparedStmt.setString(7, industria.getTelefono());
+			preparedStmt.setString(8, industria.getClaveDeAccesoWeb());
+			preparedStmt.setString(9, industria.getContacto());
+			preparedStmt.setString(10, industria.getRubro());
+			preparedStmt.setString(11, industria.getDescargaAbreviada());
+			preparedStmt.setString(12, industria.getDescarga());			
 			preparedStmt.execute();
 			
 		} catch (SQLException e){
 			e.printStackTrace();
 		}
 	}
-	*/
+	
 	public Industria obtenerIndustriaPorNombre (String nombreIndustria){
 		Industria industria = null;		
 		PreparedStatement preparedStmt;
@@ -90,4 +89,25 @@ public class IndustriasDAO {
 		return industria;
 	}
 
+	public int obtenerUltimoID () {
+		int id = 0;
+		PreparedStatement preparedStmt;
+		BaseDeDatos baseDeDatos = new BaseDeDatos();
+		Connection oConnection = null;
+		ResultSet oResultSet = null;
+		try {
+			
+			oConnection = baseDeDatos.abrirConexion();			
+			String query = "SELECT * FROM industrias";			
+			preparedStmt = (PreparedStatement) oConnection.prepareStatement(query);
+			oResultSet = preparedStmt.executeQuery();
+			oResultSet.last();
+			id = oResultSet.getInt("id");
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}		
+		
+		return id;
+	}
 }

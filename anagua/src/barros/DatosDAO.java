@@ -136,7 +136,7 @@ public class DatosDAO {
 			
 			oConnection = baseDeDatos.abrirConexion();
 
-			String query = "SELECT * FROM datos WHERE nro_analisis = ?";
+			String query = "SELECT * FROM datos WHERE numero_analisis = ?";
 			preparedStmt = (PreparedStatement) oConnection.prepareStatement(query);
 			preparedStmt.setString(1, nro_analisis);
 			

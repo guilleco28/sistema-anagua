@@ -7,19 +7,30 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JComboBox;
 import javax.swing.JTextPane;
+
+import aguas.AguasDAO;
+import aguas.AnalisisAgua;
+
 import javax.swing.JTextField;
 import javax.swing.JScrollBar;
 import java.awt.Scrollbar;
 import java.awt.Panel;
 import javax.swing.JScrollPane;
 import javax.swing.JPanel;
+import javax.swing.JButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class FormularioIngresoAguas {
 
+	private AguasDAO aguasDAO = new AguasDAO();
 	private JFrame frame;
 	private JTextField departamento;
 	private JTextField localidad;
 	private JTextField descargaEn;
+	
 
 	/**
 	 * Launch the application.
@@ -287,6 +298,34 @@ public class FormularioIngresoAguas {
 		
 		JScrollBar scrollBar = new JScrollBar();
 		scrollPane_1.setRowHeaderView(scrollBar);
+		
+		JButton btnHola = new JButton("hola");
+		btnHola.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				//System.out.println(aguasDAO.existeAnalisisAgua("numero"));
+				//System.out.println(aguasDAO.existeAnalisisAgua("10000009"));
+				AnalisisAgua analisisAgua = new AnalisisAgua ("numero", "industriaM", "departamentoM", "localidadM", "Curso de Agua", "lugarM", "extraidoM", null, "horaM", "aspectoM", "pHisM", "pHM", "temperaturaM", "caudalInstantaneoM", "odIsM", "odM", "dbo5M", "dbo5fM", "dqoM", "aceitesM", "solidostotalesM", "solidostotalesvolatilesM", "sstM", "ssvM", "ss10M", "ss30M", "ss60M", "amoniacoM", "nitratoM", "nitritoM", "nitrogenoTotalM", "fosforoTotalM", "cromoM", "plomoM", "zincM", "aluminioM", "manganesoM", "potasioM", "alcalinidadTotalM", "acidezVolatilM", "alfaM", "alfapM", "bicarbonatoM", "salinidadM", "turbiedadM", "conductividadM", "sulfuroM", "sulfatoM", "fenolesM", "tensoactivosM", "clororM", "clorotM", "cloruroM", "durezaM", "colorM", "hidrocarburosM", "coliformesM", "2A", "estadoM", "otrosM");
+				AnalisisAgua analisisAgua2 = new AnalisisAgua ("numero", "industriaM", "departamentoM", "localidadM", "descargaM", "lugarM", "extraidoM", null, "horaM", "", "", "", "", "", "odisM", "odM", "dbo5M", "dbo5fM", "dqoM", "aceitesM", "solidostotalesM", "solidostotalesvolatilesM", "sstM", "ssvM", "ss10M", "ss30M", "ss60M", "amoniacoM", "nitratoM", "nitritoM", "nitrogenoTotalM", "fosforoTotalM", "cromoM", "plomoM", "zincM", "aluminioM", "manganesoM", "potasioM", "alcalinidadTotalM", "acidezVolatilM", "alfaM", "alfapM", "bicarbonatoM", "salinidadM", "turbiedadM", "conductividadM", "sulfuroM", "sulfatoM", "fenolesM", "tensoactivosM", "", "", "cloruroM", "durezaM", "", "hidrocarburosM", "coliformesM", "cursoTipoM", "estadoM", "");
+				//aguasDAO.modificarAgua(analisisAgua);
+				//aguasDAO.obtenerTodosLosAnalisisAguas();
+				//aguasDAO.obtenerAnalisisAguaPorNumero("18-638");
+				//aguasDAO.validarAnalisis("numero");
+				//aguasDAO.desvalidarAnalisis("18-638");
+				ArrayList <AnalisisAgua> arrayList = new ArrayList <AnalisisAgua>();
+				arrayList.add(analisisAgua);
+				arrayList.add(analisisAgua2);
+				try {
+					aguasDAO.generarTablaParaInformeAguas(arrayList);
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			}
+		});
+		btnHola.setBounds(941, 278, 115, 29);
+		frame.getContentPane().add(btnHola);
 		
 		
 

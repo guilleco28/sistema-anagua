@@ -5,8 +5,13 @@ import java.awt.Font;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+
+import industrias.VerIndustrias;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
+import java.sql.SQLException;
 
 public class MenuIndustrias {
 
@@ -50,6 +55,13 @@ public class MenuIndustrias {
 		frame.setVisible(true);
 		
 		JButton btnNewButton = new JButton("Agregar industria");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				AgregarIndustria agregarIndustria = new AgregarIndustria();
+				frame.dispose();
+			}
+		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 28));
 		btnNewButton.setBounds(250, 100, 410, 70);
 		frame.getContentPane().add(btnNewButton);
@@ -60,6 +72,18 @@ public class MenuIndustrias {
 		frame.getContentPane().add(btnModificarIndustria);
 		
 		JButton btnVerIndustrias = new JButton("Ver industrias");
+		btnVerIndustrias.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				VerIndustrias verIndustrias = new VerIndustrias();
+				try {
+					verIndustrias.verIndustrias();
+				} catch (IOException | SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
 		btnVerIndustrias.setFont(new Font("Tahoma", Font.PLAIN, 28));
 		btnVerIndustrias.setBounds(250, 275, 410, 70);
 		frame.getContentPane().add(btnVerIndustrias);
