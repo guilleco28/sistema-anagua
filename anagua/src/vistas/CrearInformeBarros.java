@@ -149,6 +149,7 @@ public class CrearInformeBarros {
 	private JTextField conductividad4;
 	private JTextField relacionCN4;
 	private JTextField otros4;
+	Color colorPorDefecto = new Color (238, 238, 238);
 
 	/**
 	 * Launch the application.
@@ -216,7 +217,7 @@ public class CrearInformeBarros {
 		lblLugarExtraccion.setBounds(37, 160, 150, 16);
 		frame.getContentPane().add(lblLugarExtraccion);
 		
-		JLabel lblExtraidoPor = new JLabel("ExtraÃ­do por");
+		JLabel lblExtraidoPor = new JLabel("Extraído por");
 		lblExtraidoPor.setBounds(37, 190, 150, 16);
 		frame.getContentPane().add(lblExtraidoPor);
 		
@@ -314,7 +315,17 @@ public class CrearInformeBarros {
 				localidad.setText(analisisBarroSeleccionado.getLocalidad());
 				descargaEn.setText(analisisBarroSeleccionado.getDescargaEn());
 				lugarExtraccion1.setText(analisisBarroSeleccionado.getLugarExtraccion());
+				if (lugarExtraccion1.getText().equals("*")) {
+					lugarExtraccion1.setBackground(Color.YELLOW);
+				}  else {
+					lugarExtraccion1.setBackground(colorPorDefecto);
+				}
 				extraidoPor1.setText(analisisBarroSeleccionado.getExtraidoPor());
+				if (extraidoPor1.getText().equals("*")) {
+					extraidoPor1.setBackground(Color.YELLOW);
+				}  else {
+					extraidoPor1.setBackground(colorPorDefecto);
+				}
 				if(analisisBarroSeleccionado.getFechaExtraccion() == null) {
 					fechaExtraccion1.setText("");
 				} else {
@@ -322,21 +333,97 @@ public class CrearInformeBarros {
 				    fechaExtraccion1.setText(df.format(analisisBarroSeleccionado.getFechaExtraccion()));
 				}
 				horaExtraccion1.setText(analisisBarroSeleccionado.getHoraExtraccion());
+				if (horaExtraccion1.getText().equals("*")) {
+					horaExtraccion1.setBackground(Color.YELLOW);
+				}  else {
+					horaExtraccion1.setBackground(colorPorDefecto);
+				}
 				aspecto1.setText(analisisBarroSeleccionado.getAspecto());
+				if (aspecto1.getText().equals("*")) {
+					aspecto1.setBackground(Color.YELLOW);
+				}  else {
+					aspecto1.setBackground(colorPorDefecto);
+				}
 				pH1.setText(analisisBarroSeleccionado.getpH());
+				if (pH1.getText().equals("*")) {
+					pH1.setBackground(Color.YELLOW);
+				}  else {
+					pH1.setBackground(colorPorDefecto);
+				}
 				temperatura1.setText(analisisBarroSeleccionado.getTemperatura());
+				
 				solidosTotales1.setText(analisisBarroSeleccionado.getSolidosTotales());
+				if (solidosTotales1.getText().equals("*")) {
+					solidosTotales1.setBackground(Color.YELLOW);
+				}  else {
+					solidosTotales1.setBackground(colorPorDefecto);
+				}
 				humedad1.setText(analisisBarroSeleccionado.getHumedad());
+				if (humedad1.getText().equals("*")) {
+					humedad1.setBackground(Color.YELLOW);
+				}  else {
+					humedad1.setBackground(colorPorDefecto);
+				}
 				solidosTotalesVolatiles1.setText(analisisBarroSeleccionado.getSolidosTotalesVolatiles());
+				if (solidosTotalesVolatiles1.getText().equals("*")) {
+					solidosTotalesVolatiles1.setBackground(Color.YELLOW);
+				}  else {
+					solidosTotalesVolatiles1.setBackground(colorPorDefecto);
+				}
 				liquidosLibres1.setText(analisisBarroSeleccionado.getLiquidosLibres());
+				if (liquidosLibres1.getText().equals("*")) {
+					liquidosLibres1.setBackground(Color.YELLOW);
+				}  else {
+					liquidosLibres1.setBackground(colorPorDefecto);
+				}
 				sulfuro1.setText(analisisBarroSeleccionado.getSulfuro());
+				if (sulfuro1.getText().equals("*")) {
+					sulfuro1.setBackground(Color.YELLOW);
+				}  else {
+					sulfuro1.setBackground(colorPorDefecto);
+				}
 				cromoEnLixiviado1.setText(analisisBarroSeleccionado.getCromoEnLixiviado());
+				if (cromoEnLixiviado1.getText().equals("*")) {
+					cromoEnLixiviado1.setBackground(Color.YELLOW);
+				}  else {
+					cromoEnLixiviado1.setBackground(colorPorDefecto);
+				}
 				plomoEnLixiviado1.setText(analisisBarroSeleccionado.getPlomoEnLixiviado());
+				if (plomoEnLixiviado1.getText().equals("*")) {
+					plomoEnLixiviado1.setBackground(Color.YELLOW);
+				}  else {
+					plomoEnLixiviado1.setBackground(colorPorDefecto);
+				}
 				materiaOrganica1.setText(analisisBarroSeleccionado.getMateriaOrganica());
+				if (materiaOrganica1.getText().equals("*")) {
+					materiaOrganica1.setBackground(Color.YELLOW);
+				}  else {
+					materiaOrganica1.setBackground(colorPorDefecto);
+				}
 				hidrocarburosTotales1.setText(analisisBarroSeleccionado.getHidrocarburosTotales());
+				if (hidrocarburosTotales1.getText().equals("*")) {
+					hidrocarburosTotales1.setBackground(Color.YELLOW);
+				}  else {
+					hidrocarburosTotales1.setBackground(colorPorDefecto);
+				}
 				conductividad1.setText(analisisBarroSeleccionado.getConductividad());
+				if (conductividad1.getText().equals("*")) {
+					conductividad1.setBackground(Color.YELLOW);
+				}  else {
+					conductividad1.setBackground(colorPorDefecto);
+				}
 				relacionCN1.setText(analisisBarroSeleccionado.getRelacionCN());
+				if (relacionCN1.getText().equals("*")) {
+					relacionCN1.setBackground(Color.YELLOW);
+				}  else {
+					relacionCN1.setBackground(colorPorDefecto);
+				}
 				otros1.setText(analisisBarroSeleccionado.getOtros());
+				if (otros1.getText().equals("*")) {
+					otros1.setBackground(Color.YELLOW);
+				}  else {
+					otros1.setBackground(colorPorDefecto);
+				}
 			}
 		});
 		
@@ -542,7 +629,17 @@ public class CrearInformeBarros {
 			public void itemStateChanged(ItemEvent arg0){
 				AnalisisBarro analisisBarroSeleccionado = datosDAO.obtenerAnalisisBarroPorNumero(String.valueOf(nroAnalisis2.getSelectedItem()));
 				lugarExtraccion2.setText(analisisBarroSeleccionado.getLugarExtraccion());
+				if (lugarExtraccion2.getText().equals("*")) {
+					lugarExtraccion2.setBackground(Color.YELLOW);
+				}  else {
+					lugarExtraccion2.setBackground(colorPorDefecto);
+				}
 				extraidoPor2.setText(analisisBarroSeleccionado.getExtraidoPor());
+				if (extraidoPor2.getText().equals("*")) {
+					extraidoPor2.setBackground(Color.YELLOW);
+				}  else {
+					extraidoPor2.setBackground(colorPorDefecto);
+				}
 				if(analisisBarroSeleccionado.getFechaExtraccion() == null) {
 					fechaExtraccion2.setText("");
 				} else {
@@ -550,21 +647,97 @@ public class CrearInformeBarros {
 				    fechaExtraccion2.setText(df.format(analisisBarroSeleccionado.getFechaExtraccion()));
 				}
 				horaExtraccion2.setText(analisisBarroSeleccionado.getHoraExtraccion());
+				if (horaExtraccion2.getText().equals("*")) {
+					horaExtraccion2.setBackground(Color.YELLOW);
+				}  else {
+					horaExtraccion2.setBackground(colorPorDefecto);
+				}
 				aspecto2.setText(analisisBarroSeleccionado.getAspecto());
+				if (aspecto2.getText().equals("*")) {
+					aspecto2.setBackground(Color.YELLOW);
+				}  else {
+					aspecto2.setBackground(colorPorDefecto);
+				}
 				pH2.setText(analisisBarroSeleccionado.getpH());
+				if (pH2.getText().equals("*")) {
+					pH2.setBackground(Color.YELLOW);
+				}  else {
+					pH2.setBackground(colorPorDefecto);
+				}
 				temperatura2.setText(analisisBarroSeleccionado.getTemperatura());
+				
 				solidosTotales2.setText(analisisBarroSeleccionado.getSolidosTotales());
+				if (solidosTotales2.getText().equals("*")) {
+					solidosTotales2.setBackground(Color.YELLOW);
+				}  else {
+					solidosTotales2.setBackground(colorPorDefecto);
+				}
 				humedad2.setText(analisisBarroSeleccionado.getHumedad());
+				if (humedad2.getText().equals("*")) {
+					humedad2.setBackground(Color.YELLOW);
+				}  else {
+					humedad2.setBackground(colorPorDefecto);
+				}
 				solidosTotalesVolatiles2.setText(analisisBarroSeleccionado.getSolidosTotalesVolatiles());
+				if (solidosTotalesVolatiles2.getText().equals("*")) {
+					solidosTotalesVolatiles2.setBackground(Color.YELLOW);
+				}  else {
+					solidosTotalesVolatiles2.setBackground(colorPorDefecto);
+				}
 				liquidosLibres2.setText(analisisBarroSeleccionado.getLiquidosLibres());
+				if (liquidosLibres2.getText().equals("*")) {
+					liquidosLibres2.setBackground(Color.YELLOW);
+				}  else {
+					liquidosLibres2.setBackground(colorPorDefecto);
+				}
 				sulfuro2.setText(analisisBarroSeleccionado.getSulfuro());
+				if (sulfuro2.getText().equals("*")) {
+					sulfuro2.setBackground(Color.YELLOW);
+				}  else {
+					sulfuro2.setBackground(colorPorDefecto);
+				}
 				cromoEnLixiviado2.setText(analisisBarroSeleccionado.getCromoEnLixiviado());
+				if (cromoEnLixiviado2.getText().equals("*")) {
+					cromoEnLixiviado2.setBackground(Color.YELLOW);
+				}  else {
+					cromoEnLixiviado2.setBackground(colorPorDefecto);
+				}
 				plomoEnLixiviado2.setText(analisisBarroSeleccionado.getPlomoEnLixiviado());
+				if (plomoEnLixiviado2.getText().equals("*")) {
+					plomoEnLixiviado2.setBackground(Color.YELLOW);
+				}  else {
+					plomoEnLixiviado2.setBackground(colorPorDefecto);
+				}
 				materiaOrganica2.setText(analisisBarroSeleccionado.getMateriaOrganica());
+				if (materiaOrganica2.getText().equals("*")) {
+					materiaOrganica2.setBackground(Color.YELLOW);
+				}  else {
+					materiaOrganica2.setBackground(colorPorDefecto);
+				}
 				hidrocarburosTotales2.setText(analisisBarroSeleccionado.getHidrocarburosTotales());
+				if (hidrocarburosTotales2.getText().equals("*")) {
+					hidrocarburosTotales2.setBackground(Color.YELLOW);
+				}  else {
+					hidrocarburosTotales2.setBackground(colorPorDefecto);
+				}
 				conductividad2.setText(analisisBarroSeleccionado.getConductividad());
+				if (conductividad2.getText().equals("*")) {
+					conductividad2.setBackground(Color.YELLOW);
+				}  else {
+					conductividad2.setBackground(colorPorDefecto);
+				}
 				relacionCN2.setText(analisisBarroSeleccionado.getRelacionCN());
+				if (relacionCN2.getText().equals("*")) {
+					relacionCN2.setBackground(Color.YELLOW);
+				}  else {
+					relacionCN2.setBackground(colorPorDefecto);
+				}
 				otros2.setText(analisisBarroSeleccionado.getOtros());
+				if (otros2.getText().equals("*")) {
+					otros2.setBackground(Color.YELLOW);
+				}  else {
+					otros2.setBackground(colorPorDefecto);
+				}
 			}
 		});
 		
@@ -578,7 +751,17 @@ public class CrearInformeBarros {
 			public void itemStateChanged(ItemEvent arg0){
 				AnalisisBarro analisisBarroSeleccionado = datosDAO.obtenerAnalisisBarroPorNumero(String.valueOf(nroAnalisis3.getSelectedItem()));
 				lugarExtraccion3.setText(analisisBarroSeleccionado.getLugarExtraccion());
+				if (lugarExtraccion3.getText().equals("*")) {
+					lugarExtraccion3.setBackground(Color.YELLOW);
+				}  else {
+					lugarExtraccion3.setBackground(colorPorDefecto);
+				}
 				extraidoPor3.setText(analisisBarroSeleccionado.getExtraidoPor());
+				if (extraidoPor3.getText().equals("*")) {
+					extraidoPor3.setBackground(Color.YELLOW);
+				}  else {
+					extraidoPor3.setBackground(colorPorDefecto);
+				}
 				if(analisisBarroSeleccionado.getFechaExtraccion() == null) {
 					fechaExtraccion3.setText("");
 				} else {
@@ -586,21 +769,96 @@ public class CrearInformeBarros {
 				    fechaExtraccion3.setText(df.format(analisisBarroSeleccionado.getFechaExtraccion()));
 				}
 				horaExtraccion3.setText(analisisBarroSeleccionado.getHoraExtraccion());
+				if (horaExtraccion3.getText().equals("*")) {
+					horaExtraccion3.setBackground(Color.YELLOW);
+				}  else {
+					horaExtraccion3.setBackground(colorPorDefecto);
+				}
 				aspecto3.setText(analisisBarroSeleccionado.getAspecto());
+				if (aspecto3.getText().equals("*")) {
+					aspecto3.setBackground(Color.YELLOW);
+				}  else {
+					aspecto3.setBackground(colorPorDefecto);
+				}
 				pH3.setText(analisisBarroSeleccionado.getpH());
+				if (pH3.getText().equals("*")) {
+					pH3.setBackground(Color.YELLOW);
+				}  else {
+					pH3.setBackground(colorPorDefecto);
+				}
 				temperatura3.setText(analisisBarroSeleccionado.getTemperatura());
 				solidosTotales3.setText(analisisBarroSeleccionado.getSolidosTotales());
+				if (solidosTotales3.getText().equals("*")) {
+					solidosTotales3.setBackground(Color.YELLOW);
+				}  else {
+					solidosTotales3.setBackground(colorPorDefecto);
+				}
 				humedad3.setText(analisisBarroSeleccionado.getHumedad());
+				if (humedad3.getText().equals("*")) {
+					humedad3.setBackground(Color.YELLOW);
+				}  else {
+					humedad3.setBackground(colorPorDefecto);
+				}
 				solidosTotalesVolatiles3.setText(analisisBarroSeleccionado.getSolidosTotalesVolatiles());
+				if (solidosTotalesVolatiles3.getText().equals("*")) {
+					solidosTotalesVolatiles3.setBackground(Color.YELLOW);
+				}  else {
+					solidosTotalesVolatiles3.setBackground(colorPorDefecto);
+				}
 				liquidosLibres3.setText(analisisBarroSeleccionado.getLiquidosLibres());
+				if (liquidosLibres3.getText().equals("*")) {
+					liquidosLibres3.setBackground(Color.YELLOW);
+				}  else {
+					liquidosLibres3.setBackground(colorPorDefecto);
+				}
 				sulfuro3.setText(analisisBarroSeleccionado.getSulfuro());
+				if (sulfuro3.getText().equals("*")) {
+					sulfuro3.setBackground(Color.YELLOW);
+				}  else {
+					sulfuro3.setBackground(colorPorDefecto);
+				}
 				cromoEnLixiviado3.setText(analisisBarroSeleccionado.getCromoEnLixiviado());
+				if (cromoEnLixiviado3.getText().equals("*")) {
+					cromoEnLixiviado3.setBackground(Color.YELLOW);
+				}  else {
+					cromoEnLixiviado3.setBackground(colorPorDefecto);
+				}
 				plomoEnLixiviado3.setText(analisisBarroSeleccionado.getPlomoEnLixiviado());
+				if (plomoEnLixiviado3.getText().equals("*")) {
+					plomoEnLixiviado3.setBackground(Color.YELLOW);
+				}  else {
+					plomoEnLixiviado3.setBackground(colorPorDefecto);
+				}
 				materiaOrganica3.setText(analisisBarroSeleccionado.getMateriaOrganica());
+				if (materiaOrganica3.getText().equals("*")) {
+					materiaOrganica3.setBackground(Color.YELLOW);
+				}  else {
+					materiaOrganica3.setBackground(colorPorDefecto);
+				}
 				hidrocarburosTotales3.setText(analisisBarroSeleccionado.getHidrocarburosTotales());
+				if (hidrocarburosTotales3.getText().equals("*")) {
+					hidrocarburosTotales3.setBackground(Color.YELLOW);
+				}  else {
+					hidrocarburosTotales3.setBackground(colorPorDefecto);
+				}
 				conductividad3.setText(analisisBarroSeleccionado.getConductividad());
+				if (conductividad3.getText().equals("*")) {
+					conductividad3.setBackground(Color.YELLOW);
+				}  else {
+					conductividad3.setBackground(colorPorDefecto);
+				}
 				relacionCN3.setText(analisisBarroSeleccionado.getRelacionCN());
+				if (relacionCN3.getText().equals("*")) {
+					relacionCN3.setBackground(Color.YELLOW);
+				}  else {
+					relacionCN3.setBackground(colorPorDefecto);
+				}
 				otros3.setText(analisisBarroSeleccionado.getOtros());
+				if (otros3.getText().equals("*")) {
+					otros3.setBackground(Color.YELLOW);
+				}  else {
+					otros3.setBackground(colorPorDefecto);
+				}
 			}
 		});
 		
@@ -614,7 +872,17 @@ public class CrearInformeBarros {
 			public void itemStateChanged(ItemEvent arg0){
 				AnalisisBarro analisisBarroSeleccionado = datosDAO.obtenerAnalisisBarroPorNumero(String.valueOf(nroAnalisis4.getSelectedItem()));
 				lugarExtraccion4.setText(analisisBarroSeleccionado.getLugarExtraccion());
+				if (lugarExtraccion4.getText().equals("*")) {
+					lugarExtraccion4.setBackground(Color.YELLOW);
+				}  else {
+					lugarExtraccion4.setBackground(colorPorDefecto);
+				}
 				extraidoPor4.setText(analisisBarroSeleccionado.getExtraidoPor());
+				if (extraidoPor4.getText().equals("*")) {
+					extraidoPor4.setBackground(Color.YELLOW);
+				}  else {
+					extraidoPor4.setBackground(colorPorDefecto);
+				}
 				if(analisisBarroSeleccionado.getFechaExtraccion() == null) {
 					fechaExtraccion4.setText("");
 				} else {
@@ -622,21 +890,96 @@ public class CrearInformeBarros {
 				    fechaExtraccion4.setText(df.format(analisisBarroSeleccionado.getFechaExtraccion()));
 				}
 				horaExtraccion4.setText(analisisBarroSeleccionado.getHoraExtraccion());
+				if (horaExtraccion4.getText().equals("*")) {
+					horaExtraccion4.setBackground(Color.YELLOW);
+				}  else {
+					horaExtraccion4.setBackground(colorPorDefecto);
+				}
 				aspecto4.setText(analisisBarroSeleccionado.getAspecto());
+				if (aspecto4.getText().equals("*")) {
+					aspecto4.setBackground(Color.YELLOW);
+				}  else {
+					aspecto4.setBackground(colorPorDefecto);
+				}
 				pH4.setText(analisisBarroSeleccionado.getpH());
+				if (pH4.getText().equals("*")) {
+					pH4.setBackground(Color.YELLOW);
+				}  else {
+					pH4.setBackground(colorPorDefecto);
+				}
 				temperatura4.setText(analisisBarroSeleccionado.getTemperatura());
 				solidosTotales4.setText(analisisBarroSeleccionado.getSolidosTotales());
+				if (solidosTotales4.getText().equals("*")) {
+					solidosTotales4.setBackground(Color.YELLOW);
+				}  else {
+					solidosTotales4.setBackground(colorPorDefecto);
+				}
 				humedad4.setText(analisisBarroSeleccionado.getHumedad());
+				if (humedad4.getText().equals("*")) {
+					humedad4.setBackground(Color.YELLOW);
+				}  else {
+					humedad4.setBackground(colorPorDefecto);
+				}
 				solidosTotalesVolatiles4.setText(analisisBarroSeleccionado.getSolidosTotalesVolatiles());
+				if (solidosTotalesVolatiles4.getText().equals("*")) {
+					solidosTotalesVolatiles4.setBackground(Color.YELLOW);
+				}  else {
+					solidosTotalesVolatiles4.setBackground(colorPorDefecto);
+				}
 				liquidosLibres4.setText(analisisBarroSeleccionado.getLiquidosLibres());
+				if (liquidosLibres4.getText().equals("*")) {
+					liquidosLibres4.setBackground(Color.YELLOW);
+				}  else {
+					liquidosLibres4.setBackground(colorPorDefecto);
+				}
 				sulfuro4.setText(analisisBarroSeleccionado.getSulfuro());
+				if (sulfuro4.getText().equals("*")) {
+					sulfuro4.setBackground(Color.YELLOW);
+				}  else {
+					sulfuro4.setBackground(colorPorDefecto);
+				}
 				cromoEnLixiviado4.setText(analisisBarroSeleccionado.getCromoEnLixiviado());
+				if (cromoEnLixiviado4.getText().equals("*")) {
+					cromoEnLixiviado4.setBackground(Color.YELLOW);
+				}  else {
+					cromoEnLixiviado4.setBackground(colorPorDefecto);
+				}
 				plomoEnLixiviado4.setText(analisisBarroSeleccionado.getPlomoEnLixiviado());
+				if (plomoEnLixiviado4.getText().equals("*")) {
+					plomoEnLixiviado4.setBackground(Color.YELLOW);
+				}  else {
+					plomoEnLixiviado4.setBackground(colorPorDefecto);
+				}
 				materiaOrganica4.setText(analisisBarroSeleccionado.getMateriaOrganica());
+				if (materiaOrganica4.getText().equals("*")) {
+					materiaOrganica4.setBackground(Color.YELLOW);
+				}  else {
+					materiaOrganica4.setBackground(colorPorDefecto);
+				}
 				hidrocarburosTotales4.setText(analisisBarroSeleccionado.getHidrocarburosTotales());
+				if (hidrocarburosTotales4.getText().equals("*")) {
+					hidrocarburosTotales4.setBackground(Color.YELLOW);
+				}  else {
+					hidrocarburosTotales4.setBackground(colorPorDefecto);
+				}
 				conductividad4.setText(analisisBarroSeleccionado.getConductividad());
+				if (conductividad4.getText().equals("*")) {
+					conductividad4.setBackground(Color.YELLOW);
+				}  else {
+					conductividad4.setBackground(colorPorDefecto);
+				}
 				relacionCN4.setText(analisisBarroSeleccionado.getRelacionCN());
+				if (relacionCN4.getText().equals("*")) {
+					relacionCN4.setBackground(Color.YELLOW);
+				}  else {
+					relacionCN4.setBackground(colorPorDefecto);
+				}
 				otros4.setText(analisisBarroSeleccionado.getOtros());
+				if (otros4.getText().equals("*")) {
+					otros4.setBackground(Color.YELLOW);
+				}  else {
+					otros4.setBackground(colorPorDefecto);
+				}
 			}
 		});
 		

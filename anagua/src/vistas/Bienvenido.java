@@ -81,6 +81,13 @@ public class Bienvenido {
 		frame.getContentPane().add(btnAnagua);
 		
 		JButton btnMedioAmbiente = new JButton("Medio Ambiente");
+		btnMedioAmbiente.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				IngresoMedioAmbiente ingresoMA = new IngresoMedioAmbiente();
+				frame.dispose();
+			}
+		});
 		btnMedioAmbiente.setFont(new Font("Tahoma", Font.PLAIN, 28));
 		btnMedioAmbiente.setBounds(251, 343, 409, 70);
 		frame.getContentPane().add(btnMedioAmbiente);

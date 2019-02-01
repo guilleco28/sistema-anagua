@@ -43,7 +43,7 @@ public class VerBD {
         try {
         	//p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties"));
 			//p.load(new FileReader("W:\\ANAGUA\\sistema-anagua\\config.properties"));
-			p.load(new FileReader("C:\\Users\\Guillermo\\Dropbox\\PROYECTO_ANAGUA\\config.properties"));
+        	p.load(new FileReader("C:\\Users\\Guillermo\\Documents\\sistema-anagua\\config.properties"));
         	BaseDeDatos baseDeDatos = new BaseDeDatos();
         	Connection con = baseDeDatos.abrirConexion();
             String rutaExcel = p.getProperty("ruta_excel");
@@ -55,7 +55,6 @@ public class VerBD {
             spreadsheet.createFreezePane(0, 1);
             HSSFRow row = spreadsheet.createRow(0);
             HSSFCell cell;
-            
             //CELLSTYLE
             CellStyle cellStyle = workbook.createCellStyle();
             cellStyle.setVerticalAlignment(VerticalAlignment.CENTER); 
@@ -227,7 +226,7 @@ public class VerBD {
             cell.setCellValue("Observaciones");
             cell.setCellStyle(setStyleParaTitulos(workbook, false));
             cell = row.createCell(53);
-            cell.setCellValue("Tensoactivos aniÃ³nicos");
+            cell.setCellValue("Tensoactivos aniónicos");
             cell.setCellStyle(setStyleParaTitulos(workbook, true));
             cell = row.createCell(54);
             cell.setCellValue("Color");
