@@ -53,6 +53,7 @@ public class VerBD {
             HSSFWorkbook workbook = new HSSFWorkbook();
             HSSFSheet spreadsheet = workbook.createSheet("datos");
             spreadsheet.createFreezePane(0, 1);
+            //spreadsheet.createFreezePane(1, 0);
             HSSFRow row = spreadsheet.createRow(0);
             HSSFCell cell;
             //CELLSTYLE

@@ -307,6 +307,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblLugarExtraccion.setForeground(Color.BLACK);
+				if (lugarExtraccion1.getText().equals("*")) {
+					lugarExtraccion1.setBackground(Color.YELLOW);
+				} else {
+					lugarExtraccion1.setBackground(Color.WHITE);
+				}
 			}
 		});
 		lugarExtraccion1.setBounds(191, 155, 130, 26);
@@ -323,6 +328,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblExtraidoPor.setForeground(Color.BLACK);
+				if (extraidoPor1.getText().equals("*")) {
+					extraidoPor1.setBackground(Color.YELLOW);
+				} else {
+					extraidoPor1.setBackground(Color.WHITE);
+				}
 			}
 		});
 		extraidoPor1.setBounds(191, 185, 130, 26);
@@ -353,6 +363,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblHoraExtraccion.setForeground(Color.BLACK);
+				if (horaExtraccion1.getText().equals("*")) {
+					horaExtraccion1.setBackground(Color.YELLOW);
+				} else {
+					horaExtraccion1.setBackground(Color.WHITE);
+				}
 			}
 		});
 		horaExtraccion1.setBounds(191, 245, 130, 26);
@@ -369,6 +384,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblAspecto.setForeground(Color.BLACK);
+				if (aspecto1.getText().equals("*")) {
+					aspecto1.setBackground(Color.YELLOW);
+				} else {
+					aspecto1.setBackground(Color.WHITE);
+				}
 			}
 		});
 		aspecto1.setBounds(191, 275, 130, 26);
@@ -385,6 +405,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblpH.setForeground(Color.BLACK);
+				if (pH1.getText().equals("*")) {
+					pH1.setBackground(Color.YELLOW);
+				} else {
+					pH1.setBackground(Color.WHITE);
+				}
 			}
 		});
 		pH1.setBounds(191, 305, 130, 26);
@@ -401,6 +426,7 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblTemperatura.setForeground(Color.BLACK);
+				
 			}
 		});
 		temperatura1.setBounds(191, 335, 130, 26);
@@ -417,6 +443,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblSolidosTotales.setForeground(Color.BLACK);
+				if (solidosTotales1.getText().equals("*")) {
+					solidosTotales1.setBackground(Color.YELLOW);
+				} else {
+					solidosTotales1.setBackground(Color.WHITE);
+				}
 			}
 		});
 		solidosTotales1.setBounds(191, 365, 130, 26);
@@ -433,6 +464,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblHumedad.setForeground(Color.BLACK);
+				if (humedad1.getText().equals("*")) {
+					humedad1.setBackground(Color.YELLOW);
+				} else {
+					humedad1.setBackground(Color.WHITE);
+				}
 			}
 		});
 		humedad1.setBounds(191, 395, 130, 26);
@@ -449,6 +485,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblSolidosTotalesVolatiles.setForeground(Color.BLACK);
+				if (solidosTotalesVolatiles1.getText().equals("*")) {
+					solidosTotalesVolatiles1.setBackground(Color.YELLOW);
+				} else {
+					solidosTotalesVolatiles1.setBackground(Color.WHITE);
+				}
 			}
 		});
 		solidosTotalesVolatiles1.setBounds(191, 425, 130, 26);
@@ -465,6 +506,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblLiquidosLibres.setForeground(Color.BLACK);
+				if (liquidosLibres1.getText().equals("*")) {
+					liquidosLibres1.setBackground(Color.YELLOW);
+				} else {
+					liquidosLibres1.setBackground(Color.WHITE);
+				}
 			}
 		});
 		liquidosLibres1.setBounds(191, 455, 130, 26);
@@ -481,6 +527,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblSulfuro.setForeground(Color.BLACK);
+				if (sulfuro1.getText().equals("*")) {
+					sulfuro1.setBackground(Color.YELLOW);
+				} else {
+					sulfuro1.setBackground(Color.WHITE);
+				}
 			}
 		});
 		sulfuro1.setBounds(191, 485, 130, 26);
@@ -497,6 +548,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblCromoEnLixiviado.setForeground(Color.BLACK);
+				if (cromoEnLixiviado1.getText().equals("*")) {
+					cromoEnLixiviado1.setBackground(Color.YELLOW);
+				} else {
+					cromoEnLixiviado1.setBackground(Color.WHITE);
+				}
 			}
 		});
 		cromoEnLixiviado1.setBounds(191, 515, 130, 26);
@@ -513,6 +569,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblPlomoEnLixiviado.setForeground(Color.BLACK);
+				if (plomoEnLixiviado1.getText().equals("*")) {
+					plomoEnLixiviado1.setBackground(Color.YELLOW);
+				} else {
+					plomoEnLixiviado1.setBackground(Color.WHITE);
+				}
 			}
 		});
 		plomoEnLixiviado1.setBounds(191, 545, 130, 26);
@@ -529,6 +590,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblMateriaOrganica.setForeground(Color.BLACK);
+				if (materiaOrganica1.getText().equals("*")) {
+					materiaOrganica1.setBackground(Color.YELLOW);
+				} else {
+					materiaOrganica1.setBackground(Color.WHITE);
+				}
 			}
 		});
 		materiaOrganica1.setBounds(191, 575, 130, 26);
@@ -545,6 +611,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblHidrocarburosTotales.setForeground(Color.BLACK);
+				if (hidrocarburosTotales1.getText().equals("*")) {
+					hidrocarburosTotales1.setBackground(Color.YELLOW);
+				} else {
+					hidrocarburosTotales1.setBackground(Color.WHITE);
+				}
 			}
 		});
 		hidrocarburosTotales1.setBounds(191, 605, 130, 26);
@@ -561,6 +632,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblConductividad.setForeground(Color.BLACK);
+				if (conductividad1.getText().equals("*")) {
+					conductividad1.setBackground(Color.YELLOW);
+				} else {
+					conductividad1.setBackground(Color.WHITE);
+				}
 			}
 		});
 		conductividad1.setBounds(191, 635, 130, 26);
@@ -577,6 +653,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblRelacionCN.setForeground(Color.BLACK);
+				if (relacionCN1.getText().equals("*")) {
+					relacionCN1.setBackground(Color.YELLOW);
+				} else {
+					relacionCN1.setBackground(Color.WHITE);
+				}
 			}
 		});
 		relacionCN1.setBounds(191, 665, 130, 26);
@@ -593,6 +674,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblOtros.setForeground(Color.BLACK);
+				if (otros1.getText().equals("*")) {
+					otros1.setBackground(Color.YELLOW);
+				} else {
+					otros1.setBackground(Color.WHITE);
+				}
 			}
 		});
 		otros1.setBounds(191, 695, 130, 26);
@@ -703,6 +789,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblLugarExtraccion.setForeground(Color.BLACK);
+				if (lugarExtraccion2.getText().equals("*")) {
+					lugarExtraccion2.setBackground(Color.YELLOW);
+				} else {
+					lugarExtraccion2.setBackground(Color.WHITE);
+				}
 			}
 		});
 		lugarExtraccion2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -719,6 +810,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblExtraidoPor.setForeground(Color.BLACK);
+				if (extraidoPor2.getText().equals("*")) {
+					extraidoPor2.setBackground(Color.YELLOW);
+				} else {
+					extraidoPor2.setBackground(Color.WHITE);
+				}
 			}
 		});
 		extraidoPor2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -731,10 +827,16 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusGained(FocusEvent e) {
 				lblHoraExtraccion.setForeground(destacado);
+				
 			}
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblHoraExtraccion.setForeground(Color.BLACK);
+				if (horaExtraccion2.getText().equals("*")) {
+					horaExtraccion2.setBackground(Color.YELLOW);
+				} else {
+					horaExtraccion2.setBackground(Color.WHITE);
+				}
 			}
 		});
 		horaExtraccion2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -751,6 +853,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblAspecto.setForeground(Color.BLACK);
+				if (aspecto2.getText().equals("*")) {
+					aspecto2.setBackground(Color.YELLOW);
+				} else {
+					aspecto2.setBackground(Color.WHITE);
+				}
 			}
 		});
 		aspecto2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -767,6 +874,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblpH.setForeground(Color.BLACK);
+				if (pH2.getText().equals("*")) {
+					pH2.setBackground(Color.YELLOW);
+				} else {
+					pH2.setBackground(Color.WHITE);
+				}
 			}
 		});
 		pH2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -799,6 +911,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblSolidosTotales.setForeground(Color.BLACK);
+				if (solidosTotales2.getText().equals("*")) {
+					solidosTotales2.setBackground(Color.YELLOW);
+				} else {
+					solidosTotales2.setBackground(Color.WHITE);
+				}
 			}
 		});
 		solidosTotales2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -815,6 +932,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblHumedad.setForeground(Color.BLACK);
+				if (humedad2.getText().equals("*")) {
+					humedad2.setBackground(Color.YELLOW);
+				} else {
+					humedad2.setBackground(Color.WHITE);
+				}
 			}
 		});
 		humedad2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -831,6 +953,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblSolidosTotalesVolatiles.setForeground(Color.BLACK);
+				if (solidosTotalesVolatiles2.getText().equals("*")) {
+					solidosTotalesVolatiles2.setBackground(Color.YELLOW);
+				} else {
+					solidosTotalesVolatiles2.setBackground(Color.WHITE);
+				}
 			}
 		});
 		solidosTotalesVolatiles2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -847,6 +974,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblLiquidosLibres.setForeground(Color.BLACK);
+				if (liquidosLibres2.getText().equals("*")) {
+					liquidosLibres2.setBackground(Color.YELLOW);
+				} else {
+					liquidosLibres2.setBackground(Color.WHITE);
+				}
 			}
 		});
 		liquidosLibres2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -863,6 +995,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblSulfuro.setForeground(Color.BLACK);
+				if (sulfuro2.getText().equals("*")) {
+					sulfuro2.setBackground(Color.YELLOW);
+				} else {
+					sulfuro2.setBackground(Color.WHITE);
+				}
 			}
 		});
 		sulfuro2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -879,6 +1016,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblCromoEnLixiviado.setForeground(Color.BLACK);
+				if (cromoEnLixiviado2.getText().equals("*")) {
+					cromoEnLixiviado2.setBackground(Color.YELLOW);
+				} else {
+					cromoEnLixiviado2.setBackground(Color.WHITE);
+				}
 			}
 		});
 		cromoEnLixiviado2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -895,6 +1037,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblPlomoEnLixiviado.setForeground(Color.BLACK);
+				if (plomoEnLixiviado2.getText().equals("*")) {
+					plomoEnLixiviado2.setBackground(Color.YELLOW);
+				} else {
+					plomoEnLixiviado2.setBackground(Color.WHITE);
+				}
 			}
 		});
 		plomoEnLixiviado2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -911,6 +1058,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblMateriaOrganica.setForeground(Color.BLACK);
+				if (materiaOrganica2.getText().equals("*")) {
+					materiaOrganica2.setBackground(Color.YELLOW);
+				} else {
+					materiaOrganica2.setBackground(Color.WHITE);
+				}
 			}
 		});
 		materiaOrganica2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -927,6 +1079,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblHidrocarburosTotales.setForeground(Color.BLACK);
+				if (hidrocarburosTotales2.getText().equals("*")) {
+					hidrocarburosTotales2.setBackground(Color.YELLOW);
+				} else {
+					hidrocarburosTotales2.setBackground(Color.WHITE);
+				}
 			}
 		});
 		hidrocarburosTotales2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -943,6 +1100,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblConductividad.setForeground(Color.BLACK);
+				if (conductividad2.getText().equals("*")) {
+					conductividad2.setBackground(Color.YELLOW);
+				} else {
+					conductividad2.setBackground(Color.WHITE);
+				}
 			}
 		});
 		conductividad2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -959,6 +1121,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblRelacionCN.setForeground(Color.BLACK);
+				if (relacionCN2.getText().equals("*")) {
+					relacionCN2.setBackground(Color.YELLOW);
+				} else {
+					relacionCN2.setBackground(Color.WHITE);
+				}
 			}
 		});
 		relacionCN2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -975,6 +1142,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblOtros.setForeground(Color.BLACK);
+				if (otros2.getText().equals("*")) {
+					otros2.setBackground(Color.YELLOW);
+				} else {
+					otros2.setBackground(Color.WHITE);
+				}
 			}
 		});
 		otros2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -991,6 +1163,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblLugarExtraccion.setForeground(Color.BLACK);
+				if (lugarExtraccion3.getText().equals("*")) {
+					lugarExtraccion3.setBackground(Color.YELLOW);
+				} else {
+					lugarExtraccion3.setBackground(Color.WHITE);
+				}
 			}
 		});
 		lugarExtraccion3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1007,6 +1184,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblExtraidoPor.setForeground(Color.BLACK);
+				if (extraidoPor3.getText().equals("*")) {
+					extraidoPor3.setBackground(Color.YELLOW);
+				} else {
+					extraidoPor3.setBackground(Color.WHITE);
+				}
 			}
 		});
 		extraidoPor3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1023,6 +1205,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblHoraExtraccion.setForeground(Color.BLACK);
+				if (horaExtraccion3.getText().equals("*")) {
+					horaExtraccion3.setBackground(Color.YELLOW);
+				} else {
+					horaExtraccion3.setBackground(Color.WHITE);
+				}
 			}
 		});
 		horaExtraccion3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1039,6 +1226,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblAspecto.setForeground(Color.BLACK);
+				if (aspecto3.getText().equals("*")) {
+					aspecto3.setBackground(Color.YELLOW);
+				} else {
+					aspecto3.setBackground(Color.WHITE);
+				}
 			}
 		});
 		aspecto3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1055,6 +1247,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblpH.setForeground(Color.BLACK);
+				if (pH3.getText().equals("*")) {
+					pH3.setBackground(Color.YELLOW);
+				} else {
+					pH3.setBackground(Color.WHITE);
+				}
 			}
 		});
 		pH3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1087,6 +1284,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblSolidosTotales.setForeground(Color.BLACK);
+				if (solidosTotales3.getText().equals("*")) {
+					solidosTotales3.setBackground(Color.YELLOW);
+				} else {
+					solidosTotales3.setBackground(Color.WHITE);
+				}
 			}
 		});
 		solidosTotales3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1103,6 +1305,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblHumedad.setForeground(Color.BLACK);
+				if (humedad3.getText().equals("*")) {
+					humedad3.setBackground(Color.YELLOW);
+				} else {
+					humedad3.setBackground(Color.WHITE);
+				}
 			}
 		});
 		humedad3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1119,6 +1326,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblSolidosTotalesVolatiles.setForeground(Color.BLACK);
+				if (solidosTotalesVolatiles3.getText().equals("*")) {
+					solidosTotalesVolatiles3.setBackground(Color.YELLOW);
+				} else {
+					solidosTotalesVolatiles3.setBackground(Color.WHITE);
+				}
 			}
 		});
 		solidosTotalesVolatiles3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1135,6 +1347,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblLiquidosLibres.setForeground(Color.BLACK);
+				if (liquidosLibres3.getText().equals("*")) {
+					liquidosLibres3.setBackground(Color.YELLOW);
+				} else {
+					liquidosLibres3.setBackground(Color.WHITE);
+				}
 			}
 		});
 		liquidosLibres3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1151,6 +1368,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblSulfuro.setForeground(Color.BLACK);
+				if (sulfuro3.getText().equals("*")) {
+					sulfuro3.setBackground(Color.YELLOW);
+				} else {
+					sulfuro3.setBackground(Color.WHITE);
+				}
 			}
 		});
 		sulfuro3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1167,6 +1389,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblCromoEnLixiviado.setForeground(Color.BLACK);
+				if (cromoEnLixiviado3.getText().equals("*")) {
+					cromoEnLixiviado3.setBackground(Color.YELLOW);
+				} else {
+					cromoEnLixiviado3.setBackground(Color.WHITE);
+				}
 			}
 		});
 		cromoEnLixiviado3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1183,6 +1410,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblPlomoEnLixiviado.setForeground(Color.BLACK);
+				if (plomoEnLixiviado3.getText().equals("*")) {
+					plomoEnLixiviado3.setBackground(Color.YELLOW);
+				} else {
+					plomoEnLixiviado3.setBackground(Color.WHITE);
+				}
 			}
 		});
 		plomoEnLixiviado3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1199,6 +1431,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblMateriaOrganica.setForeground(Color.BLACK);
+				if (materiaOrganica3.getText().equals("*")) {
+					materiaOrganica3.setBackground(Color.YELLOW);
+				} else {
+					materiaOrganica3.setBackground(Color.WHITE);
+				}
 			}
 		});
 		materiaOrganica3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1215,6 +1452,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblHidrocarburosTotales.setForeground(Color.BLACK);
+				if (hidrocarburosTotales3.getText().equals("*")) {
+					hidrocarburosTotales3.setBackground(Color.YELLOW);
+				} else {
+					hidrocarburosTotales3.setBackground(Color.WHITE);
+				}
 			}
 		});
 		hidrocarburosTotales3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1231,6 +1473,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblConductividad.setForeground(Color.BLACK);
+				if (conductividad3.getText().equals("*")) {
+					conductividad3.setBackground(Color.YELLOW);
+				} else {
+					conductividad3.setBackground(Color.WHITE);
+				}
 			}
 		});
 		conductividad3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1247,6 +1494,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblRelacionCN.setForeground(Color.BLACK);
+				if (relacionCN3.getText().equals("*")) {
+					relacionCN3.setBackground(Color.YELLOW);
+				} else {
+					relacionCN3.setBackground(Color.WHITE);
+				}
 			}
 		});
 		relacionCN3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1263,6 +1515,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblOtros.setForeground(Color.BLACK);
+				if (otros3.getText().equals("*")) {
+					otros3.setBackground(Color.YELLOW);
+				} else {
+					otros3.setBackground(Color.WHITE);
+				}
 			}
 		});
 		otros3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1279,6 +1536,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblLugarExtraccion.setForeground(Color.BLACK);
+				if (lugarExtraccion4.getText().equals("*")) {
+					lugarExtraccion4.setBackground(Color.YELLOW);
+				} else {
+					lugarExtraccion4.setBackground(Color.WHITE);
+				}
 			}
 		});
 		lugarExtraccion4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1295,6 +1557,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblExtraidoPor.setForeground(Color.BLACK);
+				if (extraidoPor4.getText().equals("*")) {
+					extraidoPor4.setBackground(Color.YELLOW);
+				} else {
+					extraidoPor4.setBackground(Color.WHITE);
+				}
 			}
 		});
 		extraidoPor4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1311,6 +1578,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblHoraExtraccion.setForeground(Color.BLACK);
+				if (horaExtraccion4.getText().equals("*")) {
+					horaExtraccion4.setBackground(Color.YELLOW);
+				} else {
+					horaExtraccion4.setBackground(Color.WHITE);
+				}
 			}
 		});
 		horaExtraccion4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1327,6 +1599,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblAspecto.setForeground(Color.BLACK);
+				if (aspecto4.getText().equals("*")) {
+					aspecto4.setBackground(Color.YELLOW);
+				} else {
+					aspecto4.setBackground(Color.WHITE);
+				}
 			}
 		});
 		aspecto4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1343,6 +1620,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblpH.setForeground(Color.BLACK);
+				if (pH4.getText().equals("*")) {
+					pH4.setBackground(Color.YELLOW);
+				} else {
+					pH4.setBackground(Color.WHITE);
+				}
 			}
 		});
 		pH4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1375,6 +1657,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblSolidosTotales.setForeground(Color.BLACK);
+				if (solidosTotales4.getText().equals("*")) {
+					solidosTotales4.setBackground(Color.YELLOW);
+				} else {
+					solidosTotales4.setBackground(Color.WHITE);
+				}
 			}
 		});
 		solidosTotales4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1391,6 +1678,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblHumedad.setForeground(Color.BLACK);
+				if (humedad4.getText().equals("*")) {
+					humedad4.setBackground(Color.YELLOW);
+				} else {
+					humedad4.setBackground(Color.WHITE);
+				}
 			}
 		});
 		humedad4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1407,6 +1699,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblSolidosTotalesVolatiles.setForeground(Color.BLACK);
+				if (solidosTotalesVolatiles4.getText().equals("*")) {
+					solidosTotalesVolatiles4.setBackground(Color.YELLOW);
+				} else {
+					solidosTotalesVolatiles4.setBackground(Color.WHITE);
+				}
 			}
 		});
 		solidosTotalesVolatiles4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1423,6 +1720,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblLiquidosLibres.setForeground(Color.BLACK);
+				if (liquidosLibres4.getText().equals("*")) {
+					liquidosLibres4.setBackground(Color.YELLOW);
+				} else {
+					liquidosLibres4.setBackground(Color.WHITE);
+				}
 			}
 		});
 		liquidosLibres4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1439,6 +1741,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblSulfuro.setForeground(Color.BLACK);
+				if (sulfuro4.getText().equals("*")) {
+					sulfuro4.setBackground(Color.YELLOW);
+				} else {
+					sulfuro4.setBackground(Color.WHITE);
+				}
 			}
 		});
 		sulfuro4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1455,6 +1762,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblCromoEnLixiviado.setForeground(Color.BLACK);
+				if (cromoEnLixiviado4.getText().equals("*")) {
+					cromoEnLixiviado4.setBackground(Color.YELLOW);
+				} else {
+					cromoEnLixiviado4.setBackground(Color.WHITE);
+				}
 			}
 		});
 		cromoEnLixiviado4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1471,6 +1783,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblPlomoEnLixiviado.setForeground(Color.BLACK);
+				if (plomoEnLixiviado4.getText().equals("*")) {
+					plomoEnLixiviado4.setBackground(Color.YELLOW);
+				} else {
+					plomoEnLixiviado4.setBackground(Color.WHITE);
+				}
 			}
 		});
 		plomoEnLixiviado4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1487,6 +1804,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblMateriaOrganica.setForeground(Color.BLACK);
+				if (materiaOrganica4.getText().equals("*")) {
+					materiaOrganica4.setBackground(Color.YELLOW);
+				} else {
+					materiaOrganica4.setBackground(Color.WHITE);
+				}
 			}
 		});
 		materiaOrganica4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1503,6 +1825,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblHidrocarburosTotales.setForeground(Color.BLACK);
+				if (hidrocarburosTotales4.getText().equals("*")) {
+					hidrocarburosTotales4.setBackground(Color.YELLOW);
+				} else {
+					hidrocarburosTotales4.setBackground(Color.WHITE);
+				}
 			}
 		});
 		hidrocarburosTotales4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1519,6 +1846,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblConductividad.setForeground(Color.BLACK);
+				if (conductividad4.getText().equals("*")) {
+					conductividad4.setBackground(Color.YELLOW);
+				} else {
+					conductividad4.setBackground(Color.WHITE);
+				}
 			}
 		});
 		conductividad4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1535,6 +1867,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblRelacionCN.setForeground(Color.BLACK);
+				if (relacionCN4.getText().equals("*")) {
+					relacionCN4.setBackground(Color.YELLOW);
+				} else {
+					relacionCN4.setBackground(Color.WHITE);
+				}
 			}
 		});
 		relacionCN4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1551,6 +1888,11 @@ public class FormularioIngresoBarros {
 			@Override
 			public void focusLost(FocusEvent e) {
 				lblOtros.setForeground(Color.BLACK);
+				if (otros4.getText().equals("*")) {
+					otros4.setBackground(Color.YELLOW);
+				} else {
+					otros4.setBackground(Color.WHITE);
+				}
 			}
 		});
 		otros4.setHorizontalAlignment(SwingConstants.CENTER);
