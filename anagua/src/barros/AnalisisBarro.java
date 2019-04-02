@@ -15,7 +15,6 @@ public class AnalisisBarro {
 	private String horaExtraccion;
 	private String aspecto;
 	private String pH;
-	private String temperatura;
 	private String solidosTotales;
 	private String humedad;
 	private String solidosTotalesVolatiles;
@@ -27,16 +26,17 @@ public class AnalisisBarro {
 	private String hidrocarburosTotales;
 	private String conductividad;
 	private String relacionCN;
-	private String otros;
+	private String otros1;
+	private String otros2;
 	private String estado;
 	private int size;
 	
 	public AnalisisBarro(String industria, String departamento, String localidad, String descargaEn, String nroAnalisis,
 			String lugarExtraccion, String extraidoPor, Date fechaExtraccion, String horaExtraccion, String aspecto,
-			String pH, String temperatura, String solidosTotales, String humedad, String solidosTotalesVolatiles,
+			String pH, String solidosTotales, String humedad, String solidosTotalesVolatiles,
 			String liquidosLibres, String sulfuro, String cromoEnLixiviado, String plomoEnLixiviado,
 			String materiaOrganica, String hidrocarburosTotales, String conductividad, String relacionCN,
-			String otros, String estado) {
+			String otros1, String otros2, String estado) {
 		this.industria = industria;
 		this.departamento = departamento;
 		this.localidad = localidad;
@@ -48,7 +48,6 @@ public class AnalisisBarro {
 		this.horaExtraccion = horaExtraccion;
 		this.aspecto = aspecto;
 		this.pH = pH;
-		this.temperatura = temperatura;
 		this.solidosTotales = solidosTotales;
 		this.humedad = humedad;
 		this.solidosTotalesVolatiles = solidosTotalesVolatiles;
@@ -60,7 +59,8 @@ public class AnalisisBarro {
 		this.hidrocarburosTotales = hidrocarburosTotales;
 		this.conductividad = conductividad;
 		this.relacionCN = relacionCN;
-		this.otros = otros;
+		this.otros1 = otros1;
+		this.otros2 = otros2;
 		this.estado = estado;
 		this.size = 24;
 	}
@@ -98,9 +98,6 @@ public class AnalisisBarro {
 	public String getpH() {
 		return pH;
 	}
-	public String getTemperatura() {
-		return temperatura;
-	}
 	public String getSolidosTotales() {
 		return solidosTotales;
 	}
@@ -134,9 +131,14 @@ public class AnalisisBarro {
 	public String getRelacionCN() {
 		return relacionCN;
 	}
-	public String getOtros() {
-		return otros;
+	public String getOtros1() {
+		return otros1;
 	}
+	
+	public String getOtros2() {
+		return otros2;
+	}
+	
 	public String getEstado(){
 		return estado;
 	}

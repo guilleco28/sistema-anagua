@@ -34,6 +34,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import javax.swing.SwingConstants;
 
 public class FormularioModificacionBarros {
 
@@ -46,7 +47,6 @@ public class FormularioModificacionBarros {
 	private JTextField horaExtraccion1;
 	private JTextField aspecto1;
 	private JTextField pH1;
-	private JTextField temperatura1;
 	private JTextField solidosTotales1;
 	private JTextField humedad1;
 	private JTextField solidosTotalesVolatiles1;
@@ -67,6 +67,7 @@ public class FormularioModificacionBarros {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
+	private JTextField otros2;
 
 	/**
 	 * Launch the application.
@@ -159,56 +160,52 @@ public class FormularioModificacionBarros {
 		lblpH.setBounds(37, 340, 150, 16);
 		frame.getContentPane().add(lblpH);
 		
-		JLabel lblTemperatura = new JLabel("Temperatura");
-		lblTemperatura.setBounds(37, 370, 150, 16);
-		frame.getContentPane().add(lblTemperatura);
-		
 		JLabel lblSolidosTotales = new JLabel("Sólidos totales");
-		lblSolidosTotales.setBounds(37, 400, 150, 16);
+		lblSolidosTotales.setBounds(37, 370, 150, 16);
 		frame.getContentPane().add(lblSolidosTotales);
 		
 		JLabel lblHumedad = new JLabel("Humedad");
-		lblHumedad.setBounds(37, 430, 150, 16);
+		lblHumedad.setBounds(37, 400, 150, 16);
 		frame.getContentPane().add(lblHumedad);
 		
 		JLabel lblSolidosTotalesVolatiles = new JLabel("Sólidos totales volátiles");
-		lblSolidosTotalesVolatiles.setBounds(37, 460, 150, 16);
+		lblSolidosTotalesVolatiles.setBounds(37, 430, 150, 16);
 		frame.getContentPane().add(lblSolidosTotalesVolatiles);
 		
 		JLabel lblLiquidosLibres = new JLabel("Líquidos libres");
-		lblLiquidosLibres.setBounds(37, 490, 150, 16);
+		lblLiquidosLibres.setBounds(37, 460, 150, 16);
 		frame.getContentPane().add(lblLiquidosLibres);
 		
 		JLabel lblSulfuro = new JLabel("Sulfuro");
-		lblSulfuro.setBounds(37, 520, 150, 16);
+		lblSulfuro.setBounds(37, 490, 150, 16);
 		frame.getContentPane().add(lblSulfuro);
 		
 		JLabel lblCromoEnLixiviado = new JLabel("Cromo en lixiviado");
-		lblCromoEnLixiviado.setBounds(37, 550, 150, 16);
+		lblCromoEnLixiviado.setBounds(37, 520, 150, 16);
 		frame.getContentPane().add(lblCromoEnLixiviado);
 		
 		JLabel lblPlomoEnLixiviado = new JLabel("Plomo en lixiviado");
-		lblPlomoEnLixiviado.setBounds(37, 580, 150, 16);
+		lblPlomoEnLixiviado.setBounds(37, 550, 150, 16);
 		frame.getContentPane().add(lblPlomoEnLixiviado);
 		
 		JLabel lblMateriaOrganica = new JLabel("Materia orgánica");
-		lblMateriaOrganica.setBounds(37, 610, 150, 16);
+		lblMateriaOrganica.setBounds(37, 580, 150, 16);
 		frame.getContentPane().add(lblMateriaOrganica);
 		
 		JLabel lblHidrocarburosTotales = new JLabel("Hidrocarburos totales");
-		lblHidrocarburosTotales.setBounds(37, 640, 150, 16);
+		lblHidrocarburosTotales.setBounds(37, 610, 150, 16);
 		frame.getContentPane().add(lblHidrocarburosTotales);
 		
 		JLabel lblConductividad = new JLabel("Conductividad");
-		lblConductividad.setBounds(37, 670, 150, 16);
+		lblConductividad.setBounds(37, 640, 150, 16);
 		frame.getContentPane().add(lblConductividad);
 		
 		JLabel lblRelacionCN = new JLabel("Relación C/N");
-		lblRelacionCN.setBounds(37, 700, 150, 16);
+		lblRelacionCN.setBounds(37, 670, 150, 16);
 		frame.getContentPane().add(lblRelacionCN);
 		
-		JLabel lblOtros = new JLabel("Otros");
-		lblOtros.setBounds(37, 730, 150, 16);
+		JLabel lblOtros = new JLabel("Otros 1");
+		lblOtros.setBounds(37, 700, 150, 16);
 		frame.getContentPane().add(lblOtros);		
 		
 		nroAnalisis = new JComboBox();
@@ -251,14 +248,13 @@ public class FormularioModificacionBarros {
 				} else {
 					aspecto1.setBackground(Color.WHITE);
 				}
-				aspecto1.setText(analisisBarroSeleccionado.getpH());
-				if(analisisBarroSeleccionado.getAspecto().equals("*")) {
+				aspecto1.setText(analisisBarroSeleccionado.getAspecto());
+				if(analisisBarroSeleccionado.getpH().equals("*")) {
 					pH1.setBackground(Color.YELLOW);
 				} else {
 					pH1.setBackground(Color.WHITE);
 				}
 				pH1.setText(analisisBarroSeleccionado.getpH());				
-				temperatura1.setText(analisisBarroSeleccionado.getTemperatura());
 				if(analisisBarroSeleccionado.getSolidosTotales().equals("*")) {
 					solidosTotales1.setBackground(Color.YELLOW);
 				} else {
@@ -326,11 +322,17 @@ public class FormularioModificacionBarros {
 				}
 				relacionCN1.setText(analisisBarroSeleccionado.getRelacionCN());
 
-				otros1.setText(analisisBarroSeleccionado.getOtros());
-				if(analisisBarroSeleccionado.getOtros().equals("*")) {
+				otros1.setText(analisisBarroSeleccionado.getOtros1());
+				if(analisisBarroSeleccionado.getOtros1().equals("*")) {
 					otros1.setBackground(Color.YELLOW);
 				} else {
 					otros1.setBackground(Color.WHITE);
+				}
+				otros2.setText(analisisBarroSeleccionado.getOtros2());
+				if(analisisBarroSeleccionado.getOtros2().equals("*")) {
+					otros2.setBackground(Color.YELLOW);
+				} else {
+					otros2.setBackground(Color.WHITE);
 				}
 			}
 		});
@@ -439,12 +441,6 @@ public class FormularioModificacionBarros {
 		pH1.setColumns(10);
 		pH1.setHorizontalAlignment(JTextField.CENTER);
 		
-		temperatura1 = new JTextField();
-		temperatura1.setBounds(191, 365, 130, 26);
-		frame.getContentPane().add(temperatura1);
-		temperatura1.setColumns(10);
-		temperatura1.setHorizontalAlignment(JTextField.CENTER);
-		
 		solidosTotales1 = new JTextField();
 		solidosTotales1.addFocusListener(new FocusAdapter() {
 			@Override
@@ -456,7 +452,7 @@ public class FormularioModificacionBarros {
 				}
 			}
 		});
-		solidosTotales1.setBounds(191, 395, 130, 26);
+		solidosTotales1.setBounds(191, 365, 130, 26);
 		frame.getContentPane().add(solidosTotales1);
 		solidosTotales1.setColumns(10);
 		solidosTotales1.setHorizontalAlignment(JTextField.CENTER);
@@ -472,7 +468,7 @@ public class FormularioModificacionBarros {
 				}
 			}
 		});
-		humedad1.setBounds(191, 425, 130, 26);
+		humedad1.setBounds(191, 395, 130, 26);
 		frame.getContentPane().add(humedad1);
 		humedad1.setColumns(10);
 		humedad1.setHorizontalAlignment(JTextField.CENTER);
@@ -488,7 +484,7 @@ public class FormularioModificacionBarros {
 				}
 			}
 		});
-		solidosTotalesVolatiles1.setBounds(191, 455, 130, 26);
+		solidosTotalesVolatiles1.setBounds(191, 425, 130, 26);
 		frame.getContentPane().add(solidosTotalesVolatiles1);
 		solidosTotalesVolatiles1.setColumns(10);
 		solidosTotalesVolatiles1.setHorizontalAlignment(JTextField.CENTER);
@@ -504,7 +500,7 @@ public class FormularioModificacionBarros {
 				}
 			}
 		});
-		liquidosLibres1.setBounds(191, 485, 130, 26);
+		liquidosLibres1.setBounds(191, 455, 130, 26);
 		frame.getContentPane().add(liquidosLibres1);
 		liquidosLibres1.setColumns(10);
 		liquidosLibres1.setHorizontalAlignment(JTextField.CENTER);
@@ -520,7 +516,7 @@ public class FormularioModificacionBarros {
 				}
 			}
 		});
-		sulfuro1.setBounds(191, 515, 130, 26);
+		sulfuro1.setBounds(191, 485, 130, 26);
 		frame.getContentPane().add(sulfuro1);
 		sulfuro1.setColumns(10);
 		sulfuro1.setHorizontalAlignment(JTextField.CENTER);
@@ -536,7 +532,7 @@ public class FormularioModificacionBarros {
 				}
 			}
 		});
-		cromoEnLixiviado1.setBounds(191, 545, 130, 26);
+		cromoEnLixiviado1.setBounds(191, 515, 130, 26);
 		frame.getContentPane().add(cromoEnLixiviado1);
 		cromoEnLixiviado1.setColumns(10);
 		cromoEnLixiviado1.setHorizontalAlignment(JTextField.CENTER);
@@ -552,7 +548,7 @@ public class FormularioModificacionBarros {
 				}
 			}
 		});
-		plomoEnLixiviado1.setBounds(191, 575, 130, 26);
+		plomoEnLixiviado1.setBounds(191, 545, 130, 26);
 		frame.getContentPane().add(plomoEnLixiviado1);
 		plomoEnLixiviado1.setColumns(10);
 		plomoEnLixiviado1.setHorizontalAlignment(JTextField.CENTER);
@@ -568,7 +564,7 @@ public class FormularioModificacionBarros {
 				}
 			}
 		});
-		materiaOrganica1.setBounds(191, 605, 130, 26);
+		materiaOrganica1.setBounds(191, 575, 130, 26);
 		frame.getContentPane().add(materiaOrganica1);
 		materiaOrganica1.setColumns(10);
 		materiaOrganica1.setHorizontalAlignment(JTextField.CENTER);
@@ -584,7 +580,7 @@ public class FormularioModificacionBarros {
 				}
 			}
 		});
-		hidrocarburosTotales1.setBounds(191, 635, 130, 26);
+		hidrocarburosTotales1.setBounds(191, 605, 130, 26);
 		frame.getContentPane().add(hidrocarburosTotales1);
 		hidrocarburosTotales1.setColumns(10);
 		hidrocarburosTotales1.setHorizontalAlignment(JTextField.CENTER);
@@ -600,7 +596,7 @@ public class FormularioModificacionBarros {
 				}
 			}
 		});
-		conductividad1.setBounds(191, 665, 130, 26);
+		conductividad1.setBounds(191, 635, 130, 26);
 		frame.getContentPane().add(conductividad1);
 		conductividad1.setColumns(10);
 		conductividad1.setHorizontalAlignment(JTextField.CENTER);
@@ -616,7 +612,7 @@ public class FormularioModificacionBarros {
 				}
 			}
 		});
-		relacionCN1.setBounds(191, 695, 130, 26);
+		relacionCN1.setBounds(191, 665, 130, 26);
 		frame.getContentPane().add(relacionCN1);
 		relacionCN1.setColumns(10);
 		relacionCN1.setHorizontalAlignment(JTextField.CENTER);
@@ -632,10 +628,26 @@ public class FormularioModificacionBarros {
 				}
 			}
 		});
-		otros1.setBounds(191, 725, 130, 26);
+		otros1.setBounds(191, 695, 130, 26);
 		frame.getContentPane().add(otros1);
 		otros1.setColumns(10);
 		otros1.setHorizontalAlignment(JTextField.CENTER);
+		
+		otros2 = new JTextField();
+		otros2.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				if (otros2.getText().equals("*")) {
+					otros2.setBackground(Color.YELLOW);
+				} else {
+					otros2.setBackground(Color.WHITE);
+				}
+			}
+		});
+		otros2.setHorizontalAlignment(SwingConstants.CENTER);
+		otros2.setColumns(10);
+		otros2.setBounds(191, 725, 130, 26);
+		frame.getContentPane().add(otros2);
 		
 		industria = new JComboBox();
 		industria.setBounds(156, 16, 256, 27);
@@ -710,9 +722,9 @@ public class FormularioModificacionBarros {
 				} else {
 					AnalisisBarro analisisBarro = new AnalisisBarro (String.valueOf(industria.getSelectedItem()), departamento1.getText(), localidad1.getText(), descargaEn1.getText(), String.valueOf(nroAnalisis.getSelectedItem()),
 							lugarExtraccion1.getText(), extraidoPor1.getText(), null, horaExtraccion1.getText(), aspecto1.getText(), pH1.getText(),
-							temperatura1.getText(), solidosTotales1.getText(), humedad1.getText(), solidosTotalesVolatiles1.getText(), liquidosLibres1.getText(), sulfuro1.getText(),
+							solidosTotales1.getText(), humedad1.getText(), solidosTotalesVolatiles1.getText(), liquidosLibres1.getText(), sulfuro1.getText(),
 							cromoEnLixiviado1.getText(), plomoEnLixiviado1.getText(), materiaOrganica1.getText(), hidrocarburosTotales1.getText(), conductividad1.getText(),
-							relacionCN1.getText(), otros1.getText(), "En proceso");
+							relacionCN1.getText(), otros1.getText(), otros2.getText(), "En proceso");
 					try {
 						
 						datosDAO.modificarBarro(analisisBarro);
@@ -742,6 +754,12 @@ public class FormularioModificacionBarros {
 		});
 		btnVolver.setBounds(372, 365, 155, 48);
 		frame.getContentPane().add(btnVolver);
+		
+		
+		
+		JLabel lblOtros2 = new JLabel("Otros 2");
+		lblOtros2.setBounds(37, 728, 150, 16);
+		frame.getContentPane().add(lblOtros2);
 		
 		
 	}

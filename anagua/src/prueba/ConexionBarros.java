@@ -23,9 +23,8 @@ public class ConexionBarros {
 	
 	public ConexionBarros() {
 		try {
-			p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties"));
-			//p.load(new FileReader("W:\\ANAGUA\\sistema-anagua\\config.properties"));
-			//p.load(new FileReader("C:\\Users\\Guillermo\\Dropbox\\PROYECTO_ANAGUA\\config.properties"));
+			//p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties"));
+			p.load(new FileReader("C:\\Users\\Guillermo\\Documents\\sistema-anagua\\config.properties"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -70,7 +69,8 @@ public class ConexionBarros {
 		determinaciones.put("hidrocarburos_totales", "Hidrocarburos totales");
 		determinaciones.put("conductividad", "Conductividad");
 		determinaciones.put("relacion_CN", "Relación C/N");
-		determinaciones.put("otros", "Otros");
+		determinaciones.put("otros", "Otros 1");
+		determinaciones.put("otros2", "Otros 2");
 		String query = "SELECT * FROM informe_barros";
 		PreparedStatement preparedStmt = conexion.prepareStatement(query);
 		ResultSet oResultSet = preparedStmt.executeQuery();
