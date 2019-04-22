@@ -735,7 +735,7 @@ public class FormularioModificacionBarros {
 						e1.printStackTrace();
 					} catch (SQLException e1) {	
 						e1.printStackTrace();
-					}
+					} 
 				}
 			}
 			

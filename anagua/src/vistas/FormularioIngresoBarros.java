@@ -33,6 +33,7 @@ import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import org.eclipse.wb.swing.FocusTraversalOnArray;
 import java.awt.Component;
+import java.awt.Font;
 
 public class FormularioIngresoBarros {
 
@@ -671,8 +672,7 @@ public class FormularioIngresoBarros {
 		otros11.setBounds(191, 665, 130, 26);
 		frame.getContentPane().add(otros11);
 		otros11.setColumns(10);
-		otros11.setHorizontalAlignment(JTextField.CENTER);
-		
+		otros11.setHorizontalAlignment(JTextField.CENTER);		
 		
 		
 		industria = new JComboBox();
