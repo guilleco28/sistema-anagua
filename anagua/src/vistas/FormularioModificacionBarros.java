@@ -68,6 +68,8 @@ public class FormularioModificacionBarros {
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField otros2;
+	private JTextField otros3;
+	private JTextField otros4;
 
 	/**
 	 * Launch the application.
@@ -101,7 +103,7 @@ public class FormularioModificacionBarros {
 		IndustriasDAO industriasDAO = new IndustriasDAO();
 		
 		frame = new JFrame();
-		frame.setBounds(100, 100, 623, 827);
+		frame.setBounds(100, 100, 623, 870);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setTitle("Formulario de modificación de análisis de barros - ANAGUA");
@@ -206,7 +208,19 @@ public class FormularioModificacionBarros {
 		
 		JLabel lblOtros = new JLabel("Otros 1");
 		lblOtros.setBounds(37, 700, 150, 16);
-		frame.getContentPane().add(lblOtros);		
+		frame.getContentPane().add(lblOtros);
+		
+		JLabel lblOtros2 = new JLabel("Otros 2");
+		lblOtros2.setBounds(37, 730, 150, 16);
+		frame.getContentPane().add(lblOtros2);
+		
+		JLabel lblOtros3 = new JLabel("Otros 3");
+		lblOtros3.setBounds(37, 760, 150, 16);
+		frame.getContentPane().add(lblOtros3);
+		
+		JLabel lblOtros4 = new JLabel("Otros 4");
+		lblOtros4.setBounds(37, 790, 150, 16);
+		frame.getContentPane().add(lblOtros4);
 		
 		nroAnalisis = new JComboBox();
 		nroAnalisis.setBounds(191, 125, 130, 26);
@@ -333,6 +347,18 @@ public class FormularioModificacionBarros {
 					otros2.setBackground(Color.YELLOW);
 				} else {
 					otros2.setBackground(Color.WHITE);
+				}
+				otros3.setText(analisisBarroSeleccionado.getOtros3());
+				if(analisisBarroSeleccionado.getOtros3().equals("*")) {
+					otros3.setBackground(Color.YELLOW);
+				} else {
+					otros3.setBackground(Color.WHITE);
+				}
+				otros4.setText(analisisBarroSeleccionado.getOtros4());
+				if(analisisBarroSeleccionado.getOtros4().equals("*")) {
+					otros4.setBackground(Color.YELLOW);
+				} else {
+					otros4.setBackground(Color.WHITE);
 				}
 			}
 		});
@@ -647,7 +673,39 @@ public class FormularioModificacionBarros {
 		otros2.setHorizontalAlignment(SwingConstants.CENTER);
 		otros2.setColumns(10);
 		otros2.setBounds(191, 725, 130, 26);
-		frame.getContentPane().add(otros2);
+		frame.getContentPane().add(otros2);		
+		
+		otros3 = new JTextField();
+		otros3.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				if (otros3.getText().equals("*")) {
+					otros3.setBackground(Color.YELLOW);
+				} else {
+					otros3.setBackground(Color.WHITE);
+				}
+			}
+		});
+		otros3.setHorizontalAlignment(SwingConstants.CENTER);
+		otros3.setColumns(10);
+		otros3.setBounds(191, 755, 130, 26);
+		frame.getContentPane().add(otros3);
+		
+		otros4 = new JTextField();
+		otros4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				if (otros4.getText().equals("*")) {
+					otros4.setBackground(Color.YELLOW);
+				} else {
+					otros4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		otros4.setHorizontalAlignment(SwingConstants.CENTER);
+		otros4.setColumns(10);
+		otros4.setBounds(191, 785, 130, 26);
+		frame.getContentPane().add(otros4);
 		
 		industria = new JComboBox();
 		industria.setBounds(156, 16, 256, 27);
@@ -724,7 +782,7 @@ public class FormularioModificacionBarros {
 							lugarExtraccion1.getText(), extraidoPor1.getText(), null, horaExtraccion1.getText(), aspecto1.getText(), pH1.getText(),
 							solidosTotales1.getText(), humedad1.getText(), solidosTotalesVolatiles1.getText(), liquidosLibres1.getText(), sulfuro1.getText(),
 							cromoEnLixiviado1.getText(), plomoEnLixiviado1.getText(), materiaOrganica1.getText(), hidrocarburosTotales1.getText(), conductividad1.getText(),
-							relacionCN1.getText(), otros1.getText(), otros2.getText(), "En proceso");
+							relacionCN1.getText(), otros1.getText(), otros2.getText(), otros3.getText(), otros4.getText(), "En proceso");
 					try {
 						
 						datosDAO.modificarBarro(analisisBarro);
@@ -753,13 +811,10 @@ public class FormularioModificacionBarros {
 			}
 		});
 		btnVolver.setBounds(372, 365, 155, 48);
-		frame.getContentPane().add(btnVolver);
+		frame.getContentPane().add(btnVolver);		
 		
-		
-		
-		JLabel lblOtros2 = new JLabel("Otros 2");
-		lblOtros2.setBounds(37, 728, 150, 16);
-		frame.getContentPane().add(lblOtros2);
+
+
 		
 		
 	}

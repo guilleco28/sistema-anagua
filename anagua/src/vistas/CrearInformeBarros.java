@@ -138,6 +138,16 @@ public class CrearInformeBarros {
 	private JTextField otros22;
 	private JTextField otros23;
 	private JTextField otros24;
+	private JLabel lblOtros3;
+	private JLabel lblOtros4;
+	private JTextField otros31;
+	private JTextField otros32;
+	private JTextField otros33;
+	private JTextField otros34;
+	private JTextField otros41;
+	private JTextField otros42;
+	private JTextField otros43;
+	private JTextField otros44;
 
 	/**
 	 * Launch the application.
@@ -414,6 +424,18 @@ public class CrearInformeBarros {
 				}  else {
 					otros21.setBackground(colorPorDefecto);
 				}
+				otros31.setText(analisisBarroSeleccionado.getOtros3());
+				if (otros31.getText().equals("*")) {
+					otros31.setBackground(Color.YELLOW);
+				}  else {
+					otros31.setBackground(colorPorDefecto);
+				}
+				otros41.setText(analisisBarroSeleccionado.getOtros4());
+				if (otros41.getText().equals("*")) {
+					otros41.setBackground(Color.YELLOW);
+				}  else {
+					otros41.setBackground(colorPorDefecto);
+				}
 			}
 		});
 		
@@ -602,15 +624,10 @@ public class CrearInformeBarros {
 		btnVolver.setBounds(959, 34, 175, 51);
 		frame.getContentPane().add(btnVolver);
 		
-		/*JComboBox nroAnalisis2 = new JComboBox();
-		nroAnalisis2.setBounds(370, 126, 130, 26);
-		frame.getContentPane().add(nroAnalisis2);
-		for (AnalisisBarro analisisBarro : datosDAO.obtenerTodosLosAnalisisBarros()){
-			nroAnalisis2.addItem(analisisBarro.getNroAnalisis());
-		}*/
 		nroAnalisis2.addItemListener(new ItemListener(){
 			public void itemStateChanged(ItemEvent arg0){
 				AnalisisBarro analisisBarroSeleccionado = datosDAO.obtenerAnalisisBarroPorNumero(String.valueOf(nroAnalisis2.getSelectedItem()));
+				
 				lugarExtraccion2.setText(analisisBarroSeleccionado.getLugarExtraccion());
 				if (lugarExtraccion2.getText().equals("*")) {
 					lugarExtraccion2.setBackground(Color.YELLOW);
@@ -726,6 +743,18 @@ public class CrearInformeBarros {
 					otros22.setBackground(Color.YELLOW);
 				}  else {
 					otros22.setBackground(colorPorDefecto);
+				}
+				otros32.setText(analisisBarroSeleccionado.getOtros3());
+				if (otros32.getText().equals("*")) {
+					otros32.setBackground(Color.YELLOW);
+				}  else {
+					otros32.setBackground(colorPorDefecto);
+				}
+				otros42.setText(analisisBarroSeleccionado.getOtros4());
+				if (otros42.getText().equals("*")) {
+					otros42.setBackground(Color.YELLOW);
+				}  else {
+					otros42.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -854,6 +883,18 @@ public class CrearInformeBarros {
 				}  else {
 					otros23.setBackground(colorPorDefecto);
 				}
+				otros33.setText(analisisBarroSeleccionado.getOtros3());
+				if (otros33.getText().equals("*")) {
+					otros33.setBackground(Color.YELLOW);
+				}  else {
+					otros33.setBackground(colorPorDefecto);
+				}
+				otros43.setText(analisisBarroSeleccionado.getOtros4());
+				if (otros43.getText().equals("*")) {
+					otros43.setBackground(Color.YELLOW);
+				}  else {
+					otros43.setBackground(colorPorDefecto);
+				}
 			}
 		});
 		
@@ -980,6 +1021,18 @@ public class CrearInformeBarros {
 					otros24.setBackground(Color.YELLOW);
 				}  else {
 					otros24.setBackground(colorPorDefecto);
+				}
+				otros34.setText(analisisBarroSeleccionado.getOtros3());
+				if (otros34.getText().equals("*")) {
+					otros34.setBackground(Color.YELLOW);
+				}  else {
+					otros34.setBackground(colorPorDefecto);
+				}
+				otros44.setText(analisisBarroSeleccionado.getOtros4());
+				if (otros44.getText().equals("*")) {
+					otros44.setBackground(Color.YELLOW);
+				}  else {
+					otros44.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1440,6 +1493,70 @@ public class CrearInformeBarros {
 		otros24.setColumns(10);
 		otros24.setBounds(730, 697, 130, 26);
 		frame.getContentPane().add(otros24);
+		
+		lblOtros3 = new JLabel("Otros 3");
+		lblOtros3.setBounds(37, 734, 150, 16);
+		frame.getContentPane().add(lblOtros3);
+		
+		lblOtros4 = new JLabel("Otros 4");
+		lblOtros4.setBounds(37, 766, 150, 16);
+		frame.getContentPane().add(lblOtros4);
+		
+		otros31 = new JTextField();
+		otros31.setHorizontalAlignment(SwingConstants.CENTER);
+		otros31.setEditable(false);
+		otros31.setColumns(10);
+		otros31.setBounds(190, 729, 130, 26);
+		frame.getContentPane().add(otros31);
+		
+		otros32 = new JTextField();
+		otros32.setHorizontalAlignment(SwingConstants.CENTER);
+		otros32.setEditable(false);
+		otros32.setColumns(10);
+		otros32.setBounds(370, 729, 130, 26);
+		frame.getContentPane().add(otros32);
+		
+		otros33 = new JTextField();
+		otros33.setHorizontalAlignment(SwingConstants.CENTER);
+		otros33.setEditable(false);
+		otros33.setColumns(10);
+		otros33.setBounds(550, 729, 130, 26);
+		frame.getContentPane().add(otros33);
+		
+		otros34 = new JTextField();
+		otros34.setHorizontalAlignment(SwingConstants.CENTER);
+		otros34.setEditable(false);
+		otros34.setColumns(10);
+		otros34.setBounds(730, 729, 130, 26);
+		frame.getContentPane().add(otros34);
+		
+		otros41 = new JTextField();
+		otros41.setHorizontalAlignment(SwingConstants.CENTER);
+		otros41.setEditable(false);
+		otros41.setColumns(10);
+		otros41.setBounds(190, 761, 130, 26);
+		frame.getContentPane().add(otros41);
+		
+		otros42 = new JTextField();
+		otros42.setHorizontalAlignment(SwingConstants.CENTER);
+		otros42.setEditable(false);
+		otros42.setColumns(10);
+		otros42.setBounds(370, 761, 130, 26);
+		frame.getContentPane().add(otros42);
+		
+		otros43 = new JTextField();
+		otros43.setHorizontalAlignment(SwingConstants.CENTER);
+		otros43.setEditable(false);
+		otros43.setColumns(10);
+		otros43.setBounds(550, 761, 130, 26);
+		frame.getContentPane().add(otros43);
+		
+		otros44 = new JTextField();
+		otros44.setHorizontalAlignment(SwingConstants.CENTER);
+		otros44.setEditable(false);
+		otros44.setColumns(10);
+		otros44.setBounds(730, 761, 130, 26);
+		frame.getContentPane().add(otros44);
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -1465,7 +1582,7 @@ public class CrearInformeBarros {
 							lugarExtraccion1.getText(), extraidoPor1.getText(), date, horaExtraccion1.getText(), aspecto1.getText(), pH1.getText(),
 							solidosTotales1.getText(), humedad1.getText(), solidosTotalesVolatiles1.getText(), liquidosLibres1.getText(), sulfuro1.getText(),
 							cromoEnLixiviado1.getText(), plomoEnLixiviado1.getText(), materiaOrganica1.getText(), hidrocarburosTotales1.getText(), conductividad1.getText(),
-							relacionCN1.getText(), otros11.getText(), otros21.getText(), null);
+							relacionCN1.getText(), otros11.getText(), otros21.getText(), otros31.getText(), otros41.getText(), null);
 					analisisParaInforme.add(analisisBarro);
 				}
 
@@ -1485,7 +1602,7 @@ public class CrearInformeBarros {
 							lugarExtraccion2.getText(), extraidoPor2.getText(), date2, horaExtraccion2.getText(), aspecto2.getText(), pH2.getText(),
 							solidosTotales2.getText(), humedad2.getText(), solidosTotalesVolatiles2.getText(), liquidosLibres2.getText(), sulfuro2.getText(),
 							cromoEnLixiviado2.getText(), plomoEnLixiviado2.getText(), materiaOrganica2.getText(), hidrocarburosTotales2.getText(), conductividad2.getText(),
-							relacionCN2.getText(), otros12.getText(), otros22.getText(), null);
+							relacionCN2.getText(), otros12.getText(), otros22.getText(), otros32.getText(), otros43.getText(),null);
 					analisisParaInforme.add(analisisBarro);					
 				}
 				
@@ -1503,7 +1620,7 @@ public class CrearInformeBarros {
 							lugarExtraccion3.getText(), extraidoPor3.getText(), date3, horaExtraccion3.getText(), aspecto3.getText(), pH3.getText(),
 							solidosTotales3.getText(), humedad3.getText(), solidosTotalesVolatiles3.getText(), liquidosLibres3.getText(), sulfuro3.getText(),
 							cromoEnLixiviado3.getText(), plomoEnLixiviado3.getText(), materiaOrganica3.getText(), hidrocarburosTotales3.getText(), conductividad3.getText(),
-							relacionCN3.getText(), otros13.getText(), otros23.getText(), null);
+							relacionCN3.getText(), otros13.getText(), otros23.getText(), otros33.getText(), otros43.getText(), null);
 					analisisParaInforme.add(analisisBarro);					
 				}
 				
@@ -1521,7 +1638,7 @@ public class CrearInformeBarros {
 							lugarExtraccion4.getText(), extraidoPor4.getText(), date4, horaExtraccion4.getText(), aspecto4.getText(), pH4.getText(),
 							solidosTotales4.getText(), humedad4.getText(), solidosTotalesVolatiles4.getText(), liquidosLibres4.getText(), sulfuro4.getText(),
 							cromoEnLixiviado4.getText(), plomoEnLixiviado4.getText(), materiaOrganica4.getText(), hidrocarburosTotales4.getText(), conductividad4.getText(),
-							relacionCN4.getText(), otros14.getText(), otros24.getText(), null);
+							relacionCN4.getText(), otros14.getText(), otros24.getText(), otros34.getText(), otros44.getText(), null);
 					analisisParaInforme.add(analisisBarro);
 					
 				}

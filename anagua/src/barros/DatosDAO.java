@@ -29,7 +29,7 @@ public class DatosDAO {
 
 			String query = "INSERT INTO datos (numero_analisis, industria, departamento, localidad, descarga_en, lugar_extraccion, extraido_por, fecha_extraccion, hora_extraccion, "
 					+ "aspecto, ph_barros, solidos_totales_barros, humedad, solidos_totales_volatiles, liquidos_libres, sulfuro, cromo_en_lixiviado, plomo_en_lixiviado, "
-					+ "materia_organica, hidrocarburos_totales, conductividad_barros, relacion_CN, otros, otros2, estado)" + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+					+ "materia_organica, hidrocarburos_totales, conductividad_barros, relacion_CN, otros, otros2, otros3, otros4, estado)" + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			
 			preparedStmt = (PreparedStatement) oConnection.prepareStatement(query);
 			preparedStmt.setString(1, analisisBarro.getNroAnalisis());
@@ -57,7 +57,9 @@ public class DatosDAO {
 			preparedStmt.setString(22, analisisBarro.getRelacionCN());
 			preparedStmt.setString(23, analisisBarro.getOtros1());
 			preparedStmt.setString(24, analisisBarro.getOtros2());
-			preparedStmt.setString(25, analisisBarro.getEstado());
+			preparedStmt.setString(25, analisisBarro.getOtros3());
+			preparedStmt.setString(26, analisisBarro.getOtros4());
+			preparedStmt.setString(27, analisisBarro.getEstado());
 			preparedStmt.execute();
 			preparedStmt.close();
 			
@@ -80,7 +82,7 @@ public class DatosDAO {
 
 			String query = "UPDATE datos SET industria = ?, departamento = ?, localidad = ?, descarga_en = ?, lugar_extraccion = ?, extraido_por = ?, fecha_extraccion = ?, hora_extraccion = ?, "
 					+ "aspecto = ?, ph_barros = ?, solidos_totales_barros = ?, humedad = ?, solidos_totales_volatiles = ?, liquidos_libres = ?, sulfuro = ?, cromo_en_lixiviado = ?, plomo_en_lixiviado = ?, "
-					+ "materia_organica = ?, hidrocarburos_totales = ?, conductividad_barros = ?, relacion_CN = ?, otros = ?, otros2 = ?, estado = ? WHERE numero_analisis = ?";
+					+ "materia_organica = ?, hidrocarburos_totales = ?, conductividad_barros = ?, relacion_CN = ?, otros = ?, otros2 = ?, otros3 = ?, otros4 = ?, estado = ? WHERE numero_analisis = ?";
 			
 			preparedStmt = (PreparedStatement) oConnection.prepareStatement(query);
 			
@@ -113,8 +115,10 @@ public class DatosDAO {
 			preparedStmt.setString(21, analisisBarro.getRelacionCN());
 			preparedStmt.setString(22, analisisBarro.getOtros1());
 			preparedStmt.setString(23, analisisBarro.getOtros2());
-			preparedStmt.setString(25, analisisBarro.getNroAnalisis());
-			preparedStmt.setString(24, analisisBarro.getEstado());
+			preparedStmt.setString(24, analisisBarro.getOtros3());
+			preparedStmt.setString(25, analisisBarro.getOtros4());
+			preparedStmt.setString(27, analisisBarro.getNroAnalisis());
+			preparedStmt.setString(26, analisisBarro.getEstado());
 			preparedStmt.execute();
 			preparedStmt.close();
 			
@@ -177,7 +181,7 @@ public class DatosDAO {
 					+ "lugar_extraccion, extraido_por, fecha_extraccion, "
 					+ "hora_extraccion, aspecto, ph_barros, solidos_totales_barros, humedad, solidos_totales_volatiles, "
 					+ "liquidos_libres, sulfuro, cromo_en_lixiviado, plomo_en_lixiviado, materia_organica, hidrocarburos_totales, "
-					+ "conductividad_barros, relacion_CN, otros, otros2, estado FROM datos";			
+					+ "conductividad_barros, relacion_CN, otros, otros2, otros3, otros4, estado FROM datos";			
 			preparedStmt = (PreparedStatement) oConnection.prepareStatement(query);
 			oResultSet = preparedStmt.executeQuery();
 
@@ -186,7 +190,8 @@ public class DatosDAO {
 						oResultSet.getString(5), oResultSet.getString(6), oResultSet.getString(7), oResultSet.getDate(8), oResultSet.getString(9),
 						oResultSet.getString(10), oResultSet.getString(11), oResultSet.getString(12), oResultSet.getString(13),
 						oResultSet.getString(14), oResultSet.getString(15), oResultSet.getString(16), oResultSet.getString(17), oResultSet.getString(18), 
-						oResultSet.getString(19), oResultSet.getString(20), oResultSet.getString(21), oResultSet.getString(22), oResultSet.getString(23), oResultSet.getString(24), oResultSet.getString(25));
+						oResultSet.getString(19), oResultSet.getString(20), oResultSet.getString(21), oResultSet.getString(22), oResultSet.getString(23), oResultSet.getString(24), oResultSet.getString(25),
+						oResultSet.getString(26), oResultSet.getString(27));
 
 				analisissBarros.add(analisisBarro);
 
@@ -215,7 +220,7 @@ public class DatosDAO {
 					+ "lugar_extraccion, extraido_por, fecha_extraccion, "
 					+ "hora_extraccion, aspecto, ph_barros, solidos_totales_barros, humedad, solidos_totales_volatiles, "
 					+ "liquidos_libres, sulfuro, cromo_en_lixiviado, plomo_en_lixiviado, materia_organica, hidrocarburos_totales, "
-					+ "conductividad_barros, relacion_CN, otros, otros2, estado FROM datos WHERE numero_analisis = ?";			
+					+ "conductividad_barros, relacion_CN, otros, otros2, otros3, otros4, estado FROM datos WHERE numero_analisis = ?";			
 			preparedStmt = (PreparedStatement) oConnection.prepareStatement(query);
 			preparedStmt.setString(1, nroAnalisis);
 			oResultSet = preparedStmt.executeQuery();
@@ -226,7 +231,8 @@ public class DatosDAO {
 						oResultSet.getString(5), oResultSet.getString(6), oResultSet.getString(7), oResultSet.getTimestamp(8), oResultSet.getString(9),
 						oResultSet.getString(10), oResultSet.getString(11), oResultSet.getString(12), oResultSet.getString(13),
 						oResultSet.getString(14), oResultSet.getString(15), oResultSet.getString(16), oResultSet.getString(17), oResultSet.getString(18), 
-						oResultSet.getString(19), oResultSet.getString(20), oResultSet.getString(21), oResultSet.getString(22), oResultSet.getString(23), oResultSet.getString(24), oResultSet.getString(25));
+						oResultSet.getString(19), oResultSet.getString(20), oResultSet.getString(21), oResultSet.getString(22), oResultSet.getString(23), oResultSet.getString(24), oResultSet.getString(25),
+						oResultSet.getString(26), oResultSet.getString(27));
 				
 				
 			}			

@@ -118,6 +118,14 @@ public class FormularioIngresoBarros {
 	private JTextField otros22;
 	private JTextField otros23;
 	private JTextField otros24;
+	private JTextField otros31;
+	private JTextField otros32;
+	private JTextField otros33;
+	private JTextField otros34;
+	private JTextField otros41;
+	private JTextField otros42;
+	private JTextField otros43;
+	private JTextField otros44;
 
 	/**
 	 * Launch the application.
@@ -282,6 +290,16 @@ public class FormularioIngresoBarros {
 		lblOtros2.setForeground(Color.BLACK);
 		lblOtros2.setBounds(37, 701, 150, 16);
 		frame.getContentPane().add(lblOtros2);
+		
+		JLabel lblOtros3 = new JLabel("Otros 3");
+		lblOtros3.setForeground(Color.BLACK);
+		lblOtros3.setBounds(37, 730, 150, 16);
+		frame.getContentPane().add(lblOtros3);
+		
+		JLabel lblOtros4 = new JLabel("Otros 4");
+		lblOtros4.setForeground(Color.BLACK);
+		lblOtros4.setBounds(37, 760, 150, 16);
+		frame.getContentPane().add(lblOtros4);
 		
 		
 		nroAnalisis1 = new JTextField();
@@ -1965,7 +1983,92 @@ public class FormularioIngresoBarros {
 		otros24.setBounds(791, 696, 130, 26);
 		frame.getContentPane().add(otros24);
 		
+		otros31 = new JTextField();
+		otros31.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblOtros3.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblOtros3.setForeground(Color.BLACK);
+				if (otros31.getText().equals("*")) {
+					otros31.setBackground(Color.YELLOW);
+				} else {
+					otros31.setBackground(Color.WHITE);
+				}
+			}
+		});
+		otros31.setHorizontalAlignment(SwingConstants.CENTER);
+		otros31.setColumns(10);
+		otros31.setBounds(191, 726, 130, 26);
+		frame.getContentPane().add(otros31);
+		
+		otros32 = new JTextField();
+		otros32.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblOtros3.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblOtros3.setForeground(Color.BLACK);
+				if (otros32.getText().equals("*")) {
+					otros32.setBackground(Color.YELLOW);
+				} else {
+					otros32.setBackground(Color.WHITE);
+				}
+			}
+		});
+		otros32.setHorizontalAlignment(SwingConstants.CENTER);
+		otros32.setColumns(10);
+		otros32.setBounds(391, 726, 130, 26);
+		frame.getContentPane().add(otros32);
+		
+		otros33 = new JTextField();
+		otros33.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblOtros3.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblOtros3.setForeground(Color.BLACK);
+				if (otros33.getText().equals("*")) {
+					otros33.setBackground(Color.YELLOW);
+				} else {
+					otros33.setBackground(Color.WHITE);
+				}
+			}
+		});
+		otros33.setHorizontalAlignment(SwingConstants.CENTER);
+		otros33.setColumns(10);
+		otros33.setBounds(591, 726, 130, 26);
+		frame.getContentPane().add(otros33);
+		
+		otros34 = new JTextField();
+		otros34.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblOtros3.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblOtros3.setForeground(Color.BLACK);
+				if (otros34.getText().equals("*")) {
+					otros34.setBackground(Color.YELLOW);
+				} else {
+					otros34.setBackground(Color.WHITE);
+				}
+			}
+		});
+		otros34.setHorizontalAlignment(SwingConstants.CENTER);
+		otros34.setColumns(10);
+		otros34.setBounds(791, 726, 130, 26);
+		frame.getContentPane().add(otros34);		
+		
 		JButton btnNewButton = new JButton("Agregar análisis");
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 23));
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -1975,7 +2078,7 @@ public class FormularioIngresoBarros {
 							lugarExtraccion1.getText(), extraidoPor1.getText(), fechaExtraccion.getDate(), horaExtraccion1.getText(), aspecto1.getText(), pH1.getText(),
 							solidosTotales1.getText(), humedad1.getText(), solidosTotalesVolatiles1.getText(), liquidosLibres1.getText(), sulfuro1.getText(),
 							cromoEnLixiviado1.getText(), plomoEnLixiviado1.getText(), materiaOrganica1.getText(), hidrocarburosTotales1.getText(), conductividad1.getText(),
-							relacionCN1.getText(), otros11.getText(), otros21.getText(), "En proceso");
+							relacionCN1.getText(), otros11.getText(), otros21.getText(), otros31.getText(), otros41.getText(), "En proceso");
 					analisisAAgregar.add(analisisBarro1);
 				}
 				if (!nroAnalisis2.getText().equals("")) {
@@ -1983,7 +2086,7 @@ public class FormularioIngresoBarros {
 							lugarExtraccion2.getText(), extraidoPor2.getText(), fechaExtraccion2.getDate(), horaExtraccion2.getText(), aspecto2.getText(), pH2.getText(),
 							solidosTotales2.getText(), humedad2.getText(), solidosTotalesVolatiles2.getText(), liquidosLibres2.getText(), sulfuro2.getText(),
 							cromoEnLixiviado2.getText(), plomoEnLixiviado2.getText(), materiaOrganica2.getText(), hidrocarburosTotales2.getText(), conductividad2.getText(),
-							relacionCN2.getText(), otros12.getText(), otros22.getText(), "En proceso");
+							relacionCN2.getText(), otros12.getText(), otros22.getText(), otros32.getText(), otros42.getText(), "En proceso");
 					analisisAAgregar.add(analisisBarro2);
 				}
 				if (!nroAnalisis3.getText().equals("")) {
@@ -1991,7 +2094,7 @@ public class FormularioIngresoBarros {
 							lugarExtraccion3.getText(), extraidoPor3.getText(), fechaExtraccion3.getDate(), horaExtraccion3.getText(), aspecto3.getText(), pH3.getText(),
 							solidosTotales3.getText(), humedad3.getText(), solidosTotalesVolatiles3.getText(), liquidosLibres3.getText(), sulfuro3.getText(),
 							cromoEnLixiviado3.getText(), plomoEnLixiviado3.getText(), materiaOrganica3.getText(), hidrocarburosTotales3.getText(), conductividad3.getText(),
-							relacionCN3.getText(), otros13.getText(), otros23.getText(), "En proceso");
+							relacionCN3.getText(), otros13.getText(), otros23.getText(), otros33.getText(), otros43.getText(), "En proceso");
 					analisisAAgregar.add(analisisBarro3);
 				}
 				if (!nroAnalisis4.getText().equals("")) {
@@ -1999,7 +2102,7 @@ public class FormularioIngresoBarros {
 							lugarExtraccion4.getText(), extraidoPor4.getText(), fechaExtraccion4.getDate(), horaExtraccion4.getText(), aspecto4.getText(), pH4.getText(),
 							solidosTotales4.getText(), humedad4.getText(), solidosTotalesVolatiles4.getText(), liquidosLibres4.getText(), sulfuro4.getText(),
 							cromoEnLixiviado4.getText(), plomoEnLixiviado4.getText(), materiaOrganica4.getText(), hidrocarburosTotales4.getText(), conductividad4.getText(),
-							relacionCN4.getText(), otros14.getText(), otros24.getText(), "En proceso");
+							relacionCN4.getText(), otros14.getText(), otros24.getText(), otros34.getText(), otros44.getText(), "En proceso");
 					analisisAAgregar.add(analisisBarro4);
 				}
 				try {
@@ -2017,7 +2120,91 @@ public class FormularioIngresoBarros {
 			}
 		});
 		
-		btnNewButton.setBounds(391, 738, 330, 29);
+		otros41 = new JTextField();
+		otros41.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblOtros4.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblOtros4.setForeground(Color.BLACK);
+				if (otros41.getText().equals("*")) {
+					otros41.setBackground(Color.YELLOW);
+				} else {
+					otros41.setBackground(Color.WHITE);
+				}
+			}
+		});
+		otros41.setHorizontalAlignment(SwingConstants.CENTER);
+		otros41.setColumns(10);
+		otros41.setBounds(191, 755, 130, 26);
+		frame.getContentPane().add(otros41);
+		
+		otros42 = new JTextField();
+		otros42.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblOtros4.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblOtros4.setForeground(Color.BLACK);
+				if (otros42.getText().equals("*")) {
+					otros42.setBackground(Color.YELLOW);
+				} else {
+					otros42.setBackground(Color.WHITE);
+				}
+			}
+		});
+		otros42.setHorizontalAlignment(SwingConstants.CENTER);
+		otros42.setColumns(10);
+		otros42.setBounds(391, 755, 130, 26);
+		frame.getContentPane().add(otros42);
+		
+		otros43 = new JTextField();
+		otros43.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblOtros4.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblOtros4.setForeground(Color.BLACK);
+				if (otros43.getText().equals("*")) {
+					otros43.setBackground(Color.YELLOW);
+				} else {
+					otros43.setBackground(Color.WHITE);
+				}
+			}
+		});
+		otros43.setHorizontalAlignment(SwingConstants.CENTER);
+		otros43.setColumns(10);
+		otros43.setBounds(591, 755, 130, 26);
+		frame.getContentPane().add(otros43);
+		
+		otros44 = new JTextField();
+		otros44.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblOtros4.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblOtros4.setForeground(Color.BLACK);
+				if (otros44.getText().equals("*")) {
+					otros44.setBackground(Color.YELLOW);
+				} else {
+					otros44.setBackground(Color.WHITE);
+				}
+			}
+		});
+		otros44.setHorizontalAlignment(SwingConstants.CENTER);
+		otros44.setColumns(10);
+		otros44.setBounds(791, 755, 130, 26);
+		frame.getContentPane().add(otros44);
+		
+		btnNewButton.setBounds(959, 340, 215, 114);
 		frame.getContentPane().add(btnNewButton);
 		ArrayList <Component> order = new ArrayList <Component>();
 		order.add(nroAnalisis1);
@@ -2040,6 +2227,8 @@ public class FormularioIngresoBarros {
 		order.add(relacionCN1);
 		order.add(otros11);
 		order.add(otros21);
+		order.add(otros31);
+		order.add(otros41);		
 		order.add(nroAnalisis2);
 		order.add(lugarExtraccion2);
 		order.add(extraidoPor2);
@@ -2060,6 +2249,8 @@ public class FormularioIngresoBarros {
 		order.add(relacionCN2);
 		order.add(otros12);
 		order.add(otros22);
+		order.add(otros32);
+		order.add(otros42);	
 		order.add(nroAnalisis3);
 		order.add(lugarExtraccion3);
 		order.add(extraidoPor3);
@@ -2080,6 +2271,8 @@ public class FormularioIngresoBarros {
 		order.add(relacionCN3);
 		order.add(otros13);
 		order.add(otros23);
+		order.add(otros33);
+		order.add(otros43);	
 		order.add(nroAnalisis4);
 		order.add(lugarExtraccion4);
 		order.add(extraidoPor4);
@@ -2100,7 +2293,11 @@ public class FormularioIngresoBarros {
 		order.add(relacionCN4);
 		order.add(otros14);
 		order.add(otros24);
+		order.add(otros34);
+		order.add(otros44);	
 		order.add(btnNewButton);
+		
+
 		
 		FocusTraversalPolicy myFocusTraversalPolicy = new MyFocusTraversalPolicy(order);
 		frame.setFocusTraversalPolicy(myFocusTraversalPolicy);

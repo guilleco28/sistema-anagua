@@ -100,7 +100,5 @@ public class MenuIndustrias {
 		btnVolver.setBounds(250, 363, 410, 70);
 		frame.getContentPane().add(btnVolver);
 		
-
-		
 	}
 }

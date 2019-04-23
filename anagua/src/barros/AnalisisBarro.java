@@ -28,6 +28,8 @@ public class AnalisisBarro {
 	private String relacionCN;
 	private String otros1;
 	private String otros2;
+	private String otros3;
+	private String otros4;
 	private String estado;
 	private int size;
 	
@@ -36,7 +38,7 @@ public class AnalisisBarro {
 			String pH, String solidosTotales, String humedad, String solidosTotalesVolatiles,
 			String liquidosLibres, String sulfuro, String cromoEnLixiviado, String plomoEnLixiviado,
 			String materiaOrganica, String hidrocarburosTotales, String conductividad, String relacionCN,
-			String otros1, String otros2, String estado) {
+			String otros1, String otros2, String otros3, String otros4, String estado) {
 		this.industria = industria;
 		this.departamento = departamento;
 		this.localidad = localidad;
@@ -61,6 +63,8 @@ public class AnalisisBarro {
 		this.relacionCN = relacionCN;
 		this.otros1 = otros1;
 		this.otros2 = otros2;
+		this.otros3 = otros3;
+		this.otros4 = otros4;
 		this.estado = estado;
 		this.size = 24;
 	}
@@ -137,6 +141,14 @@ public class AnalisisBarro {
 	
 	public String getOtros2() {
 		return otros2;
+	}
+	
+	public String getOtros3() {
+		return otros3;
+	}
+	
+	public String getOtros4() {
+		return otros4;
 	}
 	
 	public String getEstado(){

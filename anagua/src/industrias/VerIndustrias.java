@@ -32,7 +32,7 @@ public class VerIndustrias {
 	
 		//p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties"));
 		//p.load(new FileReader("W:\\ANAGUA\\sistema-anagua\\config.properties"));
-		p.load(new FileReader("C:\\Users\\Guillermo\\Dropbox\\PROYECTO_ANAGUA\\config.properties"));
+		p.load(new FileReader("C:\\Users\\Guillermo\\Documents\\sistema-anagua\\config.properties"));
 		BaseDeDatos baseDeDatos = new BaseDeDatos();
 		Connection con = baseDeDatos.abrirConexion();
 	    String rutaExcel = p.getProperty("ruta_excel_industrias");
@@ -135,7 +135,7 @@ public class VerIndustrias {
             cell.setCellValue(resultSet.getString("descarga"));
             cell.setCellStyle(cellStyle);
         
-        
+        System.out.println(rutaExcel+" "+nombreExcel);
         FileOutputStream out = new FileOutputStream(rutaExcel+"\\"+nombreExcel);
         workbook.write(out);
         out.close();
