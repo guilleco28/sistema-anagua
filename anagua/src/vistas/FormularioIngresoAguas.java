@@ -10,18 +10,26 @@ import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import com.toedter.calendar.JDateChooser;
 
+import aguas.*;
+import barros.AnalisisBarro;
 import industrias.Industria;
 import industrias.IndustriasDAO;
 import javax.swing.SwingConstants;
@@ -119,6 +127,7 @@ public class FormularioIngresoAguas {
 		//frame.setBounds(100, 100, 2500, 2500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		IndustriasDAO industriasDAO = new IndustriasDAO();
+		AguasDAO aguasDAO = new AguasDAO();
 		
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(5, 10, 3200, 1000);
@@ -517,8 +526,8 @@ public class FormularioIngresoAguas {
 		extraidoPor1.setColumns(10);
 		extraidoPor1.setHorizontalAlignment(JTextField.CENTER);
 		
-		JDateChooser fechaExtraccion = new JDateChooser();		
-		fechaExtraccion.addFocusListener(new FocusAdapter() {
+		JDateChooser fechaExtraccion1 = new JDateChooser();		
+		fechaExtraccion1.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusGained(FocusEvent e) {
 				lblFechaExtraccion.setForeground(destacado);
@@ -528,8 +537,8 @@ public class FormularioIngresoAguas {
 				lblFechaExtraccion.setForeground(Color.BLACK);
 			}
 		});
-		fechaExtraccion.setBounds(191, 215, 130, 26);
-		miPanel.add(fechaExtraccion);
+		fechaExtraccion1.setBounds(191, 215, 130, 26);
+		miPanel.add(fechaExtraccion1);
 		
 		JTextField horaExtraccion1 = new JTextField();
 		horaExtraccion1.addFocusListener(new FocusAdapter() {
@@ -1612,6 +1621,34 @@ public class FormularioIngresoAguas {
 		JButton btnAgregarAnlisis = new JButton("Agregar an\u00E1lisis");
 		btnAgregarAnlisis.setBounds(504, 1800, 330, 29);
 		miPanel.add(btnAgregarAnlisis);
+		
+		btnAgregarAnlisis.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ArrayList <AnalisisAgua> analisisAAgregar = new ArrayList <AnalisisAgua>();
+				if (!nroAnalisis1.getText().equals("")) {
+					AnalisisAgua analisisAgua1 = new AnalisisAgua(nroAnalisis1.getText(), String.valueOf(industria.getSelectedItem()), departamento.getText(), localidad.getText(), descargaEn.getText(), lugarExtraccion1.getText(),
+							extraidoPor1.getText(), fechaExtraccion1.getDate(), horaExtraccion1.getText(), aspecto1.getText(), pHIS1.getText(), pH1.getText(), temperatura1.getText(), caudal1.getText(), ODIS1.getText(), OD1.getText(),
+							DBO51.getText(), DBO5F1.getText(), DQO1.getText(), AceitesYGrasas1.getText(), SolidosTotales1.getText(), STV1.getText(), SST1.getText(), SSV1.getText(), SS101.getText(), SS301.getText(), SS601.getText(), amoniaco1.getText(), nitrato1.getText(), nitrito1.getText(), nitrogenoTotal1.getText(), fosforoTotal1.getText(),
+							cromo1.getText(), plomo1.getText(), zinc1.getText(), aluminio1.getText(), manganeso1.getText(), potasio1.getText(), alcalinidadTotal1.getText(), acidezVolatil1.getText(), alfa1.getText(), alfaPrima1.getText(),
+							bicarbonato1.getText(), salinidad1.getText(), turbiedad1.getText(), conductividad1.getText(), sulfuro1.getText(), sulfato1.getText(), fenoles1.getText(), tensoactivos1.getText(), cloroResidual1.getText(),
+							cloroTotal1.getText(), cloruro1.getText(), dureza1.getText(), color1.getText(), hidrocarburos1.getText(), coliformes1.getText(), cursoAguaTipo1.getText(), "En proceso", otros1.getText());
+					analisisAAgregar.add(analisisAgua1);
+				}
+				try {
+					for (int i=0; i<analisisAAgregar.size(); i++) {
+						aguasDAO.agregarAgua(analisisAAgregar.get(i));
+					}
+					JOptionPane.showMessageDialog(null, "Se agregaron "+analisisAAgregar.size()+" análisis al sistema correctamente.");
+				} catch (MySQLIntegrityConstraintViolationException e1) {
+					JOptionPane.showMessageDialog(null, "Usted está intentando agregar un análisis con un número ya existente en el sistema.");
+				} catch (SQLException e1) {
+					JOptionPane.showMessageDialog(null, "Se ha producido un error. Revise los datos que intenta ingresar.");
+					e1.printStackTrace();
+				}				
+				 
+			}
+		});
 		
 	}
 }

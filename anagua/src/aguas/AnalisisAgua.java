@@ -76,7 +76,6 @@ public class AnalisisAgua {
 			String conductividad, String sulfuro, String sulfato, String fenoles, String tensoactivosAnionicos,
 			String cloroResidual, String cloroTotal, String cloruro, String dureza, String color, String hidrocarburos,
 			String coliformesFecales, String cursoDeAguaTipo, String estado, String otros) {
-		super();
 		this.nroAnalisis = nroAnalisis;
 		this.industria = industria;
 		this.departamento = departamento;
@@ -91,11 +90,11 @@ public class AnalisisAgua {
 		this.pH = pH;
 		this.temperatura = temperatura;
 		this.caudalInstantaneo = caudalInstantaneo;
-		ODInSitu = oDInSitu;
-		OD = oD;
-		DBO5 = dBO5;
-		DBO5Filtrada = dBO5Filtrada;
-		DQO = dQO;
+		this.ODInSitu = oDInSitu;
+		this.OD = oD;
+		this.DBO5 = dBO5;
+		this.DBO5Filtrada = dBO5Filtrada;
+		this.DQO = dQO;
 		this.aceitesYGrasas = aceitesYGrasas;
 		this.solidosTotales = solidosTotales;
 		this.solidosTotalesVolatiles = solidosTotalesVolatiles;

@@ -7,12 +7,14 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
+
 import barros.AnalisisBarro;
 import bd.BaseDeDatos;
 
 public class AguasDAO {
 	
-	public void agregarAgua (AnalisisAgua analisisAgua) {
+	public void agregarAgua (AnalisisAgua analisisAgua) throws MySQLIntegrityConstraintViolationException, SQLException {
 		PreparedStatement preparedStmt;
 		BaseDeDatos baseDeDatos = new BaseDeDatos();
 		Connection oConnection = null;
@@ -24,7 +26,7 @@ public class AguasDAO {
 				+ "solidos_totales_volatiles, sst, ssv, solidos_sedimentables_10_min, solidos_sedimentables_30_min, solidos_sedimentables_60_min, amonio, nitrato, nitrito, "
 				+ "nitrogeno_total, fosforo_total, cromo, plomo, zinc, aluminio, manganeso, potasio, alcalinidad_total, acidez_volatil, alfa, alfa_prima, bicarbonato, "
 				+ "salinidad, turbiedad, conductividad, sulfuro, sulfato, fenoles, tensoactivos_anionicos, cloro_residual, cloro_total, cloruro, dureza, color, hidrocarburos, "
-				+ "coliformes_fecales, clase_curso_agua, otros, estado) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+				+ "coliformes_fecales, clase_curso_agua, otros, estado, otros2) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		
 		try {
 			preparedStmt = (PreparedStatement) oConnection.prepareStatement(query);
@@ -91,6 +93,7 @@ public class AguasDAO {
 			preparedStmt.setString(58, analisisAgua.getCursoDeAguaTipo());
 			preparedStmt.setString(59, analisisAgua.getOtros());
 			preparedStmt.setString(60, analisisAgua.getEstado());
+			preparedStmt.setString(61, "");
 			preparedStmt.execute();
 			preparedStmt.close();
 		} catch (SQLException e) {
