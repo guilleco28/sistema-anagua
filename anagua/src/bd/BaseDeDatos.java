@@ -29,9 +29,6 @@ public class BaseDeDatos {
 
 	public Connection abrirConexion() {
 		Connection oConnection = null;
-		System.out.println("usuario: "+p.getProperty("usuario"));
-		System.out.println("pwd: "+p.getProperty("pwd"));
-		System.out.println("url: "+url);
 		try{
 			Class.forName("com.mysql.jdbc.Connection");
 			oConnection = DriverManager.getConnection(url, p.getProperty("usuario"), p.getProperty("pwd"));

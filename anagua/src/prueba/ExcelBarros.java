@@ -45,6 +45,7 @@ public class ExcelBarros {
 	static String fechaActual = formateador.format(fechaDate);
 	static String rutaExcel;
 	static String rutaLogo;
+	static String rutaFirma;
 	static Properties p = new Properties();
 	private static ConexionBarros conexion = new ConexionBarros();
 	static int[] rgbColumnas = {216, 219, 252};
@@ -58,6 +59,7 @@ public class ExcelBarros {
 			p.load(new FileReader("C:\\Users\\Guillermo\\Documents\\sistema-anagua\\config.properties"));
 			rutaExcel = p.getProperty("ruta_excel_informe");
 			rutaLogo = p.getProperty("ruta_logo");
+			rutaFirma = p.getProperty("ruta_firma");
 		} catch (IOException e2) {
 			e2.printStackTrace();
 		}
@@ -66,6 +68,7 @@ public class ExcelBarros {
 		Sheet sheet = workbook.createSheet();
 		try {
 			agregarLogo(workbook);
+			agregarFirma(workbook);
 		} catch (IOException e3) {
 			// TODO Auto-generated catch block
 			e3.printStackTrace();
@@ -592,6 +595,20 @@ public class ExcelBarros {
 		anchor.setCol2(0);
 		final Picture pict = drawing.createPicture( anchor, pictureIndex );
 		pict.resize((double) 4, (double) 4.75);		
+	}
+	
+	static void agregarFirma(Workbook workbook) throws IOException {
+		final FileInputStream stream =
+		        new FileInputStream(rutaFirma);
+		final CreationHelper helper = workbook.getCreationHelper();
+		final Drawing drawing = workbook.getSheet("Sheet0").createDrawingPatriarch();
+		final ClientAnchor anchor = helper.createClientAnchor();
+		final int pictureIndex =
+		        workbook.addPicture(IOUtils.toByteArray(stream), Workbook.PICTURE_TYPE_PNG);
+		anchor.setCol1(7);
+		anchor.setRow1(37);
+		final Picture pict = drawing.createPicture( anchor, pictureIndex );
+		pict.resize((double) 1, (double) 3);	
 	}
 	
 }

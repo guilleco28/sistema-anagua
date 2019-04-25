@@ -226,7 +226,9 @@ public class FormularioModificacionBarros {
 		nroAnalisis.setBounds(191, 125, 130, 26);
 		frame.getContentPane().add(nroAnalisis);
 		for (AnalisisBarro analisisBarro : datosDAO.obtenerTodosLosAnalisisBarros()){
-			nroAnalisis.addItem(analisisBarro.getNroAnalisis());
+			if(analisisBarro.getpH() != null && analisisBarro.getpH() != "") {
+				nroAnalisis.addItem(analisisBarro.getNroAnalisis());
+			}
 		}
 		nroAnalisis.addItemListener(new ItemListener(){
 			public void itemStateChanged(ItemEvent arg0){

@@ -23,14 +23,13 @@ public class AguasDAO {
 		
 		String query = "INSERT INTO datos (numero_analisis, industria, departamento, localidad, descarga_en, lugar_extraccion, extraido_por, fecha_extraccion, hora_extraccion, "
 				+ "aspecto, pH_in_situ, pH, temperatura, caudal_instantaneo, OD_in_situ, oxigeno_disuelto, dbo5, dbo5_filtrada, dqo, aceites_y_grasas, solidos_totales, "
-				+ "solidos_totales_volatiles, sst, ssv, solidos_sedimentables_10_min, solidos_sedimentables_30_min, solidos_sedimentables_60_min, amonio, nitrato, nitrito, "
+				+ "solidos_totales_volatiles, sst, ssv, solidos_sedimentables_10_min, solidos_sedimentables_30_min, solidos_sedimentables_60_min, amonio, nitrato, "
 				+ "nitrogeno_total, fosforo_total, cromo, plomo, zinc, aluminio, manganeso, potasio, alcalinidad_total, acidez_volatil, alfa, alfa_prima, bicarbonato, "
 				+ "salinidad, turbiedad, conductividad, sulfuro, sulfato, fenoles, tensoactivos_anionicos, cloro_residual, cloro_total, cloruro, dureza, color, hidrocarburos, "
-				+ "coliformes_fecales, clase_curso_agua, otros, estado, otros2) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+				+ "coliformes_fecales, clase_curso_agua, otros, estado, otros2, otros3, otros4) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		
 		try {
-			preparedStmt = (PreparedStatement) oConnection.prepareStatement(query);
-			
+			preparedStmt = (PreparedStatement) oConnection.prepareStatement(query);			
 			preparedStmt.setString(1, analisisAgua.getNroAnalisis());
 			preparedStmt.setString(2, analisisAgua.getIndustria());
 			preparedStmt.setString(3, analisisAgua.getDepartamento());
@@ -62,38 +61,39 @@ public class AguasDAO {
 			preparedStmt.setString(27, analisisAgua.getSs60());
 			preparedStmt.setString(28, analisisAgua.getAmoniaco());
 			preparedStmt.setString(29, analisisAgua.getNitrato());
-			preparedStmt.setString(30, analisisAgua.getNitrito());
-			preparedStmt.setString(31, analisisAgua.getNitrogenoTotal());
-			preparedStmt.setString(32, analisisAgua.getFosforoTotal());
-			preparedStmt.setString(33, analisisAgua.getCromo());
-			preparedStmt.setString(34, analisisAgua.getPlomo());
-			preparedStmt.setString(35, analisisAgua.getZinc());
-			preparedStmt.setString(36, analisisAgua.getAluminio());
-			preparedStmt.setString(37, analisisAgua.getManganeso());
-			preparedStmt.setString(38, analisisAgua.getPotasio());
-			preparedStmt.setString(39, analisisAgua.getAlcalinidadTotal());
-			preparedStmt.setString(40, analisisAgua.getAcidezVolatil());
-			preparedStmt.setString(41, analisisAgua.getAlfa());
-			preparedStmt.setString(42, analisisAgua.getAlfaPrima());
-			preparedStmt.setString(43, analisisAgua.getBicarbonato());
-			preparedStmt.setString(44, analisisAgua.getSalinidad());
-			preparedStmt.setString(45, analisisAgua.getTurbiedad());
-			preparedStmt.setString(46, analisisAgua.getConductividad());
-			preparedStmt.setString(47, analisisAgua.getSulfuro());
-			preparedStmt.setString(48, analisisAgua.getSulfato());
-			preparedStmt.setString(49, analisisAgua.getFenoles());
-			preparedStmt.setString(50, analisisAgua.getTensoactivosAnionicos());
-			preparedStmt.setString(51, analisisAgua.getCloroResidual());
-			preparedStmt.setString(52, analisisAgua.getCloroTotal());
-			preparedStmt.setString(53, analisisAgua.getCloruro());
-			preparedStmt.setString(54, analisisAgua.getDureza());
-			preparedStmt.setString(55, analisisAgua.getColor());
-			preparedStmt.setString(56, analisisAgua.getHidrocarburos());
-			preparedStmt.setString(57, analisisAgua.getColiformesFecales());
-			preparedStmt.setString(58, analisisAgua.getCursoDeAguaTipo());
-			preparedStmt.setString(59, analisisAgua.getOtros());
-			preparedStmt.setString(60, analisisAgua.getEstado());
-			preparedStmt.setString(61, "");
+			preparedStmt.setString(30, analisisAgua.getNitrogenoTotal());
+			preparedStmt.setString(31, analisisAgua.getFosforoTotal());
+			preparedStmt.setString(32, analisisAgua.getCromo());
+			preparedStmt.setString(33, analisisAgua.getPlomo());
+			preparedStmt.setString(34, analisisAgua.getZinc());
+			preparedStmt.setString(35, analisisAgua.getAluminio());
+			preparedStmt.setString(36, analisisAgua.getManganeso());
+			preparedStmt.setString(37, analisisAgua.getPotasio());
+			preparedStmt.setString(38, analisisAgua.getAlcalinidadTotal());
+			preparedStmt.setString(39, analisisAgua.getAcidezVolatil());
+			preparedStmt.setString(40, analisisAgua.getAlfa());
+			preparedStmt.setString(41, analisisAgua.getAlfaPrima());
+			preparedStmt.setString(42, analisisAgua.getBicarbonato());
+			preparedStmt.setString(43, analisisAgua.getSalinidad());
+			preparedStmt.setString(44, analisisAgua.getTurbiedad());
+			preparedStmt.setString(45, analisisAgua.getConductividad());
+			preparedStmt.setString(46, analisisAgua.getSulfuro());
+			preparedStmt.setString(47, analisisAgua.getSulfato());
+			preparedStmt.setString(48, analisisAgua.getFenoles());
+			preparedStmt.setString(49, analisisAgua.getTensoactivosAnionicos());
+			preparedStmt.setString(50, analisisAgua.getCloroResidual());
+			preparedStmt.setString(51, analisisAgua.getCloroTotal());
+			preparedStmt.setString(52, analisisAgua.getCloruro());
+			preparedStmt.setString(53, analisisAgua.getDureza());
+			preparedStmt.setString(54, analisisAgua.getColor());
+			preparedStmt.setString(55, analisisAgua.getHidrocarburos());
+			preparedStmt.setString(56, analisisAgua.getColiformesFecales());
+			preparedStmt.setString(57, analisisAgua.getCursoDeAguaTipo());
+			preparedStmt.setString(58, analisisAgua.getOtros());
+			preparedStmt.setString(59, analisisAgua.getEstado());
+			preparedStmt.setString(60, analisisAgua.getOtros2());
+			preparedStmt.setString(61, analisisAgua.getOtros3());
+			preparedStmt.setString(62, analisisAgua.getOtros3());
 			preparedStmt.execute();
 			preparedStmt.close();
 		} catch (SQLException e) {
@@ -121,10 +121,10 @@ try {
 			String query = "UPDATE datos SET industria = ?, departamento = ?, localidad = ?, descarga_en = ?, lugar_extraccion = ?, extraido_por = ?, fecha_extraccion = ?, hora_extraccion = ?, "
 					+ "aspecto = ?, pH_in_situ = ?, ph = ?, temperatura = ?, caudal_instantaneo = ?, OD_in_situ = ?, oxigeno_disuelto = ?, dbo5 = ?, dbo5_filtrada = ?, dqo = ?, "
 					+ "aceites_y_grasas = ?, solidos_totales = ?, solidos_totales_volatiles = ?, sst = ?, ssv = ?, solidos_sedimentables_10_min = ?, solidos_sedimentables_30_min = ?, "
-					+ "solidos_sedimentables_60_min = ?, amonio = ?, nitrato = ?, nitrito = ?, nitrogeno_total = ?, fosforo_total = ?, cromo = ?, plomo = ?, zinc = ?, aluminio = ?, "
+					+ "solidos_sedimentables_60_min = ?, amonio = ?, nitrato = ?, nitrogeno_total = ?, fosforo_total = ?, cromo = ?, plomo = ?, zinc = ?, aluminio = ?, "
 					+ "manganeso = ?, potasio = ?, alcalinidad_total = ?, acidez_volatil = ?, alfa = ?, alfa_prima = ?, bicarbonato = ?, salinidad = ?, turbiedad = ?, conductividad = ?, sulfuro = ?, "
 					+ "sulfato = ?, fenoles = ?, tensoactivos_anionicos = ?, cloro_residual = ?, cloro_total = ?, cloruro = ?, dureza = ?, color = ?, hidrocarburos = ?, coliformes_fecales = ?, "
-					+ "clase_curso_agua = ?, otros = ?, estado = ? WHERE numero_analisis = ?";
+					+ "clase_curso_agua = ?, otros = ?, estado = ?, otros2 = ?, otros3 = ?, otros4 = ? WHERE numero_analisis = ?";
 			 
 			preparedStmt = (PreparedStatement) oConnection.prepareStatement(query);
 			preparedStmt.setString(1, analisisAgua.getIndustria());
@@ -161,38 +161,40 @@ try {
 			preparedStmt.setString(26, analisisAgua.getSs60());
 			preparedStmt.setString(27, analisisAgua.getAmoniaco());
 			preparedStmt.setString(28, analisisAgua.getNitrato());
-			preparedStmt.setString(29, analisisAgua.getNitrito());
-			preparedStmt.setString(30, analisisAgua.getNitrogenoTotal());
-			preparedStmt.setString(31, analisisAgua.getFosforoTotal());
-			preparedStmt.setString(32, analisisAgua.getCromo());
-			preparedStmt.setString(33, analisisAgua.getPlomo());
-			preparedStmt.setString(34, analisisAgua.getZinc());
-			preparedStmt.setString(35, analisisAgua.getAluminio());
-			preparedStmt.setString(36, analisisAgua.getManganeso());
-			preparedStmt.setString(37, analisisAgua.getPotasio());
-			preparedStmt.setString(38, analisisAgua.getAlcalinidadTotal());
-			preparedStmt.setString(39, analisisAgua.getAcidezVolatil());
-			preparedStmt.setString(40, analisisAgua.getAlfa());
-			preparedStmt.setString(41, analisisAgua.getAlfaPrima());
-			preparedStmt.setString(42, analisisAgua.getBicarbonato());
-			preparedStmt.setString(43, analisisAgua.getSalinidad());
-			preparedStmt.setString(44, analisisAgua.getTurbiedad());
-			preparedStmt.setString(45, analisisAgua.getConductividad());
-			preparedStmt.setString(46, analisisAgua.getSulfuro());
-			preparedStmt.setString(47, analisisAgua.getSulfato());
-			preparedStmt.setString(48, analisisAgua.getFenoles());
-			preparedStmt.setString(49, analisisAgua.getTensoactivosAnionicos());
-			preparedStmt.setString(50, analisisAgua.getCloroResidual());
-			preparedStmt.setString(51, analisisAgua.getCloroTotal());
-			preparedStmt.setString(52, analisisAgua.getCloruro());
-			preparedStmt.setString(53, analisisAgua.getDureza());
-			preparedStmt.setString(54, analisisAgua.getColor());
-			preparedStmt.setString(55, analisisAgua.getHidrocarburos());
-			preparedStmt.setString(56, analisisAgua.getColiformesFecales());
-			preparedStmt.setString(57, analisisAgua.getCursoDeAguaTipo());
-			preparedStmt.setString(58, analisisAgua.getOtros());
-			preparedStmt.setString(59, analisisAgua.getEstado());
-			preparedStmt.setString(60, analisisAgua.getNroAnalisis());
+			preparedStmt.setString(29, analisisAgua.getNitrogenoTotal());
+			preparedStmt.setString(30, analisisAgua.getFosforoTotal());
+			preparedStmt.setString(31, analisisAgua.getCromo());
+			preparedStmt.setString(32, analisisAgua.getPlomo());
+			preparedStmt.setString(33, analisisAgua.getZinc());
+			preparedStmt.setString(34, analisisAgua.getAluminio());
+			preparedStmt.setString(35, analisisAgua.getManganeso());
+			preparedStmt.setString(36, analisisAgua.getPotasio());
+			preparedStmt.setString(37, analisisAgua.getAlcalinidadTotal());
+			preparedStmt.setString(38, analisisAgua.getAcidezVolatil());
+			preparedStmt.setString(39, analisisAgua.getAlfa());
+			preparedStmt.setString(40, analisisAgua.getAlfaPrima());
+			preparedStmt.setString(41, analisisAgua.getBicarbonato());
+			preparedStmt.setString(42, analisisAgua.getSalinidad());
+			preparedStmt.setString(43, analisisAgua.getTurbiedad());
+			preparedStmt.setString(44, analisisAgua.getConductividad());
+			preparedStmt.setString(45, analisisAgua.getSulfuro());
+			preparedStmt.setString(46, analisisAgua.getSulfato());
+			preparedStmt.setString(47, analisisAgua.getFenoles());
+			preparedStmt.setString(48, analisisAgua.getTensoactivosAnionicos());
+			preparedStmt.setString(49, analisisAgua.getCloroResidual());
+			preparedStmt.setString(50, analisisAgua.getCloroTotal());
+			preparedStmt.setString(51, analisisAgua.getCloruro());
+			preparedStmt.setString(52, analisisAgua.getDureza());
+			preparedStmt.setString(53, analisisAgua.getColor());
+			preparedStmt.setString(54, analisisAgua.getHidrocarburos());
+			preparedStmt.setString(55, analisisAgua.getColiformesFecales());
+			preparedStmt.setString(56, analisisAgua.getCursoDeAguaTipo());
+			preparedStmt.setString(57, analisisAgua.getOtros());
+			preparedStmt.setString(59, analisisAgua.getOtros2());
+			preparedStmt.setString(60, analisisAgua.getOtros3());
+			preparedStmt.setString(61, analisisAgua.getOtros4());			
+			preparedStmt.setString(58, analisisAgua.getEstado());
+			preparedStmt.setString(62, analisisAgua.getNroAnalisis());
 			preparedStmt.execute();
 			preparedStmt.close();
 			
@@ -257,10 +259,10 @@ try {
 			String query = "SELECT industria, departamento, localidad, descarga_en, numero_analisis, "
 					+ "lugar_extraccion, extraido_por, fecha_extraccion, "
 					+ "hora_extraccion, aspecto, pH_in_situ, ph, temperatura, caudal_instantaneo, OD_in_situ, oxigeno_disuelto, "
-					+ "dbo5, dbo5_filtrada, dqo, aceites_y_grasas, solidos_totales, solidos_totales_volatiles, sst, ssv, solidos_sedimentables_10_min, solidos_sedimentables_30_min, solidos_sedimentables_60_min, amonio, nitrato, nitrito, "
+					+ "dbo5, dbo5_filtrada, dqo, aceites_y_grasas, solidos_totales, solidos_totales_volatiles, sst, ssv, solidos_sedimentables_10_min, solidos_sedimentables_30_min, solidos_sedimentables_60_min, amonio, nitrato, "
 					+ "nitrogeno_total, fosforo_total, cromo, plomo, zinc, aluminio, manganeso, potasio, alcalinidad_total, acidez_volatil, alfa, alfa_prima, bicarbonato, "
 					+ "salinidad, turbiedad, conductividad, sulfuro, sulfato, fenoles, tensoactivos_anionicos, cloro_residual, cloro_total, cloruro, dureza, color, hidrocarburos, "
-					+ "coliformes_fecales, clase_curso_agua, estado, otros FROM datos";			
+					+ "coliformes_fecales, clase_curso_agua, estado, otros, otros2, otros3, otros4 FROM datos";			
 			preparedStmt = (PreparedStatement) oConnection.prepareStatement(query);
 			oResultSet = preparedStmt.executeQuery();
 
@@ -277,7 +279,7 @@ try {
 						oResultSet.getString(45), oResultSet.getString(46), oResultSet.getString(47), oResultSet.getString(48), oResultSet.getString(49),
 						oResultSet.getString(50), oResultSet.getString(51), oResultSet.getString(52), oResultSet.getString(53), oResultSet.getString(54),
 						oResultSet.getString(55), oResultSet.getString(56), oResultSet.getString(57), oResultSet.getString(58), oResultSet.getString(59),
-						oResultSet.getString(60));	
+						oResultSet.getString(60), oResultSet.getString(61), oResultSet.getString(62));	
 				analisissAguas.add(analisisAgua);
 
 				System.out.println(analisisAgua.getNroAnalisis()+" - "+analisisAgua.getIndustria());
@@ -303,10 +305,10 @@ try {
 			String query = "SELECT industria, departamento, localidad, descarga_en, numero_analisis, "
 					+ "lugar_extraccion, extraido_por, fecha_extraccion, "
 					+ "hora_extraccion, aspecto, pH_in_situ, ph, temperatura, caudal_instantaneo, OD_in_situ, oxigeno_disuelto, "
-					+ "dbo5, dbo5_filtrada, dqo, aceites_y_grasas, solidos_totales, solidos_totales_volatiles, sst, ssv, solidos_sedimentables_10_min, solidos_sedimentables_30_min, solidos_sedimentables_60_min, amonio, nitrato, nitrito, "
+					+ "dbo5, dbo5_filtrada, dqo, aceites_y_grasas, solidos_totales, solidos_totales_volatiles, sst, ssv, solidos_sedimentables_10_min, solidos_sedimentables_30_min, solidos_sedimentables_60_min, amonio, nitrato, "
 					+ "nitrogeno_total, fosforo_total, cromo, plomo, zinc, aluminio, manganeso, potasio, alcalinidad_total, acidez_volatil, alfa, alfa_prima, bicarbonato, "
 					+ "salinidad, turbiedad, conductividad, sulfuro, sulfato, fenoles, tensoactivos_anionicos, cloro_residual, cloro_total, cloruro, dureza, color, hidrocarburos, "
-					+ "coliformes_fecales, clase_curso_agua, estado, otros FROM datos WHERE numero_analisis = ?";			
+					+ "coliformes_fecales, clase_curso_agua, estado, otros, otros2, otros3, otros4 FROM datos WHERE numero_analisis = ?";			
 
 			preparedStmt = (PreparedStatement) oConnection.prepareStatement(query);
 			preparedStmt.setString(1, nroAnalisis);
@@ -326,7 +328,7 @@ try {
 						oResultSet.getString(45), oResultSet.getString(46), oResultSet.getString(47), oResultSet.getString(48), oResultSet.getString(49),
 						oResultSet.getString(50), oResultSet.getString(51), oResultSet.getString(52), oResultSet.getString(53), oResultSet.getString(54),
 						oResultSet.getString(55), oResultSet.getString(56), oResultSet.getString(57), oResultSet.getString(58), oResultSet.getString(59),
-						oResultSet.getString(60));				
+						oResultSet.getString(60), oResultSet.getString(61), oResultSet.getString(62));				
 			}			
 			
 		} catch (SQLException e) {
@@ -385,14 +387,14 @@ try {
 		query = "CREATE TABLE informe_aguas (nro_analisis VARCHAR(255), industria VARCHAR(255), departamento VARCHAR(255), localidad VARCHAR(255), descarga_en VARCHAR(255), lugar_extraccion VARCHAR(255), extraido_por VARCHAR(255), fecha_extraccion TIMESTAMP, "
 				+ "hora_extraccion VARCHAR(255), aspecto VARCHAR(255), pH_in_situ VARCHAR(255), ph VARCHAR(255), temperatura VARCHAR(255), caudal_instantaneo VARCHAR(255), OD_in_situ VARCHAR(255), oxigeno_disuelto VARCHAR(255), dbo5 VARCHAR(255), dbo5_filtrada VARCHAR(255), dqo VARCHAR(255), aceites_y_grasas VARCHAR(255), "
 				+ "solidos_totales VARCHAR(255), solidos_totales_volatiles VARCHAR(255), sst VARCHAR(255), ssv VARCHAR(255), solidos_sedimentables_10_min VARCHAR(255), solidos_sedimentables_30_min VARCHAR(255), solidos_sedimentables_60_min VARCHAR(255), "
-				+ "amonio VARCHAR(255), nitrato VARCHAR(255), nitrito VARCHAR(255), nitrogeno_total VARCHAR(255), fosforo_total VARCHAR(255), cromo VARCHAR(255), plomo VARCHAR(255), zinc VARCHAR(255), aluminio VARCHAR(255), manganeso VARCHAR(255), potasio VARCHAR(255), alcalinidad_total VARCHAR(255), acidez_volatil VARCHAR(255), "
+				+ "amonio VARCHAR(255), nitrato VARCHAR(255), nitrogeno_total VARCHAR(255), fosforo_total VARCHAR(255), cromo VARCHAR(255), plomo VARCHAR(255), zinc VARCHAR(255), aluminio VARCHAR(255), manganeso VARCHAR(255), potasio VARCHAR(255), alcalinidad_total VARCHAR(255), acidez_volatil VARCHAR(255), "
 				+ "alfa VARCHAR(255), alfa_prima VARCHAR(255), bicarbonato VARCHAR(255), salinidad VARCHAR(255), turbiedad VARCHAR(255), conductividad VARCHAR(255), sulfuro VARCHAR(255), sulfato VARCHAR(255), fenoles VARCHAR(255), tensoactivos_anionicos VARCHAR(255), cloro_residual VARCHAR(255), cloro_total VARCHAR(255), "
-				+ "cloruro VARCHAR(255), dureza VARCHAR(255), color VARCHAR(255), hidrocarburos VARCHAR(255), coliformes_fecales VARCHAR(255), clase_curso_agua VARCHAR(255), otros VARCHAR(255))";
+				+ "cloruro VARCHAR(255), dureza VARCHAR(255), color VARCHAR(255), hidrocarburos VARCHAR(255), coliformes_fecales VARCHAR(255), clase_curso_agua VARCHAR(255), otros VARCHAR(255), otros2 VARCHAR(255), otros3 VARCHAR(255), otros4 VARCHAR(255))";
 		preparedStmt = (PreparedStatement) oConnection.prepareStatement(query);
 		preparedStmt.execute();
 		for (int i=0; i<analisisParaInforme.size(); i++) {
 			AnalisisAgua analisisAAgregar = analisisParaInforme.get(i);
-			query = "INSERT INTO informe_aguas VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			query = "INSERT INTO informe_aguas VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			preparedStmt = (PreparedStatement) oConnection.prepareStatement(query);
 			preparedStmt.setString(1, analisisAAgregar.getNroAnalisis());
 			preparedStmt.setString(2, analisisAAgregar.getIndustria());
@@ -425,36 +427,38 @@ try {
 			preparedStmt.setString(27, analisisAAgregar.getSs60());
 			preparedStmt.setString(28, analisisAAgregar.getAmoniaco());
 			preparedStmt.setString(29, analisisAAgregar.getNitrato());
-			preparedStmt.setString(30, analisisAAgregar.getNitrito());
-			preparedStmt.setString(31, analisisAAgregar.getNitrogenoTotal());
-			preparedStmt.setString(32, analisisAAgregar.getFosforoTotal());
-			preparedStmt.setString(33, analisisAAgregar.getCromo());
-			preparedStmt.setString(34, analisisAAgregar.getPlomo());
-			preparedStmt.setString(35, analisisAAgregar.getZinc());
-			preparedStmt.setString(36, analisisAAgregar.getAluminio());
-			preparedStmt.setString(37, analisisAAgregar.getManganeso());
-			preparedStmt.setString(38, analisisAAgregar.getPotasio());
-			preparedStmt.setString(39, analisisAAgregar.getAlcalinidadTotal());
-			preparedStmt.setString(40, analisisAAgregar.getAcidezVolatil());
-			preparedStmt.setString(41, analisisAAgregar.getAlfa());
-			preparedStmt.setString(42, analisisAAgregar.getAlfaPrima());
-			preparedStmt.setString(43, analisisAAgregar.getBicarbonato());
-			preparedStmt.setString(44, analisisAAgregar.getSalinidad());
-			preparedStmt.setString(45, analisisAAgregar.getTurbiedad());
-			preparedStmt.setString(46, analisisAAgregar.getConductividad());
-			preparedStmt.setString(47, analisisAAgregar.getSulfuro());
-			preparedStmt.setString(48, analisisAAgregar.getSulfato());
-			preparedStmt.setString(49, analisisAAgregar.getFenoles());
-			preparedStmt.setString(50, analisisAAgregar.getTensoactivosAnionicos());
-			preparedStmt.setString(51, analisisAAgregar.getCloroResidual());
-			preparedStmt.setString(52, analisisAAgregar.getCloroTotal());
-			preparedStmt.setString(53, analisisAAgregar.getCloruro());
-			preparedStmt.setString(54, analisisAAgregar.getDureza());
-			preparedStmt.setString(55, analisisAAgregar.getColor());
-			preparedStmt.setString(56, analisisAAgregar.getHidrocarburos());
-			preparedStmt.setString(57, analisisAAgregar.getColiformesFecales());
-			preparedStmt.setString(58, analisisAAgregar.getCursoDeAguaTipo());
-			preparedStmt.setString(59, analisisAAgregar.getOtros());
+			preparedStmt.setString(30, analisisAAgregar.getNitrogenoTotal());
+			preparedStmt.setString(31, analisisAAgregar.getFosforoTotal());
+			preparedStmt.setString(32, analisisAAgregar.getCromo());
+			preparedStmt.setString(33, analisisAAgregar.getPlomo());
+			preparedStmt.setString(34, analisisAAgregar.getZinc());
+			preparedStmt.setString(35, analisisAAgregar.getAluminio());
+			preparedStmt.setString(36, analisisAAgregar.getManganeso());
+			preparedStmt.setString(37, analisisAAgregar.getPotasio());
+			preparedStmt.setString(38, analisisAAgregar.getAlcalinidadTotal());
+			preparedStmt.setString(39, analisisAAgregar.getAcidezVolatil());
+			preparedStmt.setString(40, analisisAAgregar.getAlfa());
+			preparedStmt.setString(41, analisisAAgregar.getAlfaPrima());
+			preparedStmt.setString(42, analisisAAgregar.getBicarbonato());
+			preparedStmt.setString(43, analisisAAgregar.getSalinidad());
+			preparedStmt.setString(44, analisisAAgregar.getTurbiedad());
+			preparedStmt.setString(45, analisisAAgregar.getConductividad());
+			preparedStmt.setString(46, analisisAAgregar.getSulfuro());
+			preparedStmt.setString(47, analisisAAgregar.getSulfato());
+			preparedStmt.setString(48, analisisAAgregar.getFenoles());
+			preparedStmt.setString(49, analisisAAgregar.getTensoactivosAnionicos());
+			preparedStmt.setString(50, analisisAAgregar.getCloroResidual());
+			preparedStmt.setString(51, analisisAAgregar.getCloroTotal());
+			preparedStmt.setString(52, analisisAAgregar.getCloruro());
+			preparedStmt.setString(53, analisisAAgregar.getDureza());
+			preparedStmt.setString(54, analisisAAgregar.getColor());
+			preparedStmt.setString(55, analisisAAgregar.getHidrocarburos());
+			preparedStmt.setString(56, analisisAAgregar.getColiformesFecales());
+			preparedStmt.setString(57, analisisAAgregar.getCursoDeAguaTipo());
+			preparedStmt.setString(58, analisisAAgregar.getOtros());
+			preparedStmt.setString(58, analisisAAgregar.getOtros2());
+			preparedStmt.setString(58, analisisAAgregar.getOtros3());
+			preparedStmt.setString(58, analisisAAgregar.getOtros4());
 			preparedStmt.execute();
 		}
 		preparedStmt.close();

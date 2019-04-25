@@ -71,6 +71,8 @@ public class ConexionBarros {
 		determinaciones.put("relacion_CN", "Relación C/N");
 		determinaciones.put("otros", "Otros 1");
 		determinaciones.put("otros2", "Otros 2");
+		determinaciones.put("otros3", "Otros 3");
+		determinaciones.put("otros4", "Otros 4");
 		String query = "SELECT * FROM informe_barros";
 		PreparedStatement preparedStmt = conexion.prepareStatement(query);
 		ResultSet oResultSet = preparedStmt.executeQuery();

@@ -296,10 +296,12 @@ public class CrearInformeBarros {
 		nroAnalisis4.setBounds(730, 126, 130, 26);
 		frame.getContentPane().add(nroAnalisis4);
 		for (AnalisisBarro analisisBarro : datosDAO.obtenerTodosLosAnalisisBarros()){
-			nroAnalisis1.addItem(analisisBarro.getNroAnalisis());
-			nroAnalisis2.addItem(analisisBarro.getNroAnalisis());
-			nroAnalisis3.addItem(analisisBarro.getNroAnalisis());
-			nroAnalisis4.addItem(analisisBarro.getNroAnalisis());
+			if(analisisBarro.getNroAnalisis().equals("-- Sin especificar --") || (analisisBarro.getpH() != null && analisisBarro.getpH() != "")) {
+				nroAnalisis1.addItem(analisisBarro.getNroAnalisis());
+				nroAnalisis2.addItem(analisisBarro.getNroAnalisis());
+				nroAnalisis3.addItem(analisisBarro.getNroAnalisis());
+				nroAnalisis4.addItem(analisisBarro.getNroAnalisis());
+			}
 		}
 		nroAnalisis1.addItemListener(new ItemListener(){
 			public void itemStateChanged(ItemEvent arg0){

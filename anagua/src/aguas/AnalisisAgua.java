@@ -33,7 +33,6 @@ public class AnalisisAgua {
 	private String ss60;
 	private String amoniaco;
 	private String nitrato;
-	private String nitrito;
 	private String nitrogenoTotal;
 	private String fosforoTotal;
 	private String cromo;
@@ -64,18 +63,22 @@ public class AnalisisAgua {
 	private String cursoDeAguaTipo;
 	private String estado;
 	private String otros;
+	private String otros2;
+	private String otros3;
+	private String otros4;
 	
 	public AnalisisAgua(String nroAnalisis, String industria, String departamento, String localidad, String descargaEn,
 			String lugarExtraccion, String extraidoPor, Date fechaExtraccion, String horaExtraccion, String aspecto,
 			String pHInSitu, String pH, String temperatura, String caudalInstantaneo, String oDInSitu, String oD,
 			String dBO5, String dBO5Filtrada, String dQO, String aceitesYGrasas, String solidosTotales,
 			String solidosTotalesVolatiles, String sst, String ssv, String ss10, String ss30, String ss60,
-			String amoniaco, String nitrato, String nitrito, String nitrogenoTotal, String fosforoTotal, String cromo,
+			String amoniaco, String nitrato, String nitrogenoTotal, String fosforoTotal, String cromo,
 			String plomo, String zinc, String aluminio, String manganeso, String potasio, String alcalinidadTotal,
 			String acidezVolatil, String alfa, String alfaPrima, String bicarbonato, String salinidad, String turbiedad,
 			String conductividad, String sulfuro, String sulfato, String fenoles, String tensoactivosAnionicos,
 			String cloroResidual, String cloroTotal, String cloruro, String dureza, String color, String hidrocarburos,
-			String coliformesFecales, String cursoDeAguaTipo, String estado, String otros) {
+			String coliformesFecales, String cursoDeAguaTipo, String estado, String otros, String otros2, String otros3,
+			String otros4) {
 		this.nroAnalisis = nroAnalisis;
 		this.industria = industria;
 		this.departamento = departamento;
@@ -105,7 +108,6 @@ public class AnalisisAgua {
 		this.ss60 = ss60;
 		this.amoniaco = amoniaco;
 		this.nitrato = nitrato;
-		this.nitrito = nitrito;
 		this.nitrogenoTotal = nitrogenoTotal;
 		this.fosforoTotal = fosforoTotal;
 		this.cromo = cromo;
@@ -136,6 +138,9 @@ public class AnalisisAgua {
 		this.cursoDeAguaTipo = cursoDeAguaTipo;
 		this.estado = estado;
 		this.otros = otros;
+		this.otros2 = otros2;
+		this.otros3 = otros3;
+		this.otros4 = otros4;
 	}
 	
 	public String getNroAnalisis() {
@@ -224,9 +229,6 @@ public class AnalisisAgua {
 	}
 	public String getNitrato() {
 		return nitrato;
-	}
-	public String getNitrito() {
-		return nitrito;
 	}
 	public String getNitrogenoTotal() {
 		return nitrogenoTotal;
@@ -317,6 +319,15 @@ public class AnalisisAgua {
 	}
 	public String getOtros() {
 		return otros;
+	}
+	public String getOtros2() {
+		return otros2;
+	}
+	public String getOtros3() {
+		return otros3;
+	}
+	public String getOtros4() {
+		return otros4;
 	}
 	
 	

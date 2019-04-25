@@ -297,13 +297,14 @@ public class DatosDAO {
 					+ "fecha_extraccion TIMESTAMP, hora_extraccion VARCHAR(255), aspecto VARCHAR(255), ph VARCHAR(255),"
 					+ " solidos_totales VARCHAR(255), humedad VARCHAR(255), stv VARCHAR(255), liquidos_libres VARCHAR(255), "
 					+ "sulfuro VARCHAR(255), cromo_en_lixiviado VARCHAR(255), plomo_en_lixiviado VARCHAR(255), materia_organica VARCHAR(255), "
-					+ "hidrocarburos_totales VARCHAR(255), conductividad VARCHAR(255), relacion_CN VARCHAR(255), otros VARCHAR(255), otros2 VARCHAR(255));";		
+					+ "hidrocarburos_totales VARCHAR(255), conductividad VARCHAR(255), relacion_CN VARCHAR(255), otros VARCHAR(255), otros2 VARCHAR(255),"
+					+ "otros3 VARCHAR(255), otros4 VARCHAR(255));";		
 			preparedStmt = (PreparedStatement) oConnection.prepareStatement(query);
 			preparedStmt.execute();
 
 			for (int i=0; i<analisisParaInforme.size(); i++) {
 				AnalisisBarro analisisAAgregar = analisisParaInforme.get(i);
-				query = "INSERT INTO informe_barros VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+				query = "INSERT INTO informe_barros VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 				preparedStmt = (PreparedStatement) oConnection.prepareStatement(query);
 				preparedStmt.setString(1, analisisAAgregar.getNroAnalisis());
 				preparedStmt.setString(2, analisisAAgregar.getIndustria());
@@ -330,6 +331,8 @@ public class DatosDAO {
 				preparedStmt.setString(22, analisisAAgregar.getRelacionCN());
 				preparedStmt.setString(23, analisisAAgregar.getOtros1());
 				preparedStmt.setString(24, analisisAAgregar.getOtros2());
+				preparedStmt.setString(25, analisisAAgregar.getOtros3());
+				preparedStmt.setString(26, analisisAAgregar.getOtros4());
 				preparedStmt.execute();
 			}
 			
