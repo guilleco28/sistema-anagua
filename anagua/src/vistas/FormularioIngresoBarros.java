@@ -2067,59 +2067,6 @@ public class FormularioIngresoBarros {
 		otros34.setBounds(791, 726, 130, 26);
 		frame.getContentPane().add(otros34);		
 		
-		JButton btnNewButton = new JButton("Agregar análisis");
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 23));
-		btnNewButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				ArrayList <AnalisisBarro> analisisAAgregar = new ArrayList <AnalisisBarro>();
-				if (!nroAnalisis1.getText().equals("")) {
-					AnalisisBarro analisisBarro1 = new AnalisisBarro (String.valueOf(industria.getSelectedItem()), departamento.getText(), localidad.getText(), descargaEn.getText(), nroAnalisis1.getText(),
-							lugarExtraccion1.getText(), extraidoPor1.getText(), fechaExtraccion.getDate(), horaExtraccion1.getText(), aspecto1.getText(), pH1.getText(),
-							solidosTotales1.getText(), humedad1.getText(), solidosTotalesVolatiles1.getText(), liquidosLibres1.getText(), sulfuro1.getText(),
-							cromoEnLixiviado1.getText(), plomoEnLixiviado1.getText(), materiaOrganica1.getText(), hidrocarburosTotales1.getText(), conductividad1.getText(),
-							relacionCN1.getText(), otros11.getText(), otros21.getText(), otros31.getText(), otros41.getText(), "En proceso");
-					analisisAAgregar.add(analisisBarro1);
-				}
-				if (!nroAnalisis2.getText().equals("")) {
-					AnalisisBarro analisisBarro2 = new AnalisisBarro (String.valueOf(industria.getSelectedItem()), departamento.getText(), localidad.getText(), descargaEn.getText(), nroAnalisis2.getText(),
-							lugarExtraccion2.getText(), extraidoPor2.getText(), fechaExtraccion2.getDate(), horaExtraccion2.getText(), aspecto2.getText(), pH2.getText(),
-							solidosTotales2.getText(), humedad2.getText(), solidosTotalesVolatiles2.getText(), liquidosLibres2.getText(), sulfuro2.getText(),
-							cromoEnLixiviado2.getText(), plomoEnLixiviado2.getText(), materiaOrganica2.getText(), hidrocarburosTotales2.getText(), conductividad2.getText(),
-							relacionCN2.getText(), otros12.getText(), otros22.getText(), otros32.getText(), otros42.getText(), "En proceso");
-					analisisAAgregar.add(analisisBarro2);
-				}
-				if (!nroAnalisis3.getText().equals("")) {
-					AnalisisBarro analisisBarro3 = new AnalisisBarro (String.valueOf(industria.getSelectedItem()), departamento.getText(), localidad.getText(), descargaEn.getText(), nroAnalisis3.getText(),
-							lugarExtraccion3.getText(), extraidoPor3.getText(), fechaExtraccion3.getDate(), horaExtraccion3.getText(), aspecto3.getText(), pH3.getText(),
-							solidosTotales3.getText(), humedad3.getText(), solidosTotalesVolatiles3.getText(), liquidosLibres3.getText(), sulfuro3.getText(),
-							cromoEnLixiviado3.getText(), plomoEnLixiviado3.getText(), materiaOrganica3.getText(), hidrocarburosTotales3.getText(), conductividad3.getText(),
-							relacionCN3.getText(), otros13.getText(), otros23.getText(), otros33.getText(), otros43.getText(), "En proceso");
-					analisisAAgregar.add(analisisBarro3);
-				}
-				if (!nroAnalisis4.getText().equals("")) {
-					AnalisisBarro analisisBarro4 = new AnalisisBarro (String.valueOf(industria.getSelectedItem()), departamento.getText(), localidad.getText(), descargaEn.getText(), nroAnalisis4.getText(),
-							lugarExtraccion4.getText(), extraidoPor4.getText(), fechaExtraccion4.getDate(), horaExtraccion4.getText(), aspecto4.getText(), pH4.getText(),
-							solidosTotales4.getText(), humedad4.getText(), solidosTotalesVolatiles4.getText(), liquidosLibres4.getText(), sulfuro4.getText(),
-							cromoEnLixiviado4.getText(), plomoEnLixiviado4.getText(), materiaOrganica4.getText(), hidrocarburosTotales4.getText(), conductividad4.getText(),
-							relacionCN4.getText(), otros14.getText(), otros24.getText(), otros34.getText(), otros44.getText(), "En proceso");
-					analisisAAgregar.add(analisisBarro4);
-				}
-				try {
-					for (int i=0; i<analisisAAgregar.size(); i++) {
-						datosDAO.agregarBarro(analisisAAgregar.get(i));
-					}
-					JOptionPane.showMessageDialog(null, "Se agregaron "+analisisAAgregar.size()+" análisis al sistema correctamente.");
-				} catch (MySQLIntegrityConstraintViolationException e1) {
-					JOptionPane.showMessageDialog(null, "Usted está intentando agregar un análisis con un número ya existente en el sistema.");
-				} catch (SQLException e1) {
-					JOptionPane.showMessageDialog(null, "Se ha producido un error. Revise los datos que intenta ingresar.");
-					e1.printStackTrace();
-				}				
-				 
-			}
-		});
-		
 		otros41 = new JTextField();
 		otros41.addFocusListener(new FocusAdapter() {
 			@Override
@@ -2203,6 +2150,59 @@ public class FormularioIngresoBarros {
 		otros44.setColumns(10);
 		otros44.setBounds(791, 755, 130, 26);
 		frame.getContentPane().add(otros44);
+		
+		JButton btnNewButton = new JButton("Agregar análisis");
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 23));
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ArrayList <AnalisisBarro> analisisAAgregar = new ArrayList <AnalisisBarro>();
+				if (!nroAnalisis1.getText().equals("")) {
+					AnalisisBarro analisisBarro1 = new AnalisisBarro (String.valueOf(industria.getSelectedItem()), departamento.getText(), localidad.getText(), descargaEn.getText(), nroAnalisis1.getText(),
+							lugarExtraccion1.getText(), extraidoPor1.getText(), fechaExtraccion.getDate(), horaExtraccion1.getText(), aspecto1.getText(), pH1.getText(),
+							solidosTotales1.getText(), humedad1.getText(), solidosTotalesVolatiles1.getText(), liquidosLibres1.getText(), sulfuro1.getText(),
+							cromoEnLixiviado1.getText(), plomoEnLixiviado1.getText(), materiaOrganica1.getText(), hidrocarburosTotales1.getText(), conductividad1.getText(),
+							relacionCN1.getText(), otros11.getText(), otros21.getText(), otros31.getText(), otros41.getText(), "En proceso");
+					analisisAAgregar.add(analisisBarro1);
+				}
+				if (!nroAnalisis2.getText().equals("")) {
+					AnalisisBarro analisisBarro2 = new AnalisisBarro (String.valueOf(industria.getSelectedItem()), departamento.getText(), localidad.getText(), descargaEn.getText(), nroAnalisis2.getText(),
+							lugarExtraccion2.getText(), extraidoPor2.getText(), fechaExtraccion2.getDate(), horaExtraccion2.getText(), aspecto2.getText(), pH2.getText(),
+							solidosTotales2.getText(), humedad2.getText(), solidosTotalesVolatiles2.getText(), liquidosLibres2.getText(), sulfuro2.getText(),
+							cromoEnLixiviado2.getText(), plomoEnLixiviado2.getText(), materiaOrganica2.getText(), hidrocarburosTotales2.getText(), conductividad2.getText(),
+							relacionCN2.getText(), otros12.getText(), otros22.getText(), otros32.getText(), otros42.getText(), "En proceso");
+					analisisAAgregar.add(analisisBarro2);
+				}
+				if (!nroAnalisis3.getText().equals("")) {
+					AnalisisBarro analisisBarro3 = new AnalisisBarro (String.valueOf(industria.getSelectedItem()), departamento.getText(), localidad.getText(), descargaEn.getText(), nroAnalisis3.getText(),
+							lugarExtraccion3.getText(), extraidoPor3.getText(), fechaExtraccion3.getDate(), horaExtraccion3.getText(), aspecto3.getText(), pH3.getText(),
+							solidosTotales3.getText(), humedad3.getText(), solidosTotalesVolatiles3.getText(), liquidosLibres3.getText(), sulfuro3.getText(),
+							cromoEnLixiviado3.getText(), plomoEnLixiviado3.getText(), materiaOrganica3.getText(), hidrocarburosTotales3.getText(), conductividad3.getText(),
+							relacionCN3.getText(), otros13.getText(), otros23.getText(), otros33.getText(), otros43.getText(), "En proceso");
+					analisisAAgregar.add(analisisBarro3);
+				}
+				if (!nroAnalisis4.getText().equals("")) {
+					AnalisisBarro analisisBarro4 = new AnalisisBarro (String.valueOf(industria.getSelectedItem()), departamento.getText(), localidad.getText(), descargaEn.getText(), nroAnalisis4.getText(),
+							lugarExtraccion4.getText(), extraidoPor4.getText(), fechaExtraccion4.getDate(), horaExtraccion4.getText(), aspecto4.getText(), pH4.getText(),
+							solidosTotales4.getText(), humedad4.getText(), solidosTotalesVolatiles4.getText(), liquidosLibres4.getText(), sulfuro4.getText(),
+							cromoEnLixiviado4.getText(), plomoEnLixiviado4.getText(), materiaOrganica4.getText(), hidrocarburosTotales4.getText(), conductividad4.getText(),
+							relacionCN4.getText(), otros14.getText(), otros24.getText(), otros34.getText(), otros44.getText(), "En proceso");
+					analisisAAgregar.add(analisisBarro4);
+				}
+				try {
+					for (int i=0; i<analisisAAgregar.size(); i++) {
+						datosDAO.agregarBarro(analisisAAgregar.get(i));
+					}
+					JOptionPane.showMessageDialog(null, "Se agregaron "+analisisAAgregar.size()+" análisis al sistema correctamente.");
+				} catch (MySQLIntegrityConstraintViolationException e1) {
+					JOptionPane.showMessageDialog(null, "Usted está intentando agregar un análisis con un número ya existente en el sistema.");
+				} catch (SQLException e1) {
+					JOptionPane.showMessageDialog(null, "Se ha producido un error. Revise los datos que intenta ingresar.");
+					e1.printStackTrace();
+				}				
+				 
+			}
+		});
 		
 		btnNewButton.setBounds(959, 340, 215, 114);
 		frame.getContentPane().add(btnNewButton);

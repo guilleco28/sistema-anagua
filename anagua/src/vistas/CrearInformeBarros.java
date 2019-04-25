@@ -1652,7 +1652,12 @@ public class CrearInformeBarros {
 				}
 				//Process p = pb.start();
 				ExcelBarros excelBarros = new ExcelBarros();
-				ExcelBarros.realizarInforme();
+				try {
+					ExcelBarros.realizarInforme();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		

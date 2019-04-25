@@ -238,7 +238,7 @@ public class FormularioIngresoAguas {
 	private JTextField SST4;
 	private JTextField SSV4;
 	private JTextField SS104;
-	private JTextField SS404;
+	private JTextField SS304;
 	private JTextField SS604;
 	private JTextField amoniaco4;
 	private JTextField nitrato4;
@@ -302,12 +302,16 @@ public class FormularioIngresoAguas {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 1200, 850);
-		//frame.setBounds(100, 100, 2500, 2500);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
 		IndustriasDAO industriasDAO = new IndustriasDAO();
 		AguasDAO aguasDAO = new AguasDAO();
+		
+		frame = new JFrame();
+		frame.setBounds(100, 100, 1200, 850);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setTitle("Formulario de ingreso de análisis de barros - ANAGUA");
+		frame.setVisible(true);
 		
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(5, 10, 3200, 1000);
@@ -499,162 +503,162 @@ public class FormularioIngresoAguas {
 		lblNitrato.setForeground(Color.BLACK);
 		
 		JLabel lblNitrogenoTotal = new JLabel("Nitrógeno total");
-		lblNitrogenoTotal.setBounds(37, 910, 179, 20);
+		lblNitrogenoTotal.setBounds(37, 880, 179, 20);
 		miPanel.add(lblNitrogenoTotal);
 		lblNitrogenoTotal.setForeground(Color.BLACK);
 		
 		JLabel lblFosforoTotal = new JLabel("Fósforo total");
-		lblFosforoTotal.setBounds(37, 940, 179, 20);
+		lblFosforoTotal.setBounds(37, 910, 179, 20);
 		miPanel.add(lblFosforoTotal);
 		lblFosforoTotal.setForeground(Color.BLACK);
 		
 		JLabel lblCromo = new JLabel("Cromo");
-		lblCromo.setBounds(37, 970, 179, 20);
+		lblCromo.setBounds(37, 940, 179, 20);
 		miPanel.add(lblCromo);
 		lblCromo.setForeground(Color.BLACK);
 		
 		JLabel lblPlomo = new JLabel("Plomo");
-		lblPlomo.setBounds(37, 1000, 179, 20);
+		lblPlomo.setBounds(37, 970, 179, 20);
 		miPanel.add(lblPlomo);
 		lblPlomo.setForeground(Color.BLACK);
 		
 		JLabel lblZinc = new JLabel("Zinc");
-		lblZinc.setBounds(37, 1030, 179, 20);
+		lblZinc.setBounds(37, 1000, 179, 20);
 		miPanel.add(lblZinc);
 		lblZinc.setForeground(Color.BLACK);
 		
 		JLabel lblAluminio = new JLabel("Aluminio");
-		lblAluminio.setBounds(37, 1060, 179, 20);
+		lblAluminio.setBounds(37, 1030, 179, 20);
 		miPanel.add(lblAluminio);
 		lblAluminio.setForeground(Color.BLACK);
 		
 		JLabel lblManganeso = new JLabel("Manganeso");
-		lblManganeso.setBounds(37, 1090, 179, 20);
+		lblManganeso.setBounds(37, 1060, 179, 20);
 		miPanel.add(lblManganeso);
 		lblManganeso.setForeground(Color.BLACK);
 		
 		JLabel lblPotasio = new JLabel("Potasio");
-		lblPotasio.setBounds(37, 1120, 179, 20);
+		lblPotasio.setBounds(37, 1090, 179, 20);
 		miPanel.add(lblPotasio);
 		lblPotasio.setForeground(Color.BLACK);
 		
 		JLabel lblAlcalinidadTotal = new JLabel("Alcalinidad total");
-		lblAlcalinidadTotal.setBounds(37, 1150, 179, 20);
+		lblAlcalinidadTotal.setBounds(37, 1120, 179, 20);
 		miPanel.add(lblAlcalinidadTotal);
 		lblAlcalinidadTotal.setForeground(Color.BLACK);
 		
 		JLabel lblAcidezVolatil = new JLabel("Acidez volátil");
-		lblAcidezVolatil.setBounds(37, 1180, 179, 20);
+		lblAcidezVolatil.setBounds(37, 1150, 179, 20);
 		miPanel.add(lblAcidezVolatil);
 		lblAcidezVolatil.setForeground(Color.BLACK);
 		
 		JLabel lblAlfa = new JLabel("Alfa");
-		lblAlfa.setBounds(37, 1210, 179, 20);
+		lblAlfa.setBounds(37, 1180, 179, 20);
 		miPanel.add(lblAlfa);
 		lblAlfa.setForeground(Color.BLACK);
 		
 		JLabel lblAlfaPrima = new JLabel("Alfa prima");
-		lblAlfaPrima.setBounds(37, 1240, 179, 20);
+		lblAlfaPrima.setBounds(37, 1210, 179, 20);
 		miPanel.add(lblAlfaPrima);
 		lblAlfaPrima.setForeground(Color.BLACK);
 		
 		JLabel lblBicarbonato = new JLabel("Bicarbonato");
-		lblBicarbonato.setBounds(37, 1270, 179, 20);
+		lblBicarbonato.setBounds(37, 1240, 179, 20);
 		miPanel.add(lblBicarbonato);
 		lblBicarbonato.setForeground(Color.BLACK);
 		
 		JLabel lblSalinidad = new JLabel("Salinidad");
-		lblSalinidad.setBounds(37, 1300, 179, 20);
+		lblSalinidad.setBounds(37, 1270, 179, 20);
 		miPanel.add(lblSalinidad);
 		lblSalinidad.setForeground(Color.BLACK);
 		
 		JLabel lblTurbiedad = new JLabel("Turbiedad");
-		lblTurbiedad.setBounds(37, 1330, 179, 20);
+		lblTurbiedad.setBounds(37, 1300, 179, 20);
 		miPanel.add(lblTurbiedad);
 		lblTurbiedad.setForeground(Color.BLACK);
 		
 		JLabel lblConductividad = new JLabel("Conductividad");
-		lblConductividad.setBounds(37, 1360, 179, 20);
+		lblConductividad.setBounds(37, 1330, 179, 20);
 		miPanel.add(lblConductividad);
 		lblConductividad.setForeground(Color.BLACK);
 		
 		JLabel lblSulfuro = new JLabel("Sulfuro");
-		lblSulfuro.setBounds(37, 1390, 179, 20);
+		lblSulfuro.setBounds(37, 1360, 179, 20);
 		miPanel.add(lblSulfuro);
 		lblSulfuro.setForeground(Color.BLACK);
 		
 		JLabel lblSulfato = new JLabel("Sulfato");
-		lblSulfato.setBounds(37, 1420, 179, 20);
+		lblSulfato.setBounds(37, 1390, 179, 20);
 		miPanel.add(lblSulfato);
 		lblSulfato.setForeground(Color.BLACK);
 		
 		JLabel lblFenoles = new JLabel("Fenoles");
-		lblFenoles.setBounds(37, 1450, 179, 20);
+		lblFenoles.setBounds(37, 1420, 179, 20);
 		miPanel.add(lblFenoles);
 		lblFenoles.setForeground(Color.BLACK);
 		
 		JLabel lblTensoactivosAnionicos = new JLabel("Tensoactivos aniónicos");
-		lblTensoactivosAnionicos.setBounds(37, 1480, 179, 20);
+		lblTensoactivosAnionicos.setBounds(37, 1450, 179, 20);
 		miPanel.add(lblTensoactivosAnionicos);
 		lblTensoactivosAnionicos.setForeground(Color.BLACK);
 		
 		JLabel lblCloroResidual = new JLabel("Cloro residual");
-		lblCloroResidual.setBounds(37, 1510, 179, 20);
+		lblCloroResidual.setBounds(37, 1480, 179, 20);
 		miPanel.add(lblCloroResidual);
 		lblCloroResidual.setForeground(Color.BLACK);
 		
 		JLabel lblCloroTotal = new JLabel("Cloro total");
-		lblCloroTotal.setBounds(37, 1540, 179, 20);
+		lblCloroTotal.setBounds(37, 1510, 179, 20);
 		miPanel.add(lblCloroTotal);
 		lblCloroTotal.setForeground(Color.BLACK);
 		
 		JLabel lblCloruro = new JLabel("Cloruro");
-		lblCloruro.setBounds(37, 1570, 179, 20);
+		lblCloruro.setBounds(37, 1540, 179, 20);
 		miPanel.add(lblCloruro);
 		lblCloruro.setForeground(Color.BLACK);
 		
 		JLabel lblDureza = new JLabel("Dureza");
-		lblDureza.setBounds(37, 1600, 179, 20);
+		lblDureza.setBounds(37, 1570, 179, 20);
 		miPanel.add(lblDureza);
 		lblDureza.setForeground(Color.BLACK);
 		
 		JLabel lblColor = new JLabel("Color");
-		lblColor.setBounds(37, 1630, 179, 20);
+		lblColor.setBounds(37, 1600, 179, 20);
 		miPanel.add(lblColor);
 		lblColor.setForeground(Color.BLACK);
 		
 		JLabel lblHidrocarburos = new JLabel("Hidrocarburos");
-		lblHidrocarburos.setBounds(37, 1660, 179, 20);
+		lblHidrocarburos.setBounds(37, 1630, 179, 20);
 		miPanel.add(lblHidrocarburos);
 		lblHidrocarburos.setForeground(Color.BLACK);
 		
 		JLabel lblColiformes = new JLabel("Coliformes fecales");
-		lblColiformes.setBounds(37, 1690, 179, 20);
+		lblColiformes.setBounds(37, 1660, 179, 20);
 		miPanel.add(lblColiformes);
 		lblColiformes.setForeground(Color.BLACK);
 		
 		JLabel lblCursoDeAgua = new JLabel("Curso de agua tipo");
-		lblCursoDeAgua.setBounds(37, 1720, 179, 20);
+		lblCursoDeAgua.setBounds(37, 1690, 179, 20);
 		miPanel.add(lblCursoDeAgua);
 		lblCursoDeAgua.setForeground(Color.BLACK);
 		
 		JLabel lblOtros = new JLabel("Otros");
-		lblOtros.setBounds(37, 1750, 179, 20);
+		lblOtros.setBounds(37, 1720, 179, 20);
 		miPanel.add(lblOtros);
 		lblOtros.setForeground(Color.BLACK);
 		
 		JLabel lblOtros2 = new JLabel("Otros 2");
-		lblOtros2.setBounds(37, 1780, 179, 20);
+		lblOtros2.setBounds(37, 1750, 179, 20);
 		miPanel.add(lblOtros2);
 		lblOtros2.setForeground(Color.BLACK);
 		
 		JLabel lblOtros3 = new JLabel("Otros 3");
-		lblOtros3.setBounds(37, 1810, 179, 20);
+		lblOtros3.setBounds(37, 1780, 179, 20);
 		miPanel.add(lblOtros3);
 		lblOtros3.setForeground(Color.BLACK);
 		
 		JLabel lblOtros4 = new JLabel("Otros 4");
-		lblOtros4.setBounds(37, 1840, 179, 20);
+		lblOtros4.setBounds(37, 1810, 179, 20);
 		miPanel.add(lblOtros4);
 		lblOtros4.setForeground(Color.BLACK);
 		
@@ -1189,7 +1193,7 @@ public class FormularioIngresoAguas {
 		});
 		nitrogenoTotal1.setHorizontalAlignment(SwingConstants.CENTER);
 		nitrogenoTotal1.setColumns(10);
-		nitrogenoTotal1.setBounds(191, 907, 130, 26);
+		nitrogenoTotal1.setBounds(191, 877, 130, 26);
 		miPanel.add(nitrogenoTotal1);
 		
 		fosforoTotal1 = new JTextField();
@@ -1210,7 +1214,7 @@ public class FormularioIngresoAguas {
 		});
 		fosforoTotal1.setHorizontalAlignment(SwingConstants.CENTER);
 		fosforoTotal1.setColumns(10);
-		fosforoTotal1.setBounds(191, 937, 130, 26);
+		fosforoTotal1.setBounds(191, 907, 130, 26);
 		miPanel.add(fosforoTotal1);
 		
 		cromo1 = new JTextField();
@@ -1231,7 +1235,7 @@ public class FormularioIngresoAguas {
 		});
 		cromo1.setHorizontalAlignment(SwingConstants.CENTER);
 		cromo1.setColumns(10);
-		cromo1.setBounds(191, 967, 130, 26);
+		cromo1.setBounds(191, 937, 130, 26);
 		miPanel.add(cromo1);
 		
 		plomo1 = new JTextField();
@@ -1252,7 +1256,7 @@ public class FormularioIngresoAguas {
 		});
 		plomo1.setHorizontalAlignment(SwingConstants.CENTER);
 		plomo1.setColumns(10);
-		plomo1.setBounds(191, 997, 130, 26);
+		plomo1.setBounds(191, 967, 130, 26);
 		miPanel.add(plomo1);
 		
 		zinc1 = new JTextField();
@@ -1273,7 +1277,7 @@ public class FormularioIngresoAguas {
 		});
 		zinc1.setHorizontalAlignment(SwingConstants.CENTER);
 		zinc1.setColumns(10);
-		zinc1.setBounds(191, 1027, 130, 26);
+		zinc1.setBounds(191, 997, 130, 26);
 		miPanel.add(zinc1);
 		
 		aluminio1 = new JTextField();
@@ -1294,7 +1298,7 @@ public class FormularioIngresoAguas {
 		});
 		aluminio1.setHorizontalAlignment(SwingConstants.CENTER);
 		aluminio1.setColumns(10);
-		aluminio1.setBounds(191, 1057, 130, 26);
+		aluminio1.setBounds(191, 1027, 130, 26);
 		miPanel.add(aluminio1);
 		
 		manganeso1 = new JTextField();
@@ -1315,7 +1319,7 @@ public class FormularioIngresoAguas {
 		});
 		manganeso1.setHorizontalAlignment(SwingConstants.CENTER);
 		manganeso1.setColumns(10);
-		manganeso1.setBounds(191, 1087, 130, 26);
+		manganeso1.setBounds(191, 1057, 130, 26);
 		miPanel.add(manganeso1);
 		
 		potasio1 = new JTextField();
@@ -1336,7 +1340,7 @@ public class FormularioIngresoAguas {
 		});
 		potasio1.setHorizontalAlignment(SwingConstants.CENTER);
 		potasio1.setColumns(10);
-		potasio1.setBounds(191, 1117, 130, 26);
+		potasio1.setBounds(191, 1087, 130, 26);
 		miPanel.add(potasio1);
 		
 		alcalinidadTotal1 = new JTextField();
@@ -1357,7 +1361,7 @@ public class FormularioIngresoAguas {
 		});
 		alcalinidadTotal1.setHorizontalAlignment(SwingConstants.CENTER);
 		alcalinidadTotal1.setColumns(10);
-		alcalinidadTotal1.setBounds(191, 1147, 130, 26);
+		alcalinidadTotal1.setBounds(191, 1117, 130, 26);
 		miPanel.add(alcalinidadTotal1);
 		
 		acidezVolatil1 = new JTextField();
@@ -1378,7 +1382,7 @@ public class FormularioIngresoAguas {
 		});
 		acidezVolatil1.setHorizontalAlignment(SwingConstants.CENTER);
 		acidezVolatil1.setColumns(10);
-		acidezVolatil1.setBounds(191, 1177, 130, 26);
+		acidezVolatil1.setBounds(191, 1147, 130, 26);
 		miPanel.add(acidezVolatil1);
 		
 		alfa1 = new JTextField();
@@ -1399,7 +1403,7 @@ public class FormularioIngresoAguas {
 		});
 		alfa1.setHorizontalAlignment(SwingConstants.CENTER);
 		alfa1.setColumns(10);
-		alfa1.setBounds(191, 1207, 130, 26);
+		alfa1.setBounds(191, 1177, 130, 26);
 		miPanel.add(alfa1);
 		
 		alfaPrima1 = new JTextField();
@@ -1420,7 +1424,7 @@ public class FormularioIngresoAguas {
 		});
 		alfaPrima1.setHorizontalAlignment(SwingConstants.CENTER);
 		alfaPrima1.setColumns(10);
-		alfaPrima1.setBounds(191, 1237, 130, 26);
+		alfaPrima1.setBounds(191, 1207, 130, 26);
 		miPanel.add(alfaPrima1);
 		
 		bicarbonato1 = new JTextField();
@@ -1441,7 +1445,7 @@ public class FormularioIngresoAguas {
 		});
 		bicarbonato1.setHorizontalAlignment(SwingConstants.CENTER);
 		bicarbonato1.setColumns(10);
-		bicarbonato1.setBounds(191, 1267, 130, 26);
+		bicarbonato1.setBounds(191, 1237, 130, 26);
 		miPanel.add(bicarbonato1);
 		
 		salinidad1 = new JTextField();
@@ -1462,7 +1466,7 @@ public class FormularioIngresoAguas {
 		});
 		salinidad1.setHorizontalAlignment(SwingConstants.CENTER);
 		salinidad1.setColumns(10);
-		salinidad1.setBounds(191, 1297, 130, 26);
+		salinidad1.setBounds(191, 1267, 130, 26);
 		miPanel.add(salinidad1);
 		
 		turbiedad1 = new JTextField();
@@ -1483,7 +1487,7 @@ public class FormularioIngresoAguas {
 		});
 		turbiedad1.setHorizontalAlignment(SwingConstants.CENTER);
 		turbiedad1.setColumns(10);
-		turbiedad1.setBounds(191, 1327, 130, 26);
+		turbiedad1.setBounds(191, 1297, 130, 26);
 		miPanel.add(turbiedad1);
 		
 		conductividad1 = new JTextField();
@@ -1504,7 +1508,7 @@ public class FormularioIngresoAguas {
 		});
 		conductividad1.setHorizontalAlignment(SwingConstants.CENTER);
 		conductividad1.setColumns(10);
-		conductividad1.setBounds(191, 1357, 130, 26);
+		conductividad1.setBounds(191, 1327, 130, 26);
 		miPanel.add(conductividad1);
 		
 		sulfuro1 = new JTextField();
@@ -1525,7 +1529,7 @@ public class FormularioIngresoAguas {
 		});
 		sulfuro1.setHorizontalAlignment(SwingConstants.CENTER);
 		sulfuro1.setColumns(10);
-		sulfuro1.setBounds(191, 1387, 130, 26);
+		sulfuro1.setBounds(191, 1357, 130, 26);
 		miPanel.add(sulfuro1);
 		
 		sulfato1 = new JTextField();
@@ -1546,7 +1550,7 @@ public class FormularioIngresoAguas {
 		});
 		sulfato1.setHorizontalAlignment(SwingConstants.CENTER);
 		sulfato1.setColumns(10);
-		sulfato1.setBounds(191, 1417, 130, 26);
+		sulfato1.setBounds(191, 1387, 130, 26);
 		miPanel.add(sulfato1);
 		
 		fenoles1 = new JTextField();
@@ -1567,7 +1571,7 @@ public class FormularioIngresoAguas {
 		});
 		fenoles1.setHorizontalAlignment(SwingConstants.CENTER);
 		fenoles1.setColumns(10);
-		fenoles1.setBounds(191, 1447, 130, 26);
+		fenoles1.setBounds(191, 1417, 130, 26);
 		miPanel.add(fenoles1);
 		
 		tensoactivos1 = new JTextField();
@@ -1588,7 +1592,7 @@ public class FormularioIngresoAguas {
 		});
 		tensoactivos1.setHorizontalAlignment(SwingConstants.CENTER);
 		tensoactivos1.setColumns(10);
-		tensoactivos1.setBounds(191, 1477, 130, 26);
+		tensoactivos1.setBounds(191, 1447, 130, 26);
 		miPanel.add(tensoactivos1);
 		
 		cloroResidual1 = new JTextField();
@@ -1609,7 +1613,7 @@ public class FormularioIngresoAguas {
 		});
 		cloroResidual1.setHorizontalAlignment(SwingConstants.CENTER);
 		cloroResidual1.setColumns(10);
-		cloroResidual1.setBounds(191, 1507, 130, 26);
+		cloroResidual1.setBounds(191, 1477, 130, 26);
 		miPanel.add(cloroResidual1);
 		
 		cloroTotal1 = new JTextField();
@@ -1630,7 +1634,7 @@ public class FormularioIngresoAguas {
 		});
 		cloroTotal1.setHorizontalAlignment(SwingConstants.CENTER);
 		cloroTotal1.setColumns(10);
-		cloroTotal1.setBounds(191, 1537, 130, 26);
+		cloroTotal1.setBounds(191, 1507, 130, 26);
 		miPanel.add(cloroTotal1);
 		
 		cloruro1 = new JTextField();
@@ -1651,7 +1655,7 @@ public class FormularioIngresoAguas {
 		});
 		cloruro1.setHorizontalAlignment(SwingConstants.CENTER);
 		cloruro1.setColumns(10);
-		cloruro1.setBounds(191, 1567, 130, 26);
+		cloruro1.setBounds(191, 1537, 130, 26);
 		miPanel.add(cloruro1);
 		
 		dureza1 = new JTextField();
@@ -1673,7 +1677,7 @@ public class FormularioIngresoAguas {
 		});
 		dureza1.setHorizontalAlignment(SwingConstants.CENTER);
 		dureza1.setColumns(10);
-		dureza1.setBounds(191, 1597, 130, 26);
+		dureza1.setBounds(191, 1567, 130, 26);
 		miPanel.add(dureza1);
 		
 		color1 = new JTextField();
@@ -1694,7 +1698,7 @@ public class FormularioIngresoAguas {
 		});
 		color1.setHorizontalAlignment(SwingConstants.CENTER);
 		color1.setColumns(10);
-		color1.setBounds(191, 1627, 130, 26);
+		color1.setBounds(191, 1597, 130, 26);
 		miPanel.add(color1);
 		
 		hidrocarburos1 = new JTextField();
@@ -1715,7 +1719,7 @@ public class FormularioIngresoAguas {
 		});
 		hidrocarburos1.setHorizontalAlignment(SwingConstants.CENTER);
 		hidrocarburos1.setColumns(10);
-		hidrocarburos1.setBounds(191, 1657, 130, 26);
+		hidrocarburos1.setBounds(191, 1627, 130, 26);
 		miPanel.add(hidrocarburos1);
 		
 		coliformes1 = new JTextField();
@@ -1736,7 +1740,7 @@ public class FormularioIngresoAguas {
 		});
 		coliformes1.setHorizontalAlignment(SwingConstants.CENTER);
 		coliformes1.setColumns(10);
-		coliformes1.setBounds(191, 1687, 130, 26);
+		coliformes1.setBounds(191, 1657, 130, 26);
 		miPanel.add(coliformes1);
 		
 		cursoAguaTipo1 = new JTextField();
@@ -1757,7 +1761,7 @@ public class FormularioIngresoAguas {
 		});
 		cursoAguaTipo1.setHorizontalAlignment(SwingConstants.CENTER);
 		cursoAguaTipo1.setColumns(10);
-		cursoAguaTipo1.setBounds(191, 1717, 130, 26);
+		cursoAguaTipo1.setBounds(191, 1687, 130, 26);
 		miPanel.add(cursoAguaTipo1);
 		
 		otros11 = new JTextField();
@@ -1778,7 +1782,7 @@ public class FormularioIngresoAguas {
 		});
 		otros11.setHorizontalAlignment(SwingConstants.CENTER);
 		otros11.setColumns(10);
-		otros11.setBounds(191, 1747, 130, 26);
+		otros11.setBounds(191, 1717, 130, 26);
 		miPanel.add(otros11);
 		
 		otros21 = new JTextField();
@@ -1799,7 +1803,7 @@ public class FormularioIngresoAguas {
 		});
 		otros21.setHorizontalAlignment(SwingConstants.CENTER);
 		otros21.setColumns(10);
-		otros21.setBounds(191, 1777, 130, 26);
+		otros21.setBounds(191, 1747, 130, 26);
 		miPanel.add(otros21);
 		
 		otros31 = new JTextField();
@@ -1820,7 +1824,7 @@ public class FormularioIngresoAguas {
 		});
 		otros31.setHorizontalAlignment(SwingConstants.CENTER);
 		otros31.setColumns(10);
-		otros31.setBounds(191, 1807, 130, 26);
+		otros31.setBounds(191, 1777, 130, 26);
 		miPanel.add(otros31);
 		
 		otros41 = new JTextField();
@@ -1841,7 +1845,7 @@ public class FormularioIngresoAguas {
 		});
 		otros41.setHorizontalAlignment(SwingConstants.CENTER);
 		otros41.setColumns(10);
-		otros41.setBounds(191, 1837, 130, 26);
+		otros41.setBounds(191, 1807, 130, 26);
 		miPanel.add(otros41);
 		
 		// comienza segunda columna
@@ -2367,7 +2371,7 @@ public class FormularioIngresoAguas {
 		});
 		nitrogenoTotal2.setHorizontalAlignment(SwingConstants.CENTER);
 		nitrogenoTotal2.setColumns(10);
-		nitrogenoTotal2.setBounds(370, 907, 130, 26);
+		nitrogenoTotal2.setBounds(370, 877, 130, 26);
 		miPanel.add(nitrogenoTotal2);
 		
 		fosforoTotal2 = new JTextField();
@@ -2388,7 +2392,7 @@ public class FormularioIngresoAguas {
 		});
 		fosforoTotal2.setHorizontalAlignment(SwingConstants.CENTER);
 		fosforoTotal2.setColumns(10);
-		fosforoTotal2.setBounds(370, 937, 130, 26);
+		fosforoTotal2.setBounds(370, 907, 130, 26);
 		miPanel.add(fosforoTotal2);
 		
 		cromo2 = new JTextField();
@@ -2409,7 +2413,7 @@ public class FormularioIngresoAguas {
 		});
 		cromo2.setHorizontalAlignment(SwingConstants.CENTER);
 		cromo2.setColumns(10);
-		cromo2.setBounds(370, 967, 130, 26);
+		cromo2.setBounds(370, 937, 130, 26);
 		miPanel.add(cromo2);
 		
 		plomo2 = new JTextField();
@@ -2430,7 +2434,7 @@ public class FormularioIngresoAguas {
 		});
 		plomo2.setHorizontalAlignment(SwingConstants.CENTER);
 		plomo2.setColumns(10);
-		plomo2.setBounds(370, 997, 130, 26);
+		plomo2.setBounds(370, 967, 130, 26);
 		miPanel.add(plomo2);
 		
 		zinc2 = new JTextField();
@@ -2451,7 +2455,7 @@ public class FormularioIngresoAguas {
 		});
 		zinc2.setHorizontalAlignment(SwingConstants.CENTER);
 		zinc2.setColumns(10);
-		zinc2.setBounds(370, 1027, 130, 26);
+		zinc2.setBounds(370, 997, 130, 26);
 		miPanel.add(zinc2);
 		
 		aluminio2 = new JTextField();
@@ -2472,7 +2476,7 @@ public class FormularioIngresoAguas {
 		});
 		aluminio2.setHorizontalAlignment(SwingConstants.CENTER);
 		aluminio2.setColumns(10);
-		aluminio2.setBounds(370, 1057, 130, 26);
+		aluminio2.setBounds(370, 1027, 130, 26);
 		miPanel.add(aluminio2);
 		
 		manganeso2 = new JTextField();
@@ -2493,7 +2497,7 @@ public class FormularioIngresoAguas {
 		});
 		manganeso2.setHorizontalAlignment(SwingConstants.CENTER);
 		manganeso2.setColumns(10);
-		manganeso2.setBounds(370, 1087, 130, 26);
+		manganeso2.setBounds(370, 1057, 130, 26);
 		miPanel.add(manganeso2);
 		
 		potasio2 = new JTextField();
@@ -2514,7 +2518,7 @@ public class FormularioIngresoAguas {
 		});
 		potasio2.setHorizontalAlignment(SwingConstants.CENTER);
 		potasio2.setColumns(10);
-		potasio2.setBounds(370, 1117, 130, 26);
+		potasio2.setBounds(370, 1087, 130, 26);
 		miPanel.add(potasio2);
 		
 		alcalinidadTotal2 = new JTextField();
@@ -2535,7 +2539,7 @@ public class FormularioIngresoAguas {
 		});
 		alcalinidadTotal2.setHorizontalAlignment(SwingConstants.CENTER);
 		alcalinidadTotal2.setColumns(10);
-		alcalinidadTotal2.setBounds(370, 1147, 130, 26);
+		alcalinidadTotal2.setBounds(370, 1117, 130, 26);
 		miPanel.add(alcalinidadTotal2);
 		
 		acidezVolatil2 = new JTextField();
@@ -2556,7 +2560,7 @@ public class FormularioIngresoAguas {
 		});
 		acidezVolatil2.setHorizontalAlignment(SwingConstants.CENTER);
 		acidezVolatil2.setColumns(10);
-		acidezVolatil2.setBounds(370, 1177, 130, 26);
+		acidezVolatil2.setBounds(370, 1147, 130, 26);
 		miPanel.add(acidezVolatil2);
 		
 		alfa2 = new JTextField();
@@ -2577,7 +2581,7 @@ public class FormularioIngresoAguas {
 		});
 		alfa2.setHorizontalAlignment(SwingConstants.CENTER);
 		alfa2.setColumns(10);
-		alfa2.setBounds(370, 1207, 130, 26);
+		alfa2.setBounds(370, 1177, 130, 26);
 		miPanel.add(alfa2);
 		
 		alfaPrima2 = new JTextField();
@@ -2598,7 +2602,7 @@ public class FormularioIngresoAguas {
 		});
 		alfaPrima2.setHorizontalAlignment(SwingConstants.CENTER);
 		alfaPrima2.setColumns(10);
-		alfaPrima2.setBounds(370, 1237, 130, 26);
+		alfaPrima2.setBounds(370, 1207, 130, 26);
 		miPanel.add(alfaPrima2);
 		
 		bicarbonato2 = new JTextField();
@@ -2619,7 +2623,7 @@ public class FormularioIngresoAguas {
 		});
 		bicarbonato2.setHorizontalAlignment(SwingConstants.CENTER);
 		bicarbonato2.setColumns(10);
-		bicarbonato2.setBounds(370, 1267, 130, 26);
+		bicarbonato2.setBounds(370, 1237, 130, 26);
 		miPanel.add(bicarbonato2);
 		
 		salinidad2 = new JTextField();
@@ -2640,7 +2644,7 @@ public class FormularioIngresoAguas {
 		});
 		salinidad2.setHorizontalAlignment(SwingConstants.CENTER);
 		salinidad2.setColumns(10);
-		salinidad2.setBounds(370, 1297, 130, 26);
+		salinidad2.setBounds(370, 1267, 130, 26);
 		miPanel.add(salinidad2);
 		
 		turbiedad2 = new JTextField();
@@ -2661,7 +2665,7 @@ public class FormularioIngresoAguas {
 		});
 		turbiedad2.setHorizontalAlignment(SwingConstants.CENTER);
 		turbiedad2.setColumns(10);
-		turbiedad2.setBounds(370, 1327, 130, 26);
+		turbiedad2.setBounds(370, 1297, 130, 26);
 		miPanel.add(turbiedad2);
 		
 		conductividad2 = new JTextField();
@@ -2682,7 +2686,7 @@ public class FormularioIngresoAguas {
 		});
 		conductividad2.setHorizontalAlignment(SwingConstants.CENTER);
 		conductividad2.setColumns(10);
-		conductividad2.setBounds(370, 1357, 130, 26);
+		conductividad2.setBounds(370, 1327, 130, 26);
 		miPanel.add(conductividad2);
 		
 		sulfuro2 = new JTextField();
@@ -2703,7 +2707,7 @@ public class FormularioIngresoAguas {
 		});
 		sulfuro2.setHorizontalAlignment(SwingConstants.CENTER);
 		sulfuro2.setColumns(10);
-		sulfuro2.setBounds(370, 1387, 130, 26);
+		sulfuro2.setBounds(370, 1357, 130, 26);
 		miPanel.add(sulfuro2);
 		
 		sulfato2 = new JTextField();
@@ -2724,7 +2728,7 @@ public class FormularioIngresoAguas {
 		});
 		sulfato2.setHorizontalAlignment(SwingConstants.CENTER);
 		sulfato2.setColumns(10);
-		sulfato2.setBounds(370, 1417, 130, 26);
+		sulfato2.setBounds(370, 1387, 130, 26);
 		miPanel.add(sulfato2);
 		
 		fenoles2 = new JTextField();
@@ -2745,7 +2749,7 @@ public class FormularioIngresoAguas {
 		});
 		fenoles2.setHorizontalAlignment(SwingConstants.CENTER);
 		fenoles2.setColumns(10);
-		fenoles2.setBounds(370, 1447, 130, 26);
+		fenoles2.setBounds(370, 1417, 130, 26);
 		miPanel.add(fenoles2);
 		
 		tensoactivos2 = new JTextField();
@@ -2766,7 +2770,7 @@ public class FormularioIngresoAguas {
 		});
 		tensoactivos2.setHorizontalAlignment(SwingConstants.CENTER);
 		tensoactivos2.setColumns(10);
-		tensoactivos2.setBounds(370, 1477, 130, 26);
+		tensoactivos2.setBounds(370, 1447, 130, 26);
 		miPanel.add(tensoactivos2);
 		
 		cloroResidual2 = new JTextField();
@@ -2787,7 +2791,7 @@ public class FormularioIngresoAguas {
 		});
 		cloroResidual2.setHorizontalAlignment(SwingConstants.CENTER);
 		cloroResidual2.setColumns(10);
-		cloroResidual2.setBounds(370, 1507, 130, 26);
+		cloroResidual2.setBounds(370, 1477, 130, 26);
 		miPanel.add(cloroResidual2);
 		
 		cloroTotal2 = new JTextField();
@@ -2808,7 +2812,7 @@ public class FormularioIngresoAguas {
 		});
 		cloroTotal2.setHorizontalAlignment(SwingConstants.CENTER);
 		cloroTotal2.setColumns(10);
-		cloroTotal2.setBounds(370, 1537, 130, 26);
+		cloroTotal2.setBounds(370, 1507, 130, 26);
 		miPanel.add(cloroTotal2);
 		
 		cloruro2 = new JTextField();
@@ -2829,7 +2833,7 @@ public class FormularioIngresoAguas {
 		});
 		cloruro2.setHorizontalAlignment(SwingConstants.CENTER);
 		cloruro2.setColumns(10);
-		cloruro2.setBounds(370, 1567, 130, 26);
+		cloruro2.setBounds(370, 1537, 130, 26);
 		miPanel.add(cloruro2);
 		
 		dureza2 = new JTextField();
@@ -2851,7 +2855,7 @@ public class FormularioIngresoAguas {
 		});
 		dureza2.setHorizontalAlignment(SwingConstants.CENTER);
 		dureza2.setColumns(10);
-		dureza2.setBounds(370, 1597, 130, 26);
+		dureza2.setBounds(370, 1567, 130, 26);
 		miPanel.add(dureza2);
 		
 		color2 = new JTextField();
@@ -2872,7 +2876,7 @@ public class FormularioIngresoAguas {
 		});
 		color2.setHorizontalAlignment(SwingConstants.CENTER);
 		color2.setColumns(10);
-		color2.setBounds(370, 1627, 130, 26);
+		color2.setBounds(370, 1597, 130, 26);
 		miPanel.add(color2);
 		
 		hidrocarburos2 = new JTextField();
@@ -2893,7 +2897,7 @@ public class FormularioIngresoAguas {
 		});
 		hidrocarburos2.setHorizontalAlignment(SwingConstants.CENTER);
 		hidrocarburos2.setColumns(10);
-		hidrocarburos2.setBounds(370, 1657, 130, 26);
+		hidrocarburos2.setBounds(370, 1627, 130, 26);
 		miPanel.add(hidrocarburos2);
 		
 		coliformes2 = new JTextField();
@@ -2914,7 +2918,7 @@ public class FormularioIngresoAguas {
 		});
 		coliformes2.setHorizontalAlignment(SwingConstants.CENTER);
 		coliformes2.setColumns(10);
-		coliformes2.setBounds(370, 1687, 130, 26);
+		coliformes2.setBounds(370, 1657, 130, 26);
 		miPanel.add(coliformes2);
 		
 		cursoAguaTipo2 = new JTextField();
@@ -2935,7 +2939,7 @@ public class FormularioIngresoAguas {
 		});
 		cursoAguaTipo2.setHorizontalAlignment(SwingConstants.CENTER);
 		cursoAguaTipo2.setColumns(10);
-		cursoAguaTipo2.setBounds(370, 1717, 130, 26);
+		cursoAguaTipo2.setBounds(370, 1687, 130, 26);
 		miPanel.add(cursoAguaTipo2);
 		
 		otros12 = new JTextField();
@@ -2956,7 +2960,7 @@ public class FormularioIngresoAguas {
 		});
 		otros12.setHorizontalAlignment(SwingConstants.CENTER);
 		otros12.setColumns(10);
-		otros12.setBounds(370, 1747, 130, 26);
+		otros12.setBounds(370, 1717, 130, 26);
 		miPanel.add(otros12);
 		
 		otros22 = new JTextField();
@@ -2977,7 +2981,7 @@ public class FormularioIngresoAguas {
 		});
 		otros22.setHorizontalAlignment(SwingConstants.CENTER);
 		otros22.setColumns(10);
-		otros22.setBounds(370, 1777, 130, 26);
+		otros22.setBounds(370, 1747, 130, 26);
 		miPanel.add(otros22);
 		
 		otros32 = new JTextField();
@@ -2998,7 +3002,7 @@ public class FormularioIngresoAguas {
 		});
 		otros32.setHorizontalAlignment(SwingConstants.CENTER);
 		otros32.setColumns(10);
-		otros32.setBounds(370, 1807, 130, 26);
+		otros32.setBounds(370, 1777, 130, 26);
 		miPanel.add(otros32);
 		
 		otros42 = new JTextField();
@@ -3019,7 +3023,7 @@ public class FormularioIngresoAguas {
 		});
 		otros42.setHorizontalAlignment(SwingConstants.CENTER);
 		otros42.setColumns(10);
-		otros42.setBounds(370, 1837, 130, 26);
+		otros42.setBounds(370, 1807, 130, 26);
 		miPanel.add(otros42);	
 				
 		// termina segunda columna
@@ -3550,7 +3554,7 @@ public class FormularioIngresoAguas {
 		});
 		nitrogenoTotal3.setHorizontalAlignment(SwingConstants.CENTER);
 		nitrogenoTotal3.setColumns(10);
-		nitrogenoTotal3.setBounds(550, 907, 130, 26);
+		nitrogenoTotal3.setBounds(550, 877, 130, 26);
 		miPanel.add(nitrogenoTotal3);
 		
 		fosforoTotal3 = new JTextField();
@@ -3571,7 +3575,7 @@ public class FormularioIngresoAguas {
 		});
 		fosforoTotal3.setHorizontalAlignment(SwingConstants.CENTER);
 		fosforoTotal3.setColumns(10);
-		fosforoTotal3.setBounds(550, 937, 130, 26);
+		fosforoTotal3.setBounds(550, 907, 130, 26);
 		miPanel.add(fosforoTotal3);
 		
 		cromo3 = new JTextField();
@@ -3592,7 +3596,7 @@ public class FormularioIngresoAguas {
 		});
 		cromo3.setHorizontalAlignment(SwingConstants.CENTER);
 		cromo3.setColumns(10);
-		cromo3.setBounds(550, 967, 130, 26);
+		cromo3.setBounds(550, 937, 130, 26);
 		miPanel.add(cromo3);
 		
 		plomo3 = new JTextField();
@@ -3613,7 +3617,7 @@ public class FormularioIngresoAguas {
 		});
 		plomo3.setHorizontalAlignment(SwingConstants.CENTER);
 		plomo3.setColumns(10);
-		plomo3.setBounds(550, 997, 130, 26);
+		plomo3.setBounds(550, 967, 130, 26);
 		miPanel.add(plomo3);
 		
 		zinc3 = new JTextField();
@@ -3634,7 +3638,7 @@ public class FormularioIngresoAguas {
 		});
 		zinc3.setHorizontalAlignment(SwingConstants.CENTER);
 		zinc3.setColumns(10);
-		zinc3.setBounds(550, 1027, 130, 26);
+		zinc3.setBounds(550, 997, 130, 26);
 		miPanel.add(zinc3);
 		
 		aluminio3 = new JTextField();
@@ -3655,7 +3659,7 @@ public class FormularioIngresoAguas {
 		});
 		aluminio3.setHorizontalAlignment(SwingConstants.CENTER);
 		aluminio3.setColumns(10);
-		aluminio3.setBounds(550, 1057, 130, 26);
+		aluminio3.setBounds(550, 1027, 130, 26);
 		miPanel.add(aluminio3);
 		
 		manganeso3 = new JTextField();
@@ -3676,7 +3680,7 @@ public class FormularioIngresoAguas {
 		});
 		manganeso3.setHorizontalAlignment(SwingConstants.CENTER);
 		manganeso3.setColumns(10);
-		manganeso3.setBounds(550, 1087, 130, 26);
+		manganeso3.setBounds(550, 1057, 130, 26);
 		miPanel.add(manganeso3);
 		
 		potasio3 = new JTextField();
@@ -3697,7 +3701,7 @@ public class FormularioIngresoAguas {
 		});
 		potasio3.setHorizontalAlignment(SwingConstants.CENTER);
 		potasio3.setColumns(10);
-		potasio3.setBounds(550, 1117, 130, 26);
+		potasio3.setBounds(550, 1087, 130, 26);
 		miPanel.add(potasio3);
 		
 		alcalinidadTotal3 = new JTextField();
@@ -3718,7 +3722,7 @@ public class FormularioIngresoAguas {
 		});
 		alcalinidadTotal3.setHorizontalAlignment(SwingConstants.CENTER);
 		alcalinidadTotal3.setColumns(10);
-		alcalinidadTotal3.setBounds(550, 1147, 130, 26);
+		alcalinidadTotal3.setBounds(550, 1117, 130, 26);
 		miPanel.add(alcalinidadTotal3);
 		
 		acidezVolatil3 = new JTextField();
@@ -3739,7 +3743,7 @@ public class FormularioIngresoAguas {
 		});
 		acidezVolatil3.setHorizontalAlignment(SwingConstants.CENTER);
 		acidezVolatil3.setColumns(10);
-		acidezVolatil3.setBounds(550, 1177, 130, 26);
+		acidezVolatil3.setBounds(550, 1147, 130, 26);
 		miPanel.add(acidezVolatil3);
 		
 		alfa3 = new JTextField();
@@ -3760,7 +3764,7 @@ public class FormularioIngresoAguas {
 		});
 		alfa3.setHorizontalAlignment(SwingConstants.CENTER);
 		alfa3.setColumns(10);
-		alfa3.setBounds(550, 1207, 130, 26);
+		alfa3.setBounds(550, 1177, 130, 26);
 		miPanel.add(alfa3);
 		
 		alfaPrima3 = new JTextField();
@@ -3781,7 +3785,7 @@ public class FormularioIngresoAguas {
 		});
 		alfaPrima3.setHorizontalAlignment(SwingConstants.CENTER);
 		alfaPrima3.setColumns(10);
-		alfaPrima3.setBounds(550, 1237, 130, 26);
+		alfaPrima3.setBounds(550, 1207, 130, 26);
 		miPanel.add(alfaPrima3);
 		
 		bicarbonato3 = new JTextField();
@@ -3802,7 +3806,7 @@ public class FormularioIngresoAguas {
 		});
 		bicarbonato3.setHorizontalAlignment(SwingConstants.CENTER);
 		bicarbonato3.setColumns(10);
-		bicarbonato3.setBounds(550, 1267, 130, 26);
+		bicarbonato3.setBounds(550, 1237, 130, 26);
 		miPanel.add(bicarbonato3);
 		
 		salinidad3 = new JTextField();
@@ -3823,7 +3827,7 @@ public class FormularioIngresoAguas {
 		});
 		salinidad3.setHorizontalAlignment(SwingConstants.CENTER);
 		salinidad3.setColumns(10);
-		salinidad3.setBounds(550, 1297, 130, 26);
+		salinidad3.setBounds(550, 1267, 130, 26);
 		miPanel.add(salinidad3);
 		
 		turbiedad3 = new JTextField();
@@ -3844,7 +3848,7 @@ public class FormularioIngresoAguas {
 		});
 		turbiedad3.setHorizontalAlignment(SwingConstants.CENTER);
 		turbiedad3.setColumns(10);
-		turbiedad3.setBounds(550, 1327, 130, 26);
+		turbiedad3.setBounds(550, 1297, 130, 26);
 		miPanel.add(turbiedad3);
 		
 		conductividad3 = new JTextField();
@@ -3865,7 +3869,7 @@ public class FormularioIngresoAguas {
 		});
 		conductividad3.setHorizontalAlignment(SwingConstants.CENTER);
 		conductividad3.setColumns(10);
-		conductividad3.setBounds(550, 1357, 130, 26);
+		conductividad3.setBounds(550, 1327, 130, 26);
 		miPanel.add(conductividad3);
 		
 		sulfuro3 = new JTextField();
@@ -3886,7 +3890,7 @@ public class FormularioIngresoAguas {
 		});
 		sulfuro3.setHorizontalAlignment(SwingConstants.CENTER);
 		sulfuro3.setColumns(10);
-		sulfuro3.setBounds(550, 1387, 130, 26);
+		sulfuro3.setBounds(550, 1357, 130, 26);
 		miPanel.add(sulfuro3);
 		
 		sulfato3 = new JTextField();
@@ -3907,7 +3911,7 @@ public class FormularioIngresoAguas {
 		});
 		sulfato3.setHorizontalAlignment(SwingConstants.CENTER);
 		sulfato3.setColumns(10);
-		sulfato3.setBounds(550, 1417, 130, 26);
+		sulfato3.setBounds(550, 1387, 130, 26);
 		miPanel.add(sulfato3);
 		
 		fenoles3 = new JTextField();
@@ -3928,7 +3932,7 @@ public class FormularioIngresoAguas {
 		});
 		fenoles3.setHorizontalAlignment(SwingConstants.CENTER);
 		fenoles3.setColumns(10);
-		fenoles3.setBounds(550, 1447, 130, 26);
+		fenoles3.setBounds(550, 1417, 130, 26);
 		miPanel.add(fenoles3);
 		
 		tensoactivos3 = new JTextField();
@@ -3949,7 +3953,7 @@ public class FormularioIngresoAguas {
 		});
 		tensoactivos3.setHorizontalAlignment(SwingConstants.CENTER);
 		tensoactivos3.setColumns(10);
-		tensoactivos3.setBounds(550, 1477, 130, 26);
+		tensoactivos3.setBounds(550, 1447, 130, 26);
 		miPanel.add(tensoactivos3);
 		
 		cloroResidual3 = new JTextField();
@@ -3970,7 +3974,7 @@ public class FormularioIngresoAguas {
 		});
 		cloroResidual3.setHorizontalAlignment(SwingConstants.CENTER);
 		cloroResidual3.setColumns(10);
-		cloroResidual3.setBounds(550, 1507, 130, 26);
+		cloroResidual3.setBounds(550, 1477, 130, 26);
 		miPanel.add(cloroResidual3);
 		
 		cloroTotal3 = new JTextField();
@@ -3991,7 +3995,7 @@ public class FormularioIngresoAguas {
 		});
 		cloroTotal3.setHorizontalAlignment(SwingConstants.CENTER);
 		cloroTotal3.setColumns(10);
-		cloroTotal3.setBounds(550, 1537, 130, 26);
+		cloroTotal3.setBounds(550, 1507, 130, 26);
 		miPanel.add(cloroTotal3);
 		
 		cloruro3 = new JTextField();
@@ -4012,7 +4016,7 @@ public class FormularioIngresoAguas {
 		});
 		cloruro3.setHorizontalAlignment(SwingConstants.CENTER);
 		cloruro3.setColumns(10);
-		cloruro3.setBounds(550, 1567, 130, 26);
+		cloruro3.setBounds(550, 1537, 130, 26);
 		miPanel.add(cloruro3);
 		
 		dureza3 = new JTextField();
@@ -4034,7 +4038,7 @@ public class FormularioIngresoAguas {
 		});
 		dureza3.setHorizontalAlignment(SwingConstants.CENTER);
 		dureza3.setColumns(10);
-		dureza3.setBounds(550, 1597, 130, 26);
+		dureza3.setBounds(550, 1567, 130, 26);
 		miPanel.add(dureza3);
 		
 		color3 = new JTextField();
@@ -4055,7 +4059,7 @@ public class FormularioIngresoAguas {
 		});
 		color3.setHorizontalAlignment(SwingConstants.CENTER);
 		color3.setColumns(10);
-		color3.setBounds(550, 1627, 130, 26);
+		color3.setBounds(550, 1597, 130, 26);
 		miPanel.add(color3);
 		
 		hidrocarburos3 = new JTextField();
@@ -4076,7 +4080,7 @@ public class FormularioIngresoAguas {
 		});
 		hidrocarburos3.setHorizontalAlignment(SwingConstants.CENTER);
 		hidrocarburos3.setColumns(10);
-		hidrocarburos3.setBounds(550, 1657, 130, 26);
+		hidrocarburos3.setBounds(550, 1627, 130, 26);
 		miPanel.add(hidrocarburos3);
 		
 		coliformes3 = new JTextField();
@@ -4097,7 +4101,7 @@ public class FormularioIngresoAguas {
 		});
 		coliformes3.setHorizontalAlignment(SwingConstants.CENTER);
 		coliformes3.setColumns(10);
-		coliformes3.setBounds(550, 1687, 130, 26);
+		coliformes3.setBounds(550, 1657, 130, 26);
 		miPanel.add(coliformes3);
 		
 		cursoAguaTipo3 = new JTextField();
@@ -4118,7 +4122,7 @@ public class FormularioIngresoAguas {
 		});
 		cursoAguaTipo3.setHorizontalAlignment(SwingConstants.CENTER);
 		cursoAguaTipo3.setColumns(10);
-		cursoAguaTipo3.setBounds(550, 1717, 130, 26);
+		cursoAguaTipo3.setBounds(550, 1687, 130, 26);
 		miPanel.add(cursoAguaTipo3);
 		
 		otros13 = new JTextField();
@@ -4139,7 +4143,7 @@ public class FormularioIngresoAguas {
 		});
 		otros13.setHorizontalAlignment(SwingConstants.CENTER);
 		otros13.setColumns(10);
-		otros13.setBounds(550, 1747, 130, 26);
+		otros13.setBounds(550, 1717, 130, 26);
 		miPanel.add(otros13);
 		
 		otros23 = new JTextField();
@@ -4160,7 +4164,7 @@ public class FormularioIngresoAguas {
 		});
 		otros23.setHorizontalAlignment(SwingConstants.CENTER);
 		otros23.setColumns(10);
-		otros23.setBounds(550, 1777, 130, 26);
+		otros23.setBounds(550, 1747, 130, 26);
 		miPanel.add(otros23);
 		
 		otros33 = new JTextField();
@@ -4181,7 +4185,7 @@ public class FormularioIngresoAguas {
 		});
 		otros33.setHorizontalAlignment(SwingConstants.CENTER);
 		otros33.setColumns(10);
-		otros33.setBounds(550, 1807, 130, 26);
+		otros33.setBounds(550, 1777, 130, 26);
 		miPanel.add(otros33);
 		
 		otros43 = new JTextField();
@@ -4202,22 +4206,1211 @@ public class FormularioIngresoAguas {
 		});
 		otros43.setHorizontalAlignment(SwingConstants.CENTER);
 		otros43.setColumns(10);
-		otros43.setBounds(550, 1837, 130, 26);
-		miPanel.add(otros43);	
+		otros43.setBounds(550, 1807, 130, 26);
+		miPanel.add(otros43);
 		
 		// termina tercera columna
 		
+		// empieza cuarta columna
 		
+		nroAnalisis4 = new JTextField();
+		nroAnalisis4.setBounds(730, 125, 130, 26);
+		miPanel.add(nroAnalisis4);
+		nroAnalisis4.setColumns(10);
+		nroAnalisis4.setHorizontalAlignment(JTextField.CENTER);
 		
+		lugarExtraccion4 = new JTextField();
+		lugarExtraccion4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblLugarExtraccion.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblLugarExtraccion.setForeground(Color.BLACK);
+				if (lugarExtraccion4.getText().equals("*")) {
+					lugarExtraccion4.setBackground(Color.YELLOW);
+				} else {
+					lugarExtraccion4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		lugarExtraccion4.setBounds(730, 155, 130, 26);
+		miPanel.add(lugarExtraccion4);
+		lugarExtraccion4.setColumns(10);
+		lugarExtraccion4.setHorizontalAlignment(JTextField.CENTER);
+		
+		extraidoPor4 = new JTextField();
+		extraidoPor4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblExtraidoPor.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblExtraidoPor.setForeground(Color.BLACK);
+				if (extraidoPor4.getText().equals("*")) {
+					extraidoPor4.setBackground(Color.YELLOW);
+				} else {
+					extraidoPor4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		extraidoPor4.setBounds(730, 185, 130, 26);
+		miPanel.add(extraidoPor4);
+		extraidoPor4.setColumns(10);
+		extraidoPor4.setHorizontalAlignment(JTextField.CENTER);
+		
+		fechaExtraccion4 = new JDateChooser();		
+		fechaExtraccion4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblFechaExtraccion.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblFechaExtraccion.setForeground(Color.BLACK);
+			}
+		});
+		fechaExtraccion4.setBounds(730, 215, 130, 26);
+		miPanel.add(fechaExtraccion4);
+		
+		horaExtraccion4 = new JTextField();
+		horaExtraccion4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblHoraExtraccion.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblHoraExtraccion.setForeground(Color.BLACK);
+				if (horaExtraccion4.getText().equals("*")) {
+					horaExtraccion4.setBackground(Color.YELLOW);
+				} else {
+					horaExtraccion4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		horaExtraccion4.setBounds(730, 245, 130, 26);
+		miPanel.add(horaExtraccion4);
+		horaExtraccion4.setColumns(10);
+		horaExtraccion4.setHorizontalAlignment(JTextField.CENTER);
+		
+		aspecto4 = new JTextField();
+		aspecto4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblAspecto.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblAspecto.setForeground(Color.BLACK);
+				if (aspecto4.getText().equals("*")) {
+					aspecto4.setBackground(Color.YELLOW);
+				} else {
+					aspecto4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		aspecto4.setBounds(730, 275, 130, 26);
+		miPanel.add(aspecto4);
+		aspecto4.setColumns(10);
+		aspecto4.setHorizontalAlignment(JTextField.CENTER);		
+		
+		pHIS4 = new JTextField();
+		pHIS4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblpHinSitu.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblpHinSitu.setForeground(Color.BLACK);
+				if (pHIS4.getText().equals("*")) {
+					pHIS4.setBackground(Color.YELLOW);
+				} else {
+					pHIS4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		pHIS4.setHorizontalAlignment(SwingConstants.CENTER);
+		pHIS4.setColumns(10);
+		pHIS4.setBounds(730, 307, 130, 26);
+		miPanel.add(pHIS4);
+		
+		pH4 = new JTextField();
+		pH4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblpH.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblpH.setForeground(Color.BLACK);
+				if (pH4.getText().equals("*")) {
+					pH4.setBackground(Color.YELLOW);
+				} else {
+					pH4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		pH4.setHorizontalAlignment(SwingConstants.CENTER);
+		pH4.setColumns(10);
+		pH4.setBounds(730, 337, 130, 26);
+		miPanel.add(pH4);
+		
+		temperatura4 = new JTextField();
+		temperatura4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblTemperatura.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblTemperatura.setForeground(Color.BLACK);
+				if (temperatura4.getText().equals("*")) {
+					temperatura4.setBackground(Color.YELLOW);
+				} else {
+					temperatura4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		temperatura4.setHorizontalAlignment(SwingConstants.CENTER);
+		temperatura4.setColumns(10);
+		temperatura4.setBounds(730, 367, 130, 26);
+		miPanel.add(temperatura4);
+		
+		caudal4 = new JTextField();
+		caudal4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblCaudal.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblCaudal.setForeground(Color.BLACK);
+				if (caudal4.getText().equals("*")) {
+					caudal4.setBackground(Color.YELLOW);
+				} else {
+					caudal4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		caudal4.setHorizontalAlignment(SwingConstants.CENTER);
+		caudal4.setColumns(10);
+		caudal4.setBounds(730, 397, 130, 26);
+		miPanel.add(caudal4);
+		
+		ODIS4 = new JTextField();
+		ODIS4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblODInSitu.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblODInSitu.setForeground(Color.BLACK);
+				if (ODIS4.getText().equals("*")) {
+					ODIS4.setBackground(Color.YELLOW);
+				} else {
+					ODIS4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		ODIS4.setHorizontalAlignment(SwingConstants.CENTER);
+		ODIS4.setColumns(10);
+		ODIS4.setBounds(730, 427, 130, 26);
+		miPanel.add(ODIS4);
+		
+		OD4 = new JTextField();
+		OD4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblOD.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblOD.setForeground(Color.BLACK);
+				if (OD4.getText().equals("*")) {
+					OD4.setBackground(Color.YELLOW);
+				} else {
+					OD4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		OD4.setHorizontalAlignment(SwingConstants.CENTER);
+		OD4.setColumns(10);
+		OD4.setBounds(730, 457, 130, 26);
+		miPanel.add(OD4);
+		
+		DBO54 = new JTextField();
+		DBO54.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblDBO5.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblDBO5.setForeground(Color.BLACK);
+				if (DBO54.getText().equals("*")) {
+					DBO54.setBackground(Color.YELLOW);
+				} else {
+					DBO54.setBackground(Color.WHITE);
+				}
+			}
+		});
+		DBO54.setHorizontalAlignment(SwingConstants.CENTER);
+		DBO54.setColumns(10);
+		DBO54.setBounds(730, 487, 130, 26);
+		miPanel.add(DBO54);
+		
+		DBO5F4 = new JTextField();
+		DBO5F4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblDBO5F.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblDBO5F.setForeground(Color.BLACK);
+				if (DBO5F4.getText().equals("*")) {
+					DBO5F4.setBackground(Color.YELLOW);
+				} else {
+					DBO5F4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		DBO5F4.setHorizontalAlignment(SwingConstants.CENTER);
+		DBO5F4.setColumns(10);
+		DBO5F4.setBounds(730, 517, 130, 26);
+		miPanel.add(DBO5F4);
+		
+		DQO4 = new JTextField();
+		DQO4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblDQO.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblDQO.setForeground(Color.BLACK);
+				if (DQO4.getText().equals("*")) {
+					DQO4.setBackground(Color.YELLOW);
+				} else {
+					DQO4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		DQO4.setHorizontalAlignment(SwingConstants.CENTER);
+		DQO4.setColumns(10);
+		DQO4.setBounds(730, 547, 130, 26);
+		miPanel.add(DQO4);
+		
+		AceitesYGrasas4 = new JTextField();
+		AceitesYGrasas4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblAceitesYGrasas.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblAceitesYGrasas.setForeground(Color.BLACK);
+				if (AceitesYGrasas4.getText().equals("*")) {
+					AceitesYGrasas4.setBackground(Color.YELLOW);
+				} else {
+					AceitesYGrasas4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		AceitesYGrasas4.setHorizontalAlignment(SwingConstants.CENTER);
+		AceitesYGrasas4.setColumns(10);
+		AceitesYGrasas4.setBounds(730, 577, 130, 26);
+		miPanel.add(AceitesYGrasas4);
+		
+		SolidosTotales4 = new JTextField();
+		SolidosTotales4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblSolidosTotales.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblSolidosTotales.setForeground(Color.BLACK);
+				if (SolidosTotales4.getText().equals("*")) {
+					SolidosTotales4.setBackground(Color.YELLOW);
+				} else {
+					SolidosTotales4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		SolidosTotales4.setHorizontalAlignment(SwingConstants.CENTER);
+		SolidosTotales4.setColumns(10);
+		SolidosTotales4.setBounds(730, 607, 130, 26);
+		miPanel.add(SolidosTotales4);
+		
+		STV4 = new JTextField();
+		STV4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblSolidosTotalesVolatiles.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblSolidosTotalesVolatiles.setForeground(Color.BLACK);
+				if (STV4.getText().equals("*")) {
+					STV4.setBackground(Color.YELLOW);
+				} else {
+					STV4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		STV4.setHorizontalAlignment(SwingConstants.CENTER);
+		STV4.setColumns(10);
+		STV4.setBounds(730, 637, 130, 26);
+		miPanel.add(STV4);
+		
+		SST4 = new JTextField();
+		SST4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblSolidosSuspendidosTotales.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblSolidosSuspendidosTotales.setForeground(Color.BLACK);
+				if (SST4.getText().equals("*")) {
+					SST4.setBackground(Color.YELLOW);
+				} else {
+					SST4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		SST4.setHorizontalAlignment(SwingConstants.CENTER);
+		SST4.setColumns(10);
+		SST4.setBounds(730, 667, 130, 26);
+		miPanel.add(SST4);
+		
+		SSV4 = new JTextField();
+		SSV4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblSSV.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblSSV.setForeground(Color.BLACK);
+				if (SSV4.getText().equals("*")) {
+					SSV4.setBackground(Color.YELLOW);
+				} else {
+					SSV4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		SSV4.setHorizontalAlignment(SwingConstants.CENTER);
+		SSV4.setColumns(10);
+		SSV4.setBounds(730, 697, 130, 26);
+		miPanel.add(SSV4);
+		
+		SS104 = new JTextField();
+		SS104.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblSS10.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblSS10.setForeground(Color.BLACK);
+				if (SS104.getText().equals("*")) {
+					SS104.setBackground(Color.YELLOW);
+				} else {
+					SS104.setBackground(Color.WHITE);
+				}
+			}
+		});
+		SS104.setHorizontalAlignment(SwingConstants.CENTER);
+		SS104.setColumns(10);
+		SS104.setBounds(730, 727, 130, 26);
+		miPanel.add(SS104);
+		
+		SS304 = new JTextField();
+		SS304.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblSS30.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblSS30.setForeground(Color.BLACK);
+				if (SS304.getText().equals("*")) {
+					SS304.setBackground(Color.YELLOW);
+				} else {
+					SS304.setBackground(Color.WHITE);
+				}
+			}
+		});
+		SS304.setHorizontalAlignment(SwingConstants.CENTER);
+		SS304.setColumns(10);
+		SS304.setBounds(730, 757, 130, 26);
+		miPanel.add(SS304);
+		
+		SS604 = new JTextField();
+		SS604.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblSS60.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblSS60.setForeground(Color.BLACK);
+				if (SS604.getText().equals("*")) {
+					SS604.setBackground(Color.YELLOW);
+				} else {
+					SS604.setBackground(Color.WHITE);
+				}
+			}
+		});
+		SS604.setHorizontalAlignment(SwingConstants.CENTER);
+		SS604.setColumns(10);
+		SS604.setBounds(730, 787, 130, 26);
+		miPanel.add(SS604);	
+		
+		amoniaco4 = new JTextField();
+		amoniaco4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblAmoniaco.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblAmoniaco.setForeground(Color.BLACK);
+				if (amoniaco4.getText().equals("*")) {
+					amoniaco4.setBackground(Color.YELLOW);
+				} else {
+					amoniaco4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		amoniaco4.setHorizontalAlignment(SwingConstants.CENTER);
+		amoniaco4.setColumns(10);
+		amoniaco4.setBounds(730, 817, 130, 26);
+		miPanel.add(amoniaco4);
+		
+		nitrato4 = new JTextField();
+		nitrato4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblNitrato.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblNitrato.setForeground(Color.BLACK);
+				if (nitrato4.getText().equals("*")) {
+					nitrato4.setBackground(Color.YELLOW);
+				} else {
+					nitrato4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		nitrato4.setHorizontalAlignment(SwingConstants.CENTER);
+		nitrato4.setColumns(10);
+		nitrato4.setBounds(730, 847, 130, 26);
+		miPanel.add(nitrato4);
+		
+		nitrogenoTotal4 = new JTextField();
+		nitrogenoTotal4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblNitrogenoTotal.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblNitrogenoTotal.setForeground(Color.BLACK);
+				if (nitrogenoTotal4.getText().equals("*")) {
+					nitrogenoTotal4.setBackground(Color.YELLOW);
+				} else {
+					nitrogenoTotal4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		nitrogenoTotal4.setHorizontalAlignment(SwingConstants.CENTER);
+		nitrogenoTotal4.setColumns(10);
+		nitrogenoTotal4.setBounds(730, 877, 130, 26);
+		miPanel.add(nitrogenoTotal4);
+		
+		fosforoTotal4 = new JTextField();
+		fosforoTotal4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblFosforoTotal.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblFosforoTotal.setForeground(Color.BLACK);
+				if (fosforoTotal4.getText().equals("*")) {
+					fosforoTotal4.setBackground(Color.YELLOW);
+				} else {
+					fosforoTotal4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		fosforoTotal4.setHorizontalAlignment(SwingConstants.CENTER);
+		fosforoTotal4.setColumns(10);
+		fosforoTotal4.setBounds(730, 907, 130, 26);
+		miPanel.add(fosforoTotal4);
+		
+		cromo4 = new JTextField();
+		cromo4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblCromo.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblCromo.setForeground(Color.BLACK);
+				if (cromo4.getText().equals("*")) {
+					cromo4.setBackground(Color.YELLOW);
+				} else {
+					cromo4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		cromo4.setHorizontalAlignment(SwingConstants.CENTER);
+		cromo4.setColumns(10);
+		cromo4.setBounds(730, 937, 130, 26);
+		miPanel.add(cromo4);
+		
+		plomo4 = new JTextField();
+		plomo4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblPlomo.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblPlomo.setForeground(Color.BLACK);
+				if (plomo4.getText().equals("*")) {
+					plomo4.setBackground(Color.YELLOW);
+				} else {
+					plomo4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		plomo4.setHorizontalAlignment(SwingConstants.CENTER);
+		plomo4.setColumns(10);
+		plomo4.setBounds(730, 967, 130, 26);
+		miPanel.add(plomo4);
+		
+		zinc4 = new JTextField();
+		zinc4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblZinc.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblZinc.setForeground(Color.BLACK);
+				if (zinc4.getText().equals("*")) {
+					zinc4.setBackground(Color.YELLOW);
+				} else {
+					zinc4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		zinc4.setHorizontalAlignment(SwingConstants.CENTER);
+		zinc4.setColumns(10);
+		zinc4.setBounds(730, 997, 130, 26);
+		miPanel.add(zinc4);
+		
+		aluminio4 = new JTextField();
+		aluminio4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblAluminio.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblAluminio.setForeground(Color.BLACK);
+				if (aluminio4.getText().equals("*")) {
+					aluminio4.setBackground(Color.YELLOW);
+				} else {
+					aluminio4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		aluminio4.setHorizontalAlignment(SwingConstants.CENTER);
+		aluminio4.setColumns(10);
+		aluminio4.setBounds(730, 1027, 130, 26);
+		miPanel.add(aluminio4);
+		
+		manganeso4 = new JTextField();
+		manganeso4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblManganeso.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblManganeso.setForeground(Color.BLACK);
+				if (manganeso4.getText().equals("*")) {
+					manganeso4.setBackground(Color.YELLOW);
+				} else {
+					manganeso4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		manganeso4.setHorizontalAlignment(SwingConstants.CENTER);
+		manganeso4.setColumns(10);
+		manganeso4.setBounds(730, 1057, 130, 26);
+		miPanel.add(manganeso4);
+		
+		potasio4 = new JTextField();
+		potasio4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblPotasio.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblPotasio.setForeground(Color.BLACK);
+				if (potasio4.getText().equals("*")) {
+					potasio4.setBackground(Color.YELLOW);
+				} else {
+					potasio4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		potasio4.setHorizontalAlignment(SwingConstants.CENTER);
+		potasio4.setColumns(10);
+		potasio4.setBounds(730, 1087, 130, 26);
+		miPanel.add(potasio4);
+		
+		alcalinidadTotal4 = new JTextField();
+		alcalinidadTotal4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblAlcalinidadTotal.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblAlcalinidadTotal.setForeground(Color.BLACK);
+				if (alcalinidadTotal4.getText().equals("*")) {
+					alcalinidadTotal4.setBackground(Color.YELLOW);
+				} else {
+					alcalinidadTotal4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		alcalinidadTotal4.setHorizontalAlignment(SwingConstants.CENTER);
+		alcalinidadTotal4.setColumns(10);
+		alcalinidadTotal4.setBounds(730, 1117, 130, 26);
+		miPanel.add(alcalinidadTotal4);
+		
+		acidezVolatil4 = new JTextField();
+		acidezVolatil4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblAcidezVolatil.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblAcidezVolatil.setForeground(Color.BLACK);
+				if (acidezVolatil4.getText().equals("*")) {
+					acidezVolatil4.setBackground(Color.YELLOW);
+				} else {
+					acidezVolatil4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		acidezVolatil4.setHorizontalAlignment(SwingConstants.CENTER);
+		acidezVolatil4.setColumns(10);
+		acidezVolatil4.setBounds(730, 1147, 130, 26);
+		miPanel.add(acidezVolatil4);
+		
+		alfa4 = new JTextField();
+		alfa4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblAlfa.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblAlfa.setForeground(Color.BLACK);
+				if (alfa4.getText().equals("*")) {
+					alfa4.setBackground(Color.YELLOW);
+				} else {
+					alfa4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		alfa4.setHorizontalAlignment(SwingConstants.CENTER);
+		alfa4.setColumns(10);
+		alfa4.setBounds(730, 1177, 130, 26);
+		miPanel.add(alfa4);
+		
+		alfaPrima4 = new JTextField();
+		alfaPrima4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblAlfaPrima.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblAlfaPrima.setForeground(Color.BLACK);
+				if (alfaPrima4.getText().equals("*")) {
+					alfaPrima4.setBackground(Color.YELLOW);
+				} else {
+					alfaPrima4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		alfaPrima4.setHorizontalAlignment(SwingConstants.CENTER);
+		alfaPrima4.setColumns(10);
+		alfaPrima4.setBounds(730, 1207, 130, 26);
+		miPanel.add(alfaPrima4);
+		
+		bicarbonato4 = new JTextField();
+		bicarbonato4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblBicarbonato.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblBicarbonato.setForeground(Color.BLACK);
+				if (bicarbonato4.getText().equals("*")) {
+					bicarbonato4.setBackground(Color.YELLOW);
+				} else {
+					bicarbonato4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		bicarbonato4.setHorizontalAlignment(SwingConstants.CENTER);
+		bicarbonato4.setColumns(10);
+		bicarbonato4.setBounds(730, 1237, 130, 26);
+		miPanel.add(bicarbonato4);
+		
+		salinidad4 = new JTextField();
+		salinidad4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblSalinidad.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblSalinidad.setForeground(Color.BLACK);
+				if (salinidad4.getText().equals("*")) {
+					salinidad4.setBackground(Color.YELLOW);
+				} else {
+					salinidad4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		salinidad4.setHorizontalAlignment(SwingConstants.CENTER);
+		salinidad4.setColumns(10);
+		salinidad4.setBounds(730, 1267, 130, 26);
+		miPanel.add(salinidad4);
+		
+		turbiedad4 = new JTextField();
+		turbiedad4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblTurbiedad.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblTurbiedad.setForeground(Color.BLACK);
+				if (turbiedad4.getText().equals("*")) {
+					turbiedad4.setBackground(Color.YELLOW);
+				} else {
+					turbiedad4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		turbiedad4.setHorizontalAlignment(SwingConstants.CENTER);
+		turbiedad4.setColumns(10);
+		turbiedad4.setBounds(730, 1297, 130, 26);
+		miPanel.add(turbiedad4);
+		
+		conductividad4 = new JTextField();
+		conductividad4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblConductividad.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblConductividad.setForeground(Color.BLACK);
+				if (conductividad4.getText().equals("*")) {
+					conductividad4.setBackground(Color.YELLOW);
+				} else {
+					conductividad4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		conductividad4.setHorizontalAlignment(SwingConstants.CENTER);
+		conductividad4.setColumns(10);
+		conductividad4.setBounds(730, 1327, 130, 26);
+		miPanel.add(conductividad4);
+		
+		sulfuro4 = new JTextField();
+		sulfuro4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblSulfuro.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblSulfuro.setForeground(Color.BLACK);
+				if (sulfuro4.getText().equals("*")) {
+					sulfuro4.setBackground(Color.YELLOW);
+				} else {
+					sulfuro4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		sulfuro4.setHorizontalAlignment(SwingConstants.CENTER);
+		sulfuro4.setColumns(10);
+		sulfuro4.setBounds(730, 1357, 130, 26);
+		miPanel.add(sulfuro4);
+		
+		sulfato4 = new JTextField();
+		sulfato4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblSulfato.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblSulfato.setForeground(Color.BLACK);
+				if (sulfato4.getText().equals("*")) {
+					sulfato4.setBackground(Color.YELLOW);
+				} else {
+					sulfato4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		sulfato4.setHorizontalAlignment(SwingConstants.CENTER);
+		sulfato4.setColumns(10);
+		sulfato4.setBounds(730, 1387, 130, 26);
+		miPanel.add(sulfato4);
+		
+		fenoles4 = new JTextField();
+		fenoles4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblFenoles.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblFenoles.setForeground(Color.BLACK);
+				if (fenoles4.getText().equals("*")) {
+					fenoles4.setBackground(Color.YELLOW);
+				} else {
+					fenoles4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		fenoles4.setHorizontalAlignment(SwingConstants.CENTER);
+		fenoles4.setColumns(10);
+		fenoles4.setBounds(730, 1417, 130, 26);
+		miPanel.add(fenoles4);
+		
+		tensoactivos4 = new JTextField();
+		tensoactivos4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblTensoactivosAnionicos.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblTensoactivosAnionicos.setForeground(Color.BLACK);
+				if (tensoactivos4.getText().equals("*")) {
+					tensoactivos4.setBackground(Color.YELLOW);
+				} else {
+					tensoactivos4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		tensoactivos4.setHorizontalAlignment(SwingConstants.CENTER);
+		tensoactivos4.setColumns(10);
+		tensoactivos4.setBounds(730, 1447, 130, 26);
+		miPanel.add(tensoactivos4);
+		
+		cloroResidual4 = new JTextField();
+		cloroResidual4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblCloroResidual.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblCloroResidual.setForeground(Color.BLACK);
+				if (cloroResidual4.getText().equals("*")) {
+					cloroResidual4.setBackground(Color.YELLOW);
+				} else {
+					cloroResidual4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		cloroResidual4.setHorizontalAlignment(SwingConstants.CENTER);
+		cloroResidual4.setColumns(10);
+		cloroResidual4.setBounds(730, 1477, 130, 26);
+		miPanel.add(cloroResidual4);
+		
+		cloroTotal4 = new JTextField();
+		cloroTotal4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblCloroTotal.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblCloroTotal.setForeground(Color.BLACK);
+				if (cloroTotal4.getText().equals("*")) {
+					cloroTotal4.setBackground(Color.YELLOW);
+				} else {
+					cloroTotal4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		cloroTotal4.setHorizontalAlignment(SwingConstants.CENTER);
+		cloroTotal4.setColumns(10);
+		cloroTotal4.setBounds(730, 1507, 130, 26);
+		miPanel.add(cloroTotal4);
+		
+		cloruro4 = new JTextField();
+		cloruro4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblCloruro.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblCloruro.setForeground(Color.BLACK);
+				if (cloruro4.getText().equals("*")) {
+					cloruro4.setBackground(Color.YELLOW);
+				} else {
+					cloruro4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		cloruro4.setHorizontalAlignment(SwingConstants.CENTER);
+		cloruro4.setColumns(10);
+		cloruro4.setBounds(730, 1537, 130, 26);
+		miPanel.add(cloruro4);
+		
+		dureza4 = new JTextField();
+		dureza4 = new JTextField();
+		dureza4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblDureza.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblDureza.setForeground(Color.BLACK);
+				if (dureza4.getText().equals("*")) {
+					dureza4.setBackground(Color.YELLOW);
+				} else {
+					dureza4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		dureza4.setHorizontalAlignment(SwingConstants.CENTER);
+		dureza4.setColumns(10);
+		dureza4.setBounds(730, 1567, 130, 26);
+		miPanel.add(dureza4);
+		
+		color4 = new JTextField();
+		color4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblColor.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblColor.setForeground(Color.BLACK);
+				if (color4.getText().equals("*")) {
+					color4.setBackground(Color.YELLOW);
+				} else {
+					color4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		color4.setHorizontalAlignment(SwingConstants.CENTER);
+		color4.setColumns(10);
+		color4.setBounds(730, 1597, 130, 26);
+		miPanel.add(color4);
+		
+		hidrocarburos4 = new JTextField();
+		hidrocarburos4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblHidrocarburos.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblHidrocarburos.setForeground(Color.BLACK);
+				if (hidrocarburos4.getText().equals("*")) {
+					hidrocarburos4.setBackground(Color.YELLOW);
+				} else {
+					hidrocarburos4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		hidrocarburos4.setHorizontalAlignment(SwingConstants.CENTER);
+		hidrocarburos4.setColumns(10);
+		hidrocarburos4.setBounds(730, 1627, 130, 26);
+		miPanel.add(hidrocarburos4);
+		
+		coliformes4 = new JTextField();
+		coliformes4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblColiformes.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblColiformes.setForeground(Color.BLACK);
+				if (coliformes4.getText().equals("*")) {
+					coliformes4.setBackground(Color.YELLOW);
+				} else {
+					coliformes4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		coliformes4.setHorizontalAlignment(SwingConstants.CENTER);
+		coliformes4.setColumns(10);
+		coliformes4.setBounds(730, 1657, 130, 26);
+		miPanel.add(coliformes4);
+		
+		cursoAguaTipo4 = new JTextField();
+		cursoAguaTipo4.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblCursoDeAgua.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblCursoDeAgua.setForeground(Color.BLACK);
+				if (cursoAguaTipo4.getText().equals("*")) {
+					cursoAguaTipo4.setBackground(Color.YELLOW);
+				} else {
+					cursoAguaTipo4.setBackground(Color.WHITE);
+				}
+			}
+		});
+		cursoAguaTipo4.setHorizontalAlignment(SwingConstants.CENTER);
+		cursoAguaTipo4.setColumns(10);
+		cursoAguaTipo4.setBounds(730, 1687, 130, 26);
+		miPanel.add(cursoAguaTipo4);
+		
+		otros14 = new JTextField();
+		otros14.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblOtros.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblOtros.setForeground(Color.BLACK);
+				if (otros14.getText().equals("*")) {
+					otros14.setBackground(Color.YELLOW);
+				} else {
+					otros14.setBackground(Color.WHITE);
+				}
+			}
+		});
+		otros14.setHorizontalAlignment(SwingConstants.CENTER);
+		otros14.setColumns(10);
+		otros14.setBounds(730, 1717, 130, 26);
+		miPanel.add(otros14);
+		
+		otros24 = new JTextField();
+		otros24.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblOtros2.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblOtros2.setForeground(Color.BLACK);
+				if (otros24.getText().equals("*")) {
+					otros24.setBackground(Color.YELLOW);
+				} else {
+					otros24.setBackground(Color.WHITE);
+				}
+			}
+		});
+		otros24.setHorizontalAlignment(SwingConstants.CENTER);
+		otros24.setColumns(10);
+		otros24.setBounds(730, 1747, 130, 26);
+		miPanel.add(otros24);
+		
+		otros34 = new JTextField();
+		otros34.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblOtros3.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblOtros3.setForeground(Color.BLACK);
+				if (otros34.getText().equals("*")) {
+					otros34.setBackground(Color.YELLOW);
+				} else {
+					otros34.setBackground(Color.WHITE);
+				}
+			}
+		});
+		otros34.setHorizontalAlignment(SwingConstants.CENTER);
+		otros34.setColumns(10);
+		otros34.setBounds(730, 1777, 130, 26);
+		miPanel.add(otros34);
+		
+		otros44 = new JTextField();
+		otros44.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblOtros4.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblOtros4.setForeground(Color.BLACK);
+				if (otros44.getText().equals("*")) {
+					otros44.setBackground(Color.YELLOW);
+				} else {
+					otros44.setBackground(Color.WHITE);
+				}
+			}
+		});
+		otros44.setHorizontalAlignment(SwingConstants.CENTER);
+		otros44.setColumns(10);
+		otros44.setBounds(730, 1807, 130, 26);
+		miPanel.add(otros44);		
+		
+		// termina cuarta columna		
 		
 		frame.getContentPane().add(scrollPane);
 		
-		miPanel.setPreferredSize(new Dimension(1000, 1920));		
+		miPanel.setPreferredSize(new Dimension(1000, 1850));		
 		scrollPane.setViewportView(miPanel);
 		
 		JButton btnAgregarAnlisis = new JButton("Agregar an\u00E1lisis");
-		btnAgregarAnlisis.setBounds(504, 1880, 330, 29);
+		btnAgregarAnlisis.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnAgregarAnlisis.setBounds(900, 250, 215, 114);
 		miPanel.add(btnAgregarAnlisis);
+		
+		JButton btnVolver = new JButton("Volver");
+		btnVolver.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				MenuBarrosANAGUA menuBarrosANAGUA = new MenuBarrosANAGUA();
+				frame.dispose();
+			}
+		});
+		btnVolver.setBounds(959, 34, 175, 51);
+		miPanel.add(btnVolver);
 		
 		btnAgregarAnlisis.addMouseListener(new MouseAdapter() {
 			@Override
@@ -4233,17 +5426,51 @@ public class FormularioIngresoAguas {
 							otros31.getText(), otros41.getText());
 					analisisAAgregar.add(analisisAgua1);
 				}
-				try {
+				if (!nroAnalisis2.getText().equals("")) {
+					AnalisisAgua analisisAgua2 = new AnalisisAgua(nroAnalisis2.getText(), String.valueOf(industria.getSelectedItem()), departamento.getText(), localidad.getText(), descargaEn.getText(), lugarExtraccion2.getText(),
+							extraidoPor2.getText(), fechaExtraccion2.getDate(), horaExtraccion2.getText(), aspecto2.getText(), pHIS2.getText(), pH2.getText(), temperatura2.getText(), caudal2.getText(), ODIS2.getText(), OD2.getText(),
+							DBO52.getText(), DBO5F2.getText(), DQO2.getText(), AceitesYGrasas2.getText(), SolidosTotales2.getText(), STV2.getText(), SST2.getText(), SSV2.getText(), SS102.getText(), SS302.getText(), SS602.getText(), amoniaco2.getText(), nitrato2.getText(), nitrogenoTotal2.getText(), fosforoTotal2.getText(),
+							cromo2.getText(), plomo2.getText(), zinc2.getText(), aluminio2.getText(), manganeso2.getText(), potasio2.getText(), alcalinidadTotal2.getText(), acidezVolatil2.getText(), alfa2.getText(), alfaPrima2.getText(),
+							bicarbonato2.getText(), salinidad2.getText(), turbiedad2.getText(), conductividad2.getText(), sulfuro2.getText(), sulfato2.getText(), fenoles2.getText(), tensoactivos2.getText(), cloroResidual2.getText(),
+							cloroTotal2.getText(), cloruro2.getText(), dureza2.getText(), color2.getText(), hidrocarburos2.getText(), coliformes2.getText(), cursoAguaTipo2.getText(), "En proceso", otros12.getText(), otros22.getText(),
+							otros32.getText(), otros42.getText());
+					analisisAAgregar.add(analisisAgua2);
+				}
+				if (!nroAnalisis3.getText().equals("")) {
+					AnalisisAgua analisisAgua3 = new AnalisisAgua(nroAnalisis3.getText(), String.valueOf(industria.getSelectedItem()), departamento.getText(), localidad.getText(), descargaEn.getText(), lugarExtraccion3.getText(),
+							extraidoPor3.getText(), fechaExtraccion3.getDate(), horaExtraccion3.getText(), aspecto3.getText(), pHIS3.getText(), pH3.getText(), temperatura3.getText(), caudal3.getText(), ODIS3.getText(), OD3.getText(),
+							DBO53.getText(), DBO5F3.getText(), DQO3.getText(), AceitesYGrasas3.getText(), SolidosTotales3.getText(), STV3.getText(), SST3.getText(), SSV3.getText(), SS303.getText(), SS303.getText(), SS603.getText(), amoniaco3.getText(), nitrato3.getText(), nitrogenoTotal3.getText(), fosforoTotal3.getText(),
+							cromo3.getText(), plomo3.getText(), zinc3.getText(), aluminio3.getText(), manganeso3.getText(), potasio3.getText(), alcalinidadTotal3.getText(), acidezVolatil3.getText(), alfa3.getText(), alfaPrima3.getText(),
+							bicarbonato3.getText(), salinidad3.getText(), turbiedad3.getText(), conductividad3.getText(), sulfuro3.getText(), sulfato3.getText(), fenoles3.getText(), tensoactivos3.getText(), cloroResidual3.getText(),
+							cloroTotal3.getText(), cloruro3.getText(), dureza3.getText(), color3.getText(), hidrocarburos3.getText(), coliformes3.getText(), cursoAguaTipo3.getText(), "En proceso", otros13.getText(), otros23.getText(),
+							otros33.getText(), otros43.getText());
+					analisisAAgregar.add(analisisAgua3);
+				}
+				if (!nroAnalisis4.getText().equals("")) {
+					AnalisisAgua analisisAgua4 = new AnalisisAgua(nroAnalisis4.getText(), String.valueOf(industria.getSelectedItem()), departamento.getText(), localidad.getText(), descargaEn.getText(), lugarExtraccion4.getText(),
+							extraidoPor4.getText(), fechaExtraccion4.getDate(), horaExtraccion4.getText(), aspecto4.getText(), pHIS4.getText(), pH4.getText(), temperatura4.getText(), caudal4.getText(), ODIS4.getText(), OD4.getText(),
+							DBO54.getText(), DBO5F4.getText(), DQO4.getText(), AceitesYGrasas4.getText(), SolidosTotales4.getText(), STV4.getText(), SST4.getText(), SSV4.getText(), SS104.getText(), SS304.getText(), SS604.getText(), amoniaco4.getText(), nitrato4.getText(), nitrogenoTotal4.getText(), fosforoTotal4.getText(),
+							cromo4.getText(), plomo4.getText(), zinc4.getText(), aluminio4.getText(), manganeso4.getText(), potasio4.getText(), alcalinidadTotal4.getText(), acidezVolatil4.getText(), alfa4.getText(), alfaPrima4.getText(),
+							bicarbonato4.getText(), salinidad4.getText(), turbiedad4.getText(), conductividad4.getText(), sulfuro4.getText(), sulfato4.getText(), fenoles4.getText(), tensoactivos4.getText(), cloroResidual4.getText(),
+							cloroTotal4.getText(), cloruro4.getText(), dureza4.getText(), color4.getText(), hidrocarburos4.getText(), coliformes4.getText(), cursoAguaTipo4.getText(), "En proceso", otros14.getText(), otros24.getText(),
+							otros34.getText(), otros44.getText());
+					analisisAAgregar.add(analisisAgua4);
+				}
+				
 					for (int i=0; i<analisisAAgregar.size(); i++) {
-						aguasDAO.agregarAgua(analisisAAgregar.get(i));
+						try {
+							aguasDAO.agregarAgua(analisisAAgregar.get(i));
+							JOptionPane.showMessageDialog(null, "Se agregaron "+analisisAAgregar.size()+" análisis al sistema correctamente.");
+						} catch (MySQLIntegrityConstraintViolationException e1) {
+							JOptionPane.showMessageDialog(null, "Usted está intentando agregar un análisis con un número ya existente en el sistema.");
+							e1.printStackTrace();
+						} catch (SQLException e1) {
+							JOptionPane.showMessageDialog(null, "Se ha producido un error. Revise los datos que intenta ingresar.");
+							e1.printStackTrace();
+						}
 					}
-					JOptionPane.showMessageDialog(null, "Se agregaron "+analisisAAgregar.size()+" análisis al sistema correctamente.");
-				} catch (MySQLIntegrityConstraintViolationException e1) {
-					JOptionPane.showMessageDialog(null, "Usted está intentando agregar un análisis con un número ya existente en el sistema.");
-				} catch (SQLException e1) {
-					JOptionPane.showMessageDialog(null, "Se ha producido un error. Revise los datos que intenta ingresar.");
-					e1.printStackTrace();
-				}				
+					
+					
 				 
 			}
 		});

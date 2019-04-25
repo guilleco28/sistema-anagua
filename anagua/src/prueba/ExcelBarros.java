@@ -52,7 +52,7 @@ public class ExcelBarros {
 	static int[] rgbFilas = {213, 233, 247};
 	static int[] blanco = {255, 255, 255};
 	
-	public static void realizarInforme() {
+	public static void realizarInforme() throws SQLException {
 		try {
 			System.out.println("entre");
 			//p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties")); //para RED
@@ -597,7 +597,15 @@ public class ExcelBarros {
 		pict.resize((double) 4, (double) 4.75);		
 	}
 	
-	static void agregarFirma(Workbook workbook) throws IOException {
+	static void agregarFirma(Workbook workbook) throws IOException, SQLException {
+		ArrayList<String> determinacionesSinFijos = new ArrayList<String>();
+		for (int i=0; i<conexion.traerDeterminaciones().size(); i++) {
+			if (i == 1 || i == 2 || i == 3 || i == 4) {
+			} else {
+				determinacionesSinFijos.add(conexion.traerDeterminaciones().get(i));
+			}
+		}
+		
 		final FileInputStream stream =
 		        new FileInputStream(rutaFirma);
 		final CreationHelper helper = workbook.getCreationHelper();
@@ -606,7 +614,7 @@ public class ExcelBarros {
 		final int pictureIndex =
 		        workbook.addPicture(IOUtils.toByteArray(stream), Workbook.PICTURE_TYPE_PNG);
 		anchor.setCol1(7);
-		anchor.setRow1(37);
+		anchor.setRow1(determinacionesSinFijos.size()+22);
 		final Picture pict = drawing.createPicture( anchor, pictureIndex );
 		pict.resize((double) 1, (double) 3);	
 	}

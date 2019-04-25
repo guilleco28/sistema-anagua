@@ -281,8 +281,6 @@ try {
 						oResultSet.getString(55), oResultSet.getString(56), oResultSet.getString(57), oResultSet.getString(58), oResultSet.getString(59),
 						oResultSet.getString(60), oResultSet.getString(61), oResultSet.getString(62));	
 				analisissAguas.add(analisisAgua);
-
-				System.out.println(analisisAgua.getNroAnalisis()+" - "+analisisAgua.getIndustria());
 			}			
 			
 			

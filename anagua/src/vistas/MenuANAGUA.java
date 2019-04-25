@@ -61,16 +61,19 @@ public class MenuANAGUA {
 		frame.setResizable(false);
 		
 		JButton btnSeccinAguas = new JButton("Sección AGUAS");
+		btnSeccinAguas.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				MenuAguasANAGUA menuAguasANAGUA = new MenuAguasANAGUA();
+				frame.dispose();
+			}
+		});
 		btnSeccinAguas.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		btnSeccinAguas.setBounds(268, 40, 386, 77);
 		frame.getContentPane().add(btnSeccinAguas);
 		
 		JButton btnSeccinBarros = new JButton("Sección BARROS");
 		btnSeccinBarros.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		btnSeccinBarros.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btnSeccinBarros.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
