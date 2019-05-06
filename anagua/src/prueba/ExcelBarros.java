@@ -54,9 +54,9 @@ public class ExcelBarros {
 	
 	public static void realizarInforme() throws SQLException {
 		try {
-			System.out.println("entre");
-			//p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties")); //para RED
-			p.load(new FileReader("C:\\Users\\Guillermo\\Documents\\sistema-anagua\\config.properties"));
+			//System.out.println("entre");
+			p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties")); //para RED
+			//p.load(new FileReader("C:\\Users\\Guillermo\\Documents\\sistema-anagua\\config.properties"));
 			rutaExcel = p.getProperty("ruta_excel_informe");
 			rutaLogo = p.getProperty("ruta_logo");
 			rutaFirma = p.getProperty("ruta_firma");

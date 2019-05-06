@@ -14,17 +14,20 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Properties;
 
+import bd.BaseDeDatos;
+
 public class ConexionBarros {
 	
 	static Connection con = null;
 	static Properties p = new Properties();
+	static BaseDeDatos BD = new BaseDeDatos();
 	
 	private static String url="jdbc:mysql:";
 	
 	public ConexionBarros() {
 		try {
-			//p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties"));
-			p.load(new FileReader("C:\\Users\\Guillermo\\Documents\\sistema-anagua\\config.properties"));
+			p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties"));
+			//p.load(new FileReader("C:\\Users\\Guillermo\\Documents\\sistema-anagua\\config.properties"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -41,7 +44,6 @@ public class ConexionBarros {
 		}catch(ClassNotFoundException ex){
 			System.out.println(ex);
 		}
-		
 		return oConnection;
 	}
 
@@ -80,6 +82,7 @@ public class ConexionBarros {
 		for (int i=1; i<=rsmd.getColumnCount(); i++) {
 			columnas.add(determinaciones.get(rsmd.getColumnName(i)));
 		}
+		BD.cerrarConexion(conexion);
 		return columnas;
 	}
 	
@@ -112,7 +115,7 @@ public class ConexionBarros {
 			}
 			analisis.add(paraRelleno);
 		}
-		
+		BD.cerrarConexion(conexion);
 		return analisis;
 		
 	}
@@ -132,6 +135,7 @@ public class ConexionBarros {
 			}
 			datosDeEspecificaciones.add(temporal);
 		}
+		BD.cerrarConexion(conexion);
 		return datosDeEspecificaciones;
 	}
 	

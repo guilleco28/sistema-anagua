@@ -44,16 +44,18 @@ public class ExcelAguas {
 	static Properties p = new Properties();
 	static String rutaExcel;
 	static String rutaLogo;
+	static String rutaFirma;
 	static int[] rgbColumnas = {216, 219, 252};
 	static int[] rgbFilas = {213, 233, 247};
 	static int[] blanco = {255, 255, 255};
 	
-	public static void main(String[] args) {
+	public static void realizarInforme() throws SQLException {
 		try {
-			//p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties")); //para RED
-			p.load(new FileReader("C:\\Users\\Guillermo\\Dropbox\\PROYECTO_ANAGUA\\config.properties")); //para LOCAL
+			p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties")); //para RED
+			//p.load(new FileReader("C:\\Users\\Guillermo\\Documents\\sistema-anagua\\config.properties")); //para LOCAL
 			rutaExcel = p.getProperty("ruta_excel");
 			rutaLogo = p.getProperty("ruta_logo");
+			rutaFirma = p.getProperty("ruta_firma");
 		} catch (IOException e2) {
 			e2.printStackTrace();
 		}
@@ -61,6 +63,7 @@ public class ExcelAguas {
 		Sheet sheet = workbook.createSheet();
 		try {
 			agregarLogo(workbook);
+			agregarFirma(workbook);
 		} catch (IOException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
@@ -408,7 +411,7 @@ public class ExcelAguas {
 			row.setHeightInPoints((float) 22.0);
 			workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(i,i,0,2));
 			Cell cell = workbook.getSheet("Sheet0").getRow(i).createCell(0);
-			//System.out.println(determinacionesSinFijos.get(i-13));
+			System.out.println(determinacionesSinFijos.get(i-13));
 			if(determinacionesSinFijos.get(i-13).equals("ALFA1")) {
 				cell.setCellValue("Alfa");
 			} else if (determinacionesSinFijos.get(i-13).equals("Alfa prima")) {
@@ -450,7 +453,7 @@ public class ExcelAguas {
 		
 		Row metodos2 = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+15);
 		metodos2.setHeightInPoints((float) 15.0);
-		metodos2.createCell(0).setCellValue("   Nota: límites basados en el decreto 253/79");
+		metodos2.createCell(0).setCellValue("   Nota: límites según decreto 253/79");
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+15, determinacionesSinFijos.size()+15, 0, 10));
 		metodos2.getCell(0).setCellStyle(styleMetodos);
 		/*
@@ -650,5 +653,27 @@ public class ExcelAguas {
 		anchor.setCol2(0);
 		final Picture pict = drawing.createPicture( anchor, pictureIndex );
 		pict.resize((double) 4, (double) 4.75);		
+	}
+	
+	static void agregarFirma(Workbook workbook) throws IOException, SQLException {
+		ArrayList<String> determinacionesSinFijos = new ArrayList<String>();
+		for (int i=0; i<conexion.traerDeterminaciones().size(); i++) {
+			if (i == 1 || i == 2 || i == 3 || i == 4) {
+			} else {
+				determinacionesSinFijos.add(conexion.traerDeterminaciones().get(i));
+			}
+		}
+		
+		final FileInputStream stream =
+		        new FileInputStream(rutaFirma);
+		final CreationHelper helper = workbook.getCreationHelper();
+		final Drawing drawing = workbook.getSheet("Sheet0").createDrawingPatriarch();
+		final ClientAnchor anchor = helper.createClientAnchor();
+		final int pictureIndex =
+		        workbook.addPicture(IOUtils.toByteArray(stream), Workbook.PICTURE_TYPE_PNG);
+		anchor.setCol1(8);
+		anchor.setRow1(determinacionesSinFijos.size()+18);
+		final Picture pict = drawing.createPicture( anchor, pictureIndex );
+		pict.resize((double) 1, (double) 3);	
 	}
 }

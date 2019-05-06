@@ -310,7 +310,7 @@ public class FormularioIngresoAguas {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1200, 850);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setTitle("Formulario de ingreso de análisis de barros - ANAGUA");
+		frame.setTitle("Formulario de ingreso de análisis de aguas - ANAGUA");
 		frame.setVisible(true);
 		
 		scrollPane = new JScrollPane();
@@ -5405,7 +5405,7 @@ public class FormularioIngresoAguas {
 		btnVolver.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				MenuBarrosANAGUA menuBarrosANAGUA = new MenuBarrosANAGUA();
+				MenuAguasANAGUA menuAguasANAGUA = new MenuAguasANAGUA();
 				frame.dispose();
 			}
 		});
@@ -5457,20 +5457,17 @@ public class FormularioIngresoAguas {
 					analisisAAgregar.add(analisisAgua4);
 				}
 				
+				try {
 					for (int i=0; i<analisisAAgregar.size(); i++) {
-						try {
-							aguasDAO.agregarAgua(analisisAAgregar.get(i));
-							JOptionPane.showMessageDialog(null, "Se agregaron "+analisisAAgregar.size()+" análisis al sistema correctamente.");
-						} catch (MySQLIntegrityConstraintViolationException e1) {
-							JOptionPane.showMessageDialog(null, "Usted está intentando agregar un análisis con un número ya existente en el sistema.");
-							e1.printStackTrace();
-						} catch (SQLException e1) {
-							JOptionPane.showMessageDialog(null, "Se ha producido un error. Revise los datos que intenta ingresar.");
-							e1.printStackTrace();
-						}
+						aguasDAO.agregarAgua(analisisAAgregar.get(i));
 					}
-					
-					
+					JOptionPane.showMessageDialog(null, "Se agregaron "+analisisAAgregar.size()+" análisis al sistema correctamente.");
+				} catch (MySQLIntegrityConstraintViolationException e1) {
+					JOptionPane.showMessageDialog(null, "Usted está intentando agregar un análisis con un número ya existente en el sistema.");
+				} catch (SQLException e1) {
+					JOptionPane.showMessageDialog(null, "Se ha producido un error. Revise los datos que intenta ingresar.");
+					e1.printStackTrace();
+				}	
 				 
 			}
 		});

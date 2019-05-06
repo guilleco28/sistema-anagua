@@ -177,7 +177,6 @@ public class CrearInformeBarros {
 	 */
 	private void initialize() {
 		DatosDAO datosDAO = new DatosDAO();
-		IndustriasDAO industriasDAO = new IndustriasDAO();
 		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1200, 849);

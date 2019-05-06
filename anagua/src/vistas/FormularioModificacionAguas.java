@@ -100,6 +100,7 @@ public class FormularioModificacionAguas {
 	private JTextField otros21;
 	private JTextField otros31;
 	private JTextField otros41;
+	private JTextField estado1;
 
 	/**
 	 * Launch the application.
@@ -480,9 +481,14 @@ public class FormularioModificacionAguas {
 		miPanel.add(lblOtros4);
 		lblOtros4.setForeground(Color.BLACK);
 		
+		JLabel lblEstado = new JLabel("Estado");
+		lblEstado.setBounds(37, 1840, 179, 20);
+		miPanel.add(lblEstado);
+		lblEstado.setForeground(Color.BLACK);
+		
 		nroAnalisis1 = new JComboBox();
 		nroAnalisis1.setBounds(191, 125, 130, 26);
-		frame.getContentPane().add(nroAnalisis1);
+		miPanel.add(nroAnalisis1);
 		for (AnalisisAgua analisisAgua : aguasDAO.obtenerTodosLosAnalisisAguas()){
 			if(analisisAgua.getpH() != null && analisisAgua.getpH() != "") {
 				nroAnalisis1.addItem(analisisAgua.getNroAnalisis());
@@ -490,136 +496,348 @@ public class FormularioModificacionAguas {
 		}
 		nroAnalisis1.addItemListener(new ItemListener(){
 			public void itemStateChanged(ItemEvent arg0){
-				AnalisisAgua analisisBarroSeleccionado = aguasDAO.obtenerAnalisisAguaPorNumero(String.valueOf(nroAnalisis1.getSelectedItem()));
-				estado1.setText(analisisBarroSeleccionado.getEstado());				
-				industria.setSelectedItem(analisisBarroSeleccionado.getIndustria());
-				lugarExtraccion1.setText(analisisBarroSeleccionado.getLugarExtraccion());
-				if(analisisBarroSeleccionado.getLugarExtraccion().equals("*")) {
+				AnalisisAgua analisisAguaSeleccionado = aguasDAO.obtenerAnalisisAguaPorNumero(String.valueOf(nroAnalisis1.getSelectedItem()));
+				estado1.setText(analisisAguaSeleccionado.getEstado());				
+				industria.setSelectedItem(analisisAguaSeleccionado.getIndustria());
+				lugarExtraccion1.setText(analisisAguaSeleccionado.getLugarExtraccion());
+				if(analisisAguaSeleccionado.getLugarExtraccion().equals("*")) {
 					lugarExtraccion1.setBackground(Color.YELLOW);
 				} else {
 					lugarExtraccion1.setBackground(Color.WHITE);
 				}
-				extraidoPor1.setText(analisisBarroSeleccionado.getExtraidoPor());
-				if(analisisBarroSeleccionado.getExtraidoPor().equals("*")) {
+				extraidoPor1.setText(analisisAguaSeleccionado.getExtraidoPor());
+				if(analisisAguaSeleccionado.getExtraidoPor().equals("*")) {
 					extraidoPor1.setBackground(Color.YELLOW);
 				} else {
 					extraidoPor1.setBackground(Color.WHITE);
 				}
-				if(analisisBarroSeleccionado.getFechaExtraccion() == null) {
+				if(analisisAguaSeleccionado.getFechaExtraccion() == null) {
 					fechaExtraccion1.setText("");
 				} else {
 					DateFormat df = new SimpleDateFormat("dd/MM/YYYY");
-				    fechaExtraccion1.setText(df.format(analisisBarroSeleccionado.getFechaExtraccion()));
+				    fechaExtraccion1.setText(df.format(analisisAguaSeleccionado.getFechaExtraccion()));
 				}
-				horaExtraccion1.setText(analisisBarroSeleccionado.getHoraExtraccion());
-				if(analisisBarroSeleccionado.getHoraExtraccion().equals("*")) {
+				horaExtraccion1.setText(analisisAguaSeleccionado.getHoraExtraccion());
+				if(analisisAguaSeleccionado.getHoraExtraccion().equals("*")) {
 					horaExtraccion1.setBackground(Color.YELLOW);
 				} else {
 					horaExtraccion1.setBackground(Color.WHITE);
 				}
-				if(analisisBarroSeleccionado.getAspecto().equals("*")) {
+				if(analisisAguaSeleccionado.getAspecto().equals("*")) {
 					aspecto1.setBackground(Color.YELLOW);
 				} else {
 					aspecto1.setBackground(Color.WHITE);
 				}
-				aspecto1.setText(analisisBarroSeleccionado.getAspecto());
-				if(analisisBarroSeleccionado.getpH().equals("*")) {
+				aspecto1.setText(analisisAguaSeleccionado.getAspecto());
+				if(analisisAguaSeleccionado.getpH().equals("*")) {
 					pH1.setBackground(Color.YELLOW);
 				} else {
 					pH1.setBackground(Color.WHITE);
 				}
-				pH1.setText(analisisBarroSeleccionado.getpH());				
-				if(analisisBarroSeleccionado.getSolidosTotales().equals("*")) {
-					solidosTotales1.setBackground(Color.YELLOW);
+				pH1.setText(analisisAguaSeleccionado.getpH());				
+				if(analisisAguaSeleccionado.getSolidosTotales().equals("*")) {
+					SolidosTotales1.setBackground(Color.YELLOW);
 				} else {
-					solidosTotales1.setBackground(Color.WHITE);
+					SolidosTotales1.setBackground(Color.WHITE);
 				}
-				solidosTotales1.setText(analisisBarroSeleccionado.getSolidosTotales());
-				if(analisisBarroSeleccionado.getHumedad().equals("*")) {
-					humedad1.setBackground(Color.YELLOW);
+				SolidosTotales1.setText(analisisAguaSeleccionado.getSolidosTotales());
+				if(analisisAguaSeleccionado.getpHInSitu().equals("*")) {
+					pHIS1.setBackground(Color.YELLOW);
 				} else {
-					humedad1.setBackground(Color.WHITE);
+					pHIS1.setBackground(Color.WHITE);
 				}
-				humedad1.setText(analisisBarroSeleccionado.getHumedad());
-				if(analisisBarroSeleccionado.getSolidosTotalesVolatiles().equals("*")) {
-					solidosTotalesVolatiles1.setBackground(Color.YELLOW);
+				pHIS1.setText(analisisAguaSeleccionado.getpHInSitu());
+				if(analisisAguaSeleccionado.getTemperatura().equals("*")) {
+					temperatura1.setBackground(Color.YELLOW);
 				} else {
-					solidosTotalesVolatiles1.setBackground(Color.WHITE);
+					temperatura1.setBackground(Color.WHITE);
 				}
-				solidosTotalesVolatiles1.setText(analisisBarroSeleccionado.getSolidosTotalesVolatiles());
-				if(analisisBarroSeleccionado.getLiquidosLibres().equals("*")) {
-					liquidosLibres1.setBackground(Color.YELLOW);
+				temperatura1.setText(analisisAguaSeleccionado.getTemperatura());
+				if(analisisAguaSeleccionado.getCaudalInstantaneo().equals("*")) {
+					caudal1.setBackground(Color.YELLOW);
 				} else {
-					liquidosLibres1.setBackground(Color.WHITE);
+					caudal1.setBackground(Color.WHITE);
 				}
-				liquidosLibres1.setText(analisisBarroSeleccionado.getLiquidosLibres());
-				if(analisisBarroSeleccionado.getSulfuro().equals("*")) {
-					sulfuro1.setBackground(Color.YELLOW);
+				caudal1.setText(analisisAguaSeleccionado.getCaudalInstantaneo());
+				if(analisisAguaSeleccionado.getODInSitu().equals("*")) {
+					ODIS1.setBackground(Color.YELLOW);
 				} else {
-					sulfuro1.setBackground(Color.WHITE);
+					ODIS1.setBackground(Color.WHITE);
 				}
-				sulfuro1.setText(analisisBarroSeleccionado.getSulfuro());
-				if(analisisBarroSeleccionado.getCromoEnLixiviado().equals("*")) {
-					cromoEnLixiviado1.setBackground(Color.YELLOW);
+				ODIS1.setText(analisisAguaSeleccionado.getODInSitu());
+				if(analisisAguaSeleccionado.getOD().equals("*")) {
+					OD1.setBackground(Color.YELLOW);
 				} else {
-					cromoEnLixiviado1.setBackground(Color.WHITE);
+					OD1.setBackground(Color.WHITE);
 				}
-				cromoEnLixiviado1.setText(analisisBarroSeleccionado.getCromoEnLixiviado());
-				if(analisisBarroSeleccionado.getPlomoEnLixiviado().equals("*")) {
-					plomoEnLixiviado1.setBackground(Color.YELLOW);
+				OD1.setText(analisisAguaSeleccionado.getOD());
+				if(analisisAguaSeleccionado.getDBO5().equals("*")) {
+					DBO51.setBackground(Color.YELLOW);
 				} else {
-					plomoEnLixiviado1.setBackground(Color.WHITE);
+					DBO51.setBackground(Color.WHITE);
 				}
-				plomoEnLixiviado1.setText(analisisBarroSeleccionado.getPlomoEnLixiviado());
-				if(analisisBarroSeleccionado.getMateriaOrganica().equals("*")) {
-					materiaOrganica1.setBackground(Color.YELLOW);
+				DBO51.setText(analisisAguaSeleccionado.getDBO5());
+				if(analisisAguaSeleccionado.getDBO5Filtrada().equals("*")) {
+					DBO5F1.setBackground(Color.YELLOW);
 				} else {
-					materiaOrganica1.setBackground(Color.WHITE);
+					DBO5F1.setBackground(Color.WHITE);
 				}
-				materiaOrganica1.setText(analisisBarroSeleccionado.getMateriaOrganica());
-				if(analisisBarroSeleccionado.getHidrocarburosTotales().equals("*")) {
-					hidrocarburosTotales1.setBackground(Color.YELLOW);
+				DBO5F1.setText(analisisAguaSeleccionado.getDBO5Filtrada());
+				if(analisisAguaSeleccionado.getDQO().equals("*")) {
+					DQO1.setBackground(Color.YELLOW);
 				} else {
-					hidrocarburosTotales1.setBackground(Color.WHITE);
+					DQO1.setBackground(Color.WHITE);
 				}
-				hidrocarburosTotales1.setText(analisisBarroSeleccionado.getHidrocarburosTotales());
-				if(analisisBarroSeleccionado.getConductividad().equals("*")) {
+				DQO1.setText(analisisAguaSeleccionado.getDQO());
+				if(analisisAguaSeleccionado.getAceitesYGrasas().equals("*")) {
+					AceitesYGrasas1.setBackground(Color.YELLOW);
+				} else {
+					AceitesYGrasas1.setBackground(Color.WHITE);
+				}
+				AceitesYGrasas1.setText(analisisAguaSeleccionado.getAceitesYGrasas());
+				if(analisisAguaSeleccionado.getSolidosTotalesVolatiles().equals("*")) {
+					STV1.setBackground(Color.YELLOW);
+				} else {
+					STV1.setBackground(Color.WHITE);
+				}
+				STV1.setText(analisisAguaSeleccionado.getSolidosTotalesVolatiles());
+
+				SST1.setText(analisisAguaSeleccionado.getSst());
+				if(analisisAguaSeleccionado.getSst().equals("*")) {
+					SST1.setBackground(Color.YELLOW);
+				} else {
+					SST1.setBackground(Color.WHITE);
+				}
+				SSV1.setText(analisisAguaSeleccionado.getSsv());
+				if(analisisAguaSeleccionado.getSsv().equals("*")) {
+					SSV1.setBackground(Color.YELLOW);
+				} else {
+					SSV1.setBackground(Color.WHITE);
+				}
+				SS101.setText(analisisAguaSeleccionado.getSs10());
+				if(analisisAguaSeleccionado.getSs10().equals("*")) {
+					SS101.setBackground(Color.YELLOW);
+				} else {
+					SS101.setBackground(Color.WHITE);
+				}
+				SS301.setText(analisisAguaSeleccionado.getSs30());
+				if(analisisAguaSeleccionado.getSs30().equals("*")) {
+					SS301.setBackground(Color.YELLOW);
+				} else {
+					SS301.setBackground(Color.WHITE);
+				}
+				SS601.setText(analisisAguaSeleccionado.getSs60());
+				if(analisisAguaSeleccionado.getSs10().equals("*")) {
+					SS601.setBackground(Color.YELLOW);
+				} else {
+					SS601.setBackground(Color.WHITE);
+				}
+				amoniaco1.setText(analisisAguaSeleccionado.getAmoniaco());
+				if(analisisAguaSeleccionado.getOtros4().equals("*")) {
+					amoniaco1.setBackground(Color.YELLOW);
+				} else {
+					amoniaco1.setBackground(Color.WHITE);
+				}
+				nitrato1.setText(analisisAguaSeleccionado.getNitrato());
+				if(analisisAguaSeleccionado.getNitrato().equals("*")) {
+					nitrato1.setBackground(Color.YELLOW);
+				} else {
+					nitrato1.setBackground(Color.WHITE);
+				}
+				nitrogenoTotal1.setText(analisisAguaSeleccionado.getNitrogenoTotal());
+				if(analisisAguaSeleccionado.getNitrogenoTotal().equals("*")) {
+					nitrogenoTotal1.setBackground(Color.YELLOW);
+				} else {
+					nitrogenoTotal1.setBackground(Color.WHITE);
+				}
+				fosforoTotal1.setText(analisisAguaSeleccionado.getFosforoTotal());
+				if(analisisAguaSeleccionado.getFosforoTotal().equals("*")) {
+					fosforoTotal1.setBackground(Color.YELLOW);
+				} else {
+					fosforoTotal1.setBackground(Color.WHITE);
+				}
+				cromo1.setText(analisisAguaSeleccionado.getCromo());
+				if(analisisAguaSeleccionado.getCromo().equals("*")) {
+					cromo1.setBackground(Color.YELLOW);
+				} else {
+					cromo1.setBackground(Color.WHITE);
+				}
+				plomo1.setText(analisisAguaSeleccionado.getPlomo());
+				if(analisisAguaSeleccionado.getPlomo().equals("*")) {
+					plomo1.setBackground(Color.YELLOW);
+				} else {
+					plomo1.setBackground(Color.WHITE);
+				}
+				zinc1.setText(analisisAguaSeleccionado.getZinc());
+				if(analisisAguaSeleccionado.getZinc().equals("*")) {
+					zinc1.setBackground(Color.YELLOW);
+				} else {
+					zinc1.setBackground(Color.WHITE);
+				}
+				aluminio1.setText(analisisAguaSeleccionado.getAluminio());
+				if(analisisAguaSeleccionado.getAluminio().equals("*")) {
+					aluminio1.setBackground(Color.YELLOW);
+				} else {
+					aluminio1.setBackground(Color.WHITE);
+				}
+				manganeso1.setText(analisisAguaSeleccionado.getManganeso());
+				if(analisisAguaSeleccionado.getManganeso().equals("*")) {
+					manganeso1.setBackground(Color.YELLOW);
+				} else {
+					manganeso1.setBackground(Color.WHITE);
+				}
+				potasio1.setText(analisisAguaSeleccionado.getPotasio());
+				if(analisisAguaSeleccionado.getPotasio().equals("*")) {
+					potasio1.setBackground(Color.YELLOW);
+				} else {
+					potasio1.setBackground(Color.WHITE);
+				}
+				alcalinidadTotal1.setText(analisisAguaSeleccionado.getAlcalinidadTotal());
+				if(analisisAguaSeleccionado.getAlcalinidadTotal().equals("*")) {
+					alcalinidadTotal1.setBackground(Color.YELLOW);
+				} else {
+					alcalinidadTotal1.setBackground(Color.WHITE);
+				}
+				acidezVolatil1.setText(analisisAguaSeleccionado.getAcidezVolatil());
+				if(analisisAguaSeleccionado.getAcidezVolatil().equals("*")) {
+					acidezVolatil1.setBackground(Color.YELLOW);
+				} else {
+					acidezVolatil1.setBackground(Color.WHITE);
+				}
+				alfa1.setText(analisisAguaSeleccionado.getAlfa());
+				if(analisisAguaSeleccionado.getAlfa().equals("*")) {
+					alfa1.setBackground(Color.YELLOW);
+				} else {
+					alfa1.setBackground(Color.WHITE);
+				}
+				alfaPrima1.setText(analisisAguaSeleccionado.getAlfaPrima());
+				if(analisisAguaSeleccionado.getAlfaPrima().equals("*")) {
+					alfaPrima1.setBackground(Color.YELLOW);
+				} else {
+					alfaPrima1.setBackground(Color.WHITE);
+				}				
+				bicarbonato1.setText(analisisAguaSeleccionado.getBicarbonato());
+				if(analisisAguaSeleccionado.getBicarbonato().equals("*")) {
+					bicarbonato1.setBackground(Color.YELLOW);
+				} else {
+					bicarbonato1.setBackground(Color.WHITE);
+				}
+				salinidad1.setText(analisisAguaSeleccionado.getSalinidad());
+				if(analisisAguaSeleccionado.getSalinidad().equals("*")) {
+					salinidad1.setBackground(Color.YELLOW);
+				} else {
+					salinidad1.setBackground(Color.WHITE);
+				}
+				turbiedad1.setText(analisisAguaSeleccionado.getTurbiedad());
+				if(analisisAguaSeleccionado.getTurbiedad().equals("*")) {
+					turbiedad1.setBackground(Color.YELLOW);
+				} else {
+					turbiedad1.setBackground(Color.WHITE);
+				}
+				conductividad1.setText(analisisAguaSeleccionado.getConductividad());
+				if(analisisAguaSeleccionado.getConductividad().equals("*")) {
 					conductividad1.setBackground(Color.YELLOW);
 				} else {
 					conductividad1.setBackground(Color.WHITE);
 				}
-				conductividad1.setText(analisisBarroSeleccionado.getConductividad());
-				if(analisisBarroSeleccionado.getRelacionCN().equals("*")) {
-					relacionCN1.setBackground(Color.YELLOW);
+				sulfuro1.setText(analisisAguaSeleccionado.getSulfuro());
+				if(analisisAguaSeleccionado.getSulfuro().equals("*")) {
+					sulfuro1.setBackground(Color.YELLOW);
 				} else {
-					relacionCN1.setBackground(Color.WHITE);
+					sulfuro1.setBackground(Color.WHITE);
 				}
-				relacionCN1.setText(analisisBarroSeleccionado.getRelacionCN());
-
-				otros1.setText(analisisBarroSeleccionado.getOtros1());
-				if(analisisBarroSeleccionado.getOtros1().equals("*")) {
-					otros1.setBackground(Color.YELLOW);
+				sulfato1.setText(analisisAguaSeleccionado.getSulfato());
+				if(analisisAguaSeleccionado.getSulfato().equals("*")) {
+					sulfato1.setBackground(Color.YELLOW);
 				} else {
-					otros1.setBackground(Color.WHITE);
+					sulfato1.setBackground(Color.WHITE);
 				}
-				otros2.setText(analisisBarroSeleccionado.getOtros2());
-				if(analisisBarroSeleccionado.getOtros2().equals("*")) {
-					otros2.setBackground(Color.YELLOW);
+				fenoles1.setText(analisisAguaSeleccionado.getFenoles());
+				if(analisisAguaSeleccionado.getFenoles().equals("*")) {
+					fenoles1.setBackground(Color.YELLOW);
 				} else {
-					otros2.setBackground(Color.WHITE);
+					fenoles1.setBackground(Color.WHITE);
 				}
-				otros3.setText(analisisBarroSeleccionado.getOtros3());
-				if(analisisBarroSeleccionado.getOtros3().equals("*")) {
-					otros3.setBackground(Color.YELLOW);
+				tensoactivos1.setText(analisisAguaSeleccionado.getTensoactivosAnionicos());
+				if(analisisAguaSeleccionado.getTensoactivosAnionicos().equals("*")) {
+					tensoactivos1.setBackground(Color.YELLOW);
 				} else {
-					otros3.setBackground(Color.WHITE);
+					tensoactivos1.setBackground(Color.WHITE);
 				}
-				otros4.setText(analisisBarroSeleccionado.getOtros4());
-				if(analisisBarroSeleccionado.getOtros4().equals("*")) {
-					otros4.setBackground(Color.YELLOW);
+				cloroResidual1.setText(analisisAguaSeleccionado.getCloroResidual());
+				if(analisisAguaSeleccionado.getCloroResidual().equals("*")) {
+					cloroResidual1.setBackground(Color.YELLOW);
 				} else {
-					otros4.setBackground(Color.WHITE);
+					cloroResidual1.setBackground(Color.WHITE);
 				}
+				cloroTotal1.setText(analisisAguaSeleccionado.getCloroTotal());
+				if(analisisAguaSeleccionado.getCloroTotal().equals("*")) {
+					cloroTotal1.setBackground(Color.YELLOW);
+				} else {
+					cloroTotal1.setBackground(Color.WHITE);
+				}
+				cloruro1.setText(analisisAguaSeleccionado.getCloruro());
+				if(analisisAguaSeleccionado.getCloruro().equals("*")) {
+					cloruro1.setBackground(Color.YELLOW);
+				} else {
+					cloruro1.setBackground(Color.WHITE);
+				}
+				dureza1.setText(analisisAguaSeleccionado.getDureza());
+				if(analisisAguaSeleccionado.getDureza().equals("*")) {
+					dureza1.setBackground(Color.YELLOW);
+				} else {
+					dureza1.setBackground(Color.WHITE);
+				}
+				color1.setText(analisisAguaSeleccionado.getColor());
+				if(analisisAguaSeleccionado.getColor().equals("*")) {
+					color1.setBackground(Color.YELLOW);
+				} else {
+					color1.setBackground(Color.WHITE);
+				}
+				hidrocarburos1.setText(analisisAguaSeleccionado.getHidrocarburos());
+				if(analisisAguaSeleccionado.getHidrocarburos().equals("*")) {
+					hidrocarburos1.setBackground(Color.YELLOW);
+				} else {
+					hidrocarburos1.setBackground(Color.WHITE);
+				}
+				coliformes1.setText(analisisAguaSeleccionado.getColiformesFecales());
+				if(analisisAguaSeleccionado.getColiformesFecales().equals("*")) {
+					coliformes1.setBackground(Color.YELLOW);
+				} else {
+					coliformes1.setBackground(Color.WHITE);
+				}
+				cursoAguaTipo1.setText(analisisAguaSeleccionado.getCursoDeAguaTipo());
+				if(analisisAguaSeleccionado.getCursoDeAguaTipo().equals("*")) {
+					cursoAguaTipo1.setBackground(Color.YELLOW);
+				} else {
+					cursoAguaTipo1.setBackground(Color.WHITE);
+				}
+				otros11.setText(analisisAguaSeleccionado.getOtros());
+				if(analisisAguaSeleccionado.getOtros().equals("*")) {
+					otros11.setBackground(Color.YELLOW);
+				} else {
+					otros11.setBackground(Color.WHITE);
+				}
+				otros21.setText(analisisAguaSeleccionado.getOtros2());
+				if(analisisAguaSeleccionado.getOtros().equals("*")) {
+					otros21.setBackground(Color.YELLOW);
+				} else {
+					otros21.setBackground(Color.WHITE);
+				}
+				otros31.setText(analisisAguaSeleccionado.getOtros3());
+				if(analisisAguaSeleccionado.getOtros3().equals("*")) {
+					otros31.setBackground(Color.YELLOW);
+				} else {
+					otros31.setBackground(Color.WHITE);
+				}
+				otros41.setText(analisisAguaSeleccionado.getOtros4());
+				if(analisisAguaSeleccionado.getOtros4().equals("*")) {
+					otros41.setBackground(Color.YELLOW);
+				} else {
+					otros41.setBackground(Color.WHITE);
+				}
+				
+				
 			}
 		});
 		
@@ -1796,6 +2014,28 @@ public class FormularioModificacionAguas {
 		otros41.setBounds(191, 1807, 130, 26);
 		miPanel.add(otros41);
 		
+		estado1 = new JTextField();
+		estado1.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				lblEstado.setForeground(destacado);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblEstado.setForeground(Color.BLACK);
+				if (estado1.getText().equals("*")) {
+					estado1.setBackground(Color.YELLOW);
+				} else {
+					estado1.setBackground(Color.WHITE);
+				}
+			}
+		});
+		estado1.setHorizontalAlignment(SwingConstants.CENTER);
+		estado1.setColumns(10);
+		estado1.setBounds(191, 1837, 130, 26);
+		estado1.setEditable(false);
+		miPanel.add(estado1);
+		
 		JButton btnModificarAnlisis = new JButton("Modificar análisis");
 		
 		btnModificarAnlisis.addMouseListener(new MouseAdapter() {
@@ -1805,8 +2045,8 @@ public class FormularioModificacionAguas {
 				if (estado1.getText().equals("Validado")){
 					JOptionPane.showMessageDialog(null, "No es posible modificar un análisis validado. Debe desvalidarlo para poder modificarlo.");
 				} else {
-					AnalisisAgua analisisAgua = new AnalisisAgua(nroAnalisis1.getText(), String.valueOf(industria.getSelectedItem()), departamento1.getText(), localidad1.getText(), descargaEn1.getText(), lugarExtraccion1.getText(),
-							extraidoPor1.getText(), fechaExtraccion1.getDate(), horaExtraccion1.getText(), aspecto1.getText(), pHIS1.getText(), pH1.getText(), temperatura1.getText(), caudal1.getText(), ODIS1.getText(), OD1.getText(),
+					AnalisisAgua analisisAgua = new AnalisisAgua(String.valueOf(nroAnalisis1.getSelectedItem()), String.valueOf(industria.getSelectedItem()), departamento1.getText(), localidad1.getText(), descargaEn1.getText(), lugarExtraccion1.getText(),
+							extraidoPor1.getText(), null, horaExtraccion1.getText(), aspecto1.getText(), pHIS1.getText(), pH1.getText(), temperatura1.getText(), caudal1.getText(), ODIS1.getText(), OD1.getText(),
 							DBO51.getText(), DBO5F1.getText(), DQO1.getText(), AceitesYGrasas1.getText(), SolidosTotales1.getText(), STV1.getText(), SST1.getText(), SSV1.getText(), SS101.getText(), SS301.getText(), SS601.getText(), amoniaco1.getText(), nitrato1.getText(), nitrogenoTotal1.getText(), fosforoTotal1.getText(),
 							cromo1.getText(), plomo1.getText(), zinc1.getText(), aluminio1.getText(), manganeso1.getText(), potasio1.getText(), alcalinidadTotal1.getText(), acidezVolatil1.getText(), alfa1.getText(), alfaPrima1.getText(),
 							bicarbonato1.getText(), salinidad1.getText(), turbiedad1.getText(), conductividad1.getText(), sulfuro1.getText(), sulfato1.getText(), fenoles1.getText(), tensoactivos1.getText(), cloroResidual1.getText(),
@@ -1835,17 +2075,49 @@ public class FormularioModificacionAguas {
 		btnVolver.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				MenuBarrosANAGUA menuBarrosANAGUA = new MenuBarrosANAGUA();
+				MenuAguasANAGUA menuAguasANAGUA = new MenuAguasANAGUA();
 				frame.dispose();
 			}
 		});
 		btnVolver.setBounds(372, 365, 155, 48);
-		miPanel.add(btnVolver);	
+		miPanel.add(btnVolver);
+		
+		JButton btnValidar = new JButton("Validar");
+		btnValidar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				String pw = JOptionPane.showInputDialog("Ingrese la contraseña");
+				if (pw.equals("1234")){
+					aguasDAO.validarAnalisis(String.valueOf(nroAnalisis1.getSelectedItem()));
+					estado1.setText("Validado");
+				} else {
+					JOptionPane.showMessageDialog(null, "Contraseña incorrecta. Intente nuevamente.");
+				}
+			}
+		});
+		btnValidar.setBounds(325, 1835, 117, 29);
+		miPanel.add(btnValidar);
+		
+		JButton btnDesvalidar = new JButton("Desvalidar");
+		btnDesvalidar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				String pw = JOptionPane.showInputDialog("Ingrese la contraseña");
+				if (pw.equals("1234")){
+					aguasDAO.desvalidarAnalisis(String.valueOf(nroAnalisis1.getSelectedItem()));
+					estado1.setText("En proceso");
+				} else {
+					JOptionPane.showMessageDialog(null, "Contraseña incorrecta. Intente nuevamente.");
+				}
+			}
+		});
+		btnDesvalidar.setBounds(443, 1835, 117, 29);
+		miPanel.add(btnDesvalidar);
 		
 		
 		frame.getContentPane().add(scrollPane);
 		
-		miPanel.setPreferredSize(new Dimension(600, 1850));		
+		miPanel.setPreferredSize(new Dimension(600, 1880));		
 		scrollPane.setViewportView(miPanel);
 		
 	}

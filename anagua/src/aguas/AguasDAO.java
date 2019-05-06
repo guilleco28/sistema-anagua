@@ -110,7 +110,7 @@ public class AguasDAO {
 		
 	}
 	
-	public void modificarAgua (AnalisisAgua analisisAgua) {
+	public void modificarAgua (AnalisisAgua analisisAgua) throws MySQLIntegrityConstraintViolationException, SQLException{
 		PreparedStatement preparedStmt;
 		BaseDeDatos baseDeDatos = new BaseDeDatos();
 		Connection oConnection = null;
@@ -454,9 +454,9 @@ try {
 			preparedStmt.setString(56, analisisAAgregar.getColiformesFecales());
 			preparedStmt.setString(57, analisisAAgregar.getCursoDeAguaTipo());
 			preparedStmt.setString(58, analisisAAgregar.getOtros());
-			preparedStmt.setString(58, analisisAAgregar.getOtros2());
-			preparedStmt.setString(58, analisisAAgregar.getOtros3());
-			preparedStmt.setString(58, analisisAAgregar.getOtros4());
+			preparedStmt.setString(59, analisisAAgregar.getOtros2());
+			preparedStmt.setString(60, analisisAAgregar.getOtros3());
+			preparedStmt.setString(61, analisisAAgregar.getOtros4());
 			preparedStmt.execute();
 		}
 		preparedStmt.close();

@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Properties;
 
+import bd.BaseDeDatos;
+
 public class ConexionAguas {
 	
 	static Connection con = null;
@@ -22,12 +24,13 @@ public class ConexionAguas {
 	private static String url="jdbc:mysql:";
 	private static ArrayList <String> temporal;
 	static Properties p = new Properties();
+	static BaseDeDatos BD = new BaseDeDatos();
 	
 	public ConexionAguas() {
 		try {
-			//p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties"));
+			p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties"));
 			//p.load(new FileReader("W:\\ANAGUA\\sistema-anagua\\config.properties"));
-			p.load(new FileReader("C:\\Users\\Guillermo\\Dropbox\\PROYECTO_ANAGUA\\config.properties"));
+			//p.load(new FileReader("C:\\Users\\Guillermo\\Documents\\sistema-anagua\\config.properties"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -40,7 +43,8 @@ public class ConexionAguas {
 			Class.forName("com.mysql.jdbc.Connection");
 			oConnection = DriverManager.getConnection(url, p.getProperty("usuario"), p.getProperty("pwd"));
 		}catch(SQLException ex){
-			System.out.println("Hubo un problema al conectarse a la bd.");
+			//System.out.println("Hubo un problema al conectarse a la bd.");
+			System.out.println(ex);
 		}catch(ClassNotFoundException ex){
 			System.out.println(ex);
 		}
@@ -106,7 +110,10 @@ public class ConexionAguas {
 		determinaciones.put("hidrocarburos", "Hidrocarburos");
 		determinaciones.put("coliformes_fecales", "Coliformes fecales");
 		determinaciones.put("clase_curso_agua", "Clasificación curso de agua");
-		determinaciones.put("otros", "Otros");		
+		determinaciones.put("otros", "Otros");
+		determinaciones.put("otros2", "Otros 2");	
+		determinaciones.put("otros3", "Otros 3");	
+		determinaciones.put("otros4", "Otros 4");	
 		String query = "SELECT * FROM informe_aguas";
 		PreparedStatement preparedStmt = conexion.prepareStatement(query);
 		ResultSet oResultSet = preparedStmt.executeQuery();
@@ -114,6 +121,7 @@ public class ConexionAguas {
 		for (int i=1; i<=rsmd.getColumnCount(); i++) {
 			columnas.add(determinaciones.get(rsmd.getColumnName(i)));
 		}
+		BD.cerrarConexion(conexion);
 		return columnas;
 	}
 	
@@ -146,7 +154,7 @@ public class ConexionAguas {
 			}
 			analisis.add(paraRelleno);
 		}
-		
+		BD.cerrarConexion(conexion);
 		return analisis;
 		
 	}
@@ -166,6 +174,7 @@ public class ConexionAguas {
 			}
 			datosDeEspecificaciones.add(temporal);
 		}
+		BD.cerrarConexion(conexion);
 		return datosDeEspecificaciones;
 	}
 	
@@ -182,7 +191,7 @@ public class ConexionAguas {
 				cursoDeAgua = oResultSet.getString(i);
 			}
 		}
-		
+		BD.cerrarConexion(conexion);
 		return cursoDeAgua;
 	}
 

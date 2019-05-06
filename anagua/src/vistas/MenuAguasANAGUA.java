@@ -64,7 +64,6 @@ public class MenuAguasANAGUA {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				FormularioIngresoAguas formularioIngresoAguas = new FormularioIngresoAguas();
-				System.out.println("entre");
 				frame.dispose();
 			}
 		});
