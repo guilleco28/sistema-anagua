@@ -49,14 +49,10 @@ public class Bienvenido {
 	private void initialize() {
 		
 		frame = new JFrame();
-		//frame.setBounds(100, 100, 550, 400);
-		//frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		frame.setBounds(100, 100, 550, 400);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setTitle("Bienvenido al sistema gestor de análisis de aguas y barros de ANAGUA");
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		int height = screenSize.height;
-		int width = screenSize.width;
-		frame.setSize(width/2, height/2);
+		frame.setSize(960, 596);
 		frame.setLocationRelativeTo(null);
 		frame.setTitle("ANAGUA S.R.L.");
 		frame.setResizable(false);

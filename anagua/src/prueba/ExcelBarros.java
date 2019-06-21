@@ -27,6 +27,7 @@ import org.apache.poi.ss.usermodel.Drawing;
 import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
+import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Picture;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -48,7 +49,6 @@ public class ExcelBarros {
 	static String rutaFirma;
 	static Properties p = new Properties();
 	private static ConexionBarros conexion = new ConexionBarros();
-	static int[] rgbColumnas = {216, 219, 252};
 	static int[] rgbFilas = {213, 233, 247};
 	static int[] blanco = {255, 255, 255};
 	
@@ -82,7 +82,7 @@ public class ExcelBarros {
 		}
 		llenarDatosEmpresa(workbook, sheet.getRow(6), sheet.getRow(7), sheet.getRow(8), sheet.getRow(9));
 		try {
-			String nombreEmpresa = conexion.traerAnalisis().get(0).get(1).replace(" ", "_");
+			String nombreEmpresa = conexion.traerAnalisis().get(0).get(1).replace(" ", "_").replace("(", "").replace(")", "");
 			rutaExcel = rutaExcel+nombreEmpresa+"_BARROS_"+fechaActual+".xls";
 			llenarDeterminaciones(workbook, conexion);
 			llenarDatosDeterminaciones(workbook);
@@ -147,15 +147,12 @@ public class ExcelBarros {
 	}
 	
 	private static CellStyle setStyle (Workbook workbook, HorizontalAlignment horizontalAlignment, VerticalAlignment verticalAlignment, String fontName, int size, 
-			boolean bold, int[] backgroundColor, BorderStyle topBorder, BorderStyle bottomBorder, BorderStyle rightBorder, BorderStyle leftBorder) {
+			boolean bold, IndexedColors backgroundColor, BorderStyle topBorder, BorderStyle bottomBorder, BorderStyle rightBorder, BorderStyle leftBorder) {
 		CellStyle style = workbook.createCellStyle();
 		style.setAlignment(horizontalAlignment);
 		style.setVerticalAlignment(verticalAlignment);
 		if (backgroundColor != null) {
-			HSSFPalette palette = ((HSSFWorkbook) workbook).getCustomPalette();
-			HSSFColor myColor = palette.findSimilarColor(backgroundColor[0], backgroundColor[1], backgroundColor[2]);
-			short index = myColor.getIndex();
-			style.setFillForegroundColor(index);
+			style.setFillForegroundColor(backgroundColor.getIndex());
 			style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 		}
 		//style.setBorderBottom(BorderStyle.THICK);
@@ -219,7 +216,7 @@ public class ExcelBarros {
 		
 		//estilo de INDUSTRIA:, DEPARTAMENTO:, LOCALIDAD: y DESCARGA EN:
 		for (int i=0; i<titulosDatosEmpresa.size(); i++) {
-			titulosDatosEmpresa.get(i).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 12, true, rgbColumnas, BorderStyle.THIN, null, null, BorderStyle.THIN));
+			titulosDatosEmpresa.get(i).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 12, true, IndexedColors.PALE_BLUE, BorderStyle.THIN, null, null, BorderStyle.THIN));
 		}
 				
 		CellStyle styleBordesSuperioresDatos = workbook.createCellStyle();
@@ -302,7 +299,7 @@ public class ExcelBarros {
 		titulosColumnasArray.add(metodo);
 		titulosColumnasArray.add(norma);
 		for(int i=0; i<titulosColumnasArray.size(); i++) {
-			titulosColumnasArray.get(i).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 12, true, rgbColumnas, BorderStyle.THIN, null, BorderStyle.THIN, BorderStyle.THIN));
+			titulosColumnasArray.get(i).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 12, true, IndexedColors.PALE_BLUE, BorderStyle.THIN, null, BorderStyle.THIN, BorderStyle.THIN));
 		}
 		
 		Row row13 = sheet.createRow(12);
@@ -381,9 +378,9 @@ public class ExcelBarros {
 		ArrayList<ArrayList<String>> analisis = conexion.traerAnalisis();
 		ArrayList<String> determinacionesSinFijos = new ArrayList<String>();
 		ArrayList<ArrayList<String>> analisisSinFijos = new ArrayList<ArrayList<String>>();
-		CellStyle titulosDeterminaciones = setStyle(workbook, HorizontalAlignment.LEFT, VerticalAlignment.CENTER, "Arial Narrow", 10, true, rgbFilas, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN);
-		CellStyle styleDatos = setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 9, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN);
-		CellStyle styleTexto = setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 10, false, blanco, null, null, null, null);
+		CellStyle titulosDeterminaciones = setStyle(workbook, HorizontalAlignment.LEFT, VerticalAlignment.CENTER, "Arial Narrow", 10, true, IndexedColors.PALE_BLUE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN);
+		CellStyle styleDatos = setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 9, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN);
+		CellStyle styleTexto = setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 10, false, IndexedColors.WHITE, null, null, null, null);
 		
 		
 		for (int i=0; i<determinaciones.size(); i++) {
@@ -417,9 +414,9 @@ public class ExcelBarros {
 			cell2.setCellStyle(titulosDeterminaciones);
 			cell3.setCellStyle(titulosDeterminaciones);
 			
-			workbook.getSheet("Sheet0").getRow(i).createCell(3).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 10, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));
-			workbook.getSheet("Sheet0").getRow(i).createCell(8).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 10, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));
-			workbook.getSheet("Sheet0").getRow(i).createCell(9).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 10, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));
+			workbook.getSheet("Sheet0").getRow(i).createCell(3).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 10, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));
+			workbook.getSheet("Sheet0").getRow(i).createCell(8).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 10, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));
+			workbook.getSheet("Sheet0").getRow(i).createCell(9).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 10, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));
 			
 		}
 		
@@ -434,7 +431,7 @@ public class ExcelBarros {
 		Row separacion = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+13);
 		separacion.setHeightInPoints((float) 8.0);
 		
-		CellStyle styleMetodos = setStyle(workbook, HorizontalAlignment.LEFT, VerticalAlignment.CENTER, "Arial", 9 , false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN);
+		CellStyle styleMetodos = setStyle(workbook, HorizontalAlignment.LEFT, VerticalAlignment.CENTER, "Arial", 9 , false, IndexedColors.WHITE, null, null, null, null);
 		
 		Row metodos1 = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+14);
 		metodos1.setHeightInPoints((float) 15.0);
@@ -443,22 +440,22 @@ public class ExcelBarros {
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+14, determinacionesSinFijos.size()+14, 0, 9));
 		Row metodos2 = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+15);
 		metodos2.setHeightInPoints((float) 15.0);
-		metodos2.createCell(0).setCellValue("   (2)    Métodos extraídos de - Asociación Brasilera de Normas Técnicas");
+		metodos2.createCell(0).setCellValue("   (2)    Métodos extraídos de - Normas Mexicanas");
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+15, determinacionesSinFijos.size()+15, 0, 9));
 		metodos2.getCell(0).setCellStyle(styleMetodos);
 		Row metodos3 = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+16);
 		metodos3.setHeightInPoints((float) 15.0);
-		metodos3.createCell(0).setCellValue("   (3)    Métodos extraídos de - Normas Mexicanas");
+		metodos3.createCell(0).setCellValue("   (3)    Métodos extraídos de - ENVIRONMENTAL PROTECTION AGENCY");
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+16, determinacionesSinFijos.size()+16, 0, 9));
 		metodos3.getCell(0).setCellStyle(styleMetodos);
 		Row metodos4 = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+17);
 		metodos4.setHeightInPoints((float) 15.0);
-		metodos4.createCell(0).setCellValue("   (4)    Métodos extraídos de - ENVIRONMENTAL PROTECTION AGENCY");
+		metodos4.createCell(0).setCellValue("   (4)    Métodos extraídos de - 'Manual de procedimientos analíticos para muestras ambientales'-DINAMA");
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+17, determinacionesSinFijos.size()+17, 0, 9));
 		metodos4.getCell(0).setCellStyle(styleMetodos);
 		Row metodos5 = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+18);
 		metodos5.setHeightInPoints((float) 15.0);
-		metodos5.createCell(0).setCellValue("   (5)    Métodos extraídos de - 'Manual de procedimientos analíticos para muestras ambientales'-DINAMA");
+		metodos5.createCell(0).setCellValue("   Nota: límites según decreto 253/79");
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+18, determinacionesSinFijos.size()+18, 0, 9));
 		metodos5.getCell(0).setCellStyle(styleMetodos);
 		
@@ -476,13 +473,13 @@ public class ExcelBarros {
 		Row observaciones = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+20);
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+20, determinacionesSinFijos.size()+20, 0, 2));
 		observaciones.createCell(0).setCellValue("   OBSERVACIONES:");
-		observaciones.getCell(0).setCellStyle(setStyle(workbook, HorizontalAlignment.LEFT, VerticalAlignment.CENTER, "Arial Narrow", 10, true, blanco, null, null, null, null));
+		observaciones.getCell(0).setCellStyle(setStyle(workbook, HorizontalAlignment.LEFT, VerticalAlignment.CENTER, "Arial Narrow", 10, true, IndexedColors.WHITE, null, null, null, null));
 		
 		Row fecha = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+23);
 		
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+23, determinacionesSinFijos.size()+23, 1, 2));
 		fecha.createCell(1).setCellValue("Montevideo,");
-		fecha.getCell(1).setCellStyle(setStyle(workbook, HorizontalAlignment.RIGHT, VerticalAlignment.CENTER, "Arial", 10, false, blanco, null, null, null, null));
+		fecha.getCell(1).setCellStyle(setStyle(workbook, HorizontalAlignment.RIGHT, VerticalAlignment.CENTER, "Arial", 10, false, IndexedColors.WHITE, null, null, null, null));
 		
 		//formato fecha
 		SimpleDateFormat formateador = new SimpleDateFormat("dd 'de' MMMM 'de' yyyy", new Locale("ES"));
@@ -512,7 +509,7 @@ public class ExcelBarros {
 		Row fchEmision = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+24);
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+24, determinacionesSinFijos.size()+24, 1, 4));
 		fchEmision.createCell(1).setCellValue("Fecha de emisión del resultado");
-		fchEmision.getCell(1).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.TOP, "Arial", 7, false, blanco, null, null, null, null));
+		fchEmision.getCell(1).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.TOP, "Arial", 7, false, IndexedColors.WHITE, null, null, null, null));
 		
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+24, determinacionesSinFijos.size()+24, 6, 8));
 		fchEmision.createCell(6).setCellValue("Por ANAGUA S.R.L.");
@@ -532,20 +529,20 @@ public class ExcelBarros {
 		styleNombreQuimico.setAlignment(HorizontalAlignment.CENTER);
 		nombreQuimico.getCell(6).setCellStyle(styleNombreQuimico);
 		
-		Row bordeBajoGrueso = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+25);
+		Row bordeBajoGrueso = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+26);
 		CellStyle styleBordeBajoGrueso = workbook.createCellStyle();
 		styleBordeBajoGrueso.setBorderBottom(BorderStyle.THICK);
 		for (int i=0; i<=9; i++) {
 			bordeBajoGrueso.createCell(i).setCellStyle(styleBordeBajoGrueso);
 		}
 		
-		Row separacion3 = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+26);
+		Row separacion3 = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+27);
 		separacion3.setHeightInPoints((short) 3.0);
 		
-		Row datosEmpresa = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+27);
-		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+27, determinacionesSinFijos.size()+27, 0, 3));
-		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+27, determinacionesSinFijos.size()+27, 4, 6));
-		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+27, determinacionesSinFijos.size()+27, 7, 9));
+		Row datosEmpresa = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+28);
+		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+28, determinacionesSinFijos.size()+28, 0, 3));
+		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+28, determinacionesSinFijos.size()+28, 4, 6));
+		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+28, determinacionesSinFijos.size()+28, 7, 9));
 		datosEmpresa.createCell(0).setCellValue("Juan Parra del Riego 1027");
 		datosEmpresa.getCell(0).setCellStyle(styleTexto);
 		datosEmpresa.createCell(4).setCellValue("Tel: 27055200 int. 130");
@@ -568,11 +565,11 @@ public class ExcelBarros {
 				if (sheet.getRow(i).getCell(0).getStringCellValue().equals(datosDeDeterminaciones.get(j).get(0))) {
 					//System.out.println("ENTRÉ AL IF");
 					sheet.getRow(i).createCell(3).setCellValue(datosDeDeterminaciones.get(j).get(1));
-					sheet.getRow(i).getCell(3).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 10, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
+					sheet.getRow(i).getCell(3).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 10, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
 					sheet.getRow(i).createCell(8).setCellValue(datosDeDeterminaciones.get(j).get(2));
-					sheet.getRow(i).getCell(8).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 8, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
+					sheet.getRow(i).getCell(8).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 8, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
 					sheet.getRow(i).createCell(9).setCellValue(datosDeDeterminaciones.get(j).get(3));
-					sheet.getRow(i).getCell(9).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 7, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
+					sheet.getRow(i).getCell(9).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 7, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
 					//datosDeDeterminaciones.remove(j);
 					break;
 					

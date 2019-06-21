@@ -59,10 +59,7 @@ public class IngresoMedioAmbiente {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		int height = screenSize.height;
-		int width = screenSize.width;
-		frame.setSize(width/2, height/2);
+		frame.setSize(960, 596);
 		frame.setLocationRelativeTo(null);
 		frame.setTitle("ANAGUA S.R.L.");
 		frame.setResizable(false);

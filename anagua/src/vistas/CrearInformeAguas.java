@@ -273,6 +273,7 @@ public class CrearInformeAguas {
 	private JTextField otros34;
 	private JTextField otros44;
 	private JTextField lugarExtraccion4;
+	Color colorPorDefecto = new Color (238, 238, 238);
 
 	/**
 	 * Launch the application.
@@ -334,7 +335,7 @@ public class CrearInformeAguas {
 		miPanel.add(lblDescargaEn);
 		
 		industria = new JTextField();
-		industria.setBounds(416, 16, 272, 27);
+		industria.setBounds(158, 15, 436, 27);
 		miPanel.add(industria);
 		industria.setColumns(10);
 		industria.setEditable(false);
@@ -355,8 +356,8 @@ public class CrearInformeAguas {
 		miPanel.add(descargaEn1);
 		
 		JSeparator separator = new JSeparator();
-		separator.setBounds(6, 108, 588, 24);
-		frame.getContentPane().add(separator);
+		separator.setBounds(37, 112, 823, 24);
+		miPanel.add(separator);
 		
 		JLabel lblNroAnalisis = new JLabel("Número de análisis");
 		lblNroAnalisis.setBounds(37, 130, 150, 16);
@@ -675,13 +676,13 @@ public class CrearInformeAguas {
 				if(analisisAguaSeleccionado.getLugarExtraccion().equals("*")) {
 					lugarExtraccion1.setBackground(Color.YELLOW);
 				} else {
-					lugarExtraccion1.setBackground(Color.WHITE);
+					lugarExtraccion1.setBackground(colorPorDefecto);
 				}
 				extraidoPor1.setText(analisisAguaSeleccionado.getExtraidoPor());
 				if(analisisAguaSeleccionado.getExtraidoPor().equals("*")) {
 					extraidoPor1.setBackground(Color.YELLOW);
 				} else {
-					extraidoPor1.setBackground(Color.WHITE);
+					extraidoPor1.setBackground(colorPorDefecto);
 				}
 				if(analisisAguaSeleccionado.getFechaExtraccion() == null) {
 					fechaExtraccion1.setText("");
@@ -693,84 +694,84 @@ public class CrearInformeAguas {
 				if(analisisAguaSeleccionado.getHoraExtraccion().equals("*")) {
 					horaExtraccion1.setBackground(Color.YELLOW);
 				} else {
-					horaExtraccion1.setBackground(Color.WHITE);
+					horaExtraccion1.setBackground(colorPorDefecto);
 				}
 				if(analisisAguaSeleccionado.getAspecto().equals("*")) {
 					aspecto1.setBackground(Color.YELLOW);
 				} else {
-					aspecto1.setBackground(Color.WHITE);
+					aspecto1.setBackground(colorPorDefecto);
 				}
 				aspecto1.setText(analisisAguaSeleccionado.getAspecto());
 				if(analisisAguaSeleccionado.getpH().equals("*")) {
 					pH1.setBackground(Color.YELLOW);
 				} else {
-					pH1.setBackground(Color.WHITE);
+					pH1.setBackground(colorPorDefecto);
 				}
 				pH1.setText(analisisAguaSeleccionado.getpH());				
 				if(analisisAguaSeleccionado.getSolidosTotales().equals("*")) {
 					SolidosTotales1.setBackground(Color.YELLOW);
 				} else {
-					SolidosTotales1.setBackground(Color.WHITE);
+					SolidosTotales1.setBackground(colorPorDefecto);
 				}
 				SolidosTotales1.setText(analisisAguaSeleccionado.getSolidosTotales());
 				if(analisisAguaSeleccionado.getpHInSitu().equals("*")) {
 					pHIS1.setBackground(Color.YELLOW);
 				} else {
-					pHIS1.setBackground(Color.WHITE);
+					pHIS1.setBackground(colorPorDefecto);
 				}
 				pHIS1.setText(analisisAguaSeleccionado.getpHInSitu());
 				if(analisisAguaSeleccionado.getTemperatura().equals("*")) {
 					temperatura1.setBackground(Color.YELLOW);
 				} else {
-					temperatura1.setBackground(Color.WHITE);
+					temperatura1.setBackground(colorPorDefecto);
 				}
 				temperatura1.setText(analisisAguaSeleccionado.getTemperatura());
 				if(analisisAguaSeleccionado.getCaudalInstantaneo().equals("*")) {
 					caudal1.setBackground(Color.YELLOW);
 				} else {
-					caudal1.setBackground(Color.WHITE);
+					caudal1.setBackground(colorPorDefecto);
 				}
 				caudal1.setText(analisisAguaSeleccionado.getCaudalInstantaneo());
 				if(analisisAguaSeleccionado.getODInSitu().equals("*")) {
 					ODIS1.setBackground(Color.YELLOW);
 				} else {
-					ODIS1.setBackground(Color.WHITE);
+					ODIS1.setBackground(colorPorDefecto);
 				}
 				ODIS1.setText(analisisAguaSeleccionado.getODInSitu());
 				if(analisisAguaSeleccionado.getOD().equals("*")) {
 					OD1.setBackground(Color.YELLOW);
 				} else {
-					OD1.setBackground(Color.WHITE);
+					OD1.setBackground(colorPorDefecto);
 				}
 				OD1.setText(analisisAguaSeleccionado.getOD());
 				if(analisisAguaSeleccionado.getDBO5().equals("*")) {
 					DBO51.setBackground(Color.YELLOW);
 				} else {
-					DBO51.setBackground(Color.WHITE);
+					DBO51.setBackground(colorPorDefecto);
 				}
 				DBO51.setText(analisisAguaSeleccionado.getDBO5());
 				if(analisisAguaSeleccionado.getDBO5Filtrada().equals("*")) {
 					DBO5F1.setBackground(Color.YELLOW);
 				} else {
-					DBO5F1.setBackground(Color.WHITE);
+					DBO5F1.setBackground(colorPorDefecto);
 				}
 				DBO5F1.setText(analisisAguaSeleccionado.getDBO5Filtrada());
 				if(analisisAguaSeleccionado.getDQO().equals("*")) {
 					DQO1.setBackground(Color.YELLOW);
 				} else {
-					DQO1.setBackground(Color.WHITE);
+					DQO1.setBackground(colorPorDefecto);
 				}
 				DQO1.setText(analisisAguaSeleccionado.getDQO());
 				if(analisisAguaSeleccionado.getAceitesYGrasas().equals("*")) {
 					AceitesYGrasas1.setBackground(Color.YELLOW);
 				} else {
-					AceitesYGrasas1.setBackground(Color.WHITE);
+					AceitesYGrasas1.setBackground(colorPorDefecto);
 				}
 				AceitesYGrasas1.setText(analisisAguaSeleccionado.getAceitesYGrasas());
 				if(analisisAguaSeleccionado.getSolidosTotalesVolatiles().equals("*")) {
 					STV1.setBackground(Color.YELLOW);
 				} else {
-					STV1.setBackground(Color.WHITE);
+					STV1.setBackground(colorPorDefecto);
 				}
 				STV1.setText(analisisAguaSeleccionado.getSolidosTotalesVolatiles());
 
@@ -778,235 +779,235 @@ public class CrearInformeAguas {
 				if(analisisAguaSeleccionado.getSst().equals("*")) {
 					SST1.setBackground(Color.YELLOW);
 				} else {
-					SST1.setBackground(Color.WHITE);
+					SST1.setBackground(colorPorDefecto);
 				}
 				SSV1.setText(analisisAguaSeleccionado.getSsv());
 				if(analisisAguaSeleccionado.getSsv().equals("*")) {
 					SSV1.setBackground(Color.YELLOW);
 				} else {
-					SSV1.setBackground(Color.WHITE);
+					SSV1.setBackground(colorPorDefecto);
 				}
 				SS101.setText(analisisAguaSeleccionado.getSs10());
 				if(analisisAguaSeleccionado.getSs10().equals("*")) {
 					SS101.setBackground(Color.YELLOW);
 				} else {
-					SS101.setBackground(Color.WHITE);
+					SS101.setBackground(colorPorDefecto);
 				}
 				SS301.setText(analisisAguaSeleccionado.getSs30());
 				if(analisisAguaSeleccionado.getSs30().equals("*")) {
 					SS301.setBackground(Color.YELLOW);
 				} else {
-					SS301.setBackground(Color.WHITE);
+					SS301.setBackground(colorPorDefecto);
 				}
 				SS601.setText(analisisAguaSeleccionado.getSs60());
 				if(analisisAguaSeleccionado.getSs10().equals("*")) {
 					SS601.setBackground(Color.YELLOW);
 				} else {
-					SS601.setBackground(Color.WHITE);
+					SS601.setBackground(colorPorDefecto);
 				}
 				amoniaco1.setText(analisisAguaSeleccionado.getAmoniaco());
 				if(analisisAguaSeleccionado.getOtros4().equals("*")) {
 					amoniaco1.setBackground(Color.YELLOW);
 				} else {
-					amoniaco1.setBackground(Color.WHITE);
+					amoniaco1.setBackground(colorPorDefecto);
 				}
 				nitrato1.setText(analisisAguaSeleccionado.getNitrato());
 				if(analisisAguaSeleccionado.getNitrato().equals("*")) {
 					nitrato1.setBackground(Color.YELLOW);
 				} else {
-					nitrato1.setBackground(Color.WHITE);
+					nitrato1.setBackground(colorPorDefecto);
 				}
 				nitrogenoTotal1.setText(analisisAguaSeleccionado.getNitrogenoTotal());
 				if(analisisAguaSeleccionado.getNitrogenoTotal().equals("*")) {
 					nitrogenoTotal1.setBackground(Color.YELLOW);
 				} else {
-					nitrogenoTotal1.setBackground(Color.WHITE);
+					nitrogenoTotal1.setBackground(colorPorDefecto);
 				}
 				fosforoTotal1.setText(analisisAguaSeleccionado.getFosforoTotal());
 				if(analisisAguaSeleccionado.getFosforoTotal().equals("*")) {
 					fosforoTotal1.setBackground(Color.YELLOW);
 				} else {
-					fosforoTotal1.setBackground(Color.WHITE);
+					fosforoTotal1.setBackground(colorPorDefecto);
 				}
 				cromo1.setText(analisisAguaSeleccionado.getCromo());
 				if(analisisAguaSeleccionado.getCromo().equals("*")) {
 					cromo1.setBackground(Color.YELLOW);
 				} else {
-					cromo1.setBackground(Color.WHITE);
+					cromo1.setBackground(colorPorDefecto);
 				}
 				plomo1.setText(analisisAguaSeleccionado.getPlomo());
 				if(analisisAguaSeleccionado.getPlomo().equals("*")) {
 					plomo1.setBackground(Color.YELLOW);
 				} else {
-					plomo1.setBackground(Color.WHITE);
+					plomo1.setBackground(colorPorDefecto);
 				}
 				zinc1.setText(analisisAguaSeleccionado.getZinc());
 				if(analisisAguaSeleccionado.getZinc().equals("*")) {
 					zinc1.setBackground(Color.YELLOW);
 				} else {
-					zinc1.setBackground(Color.WHITE);
+					zinc1.setBackground(colorPorDefecto);
 				}
 				aluminio1.setText(analisisAguaSeleccionado.getAluminio());
 				if(analisisAguaSeleccionado.getAluminio().equals("*")) {
 					aluminio1.setBackground(Color.YELLOW);
 				} else {
-					aluminio1.setBackground(Color.WHITE);
+					aluminio1.setBackground(colorPorDefecto);
 				}
 				manganeso1.setText(analisisAguaSeleccionado.getManganeso());
 				if(analisisAguaSeleccionado.getManganeso().equals("*")) {
 					manganeso1.setBackground(Color.YELLOW);
 				} else {
-					manganeso1.setBackground(Color.WHITE);
+					manganeso1.setBackground(colorPorDefecto);
 				}
 				potasio1.setText(analisisAguaSeleccionado.getPotasio());
 				if(analisisAguaSeleccionado.getPotasio().equals("*")) {
 					potasio1.setBackground(Color.YELLOW);
 				} else {
-					potasio1.setBackground(Color.WHITE);
+					potasio1.setBackground(colorPorDefecto);
 				}
 				alcalinidadTotal1.setText(analisisAguaSeleccionado.getAlcalinidadTotal());
 				if(analisisAguaSeleccionado.getAlcalinidadTotal().equals("*")) {
 					alcalinidadTotal1.setBackground(Color.YELLOW);
 				} else {
-					alcalinidadTotal1.setBackground(Color.WHITE);
+					alcalinidadTotal1.setBackground(colorPorDefecto);
 				}
 				acidezVolatil1.setText(analisisAguaSeleccionado.getAcidezVolatil());
 				if(analisisAguaSeleccionado.getAcidezVolatil().equals("*")) {
 					acidezVolatil1.setBackground(Color.YELLOW);
 				} else {
-					acidezVolatil1.setBackground(Color.WHITE);
+					acidezVolatil1.setBackground(colorPorDefecto);
 				}
 				alfa1.setText(analisisAguaSeleccionado.getAlfa());
 				if(analisisAguaSeleccionado.getAlfa().equals("*")) {
 					alfa1.setBackground(Color.YELLOW);
 				} else {
-					alfa1.setBackground(Color.WHITE);
+					alfa1.setBackground(colorPorDefecto);
 				}
 				alfaPrima1.setText(analisisAguaSeleccionado.getAlfaPrima());
 				if(analisisAguaSeleccionado.getAlfaPrima().equals("*")) {
 					alfaPrima1.setBackground(Color.YELLOW);
 				} else {
-					alfaPrima1.setBackground(Color.WHITE);
+					alfaPrima1.setBackground(colorPorDefecto);
 				}				
 				bicarbonato1.setText(analisisAguaSeleccionado.getBicarbonato());
 				if(analisisAguaSeleccionado.getBicarbonato().equals("*")) {
 					bicarbonato1.setBackground(Color.YELLOW);
 				} else {
-					bicarbonato1.setBackground(Color.WHITE);
+					bicarbonato1.setBackground(colorPorDefecto);
 				}
 				salinidad1.setText(analisisAguaSeleccionado.getSalinidad());
 				if(analisisAguaSeleccionado.getSalinidad().equals("*")) {
 					salinidad1.setBackground(Color.YELLOW);
 				} else {
-					salinidad1.setBackground(Color.WHITE);
+					salinidad1.setBackground(colorPorDefecto);
 				}
 				turbiedad1.setText(analisisAguaSeleccionado.getTurbiedad());
 				if(analisisAguaSeleccionado.getTurbiedad().equals("*")) {
 					turbiedad1.setBackground(Color.YELLOW);
 				} else {
-					turbiedad1.setBackground(Color.WHITE);
+					turbiedad1.setBackground(colorPorDefecto);
 				}
 				conductividad1.setText(analisisAguaSeleccionado.getConductividad());
 				if(analisisAguaSeleccionado.getConductividad().equals("*")) {
 					conductividad1.setBackground(Color.YELLOW);
 				} else {
-					conductividad1.setBackground(Color.WHITE);
+					conductividad1.setBackground(colorPorDefecto);
 				}
 				sulfuro1.setText(analisisAguaSeleccionado.getSulfuro());
 				if(analisisAguaSeleccionado.getSulfuro().equals("*")) {
 					sulfuro1.setBackground(Color.YELLOW);
 				} else {
-					sulfuro1.setBackground(Color.WHITE);
+					sulfuro1.setBackground(colorPorDefecto);
 				}
 				sulfato1.setText(analisisAguaSeleccionado.getSulfato());
 				if(analisisAguaSeleccionado.getSulfato().equals("*")) {
 					sulfato1.setBackground(Color.YELLOW);
 				} else {
-					sulfato1.setBackground(Color.WHITE);
+					sulfato1.setBackground(colorPorDefecto);
 				}
 				fenoles1.setText(analisisAguaSeleccionado.getFenoles());
 				if(analisisAguaSeleccionado.getFenoles().equals("*")) {
 					fenoles1.setBackground(Color.YELLOW);
 				} else {
-					fenoles1.setBackground(Color.WHITE);
+					fenoles1.setBackground(colorPorDefecto);
 				}
 				tensoactivos1.setText(analisisAguaSeleccionado.getTensoactivosAnionicos());
 				if(analisisAguaSeleccionado.getTensoactivosAnionicos().equals("*")) {
 					tensoactivos1.setBackground(Color.YELLOW);
 				} else {
-					tensoactivos1.setBackground(Color.WHITE);
+					tensoactivos1.setBackground(colorPorDefecto);
 				}
 				cloroResidual1.setText(analisisAguaSeleccionado.getCloroResidual());
 				if(analisisAguaSeleccionado.getCloroResidual().equals("*")) {
 					cloroResidual1.setBackground(Color.YELLOW);
 				} else {
-					cloroResidual1.setBackground(Color.WHITE);
+					cloroResidual1.setBackground(colorPorDefecto);
 				}
 				cloroTotal1.setText(analisisAguaSeleccionado.getCloroTotal());
 				if(analisisAguaSeleccionado.getCloroTotal().equals("*")) {
 					cloroTotal1.setBackground(Color.YELLOW);
 				} else {
-					cloroTotal1.setBackground(Color.WHITE);
+					cloroTotal1.setBackground(colorPorDefecto);
 				}
 				cloruro1.setText(analisisAguaSeleccionado.getCloruro());
 				if(analisisAguaSeleccionado.getCloruro().equals("*")) {
 					cloruro1.setBackground(Color.YELLOW);
 				} else {
-					cloruro1.setBackground(Color.WHITE);
+					cloruro1.setBackground(colorPorDefecto);
 				}
 				dureza1.setText(analisisAguaSeleccionado.getDureza());
 				if(analisisAguaSeleccionado.getDureza().equals("*")) {
 					dureza1.setBackground(Color.YELLOW);
 				} else {
-					dureza1.setBackground(Color.WHITE);
+					dureza1.setBackground(colorPorDefecto);
 				}
 				color1.setText(analisisAguaSeleccionado.getColor());
 				if(analisisAguaSeleccionado.getColor().equals("*")) {
 					color1.setBackground(Color.YELLOW);
 				} else {
-					color1.setBackground(Color.WHITE);
+					color1.setBackground(colorPorDefecto);
 				}
 				hidrocarburos1.setText(analisisAguaSeleccionado.getHidrocarburos());
 				if(analisisAguaSeleccionado.getHidrocarburos().equals("*")) {
 					hidrocarburos1.setBackground(Color.YELLOW);
 				} else {
-					hidrocarburos1.setBackground(Color.WHITE);
+					hidrocarburos1.setBackground(colorPorDefecto);
 				}
 				coliformes1.setText(analisisAguaSeleccionado.getColiformesFecales());
 				if(analisisAguaSeleccionado.getColiformesFecales().equals("*")) {
 					coliformes1.setBackground(Color.YELLOW);
 				} else {
-					coliformes1.setBackground(Color.WHITE);
+					coliformes1.setBackground(colorPorDefecto);
 				}
 				cursoAguaTipo1.setText(analisisAguaSeleccionado.getCursoDeAguaTipo());
 				if(analisisAguaSeleccionado.getCursoDeAguaTipo().equals("*")) {
 					cursoAguaTipo1.setBackground(Color.YELLOW);
 				} else {
-					cursoAguaTipo1.setBackground(Color.WHITE);
+					cursoAguaTipo1.setBackground(colorPorDefecto);
 				}
 				otros11.setText(analisisAguaSeleccionado.getOtros());
 				if(analisisAguaSeleccionado.getOtros().equals("*")) {
 					otros11.setBackground(Color.YELLOW);
 				} else {
-					otros11.setBackground(Color.WHITE);
+					otros11.setBackground(colorPorDefecto);
 				}
 				otros21.setText(analisisAguaSeleccionado.getOtros2());
 				if(analisisAguaSeleccionado.getOtros().equals("*")) {
 					otros21.setBackground(Color.YELLOW);
 				} else {
-					otros21.setBackground(Color.WHITE);
+					otros21.setBackground(colorPorDefecto);
 				}
 				otros31.setText(analisisAguaSeleccionado.getOtros3());
 				if(analisisAguaSeleccionado.getOtros3().equals("*")) {
 					otros31.setBackground(Color.YELLOW);
 				} else {
-					otros31.setBackground(Color.WHITE);
+					otros31.setBackground(colorPorDefecto);
 				}
 				otros41.setText(analisisAguaSeleccionado.getOtros4());
 				if(analisisAguaSeleccionado.getOtros4().equals("*")) {
 					otros41.setBackground(Color.YELLOW);
 				} else {
-					otros41.setBackground(Color.WHITE);
+					otros41.setBackground(colorPorDefecto);
 				}
 				
 				
@@ -1025,7 +1026,7 @@ public class CrearInformeAguas {
 				if (lugarExtraccion1.getText().equals("*")) {
 					lugarExtraccion1.setBackground(Color.YELLOW);
 				} else {
-					lugarExtraccion1.setBackground(Color.WHITE);
+					lugarExtraccion1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1046,7 +1047,7 @@ public class CrearInformeAguas {
 				if (extraidoPor1.getText().equals("*")) {
 					extraidoPor1.setBackground(Color.YELLOW);
 				} else {
-					extraidoPor1.setBackground(Color.WHITE);
+					extraidoPor1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1062,7 +1063,7 @@ public class CrearInformeAguas {
 				if (fechaExtraccion1.getText().equals("*")) {
 					fechaExtraccion1.setBackground(Color.YELLOW);
 				} else {
-					fechaExtraccion1.setBackground(Color.WHITE);
+					fechaExtraccion1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1084,7 +1085,7 @@ public class CrearInformeAguas {
 				if (horaExtraccion1.getText().equals("*")) {
 					horaExtraccion1.setBackground(Color.YELLOW);
 				} else {
-					horaExtraccion1.setBackground(Color.WHITE);
+					horaExtraccion1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1105,7 +1106,7 @@ public class CrearInformeAguas {
 				if (aspecto1.getText().equals("*")) {
 					aspecto1.setBackground(Color.YELLOW);
 				} else {
-					aspecto1.setBackground(Color.WHITE);
+					aspecto1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1126,7 +1127,7 @@ public class CrearInformeAguas {
 				if (pHIS1.getText().equals("*")) {
 					pHIS1.setBackground(Color.YELLOW);
 				} else {
-					pHIS1.setBackground(Color.WHITE);
+					pHIS1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1147,7 +1148,7 @@ public class CrearInformeAguas {
 				if (pH1.getText().equals("*")) {
 					pH1.setBackground(Color.YELLOW);
 				} else {
-					pH1.setBackground(Color.WHITE);
+					pH1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1168,7 +1169,7 @@ public class CrearInformeAguas {
 				if (temperatura1.getText().equals("*")) {
 					temperatura1.setBackground(Color.YELLOW);
 				} else {
-					temperatura1.setBackground(Color.WHITE);
+					temperatura1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1189,7 +1190,7 @@ public class CrearInformeAguas {
 				if (caudal1.getText().equals("*")) {
 					caudal1.setBackground(Color.YELLOW);
 				} else {
-					caudal1.setBackground(Color.WHITE);
+					caudal1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1210,7 +1211,7 @@ public class CrearInformeAguas {
 				if (ODIS1.getText().equals("*")) {
 					ODIS1.setBackground(Color.YELLOW);
 				} else {
-					ODIS1.setBackground(Color.WHITE);
+					ODIS1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1231,7 +1232,7 @@ public class CrearInformeAguas {
 				if (OD1.getText().equals("*")) {
 					OD1.setBackground(Color.YELLOW);
 				} else {
-					OD1.setBackground(Color.WHITE);
+					OD1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1252,7 +1253,7 @@ public class CrearInformeAguas {
 				if (DBO51.getText().equals("*")) {
 					DBO51.setBackground(Color.YELLOW);
 				} else {
-					DBO51.setBackground(Color.WHITE);
+					DBO51.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1273,7 +1274,7 @@ public class CrearInformeAguas {
 				if (DBO5F1.getText().equals("*")) {
 					DBO5F1.setBackground(Color.YELLOW);
 				} else {
-					DBO5F1.setBackground(Color.WHITE);
+					DBO5F1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1294,7 +1295,7 @@ public class CrearInformeAguas {
 				if (DQO1.getText().equals("*")) {
 					DQO1.setBackground(Color.YELLOW);
 				} else {
-					DQO1.setBackground(Color.WHITE);
+					DQO1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1315,7 +1316,7 @@ public class CrearInformeAguas {
 				if (AceitesYGrasas1.getText().equals("*")) {
 					AceitesYGrasas1.setBackground(Color.YELLOW);
 				} else {
-					AceitesYGrasas1.setBackground(Color.WHITE);
+					AceitesYGrasas1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1336,7 +1337,7 @@ public class CrearInformeAguas {
 				if (SolidosTotales1.getText().equals("*")) {
 					SolidosTotales1.setBackground(Color.YELLOW);
 				} else {
-					SolidosTotales1.setBackground(Color.WHITE);
+					SolidosTotales1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1357,7 +1358,7 @@ public class CrearInformeAguas {
 				if (STV1.getText().equals("*")) {
 					STV1.setBackground(Color.YELLOW);
 				} else {
-					STV1.setBackground(Color.WHITE);
+					STV1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1378,7 +1379,7 @@ public class CrearInformeAguas {
 				if (SST1.getText().equals("*")) {
 					SST1.setBackground(Color.YELLOW);
 				} else {
-					SST1.setBackground(Color.WHITE);
+					SST1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1399,7 +1400,7 @@ public class CrearInformeAguas {
 				if (SSV1.getText().equals("*")) {
 					SSV1.setBackground(Color.YELLOW);
 				} else {
-					SSV1.setBackground(Color.WHITE);
+					SSV1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1420,7 +1421,7 @@ public class CrearInformeAguas {
 				if (SS101.getText().equals("*")) {
 					SS101.setBackground(Color.YELLOW);
 				} else {
-					SS101.setBackground(Color.WHITE);
+					SS101.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1441,7 +1442,7 @@ public class CrearInformeAguas {
 				if (SS301.getText().equals("*")) {
 					SS301.setBackground(Color.YELLOW);
 				} else {
-					SS301.setBackground(Color.WHITE);
+					SS301.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1462,7 +1463,7 @@ public class CrearInformeAguas {
 				if (SS601.getText().equals("*")) {
 					SS601.setBackground(Color.YELLOW);
 				} else {
-					SS601.setBackground(Color.WHITE);
+					SS601.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1483,7 +1484,7 @@ public class CrearInformeAguas {
 				if (amoniaco1.getText().equals("*")) {
 					amoniaco1.setBackground(Color.YELLOW);
 				} else {
-					amoniaco1.setBackground(Color.WHITE);
+					amoniaco1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1504,7 +1505,7 @@ public class CrearInformeAguas {
 				if (nitrato1.getText().equals("*")) {
 					nitrato1.setBackground(Color.YELLOW);
 				} else {
-					nitrato1.setBackground(Color.WHITE);
+					nitrato1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1525,7 +1526,7 @@ public class CrearInformeAguas {
 				if (nitrogenoTotal1.getText().equals("*")) {
 					nitrogenoTotal1.setBackground(Color.YELLOW);
 				} else {
-					nitrogenoTotal1.setBackground(Color.WHITE);
+					nitrogenoTotal1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1546,7 +1547,7 @@ public class CrearInformeAguas {
 				if (fosforoTotal1.getText().equals("*")) {
 					fosforoTotal1.setBackground(Color.YELLOW);
 				} else {
-					fosforoTotal1.setBackground(Color.WHITE);
+					fosforoTotal1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1567,7 +1568,7 @@ public class CrearInformeAguas {
 				if (cromo1.getText().equals("*")) {
 					cromo1.setBackground(Color.YELLOW);
 				} else {
-					cromo1.setBackground(Color.WHITE);
+					cromo1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1588,7 +1589,7 @@ public class CrearInformeAguas {
 				if (plomo1.getText().equals("*")) {
 					plomo1.setBackground(Color.YELLOW);
 				} else {
-					plomo1.setBackground(Color.WHITE);
+					plomo1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1609,7 +1610,7 @@ public class CrearInformeAguas {
 				if (zinc1.getText().equals("*")) {
 					zinc1.setBackground(Color.YELLOW);
 				} else {
-					zinc1.setBackground(Color.WHITE);
+					zinc1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1630,7 +1631,7 @@ public class CrearInformeAguas {
 				if (aluminio1.getText().equals("*")) {
 					aluminio1.setBackground(Color.YELLOW);
 				} else {
-					aluminio1.setBackground(Color.WHITE);
+					aluminio1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1651,7 +1652,7 @@ public class CrearInformeAguas {
 				if (manganeso1.getText().equals("*")) {
 					manganeso1.setBackground(Color.YELLOW);
 				} else {
-					manganeso1.setBackground(Color.WHITE);
+					manganeso1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1672,7 +1673,7 @@ public class CrearInformeAguas {
 				if (potasio1.getText().equals("*")) {
 					potasio1.setBackground(Color.YELLOW);
 				} else {
-					potasio1.setBackground(Color.WHITE);
+					potasio1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1693,7 +1694,7 @@ public class CrearInformeAguas {
 				if (alcalinidadTotal1.getText().equals("*")) {
 					alcalinidadTotal1.setBackground(Color.YELLOW);
 				} else {
-					alcalinidadTotal1.setBackground(Color.WHITE);
+					alcalinidadTotal1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1714,7 +1715,7 @@ public class CrearInformeAguas {
 				if (acidezVolatil1.getText().equals("*")) {
 					acidezVolatil1.setBackground(Color.YELLOW);
 				} else {
-					acidezVolatil1.setBackground(Color.WHITE);
+					acidezVolatil1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1735,7 +1736,7 @@ public class CrearInformeAguas {
 				if (alfa1.getText().equals("*")) {
 					alfa1.setBackground(Color.YELLOW);
 				} else {
-					alfa1.setBackground(Color.WHITE);
+					alfa1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1756,7 +1757,7 @@ public class CrearInformeAguas {
 				if (alfaPrima1.getText().equals("*")) {
 					alfaPrima1.setBackground(Color.YELLOW);
 				} else {
-					alfaPrima1.setBackground(Color.WHITE);
+					alfaPrima1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1777,7 +1778,7 @@ public class CrearInformeAguas {
 				if (bicarbonato1.getText().equals("*")) {
 					bicarbonato1.setBackground(Color.YELLOW);
 				} else {
-					bicarbonato1.setBackground(Color.WHITE);
+					bicarbonato1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1798,7 +1799,7 @@ public class CrearInformeAguas {
 				if (salinidad1.getText().equals("*")) {
 					salinidad1.setBackground(Color.YELLOW);
 				} else {
-					salinidad1.setBackground(Color.WHITE);
+					salinidad1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1819,7 +1820,7 @@ public class CrearInformeAguas {
 				if (turbiedad1.getText().equals("*")) {
 					turbiedad1.setBackground(Color.YELLOW);
 				} else {
-					turbiedad1.setBackground(Color.WHITE);
+					turbiedad1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1840,7 +1841,7 @@ public class CrearInformeAguas {
 				if (conductividad1.getText().equals("*")) {
 					conductividad1.setBackground(Color.YELLOW);
 				} else {
-					conductividad1.setBackground(Color.WHITE);
+					conductividad1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1861,7 +1862,7 @@ public class CrearInformeAguas {
 				if (sulfuro1.getText().equals("*")) {
 					sulfuro1.setBackground(Color.YELLOW);
 				} else {
-					sulfuro1.setBackground(Color.WHITE);
+					sulfuro1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1882,7 +1883,7 @@ public class CrearInformeAguas {
 				if (sulfato1.getText().equals("*")) {
 					sulfato1.setBackground(Color.YELLOW);
 				} else {
-					sulfato1.setBackground(Color.WHITE);
+					sulfato1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1903,7 +1904,7 @@ public class CrearInformeAguas {
 				if (fenoles1.getText().equals("*")) {
 					fenoles1.setBackground(Color.YELLOW);
 				} else {
-					fenoles1.setBackground(Color.WHITE);
+					fenoles1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1924,7 +1925,7 @@ public class CrearInformeAguas {
 				if (tensoactivos1.getText().equals("*")) {
 					tensoactivos1.setBackground(Color.YELLOW);
 				} else {
-					tensoactivos1.setBackground(Color.WHITE);
+					tensoactivos1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1945,7 +1946,7 @@ public class CrearInformeAguas {
 				if (cloroResidual1.getText().equals("*")) {
 					cloroResidual1.setBackground(Color.YELLOW);
 				} else {
-					cloroResidual1.setBackground(Color.WHITE);
+					cloroResidual1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1966,7 +1967,7 @@ public class CrearInformeAguas {
 				if (cloroTotal1.getText().equals("*")) {
 					cloroTotal1.setBackground(Color.YELLOW);
 				} else {
-					cloroTotal1.setBackground(Color.WHITE);
+					cloroTotal1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -1987,7 +1988,7 @@ public class CrearInformeAguas {
 				if (cloruro1.getText().equals("*")) {
 					cloruro1.setBackground(Color.YELLOW);
 				} else {
-					cloruro1.setBackground(Color.WHITE);
+					cloruro1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2009,7 +2010,7 @@ public class CrearInformeAguas {
 				if (dureza1.getText().equals("*")) {
 					dureza1.setBackground(Color.YELLOW);
 				} else {
-					dureza1.setBackground(Color.WHITE);
+					dureza1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2030,7 +2031,7 @@ public class CrearInformeAguas {
 				if (color1.getText().equals("*")) {
 					color1.setBackground(Color.YELLOW);
 				} else {
-					color1.setBackground(Color.WHITE);
+					color1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2051,7 +2052,7 @@ public class CrearInformeAguas {
 				if (hidrocarburos1.getText().equals("*")) {
 					hidrocarburos1.setBackground(Color.YELLOW);
 				} else {
-					hidrocarburos1.setBackground(Color.WHITE);
+					hidrocarburos1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2072,7 +2073,7 @@ public class CrearInformeAguas {
 				if (coliformes1.getText().equals("*")) {
 					coliformes1.setBackground(Color.YELLOW);
 				} else {
-					coliformes1.setBackground(Color.WHITE);
+					coliformes1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2093,7 +2094,7 @@ public class CrearInformeAguas {
 				if (cursoAguaTipo1.getText().equals("*")) {
 					cursoAguaTipo1.setBackground(Color.YELLOW);
 				} else {
-					cursoAguaTipo1.setBackground(Color.WHITE);
+					cursoAguaTipo1.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2114,7 +2115,7 @@ public class CrearInformeAguas {
 				if (otros11.getText().equals("*")) {
 					otros11.setBackground(Color.YELLOW);
 				} else {
-					otros11.setBackground(Color.WHITE);
+					otros11.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2135,7 +2136,7 @@ public class CrearInformeAguas {
 				if (otros21.getText().equals("*")) {
 					otros21.setBackground(Color.YELLOW);
 				} else {
-					otros21.setBackground(Color.WHITE);
+					otros21.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2156,7 +2157,7 @@ public class CrearInformeAguas {
 				if (otros31.getText().equals("*")) {
 					otros31.setBackground(Color.YELLOW);
 				} else {
-					otros31.setBackground(Color.WHITE);
+					otros31.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2177,7 +2178,7 @@ public class CrearInformeAguas {
 				if (otros41.getText().equals("*")) {
 					otros41.setBackground(Color.YELLOW);
 				} else {
-					otros41.setBackground(Color.WHITE);
+					otros41.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2193,13 +2194,13 @@ public class CrearInformeAguas {
 				if(analisisAguaSeleccionado.getLugarExtraccion().equals("*")) {
 					lugarExtraccion2.setBackground(Color.YELLOW);
 				} else {
-					lugarExtraccion2.setBackground(Color.WHITE);
+					lugarExtraccion2.setBackground(colorPorDefecto);
 				}
 				extraidoPor2.setText(analisisAguaSeleccionado.getExtraidoPor());
 				if(analisisAguaSeleccionado.getExtraidoPor().equals("*")) {
 					extraidoPor2.setBackground(Color.YELLOW);
 				} else {
-					extraidoPor2.setBackground(Color.WHITE);
+					extraidoPor2.setBackground(colorPorDefecto);
 				}
 				if(analisisAguaSeleccionado.getFechaExtraccion() == null) {
 					fechaExtraccion2.setText("");
@@ -2211,84 +2212,84 @@ public class CrearInformeAguas {
 				if(analisisAguaSeleccionado.getHoraExtraccion().equals("*")) {
 					horaExtraccion2.setBackground(Color.YELLOW);
 				} else {
-					horaExtraccion2.setBackground(Color.WHITE);
+					horaExtraccion2.setBackground(colorPorDefecto);
 				}
 				if(analisisAguaSeleccionado.getAspecto().equals("*")) {
 					aspecto2.setBackground(Color.YELLOW);
 				} else {
-					aspecto2.setBackground(Color.WHITE);
+					aspecto2.setBackground(colorPorDefecto);
 				}
 				aspecto2.setText(analisisAguaSeleccionado.getAspecto());
 				if(analisisAguaSeleccionado.getpH().equals("*")) {
 					pH2.setBackground(Color.YELLOW);
 				} else {
-					pH2.setBackground(Color.WHITE);
+					pH2.setBackground(colorPorDefecto);
 				}
 				pH2.setText(analisisAguaSeleccionado.getpH());				
 				if(analisisAguaSeleccionado.getSolidosTotales().equals("*")) {
 					SolidosTotales2.setBackground(Color.YELLOW);
 				} else {
-					SolidosTotales2.setBackground(Color.WHITE);
+					SolidosTotales2.setBackground(colorPorDefecto);
 				}
 				SolidosTotales2.setText(analisisAguaSeleccionado.getSolidosTotales());
 				if(analisisAguaSeleccionado.getpHInSitu().equals("*")) {
 					pHIS2.setBackground(Color.YELLOW);
 				} else {
-					pHIS2.setBackground(Color.WHITE);
+					pHIS2.setBackground(colorPorDefecto);
 				}
 				pHIS2.setText(analisisAguaSeleccionado.getpHInSitu());
 				if(analisisAguaSeleccionado.getTemperatura().equals("*")) {
 					temperatura2.setBackground(Color.YELLOW);
 				} else {
-					temperatura2.setBackground(Color.WHITE);
+					temperatura2.setBackground(colorPorDefecto);
 				}
 				temperatura2.setText(analisisAguaSeleccionado.getTemperatura());
 				if(analisisAguaSeleccionado.getCaudalInstantaneo().equals("*")) {
 					caudal2.setBackground(Color.YELLOW);
 				} else {
-					caudal2.setBackground(Color.WHITE);
+					caudal2.setBackground(colorPorDefecto);
 				}
 				caudal2.setText(analisisAguaSeleccionado.getCaudalInstantaneo());
 				if(analisisAguaSeleccionado.getODInSitu().equals("*")) {
 					ODIS2.setBackground(Color.YELLOW);
 				} else {
-					ODIS2.setBackground(Color.WHITE);
+					ODIS2.setBackground(colorPorDefecto);
 				}
 				ODIS2.setText(analisisAguaSeleccionado.getODInSitu());
 				if(analisisAguaSeleccionado.getOD().equals("*")) {
 					OD2.setBackground(Color.YELLOW);
 				} else {
-					OD2.setBackground(Color.WHITE);
+					OD2.setBackground(colorPorDefecto);
 				}
 				OD2.setText(analisisAguaSeleccionado.getOD());
 				if(analisisAguaSeleccionado.getDBO5().equals("*")) {
 					DBO52.setBackground(Color.YELLOW);
 				} else {
-					DBO52.setBackground(Color.WHITE);
+					DBO52.setBackground(colorPorDefecto);
 				}
 				DBO52.setText(analisisAguaSeleccionado.getDBO5());
 				if(analisisAguaSeleccionado.getDBO5Filtrada().equals("*")) {
 					DBO5F2.setBackground(Color.YELLOW);
 				} else {
-					DBO5F2.setBackground(Color.WHITE);
+					DBO5F2.setBackground(colorPorDefecto);
 				}
 				DBO5F2.setText(analisisAguaSeleccionado.getDBO5Filtrada());
 				if(analisisAguaSeleccionado.getDQO().equals("*")) {
 					DQO2.setBackground(Color.YELLOW);
 				} else {
-					DQO2.setBackground(Color.WHITE);
+					DQO2.setBackground(colorPorDefecto);
 				}
 				DQO2.setText(analisisAguaSeleccionado.getDQO());
 				if(analisisAguaSeleccionado.getAceitesYGrasas().equals("*")) {
 					AceitesYGrasas2.setBackground(Color.YELLOW);
 				} else {
-					AceitesYGrasas2.setBackground(Color.WHITE);
+					AceitesYGrasas2.setBackground(colorPorDefecto);
 				}
 				AceitesYGrasas2.setText(analisisAguaSeleccionado.getAceitesYGrasas());
 				if(analisisAguaSeleccionado.getSolidosTotalesVolatiles().equals("*")) {
 					STV2.setBackground(Color.YELLOW);
 				} else {
-					STV2.setBackground(Color.WHITE);
+					STV2.setBackground(colorPorDefecto);
 				}
 				STV2.setText(analisisAguaSeleccionado.getSolidosTotalesVolatiles());
 
@@ -2296,235 +2297,235 @@ public class CrearInformeAguas {
 				if(analisisAguaSeleccionado.getSst().equals("*")) {
 					SST2.setBackground(Color.YELLOW);
 				} else {
-					SST2.setBackground(Color.WHITE);
+					SST2.setBackground(colorPorDefecto);
 				}
 				SSV2.setText(analisisAguaSeleccionado.getSsv());
 				if(analisisAguaSeleccionado.getSsv().equals("*")) {
 					SSV2.setBackground(Color.YELLOW);
 				} else {
-					SSV2.setBackground(Color.WHITE);
+					SSV2.setBackground(colorPorDefecto);
 				}
 				SS102.setText(analisisAguaSeleccionado.getSs10());
 				if(analisisAguaSeleccionado.getSs10().equals("*")) {
 					SS102.setBackground(Color.YELLOW);
 				} else {
-					SS102.setBackground(Color.WHITE);
+					SS102.setBackground(colorPorDefecto);
 				}
 				SS302.setText(analisisAguaSeleccionado.getSs30());
 				if(analisisAguaSeleccionado.getSs30().equals("*")) {
 					SS302.setBackground(Color.YELLOW);
 				} else {
-					SS302.setBackground(Color.WHITE);
+					SS302.setBackground(colorPorDefecto);
 				}
 				SS602.setText(analisisAguaSeleccionado.getSs60());
 				if(analisisAguaSeleccionado.getSs60().equals("*")) {
 					SS602.setBackground(Color.YELLOW);
 				} else {
-					SS602.setBackground(Color.WHITE);
+					SS602.setBackground(colorPorDefecto);
 				}
 				amoniaco2.setText(analisisAguaSeleccionado.getAmoniaco());
 				if(analisisAguaSeleccionado.getOtros4().equals("*")) {
 					amoniaco2.setBackground(Color.YELLOW);
 				} else {
-					amoniaco2.setBackground(Color.WHITE);
+					amoniaco2.setBackground(colorPorDefecto);
 				}
 				nitrato2.setText(analisisAguaSeleccionado.getNitrato());
 				if(analisisAguaSeleccionado.getNitrato().equals("*")) {
 					nitrato2.setBackground(Color.YELLOW);
 				} else {
-					nitrato2.setBackground(Color.WHITE);
+					nitrato2.setBackground(colorPorDefecto);
 				}
 				nitrogenoTotal2.setText(analisisAguaSeleccionado.getNitrogenoTotal());
 				if(analisisAguaSeleccionado.getNitrogenoTotal().equals("*")) {
 					nitrogenoTotal2.setBackground(Color.YELLOW);
 				} else {
-					nitrogenoTotal2.setBackground(Color.WHITE);
+					nitrogenoTotal2.setBackground(colorPorDefecto);
 				}
 				fosforoTotal2.setText(analisisAguaSeleccionado.getFosforoTotal());
 				if(analisisAguaSeleccionado.getFosforoTotal().equals("*")) {
 					fosforoTotal2.setBackground(Color.YELLOW);
 				} else {
-					fosforoTotal2.setBackground(Color.WHITE);
+					fosforoTotal2.setBackground(colorPorDefecto);
 				}
 				cromo2.setText(analisisAguaSeleccionado.getCromo());
 				if(analisisAguaSeleccionado.getCromo().equals("*")) {
 					cromo2.setBackground(Color.YELLOW);
 				} else {
-					cromo2.setBackground(Color.WHITE);
+					cromo2.setBackground(colorPorDefecto);
 				}
 				plomo2.setText(analisisAguaSeleccionado.getPlomo());
 				if(analisisAguaSeleccionado.getPlomo().equals("*")) {
 					plomo2.setBackground(Color.YELLOW);
 				} else {
-					plomo2.setBackground(Color.WHITE);
+					plomo2.setBackground(colorPorDefecto);
 				}
 				zinc2.setText(analisisAguaSeleccionado.getZinc());
 				if(analisisAguaSeleccionado.getZinc().equals("*")) {
 					zinc2.setBackground(Color.YELLOW);
 				} else {
-					zinc2.setBackground(Color.WHITE);
+					zinc2.setBackground(colorPorDefecto);
 				}
 				aluminio2.setText(analisisAguaSeleccionado.getAluminio());
 				if(analisisAguaSeleccionado.getAluminio().equals("*")) {
 					aluminio2.setBackground(Color.YELLOW);
 				} else {
-					aluminio2.setBackground(Color.WHITE);
+					aluminio2.setBackground(colorPorDefecto);
 				}
 				manganeso2.setText(analisisAguaSeleccionado.getManganeso());
 				if(analisisAguaSeleccionado.getManganeso().equals("*")) {
 					manganeso2.setBackground(Color.YELLOW);
 				} else {
-					manganeso2.setBackground(Color.WHITE);
+					manganeso2.setBackground(colorPorDefecto);
 				}
 				potasio2.setText(analisisAguaSeleccionado.getPotasio());
 				if(analisisAguaSeleccionado.getPotasio().equals("*")) {
 					potasio2.setBackground(Color.YELLOW);
 				} else {
-					potasio2.setBackground(Color.WHITE);
+					potasio2.setBackground(colorPorDefecto);
 				}
 				alcalinidadTotal2.setText(analisisAguaSeleccionado.getAlcalinidadTotal());
 				if(analisisAguaSeleccionado.getAlcalinidadTotal().equals("*")) {
 					alcalinidadTotal2.setBackground(Color.YELLOW);
 				} else {
-					alcalinidadTotal2.setBackground(Color.WHITE);
+					alcalinidadTotal2.setBackground(colorPorDefecto);
 				}
 				acidezVolatil2.setText(analisisAguaSeleccionado.getAcidezVolatil());
 				if(analisisAguaSeleccionado.getAcidezVolatil().equals("*")) {
 					acidezVolatil2.setBackground(Color.YELLOW);
 				} else {
-					acidezVolatil2.setBackground(Color.WHITE);
+					acidezVolatil2.setBackground(colorPorDefecto);
 				}
 				alfa2.setText(analisisAguaSeleccionado.getAlfa());
 				if(analisisAguaSeleccionado.getAlfa().equals("*")) {
 					alfa2.setBackground(Color.YELLOW);
 				} else {
-					alfa2.setBackground(Color.WHITE);
+					alfa2.setBackground(colorPorDefecto);
 				}
 				alfaPrima2.setText(analisisAguaSeleccionado.getAlfaPrima());
 				if(analisisAguaSeleccionado.getAlfaPrima().equals("*")) {
 					alfaPrima2.setBackground(Color.YELLOW);
 				} else {
-					alfaPrima2.setBackground(Color.WHITE);
+					alfaPrima2.setBackground(colorPorDefecto);
 				}				
 				bicarbonato2.setText(analisisAguaSeleccionado.getBicarbonato());
 				if(analisisAguaSeleccionado.getBicarbonato().equals("*")) {
 					bicarbonato2.setBackground(Color.YELLOW);
 				} else {
-					bicarbonato2.setBackground(Color.WHITE);
+					bicarbonato2.setBackground(colorPorDefecto);
 				}
 				salinidad2.setText(analisisAguaSeleccionado.getSalinidad());
 				if(analisisAguaSeleccionado.getSalinidad().equals("*")) {
 					salinidad2.setBackground(Color.YELLOW);
 				} else {
-					salinidad2.setBackground(Color.WHITE);
+					salinidad2.setBackground(colorPorDefecto);
 				}
 				turbiedad2.setText(analisisAguaSeleccionado.getTurbiedad());
 				if(analisisAguaSeleccionado.getTurbiedad().equals("*")) {
 					turbiedad2.setBackground(Color.YELLOW);
 				} else {
-					turbiedad2.setBackground(Color.WHITE);
+					turbiedad2.setBackground(colorPorDefecto);
 				}
 				conductividad2.setText(analisisAguaSeleccionado.getConductividad());
 				if(analisisAguaSeleccionado.getConductividad().equals("*")) {
 					conductividad2.setBackground(Color.YELLOW);
 				} else {
-					conductividad2.setBackground(Color.WHITE);
+					conductividad2.setBackground(colorPorDefecto);
 				}
 				sulfuro2.setText(analisisAguaSeleccionado.getSulfuro());
 				if(analisisAguaSeleccionado.getSulfuro().equals("*")) {
 					sulfuro2.setBackground(Color.YELLOW);
 				} else {
-					sulfuro2.setBackground(Color.WHITE);
+					sulfuro2.setBackground(colorPorDefecto);
 				}
 				sulfato2.setText(analisisAguaSeleccionado.getSulfato());
 				if(analisisAguaSeleccionado.getSulfato().equals("*")) {
 					sulfato2.setBackground(Color.YELLOW);
 				} else {
-					sulfato2.setBackground(Color.WHITE);
+					sulfato2.setBackground(colorPorDefecto);
 				}
 				fenoles2.setText(analisisAguaSeleccionado.getFenoles());
 				if(analisisAguaSeleccionado.getFenoles().equals("*")) {
 					fenoles2.setBackground(Color.YELLOW);
 				} else {
-					fenoles2.setBackground(Color.WHITE);
+					fenoles2.setBackground(colorPorDefecto);
 				}
 				tensoactivos2.setText(analisisAguaSeleccionado.getTensoactivosAnionicos());
 				if(analisisAguaSeleccionado.getTensoactivosAnionicos().equals("*")) {
 					tensoactivos2.setBackground(Color.YELLOW);
 				} else {
-					tensoactivos2.setBackground(Color.WHITE);
+					tensoactivos2.setBackground(colorPorDefecto);
 				}
 				cloroResidual2.setText(analisisAguaSeleccionado.getCloroResidual());
 				if(analisisAguaSeleccionado.getCloroResidual().equals("*")) {
 					cloroResidual2.setBackground(Color.YELLOW);
 				} else {
-					cloroResidual2.setBackground(Color.WHITE);
+					cloroResidual2.setBackground(colorPorDefecto);
 				}
 				cloroTotal2.setText(analisisAguaSeleccionado.getCloroTotal());
 				if(analisisAguaSeleccionado.getCloroTotal().equals("*")) {
 					cloroTotal2.setBackground(Color.YELLOW);
 				} else {
-					cloroTotal2.setBackground(Color.WHITE);
+					cloroTotal2.setBackground(colorPorDefecto);
 				}
 				cloruro2.setText(analisisAguaSeleccionado.getCloruro());
 				if(analisisAguaSeleccionado.getCloruro().equals("*")) {
 					cloruro2.setBackground(Color.YELLOW);
 				} else {
-					cloruro2.setBackground(Color.WHITE);
+					cloruro2.setBackground(colorPorDefecto);
 				}
 				dureza2.setText(analisisAguaSeleccionado.getDureza());
 				if(analisisAguaSeleccionado.getDureza().equals("*")) {
 					dureza2.setBackground(Color.YELLOW);
 				} else {
-					dureza2.setBackground(Color.WHITE);
+					dureza2.setBackground(colorPorDefecto);
 				}
 				color2.setText(analisisAguaSeleccionado.getColor());
 				if(analisisAguaSeleccionado.getColor().equals("*")) {
 					color2.setBackground(Color.YELLOW);
 				} else {
-					color2.setBackground(Color.WHITE);
+					color2.setBackground(colorPorDefecto);
 				}
 				hidrocarburos2.setText(analisisAguaSeleccionado.getHidrocarburos());
 				if(analisisAguaSeleccionado.getHidrocarburos().equals("*")) {
 					hidrocarburos2.setBackground(Color.YELLOW);
 				} else {
-					hidrocarburos2.setBackground(Color.WHITE);
+					hidrocarburos2.setBackground(colorPorDefecto);
 				}
 				coliformes2.setText(analisisAguaSeleccionado.getColiformesFecales());
 				if(analisisAguaSeleccionado.getColiformesFecales().equals("*")) {
 					coliformes2.setBackground(Color.YELLOW);
 				} else {
-					coliformes2.setBackground(Color.WHITE);
+					coliformes2.setBackground(colorPorDefecto);
 				}
 				cursoAguaTipo2.setText(analisisAguaSeleccionado.getCursoDeAguaTipo());
 				if(analisisAguaSeleccionado.getCursoDeAguaTipo().equals("*")) {
 					cursoAguaTipo2.setBackground(Color.YELLOW);
 				} else {
-					cursoAguaTipo2.setBackground(Color.WHITE);
+					cursoAguaTipo2.setBackground(colorPorDefecto);
 				}
 				otros12.setText(analisisAguaSeleccionado.getOtros());
 				if(analisisAguaSeleccionado.getOtros().equals("*")) {
 					otros12.setBackground(Color.YELLOW);
 				} else {
-					otros12.setBackground(Color.WHITE);
+					otros12.setBackground(colorPorDefecto);
 				}
 				otros22.setText(analisisAguaSeleccionado.getOtros2());
 				if(analisisAguaSeleccionado.getOtros().equals("*")) {
 					otros22.setBackground(Color.YELLOW);
 				} else {
-					otros22.setBackground(Color.WHITE);
+					otros22.setBackground(colorPorDefecto);
 				}
 				otros32.setText(analisisAguaSeleccionado.getOtros3());
 				if(analisisAguaSeleccionado.getOtros3().equals("*")) {
 					otros32.setBackground(Color.YELLOW);
 				} else {
-					otros32.setBackground(Color.WHITE);
+					otros32.setBackground(colorPorDefecto);
 				}
 				otros42.setText(analisisAguaSeleccionado.getOtros4());
 				if(analisisAguaSeleccionado.getOtros4().equals("*")) {
 					otros42.setBackground(Color.YELLOW);
 				} else {
-					otros42.setBackground(Color.WHITE);
+					otros42.setBackground(colorPorDefecto);
 				}
 				
 				
@@ -2547,7 +2548,7 @@ public class CrearInformeAguas {
 				if (lugarExtraccion2.getText().equals("*")) {
 					lugarExtraccion2.setBackground(Color.YELLOW);
 				} else {
-					lugarExtraccion2.setBackground(Color.WHITE);
+					lugarExtraccion2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2568,7 +2569,7 @@ public class CrearInformeAguas {
 				if (extraidoPor2.getText().equals("*")) {
 					extraidoPor2.setBackground(Color.YELLOW);
 				} else {
-					extraidoPor2.setBackground(Color.WHITE);
+					extraidoPor2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2584,7 +2585,7 @@ public class CrearInformeAguas {
 				if (fechaExtraccion2.getText().equals("*")) {
 					fechaExtraccion2.setBackground(Color.YELLOW);
 				} else {
-					fechaExtraccion2.setBackground(Color.WHITE);
+					fechaExtraccion2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2606,7 +2607,7 @@ public class CrearInformeAguas {
 				if (horaExtraccion2.getText().equals("*")) {
 					horaExtraccion2.setBackground(Color.YELLOW);
 				} else {
-					horaExtraccion2.setBackground(Color.WHITE);
+					horaExtraccion2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2627,7 +2628,7 @@ public class CrearInformeAguas {
 				if (aspecto2.getText().equals("*")) {
 					aspecto2.setBackground(Color.YELLOW);
 				} else {
-					aspecto2.setBackground(Color.WHITE);
+					aspecto2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2648,7 +2649,7 @@ public class CrearInformeAguas {
 				if (pHIS2.getText().equals("*")) {
 					pHIS2.setBackground(Color.YELLOW);
 				} else {
-					pHIS2.setBackground(Color.WHITE);
+					pHIS2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2669,7 +2670,7 @@ public class CrearInformeAguas {
 				if (pH2.getText().equals("*")) {
 					pH2.setBackground(Color.YELLOW);
 				} else {
-					pH2.setBackground(Color.WHITE);
+					pH2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2690,7 +2691,7 @@ public class CrearInformeAguas {
 				if (temperatura2.getText().equals("*")) {
 					temperatura2.setBackground(Color.YELLOW);
 				} else {
-					temperatura2.setBackground(Color.WHITE);
+					temperatura2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2711,7 +2712,7 @@ public class CrearInformeAguas {
 				if (caudal2.getText().equals("*")) {
 					caudal2.setBackground(Color.YELLOW);
 				} else {
-					caudal2.setBackground(Color.WHITE);
+					caudal2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2732,7 +2733,7 @@ public class CrearInformeAguas {
 				if (ODIS2.getText().equals("*")) {
 					ODIS2.setBackground(Color.YELLOW);
 				} else {
-					ODIS2.setBackground(Color.WHITE);
+					ODIS2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2753,7 +2754,7 @@ public class CrearInformeAguas {
 				if (OD2.getText().equals("*")) {
 					OD2.setBackground(Color.YELLOW);
 				} else {
-					OD2.setBackground(Color.WHITE);
+					OD2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2774,7 +2775,7 @@ public class CrearInformeAguas {
 				if (DBO52.getText().equals("*")) {
 					DBO52.setBackground(Color.YELLOW);
 				} else {
-					DBO52.setBackground(Color.WHITE);
+					DBO52.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2795,7 +2796,7 @@ public class CrearInformeAguas {
 				if (DBO5F2.getText().equals("*")) {
 					DBO5F2.setBackground(Color.YELLOW);
 				} else {
-					DBO5F2.setBackground(Color.WHITE);
+					DBO5F2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2816,7 +2817,7 @@ public class CrearInformeAguas {
 				if (DQO2.getText().equals("*")) {
 					DQO2.setBackground(Color.YELLOW);
 				} else {
-					DQO2.setBackground(Color.WHITE);
+					DQO2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2837,7 +2838,7 @@ public class CrearInformeAguas {
 				if (AceitesYGrasas2.getText().equals("*")) {
 					AceitesYGrasas2.setBackground(Color.YELLOW);
 				} else {
-					AceitesYGrasas2.setBackground(Color.WHITE);
+					AceitesYGrasas2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2858,7 +2859,7 @@ public class CrearInformeAguas {
 				if (SolidosTotales2.getText().equals("*")) {
 					SolidosTotales2.setBackground(Color.YELLOW);
 				} else {
-					SolidosTotales2.setBackground(Color.WHITE);
+					SolidosTotales2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2879,7 +2880,7 @@ public class CrearInformeAguas {
 				if (STV2.getText().equals("*")) {
 					STV2.setBackground(Color.YELLOW);
 				} else {
-					STV2.setBackground(Color.WHITE);
+					STV2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2900,7 +2901,7 @@ public class CrearInformeAguas {
 				if (SST2.getText().equals("*")) {
 					SST2.setBackground(Color.YELLOW);
 				} else {
-					SST2.setBackground(Color.WHITE);
+					SST2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2921,7 +2922,7 @@ public class CrearInformeAguas {
 				if (SSV2.getText().equals("*")) {
 					SSV2.setBackground(Color.YELLOW);
 				} else {
-					SSV2.setBackground(Color.WHITE);
+					SSV2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2942,7 +2943,7 @@ public class CrearInformeAguas {
 				if (SS102.getText().equals("*")) {
 					SS102.setBackground(Color.YELLOW);
 				} else {
-					SS102.setBackground(Color.WHITE);
+					SS102.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2963,7 +2964,7 @@ public class CrearInformeAguas {
 				if (SS302.getText().equals("*")) {
 					SS302.setBackground(Color.YELLOW);
 				} else {
-					SS302.setBackground(Color.WHITE);
+					SS302.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -2984,7 +2985,7 @@ public class CrearInformeAguas {
 				if (SS602.getText().equals("*")) {
 					SS602.setBackground(Color.YELLOW);
 				} else {
-					SS602.setBackground(Color.WHITE);
+					SS602.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3005,7 +3006,7 @@ public class CrearInformeAguas {
 				if (amoniaco2.getText().equals("*")) {
 					amoniaco2.setBackground(Color.YELLOW);
 				} else {
-					amoniaco2.setBackground(Color.WHITE);
+					amoniaco2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3026,7 +3027,7 @@ public class CrearInformeAguas {
 				if (nitrato2.getText().equals("*")) {
 					nitrato2.setBackground(Color.YELLOW);
 				} else {
-					nitrato2.setBackground(Color.WHITE);
+					nitrato2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3047,7 +3048,7 @@ public class CrearInformeAguas {
 				if (nitrogenoTotal2.getText().equals("*")) {
 					nitrogenoTotal2.setBackground(Color.YELLOW);
 				} else {
-					nitrogenoTotal2.setBackground(Color.WHITE);
+					nitrogenoTotal2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3068,7 +3069,7 @@ public class CrearInformeAguas {
 				if (fosforoTotal2.getText().equals("*")) {
 					fosforoTotal2.setBackground(Color.YELLOW);
 				} else {
-					fosforoTotal2.setBackground(Color.WHITE);
+					fosforoTotal2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3089,7 +3090,7 @@ public class CrearInformeAguas {
 				if (cromo2.getText().equals("*")) {
 					cromo2.setBackground(Color.YELLOW);
 				} else {
-					cromo2.setBackground(Color.WHITE);
+					cromo2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3110,7 +3111,7 @@ public class CrearInformeAguas {
 				if (plomo2.getText().equals("*")) {
 					plomo2.setBackground(Color.YELLOW);
 				} else {
-					plomo2.setBackground(Color.WHITE);
+					plomo2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3131,7 +3132,7 @@ public class CrearInformeAguas {
 				if (zinc2.getText().equals("*")) {
 					zinc2.setBackground(Color.YELLOW);
 				} else {
-					zinc2.setBackground(Color.WHITE);
+					zinc2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3152,7 +3153,7 @@ public class CrearInformeAguas {
 				if (aluminio2.getText().equals("*")) {
 					aluminio2.setBackground(Color.YELLOW);
 				} else {
-					aluminio2.setBackground(Color.WHITE);
+					aluminio2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3173,7 +3174,7 @@ public class CrearInformeAguas {
 				if (manganeso2.getText().equals("*")) {
 					manganeso2.setBackground(Color.YELLOW);
 				} else {
-					manganeso2.setBackground(Color.WHITE);
+					manganeso2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3194,7 +3195,7 @@ public class CrearInformeAguas {
 				if (potasio2.getText().equals("*")) {
 					potasio2.setBackground(Color.YELLOW);
 				} else {
-					potasio2.setBackground(Color.WHITE);
+					potasio2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3215,7 +3216,7 @@ public class CrearInformeAguas {
 				if (alcalinidadTotal2.getText().equals("*")) {
 					alcalinidadTotal2.setBackground(Color.YELLOW);
 				} else {
-					alcalinidadTotal2.setBackground(Color.WHITE);
+					alcalinidadTotal2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3236,7 +3237,7 @@ public class CrearInformeAguas {
 				if (acidezVolatil2.getText().equals("*")) {
 					acidezVolatil2.setBackground(Color.YELLOW);
 				} else {
-					acidezVolatil2.setBackground(Color.WHITE);
+					acidezVolatil2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3257,7 +3258,7 @@ public class CrearInformeAguas {
 				if (alfa2.getText().equals("*")) {
 					alfa2.setBackground(Color.YELLOW);
 				} else {
-					alfa2.setBackground(Color.WHITE);
+					alfa2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3278,7 +3279,7 @@ public class CrearInformeAguas {
 				if (alfaPrima2.getText().equals("*")) {
 					alfaPrima2.setBackground(Color.YELLOW);
 				} else {
-					alfaPrima2.setBackground(Color.WHITE);
+					alfaPrima2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3299,7 +3300,7 @@ public class CrearInformeAguas {
 				if (bicarbonato2.getText().equals("*")) {
 					bicarbonato2.setBackground(Color.YELLOW);
 				} else {
-					bicarbonato2.setBackground(Color.WHITE);
+					bicarbonato2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3320,7 +3321,7 @@ public class CrearInformeAguas {
 				if (salinidad2.getText().equals("*")) {
 					salinidad2.setBackground(Color.YELLOW);
 				} else {
-					salinidad2.setBackground(Color.WHITE);
+					salinidad2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3341,7 +3342,7 @@ public class CrearInformeAguas {
 				if (turbiedad2.getText().equals("*")) {
 					turbiedad2.setBackground(Color.YELLOW);
 				} else {
-					turbiedad2.setBackground(Color.WHITE);
+					turbiedad2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3362,7 +3363,7 @@ public class CrearInformeAguas {
 				if (conductividad2.getText().equals("*")) {
 					conductividad2.setBackground(Color.YELLOW);
 				} else {
-					conductividad2.setBackground(Color.WHITE);
+					conductividad2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3383,7 +3384,7 @@ public class CrearInformeAguas {
 				if (sulfuro2.getText().equals("*")) {
 					sulfuro2.setBackground(Color.YELLOW);
 				} else {
-					sulfuro2.setBackground(Color.WHITE);
+					sulfuro2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3404,7 +3405,7 @@ public class CrearInformeAguas {
 				if (sulfato2.getText().equals("*")) {
 					sulfato2.setBackground(Color.YELLOW);
 				} else {
-					sulfato2.setBackground(Color.WHITE);
+					sulfato2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3425,7 +3426,7 @@ public class CrearInformeAguas {
 				if (fenoles2.getText().equals("*")) {
 					fenoles2.setBackground(Color.YELLOW);
 				} else {
-					fenoles2.setBackground(Color.WHITE);
+					fenoles2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3446,7 +3447,7 @@ public class CrearInformeAguas {
 				if (tensoactivos2.getText().equals("*")) {
 					tensoactivos2.setBackground(Color.YELLOW);
 				} else {
-					tensoactivos2.setBackground(Color.WHITE);
+					tensoactivos2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3467,7 +3468,7 @@ public class CrearInformeAguas {
 				if (cloroResidual2.getText().equals("*")) {
 					cloroResidual2.setBackground(Color.YELLOW);
 				} else {
-					cloroResidual2.setBackground(Color.WHITE);
+					cloroResidual2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3488,7 +3489,7 @@ public class CrearInformeAguas {
 				if (cloroTotal2.getText().equals("*")) {
 					cloroTotal2.setBackground(Color.YELLOW);
 				} else {
-					cloroTotal2.setBackground(Color.WHITE);
+					cloroTotal2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3509,7 +3510,7 @@ public class CrearInformeAguas {
 				if (cloruro2.getText().equals("*")) {
 					cloruro2.setBackground(Color.YELLOW);
 				} else {
-					cloruro2.setBackground(Color.WHITE);
+					cloruro2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3531,7 +3532,7 @@ public class CrearInformeAguas {
 				if (dureza2.getText().equals("*")) {
 					dureza2.setBackground(Color.YELLOW);
 				} else {
-					dureza2.setBackground(Color.WHITE);
+					dureza2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3552,7 +3553,7 @@ public class CrearInformeAguas {
 				if (color2.getText().equals("*")) {
 					color2.setBackground(Color.YELLOW);
 				} else {
-					color2.setBackground(Color.WHITE);
+					color2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3573,7 +3574,7 @@ public class CrearInformeAguas {
 				if (hidrocarburos2.getText().equals("*")) {
 					hidrocarburos2.setBackground(Color.YELLOW);
 				} else {
-					hidrocarburos2.setBackground(Color.WHITE);
+					hidrocarburos2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3594,7 +3595,7 @@ public class CrearInformeAguas {
 				if (coliformes2.getText().equals("*")) {
 					coliformes2.setBackground(Color.YELLOW);
 				} else {
-					coliformes2.setBackground(Color.WHITE);
+					coliformes2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3615,7 +3616,7 @@ public class CrearInformeAguas {
 				if (cursoAguaTipo2.getText().equals("*")) {
 					cursoAguaTipo2.setBackground(Color.YELLOW);
 				} else {
-					cursoAguaTipo2.setBackground(Color.WHITE);
+					cursoAguaTipo2.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3636,7 +3637,7 @@ public class CrearInformeAguas {
 				if (otros12.getText().equals("*")) {
 					otros12.setBackground(Color.YELLOW);
 				} else {
-					otros12.setBackground(Color.WHITE);
+					otros12.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3657,7 +3658,7 @@ public class CrearInformeAguas {
 				if (otros22.getText().equals("*")) {
 					otros22.setBackground(Color.YELLOW);
 				} else {
-					otros22.setBackground(Color.WHITE);
+					otros22.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3678,7 +3679,7 @@ public class CrearInformeAguas {
 				if (otros32.getText().equals("*")) {
 					otros32.setBackground(Color.YELLOW);
 				} else {
-					otros32.setBackground(Color.WHITE);
+					otros32.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3699,7 +3700,7 @@ public class CrearInformeAguas {
 				if (otros42.getText().equals("*")) {
 					otros42.setBackground(Color.YELLOW);
 				} else {
-					otros42.setBackground(Color.WHITE);
+					otros42.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -3715,13 +3716,13 @@ public class CrearInformeAguas {
 				if(analisisAguaSeleccionado.getLugarExtraccion().equals("*")) {
 					lugarExtraccion3.setBackground(Color.YELLOW);
 				} else {
-					lugarExtraccion3.setBackground(Color.WHITE);
+					lugarExtraccion3.setBackground(colorPorDefecto);
 				}
 				extraidoPor3.setText(analisisAguaSeleccionado.getExtraidoPor());
 				if(analisisAguaSeleccionado.getExtraidoPor().equals("*")) {
 					extraidoPor3.setBackground(Color.YELLOW);
 				} else {
-					extraidoPor3.setBackground(Color.WHITE);
+					extraidoPor3.setBackground(colorPorDefecto);
 				}
 				if(analisisAguaSeleccionado.getFechaExtraccion() == null) {
 					fechaExtraccion3.setText("");
@@ -3733,84 +3734,84 @@ public class CrearInformeAguas {
 				if(analisisAguaSeleccionado.getHoraExtraccion().equals("*")) {
 					horaExtraccion3.setBackground(Color.YELLOW);
 				} else {
-					horaExtraccion3.setBackground(Color.WHITE);
+					horaExtraccion3.setBackground(colorPorDefecto);
 				}
 				if(analisisAguaSeleccionado.getAspecto().equals("*")) {
 					aspecto3.setBackground(Color.YELLOW);
 				} else {
-					aspecto3.setBackground(Color.WHITE);
+					aspecto3.setBackground(colorPorDefecto);
 				}
 				aspecto3.setText(analisisAguaSeleccionado.getAspecto());
 				if(analisisAguaSeleccionado.getpH().equals("*")) {
 					pH3.setBackground(Color.YELLOW);
 				} else {
-					pH3.setBackground(Color.WHITE);
+					pH3.setBackground(colorPorDefecto);
 				}
 				pH3.setText(analisisAguaSeleccionado.getpH());				
 				if(analisisAguaSeleccionado.getSolidosTotales().equals("*")) {
 					SolidosTotales3.setBackground(Color.YELLOW);
 				} else {
-					SolidosTotales3.setBackground(Color.WHITE);
+					SolidosTotales3.setBackground(colorPorDefecto);
 				}
 				SolidosTotales3.setText(analisisAguaSeleccionado.getSolidosTotales());
 				if(analisisAguaSeleccionado.getpHInSitu().equals("*")) {
 					pHIS3.setBackground(Color.YELLOW);
 				} else {
-					pHIS3.setBackground(Color.WHITE);
+					pHIS3.setBackground(colorPorDefecto);
 				}
 				pHIS3.setText(analisisAguaSeleccionado.getpHInSitu());
 				if(analisisAguaSeleccionado.getTemperatura().equals("*")) {
 					temperatura3.setBackground(Color.YELLOW);
 				} else {
-					temperatura3.setBackground(Color.WHITE);
+					temperatura3.setBackground(colorPorDefecto);
 				}
 				temperatura3.setText(analisisAguaSeleccionado.getTemperatura());
 				if(analisisAguaSeleccionado.getCaudalInstantaneo().equals("*")) {
 					caudal3.setBackground(Color.YELLOW);
 				} else {
-					caudal3.setBackground(Color.WHITE);
+					caudal3.setBackground(colorPorDefecto);
 				}
 				caudal3.setText(analisisAguaSeleccionado.getCaudalInstantaneo());
 				if(analisisAguaSeleccionado.getODInSitu().equals("*")) {
 					ODIS3.setBackground(Color.YELLOW);
 				} else {
-					ODIS3.setBackground(Color.WHITE);
+					ODIS3.setBackground(colorPorDefecto);
 				}
 				ODIS3.setText(analisisAguaSeleccionado.getODInSitu());
 				if(analisisAguaSeleccionado.getOD().equals("*")) {
 					OD3.setBackground(Color.YELLOW);
 				} else {
-					OD3.setBackground(Color.WHITE);
+					OD3.setBackground(colorPorDefecto);
 				}
 				OD3.setText(analisisAguaSeleccionado.getOD());
 				if(analisisAguaSeleccionado.getDBO5().equals("*")) {
 					DBO53.setBackground(Color.YELLOW);
 				} else {
-					DBO53.setBackground(Color.WHITE);
+					DBO53.setBackground(colorPorDefecto);
 				}
 				DBO53.setText(analisisAguaSeleccionado.getDBO5());
 				if(analisisAguaSeleccionado.getDBO5Filtrada().equals("*")) {
 					DBO5F3.setBackground(Color.YELLOW);
 				} else {
-					DBO5F3.setBackground(Color.WHITE);
+					DBO5F3.setBackground(colorPorDefecto);
 				}
 				DBO5F3.setText(analisisAguaSeleccionado.getDBO5Filtrada());
 				if(analisisAguaSeleccionado.getDQO().equals("*")) {
 					DQO3.setBackground(Color.YELLOW);
 				} else {
-					DQO3.setBackground(Color.WHITE);
+					DQO3.setBackground(colorPorDefecto);
 				}
 				DQO3.setText(analisisAguaSeleccionado.getDQO());
 				if(analisisAguaSeleccionado.getAceitesYGrasas().equals("*")) {
 					AceitesYGrasas3.setBackground(Color.YELLOW);
 				} else {
-					AceitesYGrasas3.setBackground(Color.WHITE);
+					AceitesYGrasas3.setBackground(colorPorDefecto);
 				}
 				AceitesYGrasas3.setText(analisisAguaSeleccionado.getAceitesYGrasas());
 				if(analisisAguaSeleccionado.getSolidosTotalesVolatiles().equals("*")) {
 					STV3.setBackground(Color.YELLOW);
 				} else {
-					STV3.setBackground(Color.WHITE);
+					STV3.setBackground(colorPorDefecto);
 				}
 				STV3.setText(analisisAguaSeleccionado.getSolidosTotalesVolatiles());
 
@@ -3818,235 +3819,235 @@ public class CrearInformeAguas {
 				if(analisisAguaSeleccionado.getSst().equals("*")) {
 					SST3.setBackground(Color.YELLOW);
 				} else {
-					SST3.setBackground(Color.WHITE);
+					SST3.setBackground(colorPorDefecto);
 				}
 				SSV3.setText(analisisAguaSeleccionado.getSsv());
 				if(analisisAguaSeleccionado.getSsv().equals("*")) {
 					SSV3.setBackground(Color.YELLOW);
 				} else {
-					SSV3.setBackground(Color.WHITE);
+					SSV3.setBackground(colorPorDefecto);
 				}
 				SS103.setText(analisisAguaSeleccionado.getSs10());
 				if(analisisAguaSeleccionado.getSs10().equals("*")) {
 					SS103.setBackground(Color.YELLOW);
 				} else {
-					SS103.setBackground(Color.WHITE);
+					SS103.setBackground(colorPorDefecto);
 				}
 				SS303.setText(analisisAguaSeleccionado.getSs30());
 				if(analisisAguaSeleccionado.getSs30().equals("*")) {
 					SS303.setBackground(Color.YELLOW);
 				} else {
-					SS303.setBackground(Color.WHITE);
+					SS303.setBackground(colorPorDefecto);
 				}
 				SS603.setText(analisisAguaSeleccionado.getSs60());
 				if(analisisAguaSeleccionado.getSs60().equals("*")) {
 					SS603.setBackground(Color.YELLOW);
 				} else {
-					SS603.setBackground(Color.WHITE);
+					SS603.setBackground(colorPorDefecto);
 				}
 				amoniaco3.setText(analisisAguaSeleccionado.getAmoniaco());
 				if(analisisAguaSeleccionado.getOtros4().equals("*")) {
 					amoniaco3.setBackground(Color.YELLOW);
 				} else {
-					amoniaco3.setBackground(Color.WHITE);
+					amoniaco3.setBackground(colorPorDefecto);
 				}
 				nitrato3.setText(analisisAguaSeleccionado.getNitrato());
 				if(analisisAguaSeleccionado.getNitrato().equals("*")) {
 					nitrato3.setBackground(Color.YELLOW);
 				} else {
-					nitrato3.setBackground(Color.WHITE);
+					nitrato3.setBackground(colorPorDefecto);
 				}
 				nitrogenoTotal3.setText(analisisAguaSeleccionado.getNitrogenoTotal());
 				if(analisisAguaSeleccionado.getNitrogenoTotal().equals("*")) {
 					nitrogenoTotal3.setBackground(Color.YELLOW);
 				} else {
-					nitrogenoTotal3.setBackground(Color.WHITE);
+					nitrogenoTotal3.setBackground(colorPorDefecto);
 				}
 				fosforoTotal3.setText(analisisAguaSeleccionado.getFosforoTotal());
 				if(analisisAguaSeleccionado.getFosforoTotal().equals("*")) {
 					fosforoTotal3.setBackground(Color.YELLOW);
 				} else {
-					fosforoTotal3.setBackground(Color.WHITE);
+					fosforoTotal3.setBackground(colorPorDefecto);
 				}
 				cromo3.setText(analisisAguaSeleccionado.getCromo());
 				if(analisisAguaSeleccionado.getCromo().equals("*")) {
 					cromo3.setBackground(Color.YELLOW);
 				} else {
-					cromo3.setBackground(Color.WHITE);
+					cromo3.setBackground(colorPorDefecto);
 				}
 				plomo3.setText(analisisAguaSeleccionado.getPlomo());
 				if(analisisAguaSeleccionado.getPlomo().equals("*")) {
 					plomo3.setBackground(Color.YELLOW);
 				} else {
-					plomo3.setBackground(Color.WHITE);
+					plomo3.setBackground(colorPorDefecto);
 				}
 				zinc3.setText(analisisAguaSeleccionado.getZinc());
 				if(analisisAguaSeleccionado.getZinc().equals("*")) {
 					zinc3.setBackground(Color.YELLOW);
 				} else {
-					zinc3.setBackground(Color.WHITE);
+					zinc3.setBackground(colorPorDefecto);
 				}
 				aluminio3.setText(analisisAguaSeleccionado.getAluminio());
 				if(analisisAguaSeleccionado.getAluminio().equals("*")) {
 					aluminio3.setBackground(Color.YELLOW);
 				} else {
-					aluminio3.setBackground(Color.WHITE);
+					aluminio3.setBackground(colorPorDefecto);
 				}
 				manganeso3.setText(analisisAguaSeleccionado.getManganeso());
 				if(analisisAguaSeleccionado.getManganeso().equals("*")) {
 					manganeso3.setBackground(Color.YELLOW);
 				} else {
-					manganeso3.setBackground(Color.WHITE);
+					manganeso3.setBackground(colorPorDefecto);
 				}
 				potasio3.setText(analisisAguaSeleccionado.getPotasio());
 				if(analisisAguaSeleccionado.getPotasio().equals("*")) {
 					potasio3.setBackground(Color.YELLOW);
 				} else {
-					potasio3.setBackground(Color.WHITE);
+					potasio3.setBackground(colorPorDefecto);
 				}
 				alcalinidadTotal3.setText(analisisAguaSeleccionado.getAlcalinidadTotal());
 				if(analisisAguaSeleccionado.getAlcalinidadTotal().equals("*")) {
 					alcalinidadTotal3.setBackground(Color.YELLOW);
 				} else {
-					alcalinidadTotal3.setBackground(Color.WHITE);
+					alcalinidadTotal3.setBackground(colorPorDefecto);
 				}
 				acidezVolatil3.setText(analisisAguaSeleccionado.getAcidezVolatil());
 				if(analisisAguaSeleccionado.getAcidezVolatil().equals("*")) {
 					acidezVolatil3.setBackground(Color.YELLOW);
 				} else {
-					acidezVolatil3.setBackground(Color.WHITE);
+					acidezVolatil3.setBackground(colorPorDefecto);
 				}
 				alfa3.setText(analisisAguaSeleccionado.getAlfa());
 				if(analisisAguaSeleccionado.getAlfa().equals("*")) {
 					alfa3.setBackground(Color.YELLOW);
 				} else {
-					alfa3.setBackground(Color.WHITE);
+					alfa3.setBackground(colorPorDefecto);
 				}
 				alfaPrima3.setText(analisisAguaSeleccionado.getAlfaPrima());
 				if(analisisAguaSeleccionado.getAlfaPrima().equals("*")) {
 					alfaPrima3.setBackground(Color.YELLOW);
 				} else {
-					alfaPrima3.setBackground(Color.WHITE);
+					alfaPrima3.setBackground(colorPorDefecto);
 				}				
 				bicarbonato3.setText(analisisAguaSeleccionado.getBicarbonato());
 				if(analisisAguaSeleccionado.getBicarbonato().equals("*")) {
 					bicarbonato3.setBackground(Color.YELLOW);
 				} else {
-					bicarbonato3.setBackground(Color.WHITE);
+					bicarbonato3.setBackground(colorPorDefecto);
 				}
 				salinidad3.setText(analisisAguaSeleccionado.getSalinidad());
 				if(analisisAguaSeleccionado.getSalinidad().equals("*")) {
 					salinidad3.setBackground(Color.YELLOW);
 				} else {
-					salinidad3.setBackground(Color.WHITE);
+					salinidad3.setBackground(colorPorDefecto);
 				}
 				turbiedad3.setText(analisisAguaSeleccionado.getTurbiedad());
 				if(analisisAguaSeleccionado.getTurbiedad().equals("*")) {
 					turbiedad3.setBackground(Color.YELLOW);
 				} else {
-					turbiedad3.setBackground(Color.WHITE);
+					turbiedad3.setBackground(colorPorDefecto);
 				}
 				conductividad3.setText(analisisAguaSeleccionado.getConductividad());
 				if(analisisAguaSeleccionado.getConductividad().equals("*")) {
 					conductividad3.setBackground(Color.YELLOW);
 				} else {
-					conductividad3.setBackground(Color.WHITE);
+					conductividad3.setBackground(colorPorDefecto);
 				}
 				sulfuro3.setText(analisisAguaSeleccionado.getSulfuro());
 				if(analisisAguaSeleccionado.getSulfuro().equals("*")) {
 					sulfuro3.setBackground(Color.YELLOW);
 				} else {
-					sulfuro3.setBackground(Color.WHITE);
+					sulfuro3.setBackground(colorPorDefecto);
 				}
 				sulfato3.setText(analisisAguaSeleccionado.getSulfato());
 				if(analisisAguaSeleccionado.getSulfato().equals("*")) {
 					sulfato3.setBackground(Color.YELLOW);
 				} else {
-					sulfato3.setBackground(Color.WHITE);
+					sulfato3.setBackground(colorPorDefecto);
 				}
 				fenoles3.setText(analisisAguaSeleccionado.getFenoles());
 				if(analisisAguaSeleccionado.getFenoles().equals("*")) {
 					fenoles3.setBackground(Color.YELLOW);
 				} else {
-					fenoles3.setBackground(Color.WHITE);
+					fenoles3.setBackground(colorPorDefecto);
 				}
 				tensoactivos3.setText(analisisAguaSeleccionado.getTensoactivosAnionicos());
 				if(analisisAguaSeleccionado.getTensoactivosAnionicos().equals("*")) {
 					tensoactivos3.setBackground(Color.YELLOW);
 				} else {
-					tensoactivos3.setBackground(Color.WHITE);
+					tensoactivos3.setBackground(colorPorDefecto);
 				}
 				cloroResidual3.setText(analisisAguaSeleccionado.getCloroResidual());
 				if(analisisAguaSeleccionado.getCloroResidual().equals("*")) {
 					cloroResidual3.setBackground(Color.YELLOW);
 				} else {
-					cloroResidual3.setBackground(Color.WHITE);
+					cloroResidual3.setBackground(colorPorDefecto);
 				}
 				cloroTotal3.setText(analisisAguaSeleccionado.getCloroTotal());
 				if(analisisAguaSeleccionado.getCloroTotal().equals("*")) {
 					cloroTotal3.setBackground(Color.YELLOW);
 				} else {
-					cloroTotal3.setBackground(Color.WHITE);
+					cloroTotal3.setBackground(colorPorDefecto);
 				}
 				cloruro3.setText(analisisAguaSeleccionado.getCloruro());
 				if(analisisAguaSeleccionado.getCloruro().equals("*")) {
 					cloruro3.setBackground(Color.YELLOW);
 				} else {
-					cloruro3.setBackground(Color.WHITE);
+					cloruro3.setBackground(colorPorDefecto);
 				}
 				dureza3.setText(analisisAguaSeleccionado.getDureza());
 				if(analisisAguaSeleccionado.getDureza().equals("*")) {
 					dureza3.setBackground(Color.YELLOW);
 				} else {
-					dureza3.setBackground(Color.WHITE);
+					dureza3.setBackground(colorPorDefecto);
 				}
 				color3.setText(analisisAguaSeleccionado.getColor());
 				if(analisisAguaSeleccionado.getColor().equals("*")) {
 					color3.setBackground(Color.YELLOW);
 				} else {
-					color3.setBackground(Color.WHITE);
+					color3.setBackground(colorPorDefecto);
 				}
 				hidrocarburos3.setText(analisisAguaSeleccionado.getHidrocarburos());
 				if(analisisAguaSeleccionado.getHidrocarburos().equals("*")) {
 					hidrocarburos3.setBackground(Color.YELLOW);
 				} else {
-					hidrocarburos3.setBackground(Color.WHITE);
+					hidrocarburos3.setBackground(colorPorDefecto);
 				}
 				coliformes3.setText(analisisAguaSeleccionado.getColiformesFecales());
 				if(analisisAguaSeleccionado.getColiformesFecales().equals("*")) {
 					coliformes3.setBackground(Color.YELLOW);
 				} else {
-					coliformes3.setBackground(Color.WHITE);
+					coliformes3.setBackground(colorPorDefecto);
 				}
 				cursoAguaTipo3.setText(analisisAguaSeleccionado.getCursoDeAguaTipo());
 				if(analisisAguaSeleccionado.getCursoDeAguaTipo().equals("*")) {
 					cursoAguaTipo3.setBackground(Color.YELLOW);
 				} else {
-					cursoAguaTipo3.setBackground(Color.WHITE);
+					cursoAguaTipo3.setBackground(colorPorDefecto);
 				}
 				otros13.setText(analisisAguaSeleccionado.getOtros());
 				if(analisisAguaSeleccionado.getOtros().equals("*")) {
 					otros13.setBackground(Color.YELLOW);
 				} else {
-					otros13.setBackground(Color.WHITE);
+					otros13.setBackground(colorPorDefecto);
 				}
 				otros23.setText(analisisAguaSeleccionado.getOtros2());
 				if(analisisAguaSeleccionado.getOtros().equals("*")) {
 					otros23.setBackground(Color.YELLOW);
 				} else {
-					otros23.setBackground(Color.WHITE);
+					otros23.setBackground(colorPorDefecto);
 				}
 				otros33.setText(analisisAguaSeleccionado.getOtros3());
 				if(analisisAguaSeleccionado.getOtros3().equals("*")) {
 					otros33.setBackground(Color.YELLOW);
 				} else {
-					otros33.setBackground(Color.WHITE);
+					otros33.setBackground(colorPorDefecto);
 				}
 				otros43.setText(analisisAguaSeleccionado.getOtros4());
 				if(analisisAguaSeleccionado.getOtros4().equals("*")) {
 					otros43.setBackground(Color.YELLOW);
 				} else {
-					otros43.setBackground(Color.WHITE);
+					otros43.setBackground(colorPorDefecto);
 				}
 						
 				
@@ -4068,7 +4069,7 @@ public class CrearInformeAguas {
 				if (lugarExtraccion3.getText().equals("*")) {
 					lugarExtraccion3.setBackground(Color.YELLOW);
 				} else {
-					lugarExtraccion3.setBackground(Color.WHITE);
+					lugarExtraccion3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4089,7 +4090,7 @@ public class CrearInformeAguas {
 				if (extraidoPor3.getText().equals("*")) {
 					extraidoPor3.setBackground(Color.YELLOW);
 				} else {
-					extraidoPor3.setBackground(Color.WHITE);
+					extraidoPor3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4105,7 +4106,7 @@ public class CrearInformeAguas {
 				if (fechaExtraccion3.getText().equals("*")) {
 					fechaExtraccion3.setBackground(Color.YELLOW);
 				} else {
-					fechaExtraccion3.setBackground(Color.WHITE);
+					fechaExtraccion3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4127,7 +4128,7 @@ public class CrearInformeAguas {
 				if (horaExtraccion3.getText().equals("*")) {
 					horaExtraccion3.setBackground(Color.YELLOW);
 				} else {
-					horaExtraccion3.setBackground(Color.WHITE);
+					horaExtraccion3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4148,7 +4149,7 @@ public class CrearInformeAguas {
 				if (aspecto3.getText().equals("*")) {
 					aspecto3.setBackground(Color.YELLOW);
 				} else {
-					aspecto3.setBackground(Color.WHITE);
+					aspecto3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4169,7 +4170,7 @@ public class CrearInformeAguas {
 				if (pHIS3.getText().equals("*")) {
 					pHIS3.setBackground(Color.YELLOW);
 				} else {
-					pHIS3.setBackground(Color.WHITE);
+					pHIS3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4190,7 +4191,7 @@ public class CrearInformeAguas {
 				if (pH3.getText().equals("*")) {
 					pH3.setBackground(Color.YELLOW);
 				} else {
-					pH3.setBackground(Color.WHITE);
+					pH3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4211,7 +4212,7 @@ public class CrearInformeAguas {
 				if (temperatura3.getText().equals("*")) {
 					temperatura3.setBackground(Color.YELLOW);
 				} else {
-					temperatura3.setBackground(Color.WHITE);
+					temperatura3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4232,7 +4233,7 @@ public class CrearInformeAguas {
 				if (caudal3.getText().equals("*")) {
 					caudal3.setBackground(Color.YELLOW);
 				} else {
-					caudal3.setBackground(Color.WHITE);
+					caudal3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4253,7 +4254,7 @@ public class CrearInformeAguas {
 				if (ODIS3.getText().equals("*")) {
 					ODIS3.setBackground(Color.YELLOW);
 				} else {
-					ODIS3.setBackground(Color.WHITE);
+					ODIS3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4274,7 +4275,7 @@ public class CrearInformeAguas {
 				if (OD3.getText().equals("*")) {
 					OD3.setBackground(Color.YELLOW);
 				} else {
-					OD3.setBackground(Color.WHITE);
+					OD3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4295,7 +4296,7 @@ public class CrearInformeAguas {
 				if (DBO53.getText().equals("*")) {
 					DBO53.setBackground(Color.YELLOW);
 				} else {
-					DBO53.setBackground(Color.WHITE);
+					DBO53.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4316,7 +4317,7 @@ public class CrearInformeAguas {
 				if (DBO5F3.getText().equals("*")) {
 					DBO5F3.setBackground(Color.YELLOW);
 				} else {
-					DBO5F3.setBackground(Color.WHITE);
+					DBO5F3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4337,7 +4338,7 @@ public class CrearInformeAguas {
 				if (DQO3.getText().equals("*")) {
 					DQO3.setBackground(Color.YELLOW);
 				} else {
-					DQO3.setBackground(Color.WHITE);
+					DQO3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4358,7 +4359,7 @@ public class CrearInformeAguas {
 				if (AceitesYGrasas3.getText().equals("*")) {
 					AceitesYGrasas3.setBackground(Color.YELLOW);
 				} else {
-					AceitesYGrasas3.setBackground(Color.WHITE);
+					AceitesYGrasas3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4379,7 +4380,7 @@ public class CrearInformeAguas {
 				if (SolidosTotales3.getText().equals("*")) {
 					SolidosTotales3.setBackground(Color.YELLOW);
 				} else {
-					SolidosTotales3.setBackground(Color.WHITE);
+					SolidosTotales3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4400,7 +4401,7 @@ public class CrearInformeAguas {
 				if (STV3.getText().equals("*")) {
 					STV3.setBackground(Color.YELLOW);
 				} else {
-					STV3.setBackground(Color.WHITE);
+					STV3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4421,7 +4422,7 @@ public class CrearInformeAguas {
 				if (SST3.getText().equals("*")) {
 					SST3.setBackground(Color.YELLOW);
 				} else {
-					SST3.setBackground(Color.WHITE);
+					SST3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4442,7 +4443,7 @@ public class CrearInformeAguas {
 				if (SSV3.getText().equals("*")) {
 					SSV3.setBackground(Color.YELLOW);
 				} else {
-					SSV3.setBackground(Color.WHITE);
+					SSV3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4463,7 +4464,7 @@ public class CrearInformeAguas {
 				if (SS103.getText().equals("*")) {
 					SS103.setBackground(Color.YELLOW);
 				} else {
-					SS103.setBackground(Color.WHITE);
+					SS103.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4484,7 +4485,7 @@ public class CrearInformeAguas {
 				if (SS303.getText().equals("*")) {
 					SS303.setBackground(Color.YELLOW);
 				} else {
-					SS303.setBackground(Color.WHITE);
+					SS303.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4505,7 +4506,7 @@ public class CrearInformeAguas {
 				if (SS603.getText().equals("*")) {
 					SS603.setBackground(Color.YELLOW);
 				} else {
-					SS603.setBackground(Color.WHITE);
+					SS603.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4526,7 +4527,7 @@ public class CrearInformeAguas {
 				if (amoniaco3.getText().equals("*")) {
 					amoniaco3.setBackground(Color.YELLOW);
 				} else {
-					amoniaco3.setBackground(Color.WHITE);
+					amoniaco3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4547,7 +4548,7 @@ public class CrearInformeAguas {
 				if (nitrato3.getText().equals("*")) {
 					nitrato3.setBackground(Color.YELLOW);
 				} else {
-					nitrato3.setBackground(Color.WHITE);
+					nitrato3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4568,7 +4569,7 @@ public class CrearInformeAguas {
 				if (nitrogenoTotal3.getText().equals("*")) {
 					nitrogenoTotal3.setBackground(Color.YELLOW);
 				} else {
-					nitrogenoTotal3.setBackground(Color.WHITE);
+					nitrogenoTotal3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4589,7 +4590,7 @@ public class CrearInformeAguas {
 				if (fosforoTotal3.getText().equals("*")) {
 					fosforoTotal3.setBackground(Color.YELLOW);
 				} else {
-					fosforoTotal3.setBackground(Color.WHITE);
+					fosforoTotal3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4610,7 +4611,7 @@ public class CrearInformeAguas {
 				if (cromo3.getText().equals("*")) {
 					cromo3.setBackground(Color.YELLOW);
 				} else {
-					cromo3.setBackground(Color.WHITE);
+					cromo3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4631,7 +4632,7 @@ public class CrearInformeAguas {
 				if (plomo3.getText().equals("*")) {
 					plomo3.setBackground(Color.YELLOW);
 				} else {
-					plomo3.setBackground(Color.WHITE);
+					plomo3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4652,7 +4653,7 @@ public class CrearInformeAguas {
 				if (zinc3.getText().equals("*")) {
 					zinc3.setBackground(Color.YELLOW);
 				} else {
-					zinc3.setBackground(Color.WHITE);
+					zinc3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4673,7 +4674,7 @@ public class CrearInformeAguas {
 				if (aluminio3.getText().equals("*")) {
 					aluminio3.setBackground(Color.YELLOW);
 				} else {
-					aluminio3.setBackground(Color.WHITE);
+					aluminio3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4694,7 +4695,7 @@ public class CrearInformeAguas {
 				if (manganeso3.getText().equals("*")) {
 					manganeso3.setBackground(Color.YELLOW);
 				} else {
-					manganeso3.setBackground(Color.WHITE);
+					manganeso3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4715,7 +4716,7 @@ public class CrearInformeAguas {
 				if (potasio3.getText().equals("*")) {
 					potasio3.setBackground(Color.YELLOW);
 				} else {
-					potasio3.setBackground(Color.WHITE);
+					potasio3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4736,7 +4737,7 @@ public class CrearInformeAguas {
 				if (alcalinidadTotal3.getText().equals("*")) {
 					alcalinidadTotal3.setBackground(Color.YELLOW);
 				} else {
-					alcalinidadTotal3.setBackground(Color.WHITE);
+					alcalinidadTotal3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4757,7 +4758,7 @@ public class CrearInformeAguas {
 				if (acidezVolatil3.getText().equals("*")) {
 					acidezVolatil3.setBackground(Color.YELLOW);
 				} else {
-					acidezVolatil3.setBackground(Color.WHITE);
+					acidezVolatil3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4778,7 +4779,7 @@ public class CrearInformeAguas {
 				if (alfa3.getText().equals("*")) {
 					alfa3.setBackground(Color.YELLOW);
 				} else {
-					alfa3.setBackground(Color.WHITE);
+					alfa3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4799,7 +4800,7 @@ public class CrearInformeAguas {
 				if (alfaPrima3.getText().equals("*")) {
 					alfaPrima3.setBackground(Color.YELLOW);
 				} else {
-					alfaPrima3.setBackground(Color.WHITE);
+					alfaPrima3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4820,7 +4821,7 @@ public class CrearInformeAguas {
 				if (bicarbonato3.getText().equals("*")) {
 					bicarbonato3.setBackground(Color.YELLOW);
 				} else {
-					bicarbonato3.setBackground(Color.WHITE);
+					bicarbonato3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4841,7 +4842,7 @@ public class CrearInformeAguas {
 				if (salinidad3.getText().equals("*")) {
 					salinidad3.setBackground(Color.YELLOW);
 				} else {
-					salinidad3.setBackground(Color.WHITE);
+					salinidad3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4862,7 +4863,7 @@ public class CrearInformeAguas {
 				if (turbiedad3.getText().equals("*")) {
 					turbiedad3.setBackground(Color.YELLOW);
 				} else {
-					turbiedad3.setBackground(Color.WHITE);
+					turbiedad3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4883,7 +4884,7 @@ public class CrearInformeAguas {
 				if (conductividad3.getText().equals("*")) {
 					conductividad3.setBackground(Color.YELLOW);
 				} else {
-					conductividad3.setBackground(Color.WHITE);
+					conductividad3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4904,7 +4905,7 @@ public class CrearInformeAguas {
 				if (sulfuro3.getText().equals("*")) {
 					sulfuro3.setBackground(Color.YELLOW);
 				} else {
-					sulfuro3.setBackground(Color.WHITE);
+					sulfuro3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4925,7 +4926,7 @@ public class CrearInformeAguas {
 				if (sulfato3.getText().equals("*")) {
 					sulfato3.setBackground(Color.YELLOW);
 				} else {
-					sulfato3.setBackground(Color.WHITE);
+					sulfato3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4946,7 +4947,7 @@ public class CrearInformeAguas {
 				if (fenoles3.getText().equals("*")) {
 					fenoles3.setBackground(Color.YELLOW);
 				} else {
-					fenoles3.setBackground(Color.WHITE);
+					fenoles3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4967,7 +4968,7 @@ public class CrearInformeAguas {
 				if (tensoactivos3.getText().equals("*")) {
 					tensoactivos3.setBackground(Color.YELLOW);
 				} else {
-					tensoactivos3.setBackground(Color.WHITE);
+					tensoactivos3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -4988,7 +4989,7 @@ public class CrearInformeAguas {
 				if (cloroResidual3.getText().equals("*")) {
 					cloroResidual3.setBackground(Color.YELLOW);
 				} else {
-					cloroResidual3.setBackground(Color.WHITE);
+					cloroResidual3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5009,7 +5010,7 @@ public class CrearInformeAguas {
 				if (cloroTotal3.getText().equals("*")) {
 					cloroTotal3.setBackground(Color.YELLOW);
 				} else {
-					cloroTotal3.setBackground(Color.WHITE);
+					cloroTotal3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5030,7 +5031,7 @@ public class CrearInformeAguas {
 				if (cloruro3.getText().equals("*")) {
 					cloruro3.setBackground(Color.YELLOW);
 				} else {
-					cloruro3.setBackground(Color.WHITE);
+					cloruro3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5052,7 +5053,7 @@ public class CrearInformeAguas {
 				if (dureza3.getText().equals("*")) {
 					dureza3.setBackground(Color.YELLOW);
 				} else {
-					dureza3.setBackground(Color.WHITE);
+					dureza3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5073,7 +5074,7 @@ public class CrearInformeAguas {
 				if (color3.getText().equals("*")) {
 					color3.setBackground(Color.YELLOW);
 				} else {
-					color3.setBackground(Color.WHITE);
+					color3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5094,7 +5095,7 @@ public class CrearInformeAguas {
 				if (hidrocarburos3.getText().equals("*")) {
 					hidrocarburos3.setBackground(Color.YELLOW);
 				} else {
-					hidrocarburos3.setBackground(Color.WHITE);
+					hidrocarburos3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5115,7 +5116,7 @@ public class CrearInformeAguas {
 				if (coliformes3.getText().equals("*")) {
 					coliformes3.setBackground(Color.YELLOW);
 				} else {
-					coliformes3.setBackground(Color.WHITE);
+					coliformes3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5136,7 +5137,7 @@ public class CrearInformeAguas {
 				if (cursoAguaTipo3.getText().equals("*")) {
 					cursoAguaTipo3.setBackground(Color.YELLOW);
 				} else {
-					cursoAguaTipo3.setBackground(Color.WHITE);
+					cursoAguaTipo3.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5157,7 +5158,7 @@ public class CrearInformeAguas {
 				if (otros13.getText().equals("*")) {
 					otros13.setBackground(Color.YELLOW);
 				} else {
-					otros13.setBackground(Color.WHITE);
+					otros13.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5178,7 +5179,7 @@ public class CrearInformeAguas {
 				if (otros23.getText().equals("*")) {
 					otros23.setBackground(Color.YELLOW);
 				} else {
-					otros23.setBackground(Color.WHITE);
+					otros23.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5199,7 +5200,7 @@ public class CrearInformeAguas {
 				if (otros33.getText().equals("*")) {
 					otros33.setBackground(Color.YELLOW);
 				} else {
-					otros33.setBackground(Color.WHITE);
+					otros33.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5220,7 +5221,7 @@ public class CrearInformeAguas {
 				if (otros43.getText().equals("*")) {
 					otros43.setBackground(Color.YELLOW);
 				} else {
-					otros43.setBackground(Color.WHITE);
+					otros43.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5236,13 +5237,13 @@ public class CrearInformeAguas {
 				if(analisisAguaSeleccionado.getLugarExtraccion().equals("*")) {
 					lugarExtraccion4.setBackground(Color.YELLOW);
 				} else {
-					lugarExtraccion4.setBackground(Color.WHITE);
+					lugarExtraccion4.setBackground(colorPorDefecto);
 				}
 				extraidoPor4.setText(analisisAguaSeleccionado.getExtraidoPor());
 				if(analisisAguaSeleccionado.getExtraidoPor().equals("*")) {
 					extraidoPor4.setBackground(Color.YELLOW);
 				} else {
-					extraidoPor4.setBackground(Color.WHITE);
+					extraidoPor4.setBackground(colorPorDefecto);
 				}
 				if(analisisAguaSeleccionado.getFechaExtraccion() == null) {
 					fechaExtraccion4.setText("");
@@ -5254,84 +5255,84 @@ public class CrearInformeAguas {
 				if(analisisAguaSeleccionado.getHoraExtraccion().equals("*")) {
 					horaExtraccion4.setBackground(Color.YELLOW);
 				} else {
-					horaExtraccion4.setBackground(Color.WHITE);
+					horaExtraccion4.setBackground(colorPorDefecto);
 				}
 				if(analisisAguaSeleccionado.getAspecto().equals("*")) {
 					aspecto4.setBackground(Color.YELLOW);
 				} else {
-					aspecto4.setBackground(Color.WHITE);
+					aspecto4.setBackground(colorPorDefecto);
 				}
 				aspecto4.setText(analisisAguaSeleccionado.getAspecto());
 				if(analisisAguaSeleccionado.getpH().equals("*")) {
 					pH4.setBackground(Color.YELLOW);
 				} else {
-					pH4.setBackground(Color.WHITE);
+					pH4.setBackground(colorPorDefecto);
 				}
 				pH4.setText(analisisAguaSeleccionado.getpH());				
 				if(analisisAguaSeleccionado.getSolidosTotales().equals("*")) {
 					SolidosTotales4.setBackground(Color.YELLOW);
 				} else {
-					SolidosTotales4.setBackground(Color.WHITE);
+					SolidosTotales4.setBackground(colorPorDefecto);
 				}
 				SolidosTotales4.setText(analisisAguaSeleccionado.getSolidosTotales());
 				if(analisisAguaSeleccionado.getpHInSitu().equals("*")) {
 					pHIS4.setBackground(Color.YELLOW);
 				} else {
-					pHIS4.setBackground(Color.WHITE);
+					pHIS4.setBackground(colorPorDefecto);
 				}
 				pHIS4.setText(analisisAguaSeleccionado.getpHInSitu());
 				if(analisisAguaSeleccionado.getTemperatura().equals("*")) {
 					temperatura4.setBackground(Color.YELLOW);
 				} else {
-					temperatura4.setBackground(Color.WHITE);
+					temperatura4.setBackground(colorPorDefecto);
 				}
 				temperatura4.setText(analisisAguaSeleccionado.getTemperatura());
 				if(analisisAguaSeleccionado.getCaudalInstantaneo().equals("*")) {
 					caudal4.setBackground(Color.YELLOW);
 				} else {
-					caudal4.setBackground(Color.WHITE);
+					caudal4.setBackground(colorPorDefecto);
 				}
 				caudal4.setText(analisisAguaSeleccionado.getCaudalInstantaneo());
 				if(analisisAguaSeleccionado.getODInSitu().equals("*")) {
 					ODIS4.setBackground(Color.YELLOW);
 				} else {
-					ODIS4.setBackground(Color.WHITE);
+					ODIS4.setBackground(colorPorDefecto);
 				}
 				ODIS4.setText(analisisAguaSeleccionado.getODInSitu());
 				if(analisisAguaSeleccionado.getOD().equals("*")) {
 					OD4.setBackground(Color.YELLOW);
 				} else {
-					OD4.setBackground(Color.WHITE);
+					OD4.setBackground(colorPorDefecto);
 				}
 				OD4.setText(analisisAguaSeleccionado.getOD());
 				if(analisisAguaSeleccionado.getDBO5().equals("*")) {
 					DBO54.setBackground(Color.YELLOW);
 				} else {
-					DBO54.setBackground(Color.WHITE);
+					DBO54.setBackground(colorPorDefecto);
 				}
 				DBO54.setText(analisisAguaSeleccionado.getDBO5());
 				if(analisisAguaSeleccionado.getDBO5Filtrada().equals("*")) {
 					DBO5F4.setBackground(Color.YELLOW);
 				} else {
-					DBO5F4.setBackground(Color.WHITE);
+					DBO5F4.setBackground(colorPorDefecto);
 				}
 				DBO5F4.setText(analisisAguaSeleccionado.getDBO5Filtrada());
 				if(analisisAguaSeleccionado.getDQO().equals("*")) {
 					DQO4.setBackground(Color.YELLOW);
 				} else {
-					DQO4.setBackground(Color.WHITE);
+					DQO4.setBackground(colorPorDefecto);
 				}
 				DQO4.setText(analisisAguaSeleccionado.getDQO());
 				if(analisisAguaSeleccionado.getAceitesYGrasas().equals("*")) {
 					AceitesYGrasas4.setBackground(Color.YELLOW);
 				} else {
-					AceitesYGrasas4.setBackground(Color.WHITE);
+					AceitesYGrasas4.setBackground(colorPorDefecto);
 				}
 				AceitesYGrasas4.setText(analisisAguaSeleccionado.getAceitesYGrasas());
 				if(analisisAguaSeleccionado.getSolidosTotalesVolatiles().equals("*")) {
 					STV4.setBackground(Color.YELLOW);
 				} else {
-					STV4.setBackground(Color.WHITE);
+					STV4.setBackground(colorPorDefecto);
 				}
 				STV4.setText(analisisAguaSeleccionado.getSolidosTotalesVolatiles());
 
@@ -5339,235 +5340,235 @@ public class CrearInformeAguas {
 				if(analisisAguaSeleccionado.getSst().equals("*")) {
 					SST4.setBackground(Color.YELLOW);
 				} else {
-					SST4.setBackground(Color.WHITE);
+					SST4.setBackground(colorPorDefecto);
 				}
 				SSV4.setText(analisisAguaSeleccionado.getSsv());
 				if(analisisAguaSeleccionado.getSsv().equals("*")) {
 					SSV4.setBackground(Color.YELLOW);
 				} else {
-					SSV4.setBackground(Color.WHITE);
+					SSV4.setBackground(colorPorDefecto);
 				}
 				SS104.setText(analisisAguaSeleccionado.getSs10());
 				if(analisisAguaSeleccionado.getSs10().equals("*")) {
 					SS104.setBackground(Color.YELLOW);
 				} else {
-					SS104.setBackground(Color.WHITE);
+					SS104.setBackground(colorPorDefecto);
 				}
 				SS304.setText(analisisAguaSeleccionado.getSs30());
 				if(analisisAguaSeleccionado.getSs30().equals("*")) {
 					SS304.setBackground(Color.YELLOW);
 				} else {
-					SS304.setBackground(Color.WHITE);
+					SS304.setBackground(colorPorDefecto);
 				}
 				SS604.setText(analisisAguaSeleccionado.getSs60());
 				if(analisisAguaSeleccionado.getSs60().equals("*")) {
 					SS604.setBackground(Color.YELLOW);
 				} else {
-					SS604.setBackground(Color.WHITE);
+					SS604.setBackground(colorPorDefecto);
 				}
 				amoniaco4.setText(analisisAguaSeleccionado.getAmoniaco());
 				if(analisisAguaSeleccionado.getOtros4().equals("*")) {
 					amoniaco4.setBackground(Color.YELLOW);
 				} else {
-					amoniaco4.setBackground(Color.WHITE);
+					amoniaco4.setBackground(colorPorDefecto);
 				}
 				nitrato4.setText(analisisAguaSeleccionado.getNitrato());
 				if(analisisAguaSeleccionado.getNitrato().equals("*")) {
 					nitrato4.setBackground(Color.YELLOW);
 				} else {
-					nitrato4.setBackground(Color.WHITE);
+					nitrato4.setBackground(colorPorDefecto);
 				}
 				nitrogenoTotal4.setText(analisisAguaSeleccionado.getNitrogenoTotal());
 				if(analisisAguaSeleccionado.getNitrogenoTotal().equals("*")) {
 					nitrogenoTotal4.setBackground(Color.YELLOW);
 				} else {
-					nitrogenoTotal4.setBackground(Color.WHITE);
+					nitrogenoTotal4.setBackground(colorPorDefecto);
 				}
 				fosforoTotal4.setText(analisisAguaSeleccionado.getFosforoTotal());
 				if(analisisAguaSeleccionado.getFosforoTotal().equals("*")) {
 					fosforoTotal4.setBackground(Color.YELLOW);
 				} else {
-					fosforoTotal4.setBackground(Color.WHITE);
+					fosforoTotal4.setBackground(colorPorDefecto);
 				}
 				cromo4.setText(analisisAguaSeleccionado.getCromo());
 				if(analisisAguaSeleccionado.getCromo().equals("*")) {
 					cromo4.setBackground(Color.YELLOW);
 				} else {
-					cromo4.setBackground(Color.WHITE);
+					cromo4.setBackground(colorPorDefecto);
 				}
 				plomo4.setText(analisisAguaSeleccionado.getPlomo());
 				if(analisisAguaSeleccionado.getPlomo().equals("*")) {
 					plomo4.setBackground(Color.YELLOW);
 				} else {
-					plomo4.setBackground(Color.WHITE);
+					plomo4.setBackground(colorPorDefecto);
 				}
 				zinc4.setText(analisisAguaSeleccionado.getZinc());
 				if(analisisAguaSeleccionado.getZinc().equals("*")) {
 					zinc4.setBackground(Color.YELLOW);
 				} else {
-					zinc4.setBackground(Color.WHITE);
+					zinc4.setBackground(colorPorDefecto);
 				}
 				aluminio4.setText(analisisAguaSeleccionado.getAluminio());
 				if(analisisAguaSeleccionado.getAluminio().equals("*")) {
 					aluminio4.setBackground(Color.YELLOW);
 				} else {
-					aluminio4.setBackground(Color.WHITE);
+					aluminio4.setBackground(colorPorDefecto);
 				}
 				manganeso4.setText(analisisAguaSeleccionado.getManganeso());
 				if(analisisAguaSeleccionado.getManganeso().equals("*")) {
 					manganeso4.setBackground(Color.YELLOW);
 				} else {
-					manganeso4.setBackground(Color.WHITE);
+					manganeso4.setBackground(colorPorDefecto);
 				}
 				potasio4.setText(analisisAguaSeleccionado.getPotasio());
 				if(analisisAguaSeleccionado.getPotasio().equals("*")) {
 					potasio4.setBackground(Color.YELLOW);
 				} else {
-					potasio4.setBackground(Color.WHITE);
+					potasio4.setBackground(colorPorDefecto);
 				}
 				alcalinidadTotal4.setText(analisisAguaSeleccionado.getAlcalinidadTotal());
 				if(analisisAguaSeleccionado.getAlcalinidadTotal().equals("*")) {
 					alcalinidadTotal4.setBackground(Color.YELLOW);
 				} else {
-					alcalinidadTotal4.setBackground(Color.WHITE);
+					alcalinidadTotal4.setBackground(colorPorDefecto);
 				}
 				acidezVolatil4.setText(analisisAguaSeleccionado.getAcidezVolatil());
 				if(analisisAguaSeleccionado.getAcidezVolatil().equals("*")) {
 					acidezVolatil4.setBackground(Color.YELLOW);
 				} else {
-					acidezVolatil4.setBackground(Color.WHITE);
+					acidezVolatil4.setBackground(colorPorDefecto);
 				}
 				alfa4.setText(analisisAguaSeleccionado.getAlfa());
 				if(analisisAguaSeleccionado.getAlfa().equals("*")) {
 					alfa4.setBackground(Color.YELLOW);
 				} else {
-					alfa4.setBackground(Color.WHITE);
+					alfa4.setBackground(colorPorDefecto);
 				}
 				alfaPrima4.setText(analisisAguaSeleccionado.getAlfaPrima());
 				if(analisisAguaSeleccionado.getAlfaPrima().equals("*")) {
 					alfaPrima4.setBackground(Color.YELLOW);
 				} else {
-					alfaPrima4.setBackground(Color.WHITE);
+					alfaPrima4.setBackground(colorPorDefecto);
 				}				
 				bicarbonato4.setText(analisisAguaSeleccionado.getBicarbonato());
 				if(analisisAguaSeleccionado.getBicarbonato().equals("*")) {
 					bicarbonato4.setBackground(Color.YELLOW);
 				} else {
-					bicarbonato4.setBackground(Color.WHITE);
+					bicarbonato4.setBackground(colorPorDefecto);
 				}
 				salinidad4.setText(analisisAguaSeleccionado.getSalinidad());
 				if(analisisAguaSeleccionado.getSalinidad().equals("*")) {
 					salinidad4.setBackground(Color.YELLOW);
 				} else {
-					salinidad4.setBackground(Color.WHITE);
+					salinidad4.setBackground(colorPorDefecto);
 				}
 				turbiedad4.setText(analisisAguaSeleccionado.getTurbiedad());
 				if(analisisAguaSeleccionado.getTurbiedad().equals("*")) {
 					turbiedad4.setBackground(Color.YELLOW);
 				} else {
-					turbiedad4.setBackground(Color.WHITE);
+					turbiedad4.setBackground(colorPorDefecto);
 				}
 				conductividad4.setText(analisisAguaSeleccionado.getConductividad());
 				if(analisisAguaSeleccionado.getConductividad().equals("*")) {
 					conductividad4.setBackground(Color.YELLOW);
 				} else {
-					conductividad4.setBackground(Color.WHITE);
+					conductividad4.setBackground(colorPorDefecto);
 				}
 				sulfuro4.setText(analisisAguaSeleccionado.getSulfuro());
 				if(analisisAguaSeleccionado.getSulfuro().equals("*")) {
 					sulfuro4.setBackground(Color.YELLOW);
 				} else {
-					sulfuro4.setBackground(Color.WHITE);
+					sulfuro4.setBackground(colorPorDefecto);
 				}
 				sulfato4.setText(analisisAguaSeleccionado.getSulfato());
 				if(analisisAguaSeleccionado.getSulfato().equals("*")) {
 					sulfato4.setBackground(Color.YELLOW);
 				} else {
-					sulfato4.setBackground(Color.WHITE);
+					sulfato4.setBackground(colorPorDefecto);
 				}
 				fenoles4.setText(analisisAguaSeleccionado.getFenoles());
 				if(analisisAguaSeleccionado.getFenoles().equals("*")) {
 					fenoles4.setBackground(Color.YELLOW);
 				} else {
-					fenoles4.setBackground(Color.WHITE);
+					fenoles4.setBackground(colorPorDefecto);
 				}
 				tensoactivos4.setText(analisisAguaSeleccionado.getTensoactivosAnionicos());
 				if(analisisAguaSeleccionado.getTensoactivosAnionicos().equals("*")) {
 					tensoactivos4.setBackground(Color.YELLOW);
 				} else {
-					tensoactivos4.setBackground(Color.WHITE);
+					tensoactivos4.setBackground(colorPorDefecto);
 				}
 				cloroResidual4.setText(analisisAguaSeleccionado.getCloroResidual());
 				if(analisisAguaSeleccionado.getCloroResidual().equals("*")) {
 					cloroResidual4.setBackground(Color.YELLOW);
 				} else {
-					cloroResidual4.setBackground(Color.WHITE);
+					cloroResidual4.setBackground(colorPorDefecto);
 				}
 				cloroTotal4.setText(analisisAguaSeleccionado.getCloroTotal());
 				if(analisisAguaSeleccionado.getCloroTotal().equals("*")) {
 					cloroTotal4.setBackground(Color.YELLOW);
 				} else {
-					cloroTotal4.setBackground(Color.WHITE);
+					cloroTotal4.setBackground(colorPorDefecto);
 				}
 				cloruro4.setText(analisisAguaSeleccionado.getCloruro());
 				if(analisisAguaSeleccionado.getCloruro().equals("*")) {
 					cloruro4.setBackground(Color.YELLOW);
 				} else {
-					cloruro4.setBackground(Color.WHITE);
+					cloruro4.setBackground(colorPorDefecto);
 				}
 				dureza4.setText(analisisAguaSeleccionado.getDureza());
 				if(analisisAguaSeleccionado.getDureza().equals("*")) {
 					dureza4.setBackground(Color.YELLOW);
 				} else {
-					dureza4.setBackground(Color.WHITE);
+					dureza4.setBackground(colorPorDefecto);
 				}
 				color4.setText(analisisAguaSeleccionado.getColor());
 				if(analisisAguaSeleccionado.getColor().equals("*")) {
 					color4.setBackground(Color.YELLOW);
 				} else {
-					color4.setBackground(Color.WHITE);
+					color4.setBackground(colorPorDefecto);
 				}
 				hidrocarburos4.setText(analisisAguaSeleccionado.getHidrocarburos());
 				if(analisisAguaSeleccionado.getHidrocarburos().equals("*")) {
 					hidrocarburos4.setBackground(Color.YELLOW);
 				} else {
-					hidrocarburos4.setBackground(Color.WHITE);
+					hidrocarburos4.setBackground(colorPorDefecto);
 				}
 				coliformes4.setText(analisisAguaSeleccionado.getColiformesFecales());
 				if(analisisAguaSeleccionado.getColiformesFecales().equals("*")) {
 					coliformes4.setBackground(Color.YELLOW);
 				} else {
-					coliformes4.setBackground(Color.WHITE);
+					coliformes4.setBackground(colorPorDefecto);
 				}
 				cursoAguaTipo4.setText(analisisAguaSeleccionado.getCursoDeAguaTipo());
 				if(analisisAguaSeleccionado.getCursoDeAguaTipo().equals("*")) {
 					cursoAguaTipo4.setBackground(Color.YELLOW);
 				} else {
-					cursoAguaTipo4.setBackground(Color.WHITE);
+					cursoAguaTipo4.setBackground(colorPorDefecto);
 				}
 				otros14.setText(analisisAguaSeleccionado.getOtros());
 				if(analisisAguaSeleccionado.getOtros().equals("*")) {
 					otros14.setBackground(Color.YELLOW);
 				} else {
-					otros14.setBackground(Color.WHITE);
+					otros14.setBackground(colorPorDefecto);
 				}
 				otros24.setText(analisisAguaSeleccionado.getOtros2());
 				if(analisisAguaSeleccionado.getOtros().equals("*")) {
 					otros24.setBackground(Color.YELLOW);
 				} else {
-					otros24.setBackground(Color.WHITE);
+					otros24.setBackground(colorPorDefecto);
 				}
 				otros34.setText(analisisAguaSeleccionado.getOtros3());
 				if(analisisAguaSeleccionado.getOtros3().equals("*")) {
 					otros34.setBackground(Color.YELLOW);
 				} else {
-					otros34.setBackground(Color.WHITE);
+					otros34.setBackground(colorPorDefecto);
 				}
 				otros44.setText(analisisAguaSeleccionado.getOtros4());
 				if(analisisAguaSeleccionado.getOtros4().equals("*")) {
 					otros44.setBackground(Color.YELLOW);
 				} else {
-					otros44.setBackground(Color.WHITE);
+					otros44.setBackground(colorPorDefecto);
 				}
 						
 				
@@ -5589,7 +5590,7 @@ public class CrearInformeAguas {
 				if (lugarExtraccion4.getText().equals("*")) {
 					lugarExtraccion4.setBackground(Color.YELLOW);
 				} else {
-					lugarExtraccion4.setBackground(Color.WHITE);
+					lugarExtraccion4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5610,7 +5611,7 @@ public class CrearInformeAguas {
 				if (extraidoPor4.getText().equals("*")) {
 					extraidoPor4.setBackground(Color.YELLOW);
 				} else {
-					extraidoPor4.setBackground(Color.WHITE);
+					extraidoPor4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5626,7 +5627,7 @@ public class CrearInformeAguas {
 				if (fechaExtraccion4.getText().equals("*")) {
 					fechaExtraccion4.setBackground(Color.YELLOW);
 				} else {
-					fechaExtraccion4.setBackground(Color.WHITE);
+					fechaExtraccion4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5648,7 +5649,7 @@ public class CrearInformeAguas {
 				if (horaExtraccion4.getText().equals("*")) {
 					horaExtraccion4.setBackground(Color.YELLOW);
 				} else {
-					horaExtraccion4.setBackground(Color.WHITE);
+					horaExtraccion4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5669,7 +5670,7 @@ public class CrearInformeAguas {
 				if (aspecto4.getText().equals("*")) {
 					aspecto4.setBackground(Color.YELLOW);
 				} else {
-					aspecto4.setBackground(Color.WHITE);
+					aspecto4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5690,7 +5691,7 @@ public class CrearInformeAguas {
 				if (pHIS4.getText().equals("*")) {
 					pHIS4.setBackground(Color.YELLOW);
 				} else {
-					pHIS4.setBackground(Color.WHITE);
+					pHIS4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5711,7 +5712,7 @@ public class CrearInformeAguas {
 				if (pH4.getText().equals("*")) {
 					pH4.setBackground(Color.YELLOW);
 				} else {
-					pH4.setBackground(Color.WHITE);
+					pH4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5732,7 +5733,7 @@ public class CrearInformeAguas {
 				if (temperatura4.getText().equals("*")) {
 					temperatura4.setBackground(Color.YELLOW);
 				} else {
-					temperatura4.setBackground(Color.WHITE);
+					temperatura4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5753,7 +5754,7 @@ public class CrearInformeAguas {
 				if (caudal4.getText().equals("*")) {
 					caudal4.setBackground(Color.YELLOW);
 				} else {
-					caudal4.setBackground(Color.WHITE);
+					caudal4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5774,7 +5775,7 @@ public class CrearInformeAguas {
 				if (ODIS4.getText().equals("*")) {
 					ODIS4.setBackground(Color.YELLOW);
 				} else {
-					ODIS4.setBackground(Color.WHITE);
+					ODIS4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5795,7 +5796,7 @@ public class CrearInformeAguas {
 				if (OD4.getText().equals("*")) {
 					OD4.setBackground(Color.YELLOW);
 				} else {
-					OD4.setBackground(Color.WHITE);
+					OD4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5816,7 +5817,7 @@ public class CrearInformeAguas {
 				if (DBO54.getText().equals("*")) {
 					DBO54.setBackground(Color.YELLOW);
 				} else {
-					DBO54.setBackground(Color.WHITE);
+					DBO54.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5837,7 +5838,7 @@ public class CrearInformeAguas {
 				if (DBO5F4.getText().equals("*")) {
 					DBO5F4.setBackground(Color.YELLOW);
 				} else {
-					DBO5F4.setBackground(Color.WHITE);
+					DBO5F4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5858,7 +5859,7 @@ public class CrearInformeAguas {
 				if (DQO4.getText().equals("*")) {
 					DQO4.setBackground(Color.YELLOW);
 				} else {
-					DQO4.setBackground(Color.WHITE);
+					DQO4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5879,7 +5880,7 @@ public class CrearInformeAguas {
 				if (AceitesYGrasas4.getText().equals("*")) {
 					AceitesYGrasas4.setBackground(Color.YELLOW);
 				} else {
-					AceitesYGrasas4.setBackground(Color.WHITE);
+					AceitesYGrasas4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5900,7 +5901,7 @@ public class CrearInformeAguas {
 				if (SolidosTotales4.getText().equals("*")) {
 					SolidosTotales4.setBackground(Color.YELLOW);
 				} else {
-					SolidosTotales4.setBackground(Color.WHITE);
+					SolidosTotales4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5921,7 +5922,7 @@ public class CrearInformeAguas {
 				if (STV4.getText().equals("*")) {
 					STV4.setBackground(Color.YELLOW);
 				} else {
-					STV4.setBackground(Color.WHITE);
+					STV4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5942,7 +5943,7 @@ public class CrearInformeAguas {
 				if (SST4.getText().equals("*")) {
 					SST4.setBackground(Color.YELLOW);
 				} else {
-					SST4.setBackground(Color.WHITE);
+					SST4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5963,7 +5964,7 @@ public class CrearInformeAguas {
 				if (SSV4.getText().equals("*")) {
 					SSV4.setBackground(Color.YELLOW);
 				} else {
-					SSV4.setBackground(Color.WHITE);
+					SSV4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -5984,7 +5985,7 @@ public class CrearInformeAguas {
 				if (SS104.getText().equals("*")) {
 					SS104.setBackground(Color.YELLOW);
 				} else {
-					SS104.setBackground(Color.WHITE);
+					SS104.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6005,7 +6006,7 @@ public class CrearInformeAguas {
 				if (SS304.getText().equals("*")) {
 					SS304.setBackground(Color.YELLOW);
 				} else {
-					SS304.setBackground(Color.WHITE);
+					SS304.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6026,7 +6027,7 @@ public class CrearInformeAguas {
 				if (SS604.getText().equals("*")) {
 					SS604.setBackground(Color.YELLOW);
 				} else {
-					SS604.setBackground(Color.WHITE);
+					SS604.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6047,7 +6048,7 @@ public class CrearInformeAguas {
 				if (amoniaco4.getText().equals("*")) {
 					amoniaco4.setBackground(Color.YELLOW);
 				} else {
-					amoniaco4.setBackground(Color.WHITE);
+					amoniaco4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6068,7 +6069,7 @@ public class CrearInformeAguas {
 				if (nitrato4.getText().equals("*")) {
 					nitrato4.setBackground(Color.YELLOW);
 				} else {
-					nitrato4.setBackground(Color.WHITE);
+					nitrato4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6089,7 +6090,7 @@ public class CrearInformeAguas {
 				if (nitrogenoTotal4.getText().equals("*")) {
 					nitrogenoTotal4.setBackground(Color.YELLOW);
 				} else {
-					nitrogenoTotal4.setBackground(Color.WHITE);
+					nitrogenoTotal4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6110,7 +6111,7 @@ public class CrearInformeAguas {
 				if (fosforoTotal4.getText().equals("*")) {
 					fosforoTotal4.setBackground(Color.YELLOW);
 				} else {
-					fosforoTotal4.setBackground(Color.WHITE);
+					fosforoTotal4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6131,7 +6132,7 @@ public class CrearInformeAguas {
 				if (cromo4.getText().equals("*")) {
 					cromo4.setBackground(Color.YELLOW);
 				} else {
-					cromo4.setBackground(Color.WHITE);
+					cromo4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6152,7 +6153,7 @@ public class CrearInformeAguas {
 				if (plomo4.getText().equals("*")) {
 					plomo4.setBackground(Color.YELLOW);
 				} else {
-					plomo4.setBackground(Color.WHITE);
+					plomo4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6173,7 +6174,7 @@ public class CrearInformeAguas {
 				if (zinc4.getText().equals("*")) {
 					zinc4.setBackground(Color.YELLOW);
 				} else {
-					zinc4.setBackground(Color.WHITE);
+					zinc4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6194,7 +6195,7 @@ public class CrearInformeAguas {
 				if (aluminio4.getText().equals("*")) {
 					aluminio4.setBackground(Color.YELLOW);
 				} else {
-					aluminio4.setBackground(Color.WHITE);
+					aluminio4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6215,7 +6216,7 @@ public class CrearInformeAguas {
 				if (manganeso4.getText().equals("*")) {
 					manganeso4.setBackground(Color.YELLOW);
 				} else {
-					manganeso4.setBackground(Color.WHITE);
+					manganeso4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6236,7 +6237,7 @@ public class CrearInformeAguas {
 				if (potasio4.getText().equals("*")) {
 					potasio4.setBackground(Color.YELLOW);
 				} else {
-					potasio4.setBackground(Color.WHITE);
+					potasio4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6257,7 +6258,7 @@ public class CrearInformeAguas {
 				if (alcalinidadTotal4.getText().equals("*")) {
 					alcalinidadTotal4.setBackground(Color.YELLOW);
 				} else {
-					alcalinidadTotal4.setBackground(Color.WHITE);
+					alcalinidadTotal4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6278,7 +6279,7 @@ public class CrearInformeAguas {
 				if (acidezVolatil4.getText().equals("*")) {
 					acidezVolatil4.setBackground(Color.YELLOW);
 				} else {
-					acidezVolatil4.setBackground(Color.WHITE);
+					acidezVolatil4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6299,7 +6300,7 @@ public class CrearInformeAguas {
 				if (alfa4.getText().equals("*")) {
 					alfa4.setBackground(Color.YELLOW);
 				} else {
-					alfa4.setBackground(Color.WHITE);
+					alfa4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6320,7 +6321,7 @@ public class CrearInformeAguas {
 				if (alfaPrima4.getText().equals("*")) {
 					alfaPrima4.setBackground(Color.YELLOW);
 				} else {
-					alfaPrima4.setBackground(Color.WHITE);
+					alfaPrima4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6341,7 +6342,7 @@ public class CrearInformeAguas {
 				if (bicarbonato4.getText().equals("*")) {
 					bicarbonato4.setBackground(Color.YELLOW);
 				} else {
-					bicarbonato4.setBackground(Color.WHITE);
+					bicarbonato4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6362,7 +6363,7 @@ public class CrearInformeAguas {
 				if (salinidad4.getText().equals("*")) {
 					salinidad4.setBackground(Color.YELLOW);
 				} else {
-					salinidad4.setBackground(Color.WHITE);
+					salinidad4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6383,7 +6384,7 @@ public class CrearInformeAguas {
 				if (turbiedad4.getText().equals("*")) {
 					turbiedad4.setBackground(Color.YELLOW);
 				} else {
-					turbiedad4.setBackground(Color.WHITE);
+					turbiedad4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6404,7 +6405,7 @@ public class CrearInformeAguas {
 				if (conductividad4.getText().equals("*")) {
 					conductividad4.setBackground(Color.YELLOW);
 				} else {
-					conductividad4.setBackground(Color.WHITE);
+					conductividad4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6425,7 +6426,7 @@ public class CrearInformeAguas {
 				if (sulfuro4.getText().equals("*")) {
 					sulfuro4.setBackground(Color.YELLOW);
 				} else {
-					sulfuro4.setBackground(Color.WHITE);
+					sulfuro4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6446,7 +6447,7 @@ public class CrearInformeAguas {
 				if (sulfato4.getText().equals("*")) {
 					sulfato4.setBackground(Color.YELLOW);
 				} else {
-					sulfato4.setBackground(Color.WHITE);
+					sulfato4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6467,7 +6468,7 @@ public class CrearInformeAguas {
 				if (fenoles4.getText().equals("*")) {
 					fenoles4.setBackground(Color.YELLOW);
 				} else {
-					fenoles4.setBackground(Color.WHITE);
+					fenoles4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6488,7 +6489,7 @@ public class CrearInformeAguas {
 				if (tensoactivos4.getText().equals("*")) {
 					tensoactivos4.setBackground(Color.YELLOW);
 				} else {
-					tensoactivos4.setBackground(Color.WHITE);
+					tensoactivos4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6509,7 +6510,7 @@ public class CrearInformeAguas {
 				if (cloroResidual4.getText().equals("*")) {
 					cloroResidual4.setBackground(Color.YELLOW);
 				} else {
-					cloroResidual4.setBackground(Color.WHITE);
+					cloroResidual4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6530,7 +6531,7 @@ public class CrearInformeAguas {
 				if (cloroTotal4.getText().equals("*")) {
 					cloroTotal4.setBackground(Color.YELLOW);
 				} else {
-					cloroTotal4.setBackground(Color.WHITE);
+					cloroTotal4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6551,7 +6552,7 @@ public class CrearInformeAguas {
 				if (cloruro4.getText().equals("*")) {
 					cloruro4.setBackground(Color.YELLOW);
 				} else {
-					cloruro4.setBackground(Color.WHITE);
+					cloruro4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6573,7 +6574,7 @@ public class CrearInformeAguas {
 				if (dureza4.getText().equals("*")) {
 					dureza4.setBackground(Color.YELLOW);
 				} else {
-					dureza4.setBackground(Color.WHITE);
+					dureza4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6594,7 +6595,7 @@ public class CrearInformeAguas {
 				if (color4.getText().equals("*")) {
 					color4.setBackground(Color.YELLOW);
 				} else {
-					color4.setBackground(Color.WHITE);
+					color4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6615,7 +6616,7 @@ public class CrearInformeAguas {
 				if (hidrocarburos4.getText().equals("*")) {
 					hidrocarburos4.setBackground(Color.YELLOW);
 				} else {
-					hidrocarburos4.setBackground(Color.WHITE);
+					hidrocarburos4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6636,7 +6637,7 @@ public class CrearInformeAguas {
 				if (coliformes4.getText().equals("*")) {
 					coliformes4.setBackground(Color.YELLOW);
 				} else {
-					coliformes4.setBackground(Color.WHITE);
+					coliformes4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6657,7 +6658,7 @@ public class CrearInformeAguas {
 				if (cursoAguaTipo4.getText().equals("*")) {
 					cursoAguaTipo4.setBackground(Color.YELLOW);
 				} else {
-					cursoAguaTipo4.setBackground(Color.WHITE);
+					cursoAguaTipo4.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6678,7 +6679,7 @@ public class CrearInformeAguas {
 				if (otros14.getText().equals("*")) {
 					otros14.setBackground(Color.YELLOW);
 				} else {
-					otros14.setBackground(Color.WHITE);
+					otros14.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6699,7 +6700,7 @@ public class CrearInformeAguas {
 				if (otros24.getText().equals("*")) {
 					otros24.setBackground(Color.YELLOW);
 				} else {
-					otros24.setBackground(Color.WHITE);
+					otros24.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6720,7 +6721,7 @@ public class CrearInformeAguas {
 				if (otros34.getText().equals("*")) {
 					otros34.setBackground(Color.YELLOW);
 				} else {
-					otros34.setBackground(Color.WHITE);
+					otros34.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6741,7 +6742,7 @@ public class CrearInformeAguas {
 				if (otros44.getText().equals("*")) {
 					otros44.setBackground(Color.YELLOW);
 				} else {
-					otros44.setBackground(Color.WHITE);
+					otros44.setBackground(colorPorDefecto);
 				}
 			}
 		});
@@ -6881,6 +6882,241 @@ public class CrearInformeAguas {
 		frame.getContentPane().add(scrollPane);
 		miPanel.setPreferredSize(new Dimension(1000, 1850));		
 		scrollPane.setViewportView(miPanel);
+		
+		aspecto1.setEditable(false);
+		fechaExtraccion1.setEditable(false);
+		horaExtraccion1.setEditable(false);
+		lugarExtraccion1.setEditable(false);
+		extraidoPor1.setEditable(false);
+		pHIS1.setEditable(false);
+		pH1.setEditable(false);
+		temperatura1.setEditable(false);
+		caudal1.setEditable(false);
+		ODIS1.setEditable(false);
+		OD1.setEditable(false);
+		DBO51.setEditable(false);
+		DBO5F1.setEditable(false);
+		DQO1.setEditable(false);
+		AceitesYGrasas1.setEditable(false);
+		SolidosTotales1.setEditable(false);
+		STV1.setEditable(false);
+		SST1.setEditable(false);
+		SSV1.setEditable(false);
+		SS101.setEditable(false);
+		SS301.setEditable(false);
+		SS601.setEditable(false);
+		amoniaco1.setEditable(false);
+		nitrato1.setEditable(false);
+		nitrogenoTotal1.setEditable(false);
+		fosforoTotal1.setEditable(false);
+		cromo1.setEditable(false);
+		plomo1.setEditable(false);
+		zinc1.setEditable(false);
+		aluminio1.setEditable(false);
+		manganeso1.setEditable(false);
+		potasio1.setEditable(false);
+		alcalinidadTotal1.setEditable(false);
+		acidezVolatil1.setEditable(false);
+		alfa1.setEditable(false);
+		alfaPrima1.setEditable(false);
+		bicarbonato1.setEditable(false);
+		salinidad1.setEditable(false);
+		turbiedad1.setEditable(false);
+		conductividad1.setEditable(false);
+		sulfuro1.setEditable(false);
+		sulfato1.setEditable(false);
+		fenoles1.setEditable(false);
+		tensoactivos1.setEditable(false);
+		cloroResidual1.setEditable(false);
+		cloroTotal1.setEditable(false);
+		cloruro1.setEditable(false);
+		dureza1.setEditable(false);
+		color1.setEditable(false);
+		hidrocarburos1.setEditable(false);
+		coliformes1.setEditable(false);
+		cursoAguaTipo1.setEditable(false);
+		otros11.setEditable(false);
+		otros21.setEditable(false);
+		otros31.setEditable(false);
+		otros41.setEditable(false);
+		
+		aspecto2.setEditable(false);
+		fechaExtraccion2.setEditable(false);
+		horaExtraccion2.setEditable(false);
+		lugarExtraccion2.setEditable(false);
+		extraidoPor2.setEditable(false);
+		pHIS2.setEditable(false);
+		pH2.setEditable(false);
+		temperatura2.setEditable(false);
+		caudal2.setEditable(false);
+		ODIS2.setEditable(false);
+		OD2.setEditable(false);
+		DBO52.setEditable(false);
+		DBO5F2.setEditable(false);
+		DQO2.setEditable(false);
+		AceitesYGrasas2.setEditable(false);
+		SolidosTotales2.setEditable(false);
+		STV2.setEditable(false);
+		SST2.setEditable(false);
+		SSV2.setEditable(false);
+		SS102.setEditable(false);
+		SS302.setEditable(false);
+		SS602.setEditable(false);
+		amoniaco2.setEditable(false);
+		nitrato2.setEditable(false);
+		nitrogenoTotal2.setEditable(false);
+		fosforoTotal2.setEditable(false);
+		cromo2.setEditable(false);
+		plomo2.setEditable(false);
+		zinc2.setEditable(false);
+		aluminio2.setEditable(false);
+		manganeso2.setEditable(false);
+		potasio2.setEditable(false);
+		alcalinidadTotal2.setEditable(false);
+		acidezVolatil2.setEditable(false);
+		alfa2.setEditable(false);
+		alfaPrima2.setEditable(false);
+		bicarbonato2.setEditable(false);
+		salinidad2.setEditable(false);
+		turbiedad2.setEditable(false);
+		conductividad2.setEditable(false);
+		sulfuro2.setEditable(false);
+		sulfato2.setEditable(false);
+		fenoles2.setEditable(false);
+		tensoactivos2.setEditable(false);
+		cloroResidual2.setEditable(false);
+		cloroTotal2.setEditable(false);
+		cloruro2.setEditable(false);
+		dureza2.setEditable(false);
+		color2.setEditable(false);
+		hidrocarburos2.setEditable(false);
+		coliformes2.setEditable(false);
+		cursoAguaTipo2.setEditable(false);
+		otros12.setEditable(false);
+		otros22.setEditable(false);
+		otros32.setEditable(false);
+		otros42.setEditable(false);
+		
+		aspecto3.setEditable(false);
+		fechaExtraccion3.setEditable(false);
+		horaExtraccion3.setEditable(false);
+		lugarExtraccion3.setEditable(false);
+		extraidoPor3.setEditable(false);
+		pHIS3.setEditable(false);
+		pH3.setEditable(false);
+		temperatura3.setEditable(false);
+		caudal3.setEditable(false);
+		ODIS3.setEditable(false);
+		OD3.setEditable(false);
+		DBO53.setEditable(false);
+		DBO5F3.setEditable(false);
+		DQO3.setEditable(false);
+		AceitesYGrasas3.setEditable(false);
+		SolidosTotales3.setEditable(false);
+		STV3.setEditable(false);
+		SST3.setEditable(false);
+		SSV3.setEditable(false);
+		SS103.setEditable(false);
+		SS303.setEditable(false);
+		SS603.setEditable(false);
+		amoniaco3.setEditable(false);
+		nitrato3.setEditable(false);
+		nitrogenoTotal3.setEditable(false);
+		fosforoTotal3.setEditable(false);
+		cromo3.setEditable(false);
+		plomo3.setEditable(false);
+		zinc3.setEditable(false);
+		aluminio3.setEditable(false);
+		manganeso3.setEditable(false);
+		potasio3.setEditable(false);
+		alcalinidadTotal3.setEditable(false);
+		acidezVolatil3.setEditable(false);
+		alfa3.setEditable(false);
+		alfaPrima3.setEditable(false);
+		bicarbonato3.setEditable(false);
+		salinidad3.setEditable(false);
+		turbiedad3.setEditable(false);
+		conductividad3.setEditable(false);
+		sulfuro3.setEditable(false);
+		sulfato3.setEditable(false);
+		fenoles3.setEditable(false);
+		tensoactivos3.setEditable(false);
+		cloroResidual3.setEditable(false);
+		cloroTotal3.setEditable(false);
+		cloruro3.setEditable(false);
+		dureza3.setEditable(false);
+		color3.setEditable(false);
+		hidrocarburos3.setEditable(false);
+		coliformes3.setEditable(false);
+		cursoAguaTipo3.setEditable(false);
+		otros13.setEditable(false);
+		otros23.setEditable(false);
+		otros33.setEditable(false);
+		otros43.setEditable(false);
+		
+		aspecto4.setEditable(false);
+		fechaExtraccion4.setEditable(false);
+		horaExtraccion4.setEditable(false);
+		lugarExtraccion4.setEditable(false);
+		extraidoPor4.setEditable(false);
+		pHIS4.setEditable(false);
+		pH4.setEditable(false);
+		temperatura4.setEditable(false);
+		caudal4.setEditable(false);
+		ODIS4.setEditable(false);
+		OD4.setEditable(false);
+		DBO54.setEditable(false);
+		DBO5F4.setEditable(false);
+		DQO4.setEditable(false);
+		AceitesYGrasas4.setEditable(false);
+		SolidosTotales4.setEditable(false);
+		STV4.setEditable(false);
+		SST4.setEditable(false);
+		SSV4.setEditable(false);
+		SS104.setEditable(false);
+		SS304.setEditable(false);
+		SS604.setEditable(false);
+		amoniaco4.setEditable(false);
+		nitrato4.setEditable(false);
+		nitrogenoTotal4.setEditable(false);
+		fosforoTotal4.setEditable(false);
+		cromo4.setEditable(false);
+		plomo4.setEditable(false);
+		zinc4.setEditable(false);
+		aluminio4.setEditable(false);
+		manganeso4.setEditable(false);
+		potasio4.setEditable(false);
+		alcalinidadTotal4.setEditable(false);
+		acidezVolatil4.setEditable(false);
+		alfa4.setEditable(false);
+		alfaPrima4.setEditable(false);
+		bicarbonato4.setEditable(false);
+		salinidad4.setEditable(false);
+		turbiedad4.setEditable(false);
+		conductividad4.setEditable(false);
+		sulfuro4.setEditable(false);
+		sulfato4.setEditable(false);
+		fenoles4.setEditable(false);
+		tensoactivos4.setEditable(false);
+		cloroResidual4.setEditable(false);
+		cloroTotal4.setEditable(false);
+		cloruro4.setEditable(false);
+		dureza4.setEditable(false);
+		color4.setEditable(false);
+		hidrocarburos4.setEditable(false);
+		coliformes4.setEditable(false);
+		cursoAguaTipo4.setEditable(false);
+		otros14.setEditable(false);
+		otros24.setEditable(false);
+		otros34.setEditable(false);
+		otros44.setEditable(false);
+		departamento1.setEditable(false);
+		localidad1.setEditable(false);
+		descargaEn1.setEditable(false);
+		departamento1.setBackground(colorPorDefecto);
+		localidad1.setBackground(colorPorDefecto);
+		descargaEn1.setBackground(colorPorDefecto);
+		
 	}
 
 }

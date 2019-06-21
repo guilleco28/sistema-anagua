@@ -27,6 +27,7 @@ import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.Picture;
+import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.VerticalAlignment;
@@ -45,9 +46,6 @@ public class ExcelAguas {
 	static String rutaExcel;
 	static String rutaLogo;
 	static String rutaFirma;
-	static int[] rgbColumnas = {216, 219, 252};
-	static int[] rgbFilas = {213, 233, 247};
-	static int[] blanco = {255, 255, 255};
 	
 	public static void realizarInforme() throws SQLException {
 		try {
@@ -72,7 +70,7 @@ public class ExcelAguas {
 		formatoEstaticoExcel(workbook, sheet);
 		llenarDatosEmpresa(workbook, sheet.getRow(6), sheet.getRow(7), sheet.getRow(8), sheet.getRow(9));
 		try {
-			String nombreEmpresa = conexion.traerAnalisis().get(0).get(1).replace(" ", "_");
+			String nombreEmpresa = conexion.traerAnalisis().get(0).get(1).replace(" ", "_").replace("(", "").replace(")", "");
 			rutaExcel = rutaExcel+nombreEmpresa+"_AGUAS_"+fechaActual+".xls";
 			llenarDeterminaciones(workbook, conexion);
 			llenarDatosDeterminaciones(workbook);
@@ -160,7 +158,7 @@ public class ExcelAguas {
 		Cell stringDepartamento = departamento.createCell(2);
 		stringDepartamento.setCellValue("DEPARTAMENTO:");
 		//titulosDatosEmpresa.add(stringDepartamento);
-		stringDepartamento.setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 11, true, rgbColumnas, BorderStyle.THIN, null, null, BorderStyle.THIN));
+		stringDepartamento.setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 11, true, IndexedColors.PALE_BLUE, BorderStyle.THIN, null, null, BorderStyle.THIN));
 		Row localidad = sheet.createRow(8);
 		Cell stringLocalidad = localidad.createCell(2);
 		stringLocalidad.setCellValue("LOCALIDAD:");
@@ -172,7 +170,7 @@ public class ExcelAguas {
 		
 		//estilo de INDUSTRIA:, LOCALIDAD: y DESCARGA EN:
 		for (int i=0; i<titulosDatosEmpresa.size(); i++) {
-			titulosDatosEmpresa.get(i).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 12, true, rgbColumnas, BorderStyle.THIN, null, null, BorderStyle.THIN));
+			titulosDatosEmpresa.get(i).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 12, true, IndexedColors.PALE_BLUE, BorderStyle.THIN, null, null, BorderStyle.THIN));
 		}
 
 		CellStyle styleBordesSuperioresDatos = workbook.createCellStyle();
@@ -263,12 +261,12 @@ public class ExcelAguas {
 		titulosColumnasArray.add(normaCursoAgua);
 		titulosColumnasArray.add(metodo);
 		
-		titulosColumnasArray.get(0).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 12, true, rgbColumnas, BorderStyle.THIN, null, BorderStyle.THIN, BorderStyle.THIN));
-		titulosColumnasArray.get(1).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 10, true, rgbColumnas, BorderStyle.THIN, null, BorderStyle.THIN, BorderStyle.THIN));
-		titulosColumnasArray.get(2).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 12, true, rgbColumnas, BorderStyle.THIN, null, BorderStyle.THIN, BorderStyle.THIN));
-		titulosColumnasArray.get(3).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, true, rgbColumnas, BorderStyle.THIN, null, BorderStyle.THIN, BorderStyle.THIN));
-		titulosColumnasArray.get(4).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 7, true, rgbColumnas, BorderStyle.THIN, null, BorderStyle.THIN, BorderStyle.THIN));
-		titulosColumnasArray.get(5).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 10, true, rgbColumnas, BorderStyle.THIN, null, BorderStyle.THIN, BorderStyle.THIN));
+		titulosColumnasArray.get(0).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 12, true, IndexedColors.PALE_BLUE, BorderStyle.THIN, null, BorderStyle.THIN, BorderStyle.THIN));
+		titulosColumnasArray.get(1).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 10, true, IndexedColors.PALE_BLUE, BorderStyle.THIN, null, BorderStyle.THIN, BorderStyle.THIN));
+		titulosColumnasArray.get(2).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 12, true, IndexedColors.PALE_BLUE, BorderStyle.THIN, null, BorderStyle.THIN, BorderStyle.THIN));
+		titulosColumnasArray.get(3).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, true, IndexedColors.PALE_BLUE, BorderStyle.THIN, null, BorderStyle.THIN, BorderStyle.THIN));
+		titulosColumnasArray.get(4).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 7, true, IndexedColors.PALE_BLUE, BorderStyle.THIN, null, BorderStyle.THIN, BorderStyle.THIN));
+		titulosColumnasArray.get(5).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 10, true, IndexedColors.PALE_BLUE, BorderStyle.THIN, null, BorderStyle.THIN, BorderStyle.THIN));
 		
 		Row row13 = sheet.createRow(12);
 		CellStyle bordesBajosYDerechos = workbook.createCellStyle();
@@ -307,67 +305,66 @@ public class ExcelAguas {
 		int cantidadDeterminaciones = conexion.traerDeterminaciones().size()-10;
 		ArrayList <ArrayList<String>> datosDeDeterminaciones = conexion.traerDatosDeDeterminaciones();
 		//System.out.println(datosDeDeterminaciones);
-		int[] blanco = {255, 255, 255};
 		String descargaEn = conexion.traerAnalisis().get(0).get(4);
 		
 		String cursoDeAgua = conexion.traerCursoDeAgua();
 		//System.out.println(("cursoDeAgua: "+cursoDeAgua));
 		for (int i=13; i<cantidadDeterminaciones+19; i++) {
 			//System.out.println("EN HOJA: "+sheet.getRow(i).getCell(0).getStringCellValue());
-			sheet.getRow(i).createCell(10).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 10, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
+			sheet.getRow(i).createCell(10).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 10, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
 			for (int j=0; j<datosDeDeterminaciones.size(); j++) {
 				//System.out.println("EN ARRAY: "+datosDeDeterminaciones.get(j).get(0));
 				if (sheet.getRow(i).getCell(0).getStringCellValue().equals(datosDeDeterminaciones.get(j).get(2))) {
 					sheet.getRow(i).createCell(3).setCellValue(datosDeDeterminaciones.get(j).get(3)); //UNIDADES, se usa el último porque se jodió la tabla en Access
-					sheet.getRow(i).getCell(3).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
+					sheet.getRow(i).getCell(3).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
 					sheet.getRow(i).createCell(10).setCellValue(datosDeDeterminaciones.get(j).get(4)); //metodo
-					sheet.getRow(i).getCell(10).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
+					sheet.getRow(i).getCell(10).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
 					if (descargaEn.equals("Colector")) {
 						sheet.getRow(i).createCell(8).setCellValue(datosDeDeterminaciones.get(j).get(5));
-						sheet.getRow(i).getCell(8).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
+						sheet.getRow(i).getCell(8).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
 					}
 					
 					if (descargaEn.equals("Curso de Agua")) {
 						sheet.getRow(i).createCell(8).setCellValue(datosDeDeterminaciones.get(j).get(6));
-						sheet.getRow(i).getCell(8).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
+						sheet.getRow(i).getCell(8).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
 					}
 					
 					if (descargaEn.equals("Infiltración")) {
 						sheet.getRow(i).createCell(8).setCellValue(datosDeDeterminaciones.get(j).get(7));
-						sheet.getRow(i).getCell(8).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
+						sheet.getRow(i).getCell(8).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
 					}
 					
 					if (cursoDeAgua.equals("1")) {
 						sheet.getRow(i).createCell(9).setCellValue(datosDeDeterminaciones.get(j).get(0));
-						sheet.getRow(i).getCell(9).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
+						sheet.getRow(i).getCell(9).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
 					}
 					
 					if (cursoDeAgua.equals("2A")) {
 						sheet.getRow(i).createCell(9).setCellValue(datosDeDeterminaciones.get(j).get(1));
-						sheet.getRow(i).getCell(9).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
+						sheet.getRow(i).getCell(9).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
 					}
 					
 					if (cursoDeAgua.equals("2B")) {
 						sheet.getRow(i).createCell(9).setCellValue(datosDeDeterminaciones.get(j).get(8));
-						sheet.getRow(i).getCell(9).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
+						sheet.getRow(i).getCell(9).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
 					}
 					
 					if (cursoDeAgua.equals("3")) {
 						sheet.getRow(i).createCell(9).setCellValue(datosDeDeterminaciones.get(j).get(9));
-						sheet.getRow(i).getCell(9).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
+						sheet.getRow(i).getCell(9).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
 					}
 					
 					if (cursoDeAgua.equals("4")) {
 						sheet.getRow(i).createCell(9).setCellValue(datosDeDeterminaciones.get(j).get(10));
-						sheet.getRow(i).getCell(9).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
+						sheet.getRow(i).getCell(9).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 8, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
 					}
 					
 					
 					/*
 					sheet.getRow(i).createCell(8).setCellValue(datosDeDeterminaciones.get(j).get(2));
-					sheet.getRow(i).getCell(8).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 8, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
+					sheet.getRow(i).getCell(8).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 8, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
 					sheet.getRow(i).createCell(9).setCellValue(datosDeDeterminaciones.get(j).get(3));
-					sheet.getRow(i).getCell(9).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 7, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
+					sheet.getRow(i).getCell(9).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 7, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));;
 					*/
 					//datosDeDeterminaciones.remove(j);
 					break;
@@ -383,9 +380,9 @@ public class ExcelAguas {
 		ArrayList<ArrayList<String>> analisis = conexion.traerAnalisis();
 		ArrayList<String> determinacionesSinFijos = new ArrayList<String>();
 		ArrayList<ArrayList<String>> analisisSinFijos = new ArrayList<ArrayList<String>>();
-		CellStyle titulosDeterminaciones = setStyle(workbook, HorizontalAlignment.LEFT, VerticalAlignment.CENTER, "Arial Narrow", 10, true, rgbFilas, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN);
-		CellStyle styleDatos = setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 9, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN);
-		CellStyle styleTexto = setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 10, false, blanco, null, null, null, null);
+		CellStyle titulosDeterminaciones = setStyle(workbook, HorizontalAlignment.LEFT, VerticalAlignment.CENTER, "Arial Narrow", 10, true, IndexedColors.PALE_BLUE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN);
+		CellStyle styleDatos = setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial Narrow", 9, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN);
+		CellStyle styleTexto = setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 10, false, IndexedColors.WHITE, null, null, null, null);
 		
 		for (int i=0; i<determinaciones.size(); i++) {
 			if (i == 1 || i == 2 || i == 3 || i == 4) {
@@ -425,9 +422,9 @@ public class ExcelAguas {
 			cell2.setCellStyle(titulosDeterminaciones);
 			cell3.setCellStyle(titulosDeterminaciones);
 			
-			workbook.getSheet("Sheet0").getRow(i).createCell(3).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 10, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));
-			workbook.getSheet("Sheet0").getRow(i).createCell(8).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 10, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));
-			workbook.getSheet("Sheet0").getRow(i).createCell(9).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 10, false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));
+			workbook.getSheet("Sheet0").getRow(i).createCell(3).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 10, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));
+			workbook.getSheet("Sheet0").getRow(i).createCell(8).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 10, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));
+			workbook.getSheet("Sheet0").getRow(i).createCell(9).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 10, false, IndexedColors.WHITE, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN));
 			
 		}
 		
@@ -442,7 +439,7 @@ public class ExcelAguas {
 		Row separacion = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+13);
 		separacion.setHeightInPoints((float) 8.0);
 		
-		CellStyle styleMetodos = setStyle(workbook, HorizontalAlignment.LEFT, VerticalAlignment.CENTER, "Arial", 9 , false, blanco, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN, BorderStyle.THIN);
+		CellStyle styleMetodos = setStyle(workbook, HorizontalAlignment.LEFT, VerticalAlignment.CENTER, "Arial", 9 , false, IndexedColors.WHITE, null, null, null, null);
 		
 		Row metodos1 = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+14);
 		metodos1.setHeightInPoints((float) 15.0);
@@ -482,13 +479,13 @@ public class ExcelAguas {
 		Row observaciones = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+17);
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+17, determinacionesSinFijos.size()+17, 0, 2));
 		observaciones.createCell(0).setCellValue("   OBSERVACIONES:");
-		observaciones.getCell(0).setCellStyle(setStyle(workbook, HorizontalAlignment.LEFT, VerticalAlignment.CENTER, "Arial Narrow", 10, true, blanco, null, null, null, null));
+		observaciones.getCell(0).setCellStyle(setStyle(workbook, HorizontalAlignment.LEFT, VerticalAlignment.CENTER, "Arial Narrow", 10, true, IndexedColors.WHITE, null, null, null, null));
 		
 		Row fecha = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+19);
 		
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+19, determinacionesSinFijos.size()+19, 1, 2));
 		fecha.createCell(1).setCellValue("Montevideo,");
-		fecha.getCell(1).setCellStyle(setStyle(workbook, HorizontalAlignment.RIGHT, VerticalAlignment.CENTER, "Arial", 10, false, blanco, null, null, null, null));
+		fecha.getCell(1).setCellStyle(setStyle(workbook, HorizontalAlignment.RIGHT, VerticalAlignment.CENTER, "Arial", 10, false, IndexedColors.WHITE, null, null, null, null));
 		
 		//formato fecha
 		SimpleDateFormat formateador = new SimpleDateFormat("dd 'de' MMMM 'de' yyyy", new Locale("ES"));
@@ -518,7 +515,7 @@ public class ExcelAguas {
 		Row fchEmision = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+20);
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+20, determinacionesSinFijos.size()+20, 1, 4));
 		fchEmision.createCell(1).setCellValue("Fecha de emisión del resultado");
-		fchEmision.getCell(1).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.TOP, "Arial", 7, false, blanco, null, null, null, null));
+		fchEmision.getCell(1).setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.TOP, "Arial", 7, false, IndexedColors.WHITE, null, null, null, null));
 		
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+20, determinacionesSinFijos.size()+20, 7, 9));
 		fchEmision.createCell(7).setCellValue("Por ANAGUA S.R.L.");
@@ -608,15 +605,12 @@ public class ExcelAguas {
 	}
 	
 	private static CellStyle setStyle (Workbook workbook, HorizontalAlignment horizontalAlignment, VerticalAlignment verticalAlignment, String fontName, int size, 
-			boolean bold, int[] backgroundColor, BorderStyle topBorder, BorderStyle bottomBorder, BorderStyle rightBorder, BorderStyle leftBorder) {
+			boolean bold, IndexedColors backgroundColor, BorderStyle topBorder, BorderStyle bottomBorder, BorderStyle rightBorder, BorderStyle leftBorder) {
 		CellStyle style = workbook.createCellStyle();
 		style.setAlignment(horizontalAlignment);
-		style.setVerticalAlignment(verticalAlignment);
+		style.setVerticalAlignment(verticalAlignment);		
 		if (backgroundColor != null) {
-			HSSFPalette palette = ((HSSFWorkbook) workbook).getCustomPalette();
-			HSSFColor myColor = palette.findSimilarColor(backgroundColor[0], backgroundColor[1], backgroundColor[2]);
-			short index = myColor.getIndex();
-			style.setFillForegroundColor(index);
+			style.setFillForegroundColor(backgroundColor.getIndex());
 			style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 		}
 		//style.setBorderBottom(BorderStyle.THICK);

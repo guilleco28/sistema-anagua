@@ -67,6 +67,13 @@ public class MenuIndustrias {
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnModificarIndustria = new JButton("Modificar industria");
+		btnModificarIndustria.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ModificarIndustria modificarIndustria = new ModificarIndustria();
+				frame.dispose();
+			}
+		});
 		btnModificarIndustria.setFont(new Font("Tahoma", Font.PLAIN, 28));
 		btnModificarIndustria.setBounds(250, 189, 410, 70);
 		frame.getContentPane().add(btnModificarIndustria);

@@ -4,8 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
+
+import barros.AnalisisBarro;
 import bd.BaseDeDatos;
 
 public class IndustriasDAO {
@@ -109,5 +113,42 @@ public class IndustriasDAO {
 		}		
 		
 		return id;
+	}
+	
+	public void modificarIndustria (Industria industria) throws MySQLIntegrityConstraintViolationException, SQLException {
+		PreparedStatement preparedStmt;
+		BaseDeDatos baseDeDatos = new BaseDeDatos();
+		Connection oConnection = null;
+		try {
+			
+			oConnection = baseDeDatos.abrirConexion();
+
+			String query = "UPDATE industrias SET responsable = ?, departamento = ?, localidad = ?, direccion = ?, telefono = ?,"
+					+ "clave_de_acceso_web = ?, contacto = ?, rubro = ?, descarga_abreviada = ?, descarga = ? WHERE cliente = ?";
+			
+			preparedStmt = (PreparedStatement) oConnection.prepareStatement(query);
+			
+			preparedStmt.setString(1, industria.getResponsable());
+			preparedStmt.setString(2, industria.getDepartamento());
+			preparedStmt.setString(3, industria.getLocalidad());
+			preparedStmt.setString(4, industria.getDireccion());
+			preparedStmt.setString(5, industria.getTelefono());
+			preparedStmt.setString(6, industria.getClaveDeAccesoWeb());
+			preparedStmt.setString(7, industria.getContacto());
+			preparedStmt.setString(8, industria.getRubro());
+			preparedStmt.setString(9, industria.getDescargaAbreviada());
+			preparedStmt.setString(10, industria.getDescarga());
+			preparedStmt.setString(11, industria.getCliente());
+			
+			preparedStmt.execute();
+			preparedStmt.close();
+			
+		} finally {
+			try {
+				baseDeDatos.cerrarConexion(oConnection);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }
