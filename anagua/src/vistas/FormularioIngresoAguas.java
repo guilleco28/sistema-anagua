@@ -352,9 +352,11 @@ public class FormularioIngresoAguas {
 				Industria industriaSeleccionada = industriasDAO.obtenerIndustriaPorNombre(String.valueOf(industria.getSelectedItem()));
 				departamento.setText(industriaSeleccionada.getDepartamento());
 				localidad.setText(industriaSeleccionada.getLocalidad());
-				descargaEn.setText(industriaSeleccionada.getDescarga());
+				descargaEn.setText(industriaSeleccionada.getDescargaAbreviada());
 			}
 		});
+		
+		AutoCompletion.enable(industria);
 		
 		departamento = new JTextField();
 		departamento.setBounds(421, 45, 169, 26);

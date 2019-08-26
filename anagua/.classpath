@@ -6,5 +6,6 @@
 	<classpathentry kind="lib" path="C:/Users/Guillermo/Documents/sistema-anagua-nuevo/poi-3.17.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Guillermo/Documents/sistema-anagua-nuevo/jcalendar-1.4.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Guillermo/Desktop/RealizarInformeBarros.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Guillermo/Desktop/opencsv-4.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

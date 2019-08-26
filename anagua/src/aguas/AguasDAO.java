@@ -401,9 +401,8 @@ try {
 			preparedStmt.setString(5, analisisAAgregar.getDescargaEn());
 			preparedStmt.setString(6, analisisAAgregar.getLugarExtraccion());
 			preparedStmt.setString(7, analisisAAgregar.getExtraidoPor());
-			preparedStmt.setNull(8, java.sql.Types.TIMESTAMP);
-			/*Timestamp fechaExtraccionSQL = new java.sql.Timestamp(analisisAAgregar.getFechaExtraccion().getTime());
-			preparedStmt.setTimestamp(8, fechaExtraccionSQL);*/
+			Timestamp fechaExtraccionSQL = new java.sql.Timestamp(analisisAAgregar.getFechaExtraccion().getTime());
+			preparedStmt.setTimestamp(8, fechaExtraccionSQL);
 			preparedStmt.setString(9, analisisAAgregar.getHoraExtraccion());
 			preparedStmt.setString(10, analisisAAgregar.getAspecto());
 			preparedStmt.setString(11, analisisAAgregar.getpHInSitu());

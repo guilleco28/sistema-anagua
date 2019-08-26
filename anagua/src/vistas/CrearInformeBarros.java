@@ -285,15 +285,19 @@ public class CrearInformeBarros {
 		nroAnalisis1 = new JComboBox();
 		nroAnalisis1.setBounds(190, 125, 130, 26);
 		frame.getContentPane().add(nroAnalisis1);
+		AutoCompletion.enable(nroAnalisis1);
 		nroAnalisis2 = new JComboBox();
 		nroAnalisis2.setBounds(370, 126, 130, 26);
 		frame.getContentPane().add(nroAnalisis2);
+		AutoCompletion.enable(nroAnalisis2);
 		nroAnalisis3 = new JComboBox();
 		nroAnalisis3.setBounds(550, 126, 130, 26);
 		frame.getContentPane().add(nroAnalisis3);
+		AutoCompletion.enable(nroAnalisis3);
 		nroAnalisis4 = new JComboBox();
 		nroAnalisis4.setBounds(730, 126, 130, 26);
 		frame.getContentPane().add(nroAnalisis4);
+		AutoCompletion.enable(nroAnalisis4);
 		for (AnalisisBarro analisisBarro : datosDAO.obtenerTodosLosAnalisisBarros()){
 			if(analisisBarro.getNroAnalisis().equals("-- Sin especificar --") || (analisisBarro.getpH() != null && analisisBarro.getpH() != "")) {
 				nroAnalisis1.addItem(analisisBarro.getNroAnalisis());

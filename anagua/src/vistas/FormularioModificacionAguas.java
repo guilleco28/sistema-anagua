@@ -173,9 +173,11 @@ public class FormularioModificacionAguas {
 				Industria industriaSeleccionada = industriasDAO.obtenerIndustriaPorNombre(String.valueOf(industria.getSelectedItem()));
 				departamento1.setText(industriaSeleccionada.getDepartamento());
 				localidad1.setText(industriaSeleccionada.getLocalidad());
-				descargaEn1.setText(industriaSeleccionada.getDescarga());
+				descargaEn1.setText(industriaSeleccionada.getDescargaAbreviada());
 			}
 		});
+		
+		AutoCompletion.enable(industria);
 		
 		departamento1 = new JTextField();
 		departamento1.setBounds(158, 45, 163, 26);
@@ -494,6 +496,9 @@ public class FormularioModificacionAguas {
 				nroAnalisis1.addItem(analisisAgua.getNroAnalisis());
 			}
 		}
+		
+		AutoCompletion.enable(nroAnalisis1);
+		
 		nroAnalisis1.addItemListener(new ItemListener(){
 			public void itemStateChanged(ItemEvent arg0){
 				AnalisisAgua analisisAguaSeleccionado = aguasDAO.obtenerAnalisisAguaPorNumero(String.valueOf(nroAnalisis1.getSelectedItem()));

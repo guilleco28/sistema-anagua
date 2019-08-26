@@ -133,9 +133,12 @@ public class ModificarIndustria {
 		nombre.setBounds(315, 80, 324, 32);
 		frame.getContentPane().add(nombre);
 		for (Industria industria : industriasDAO.obtenerIndustrias()){
-			nombre.addItem(industria.getCliente());
+			nombre.addItem(industria.getCliente());			
 			
 		}
+		
+		AutoCompletion.enable(nombre);
+		
 		nombre.addItemListener(new ItemListener(){
 			public void itemStateChanged(ItemEvent arg0){
 				Industria industriaSeleccionada = industriasDAO.obtenerIndustriaPorNombre((String.valueOf(nombre.getSelectedItem())));

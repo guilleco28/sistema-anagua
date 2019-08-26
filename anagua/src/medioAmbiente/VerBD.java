@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -41,8 +42,8 @@ public class VerBD {
 	
     public static void verBD() {
         try {
-        	//p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties"));
-			p.load(new FileReader("C:\\Users\\Guillermo\\Documents\\sistema-anagua\\config.properties"));
+        	p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties"));
+			//p.load(new FileReader("C:\\Users\\Guillermo\\Documents\\sistema-anagua\\config.properties"));
         	BaseDeDatos baseDeDatos = new BaseDeDatos();
         	Connection con = baseDeDatos.abrirConexion();
             String rutaExcel = p.getProperty("ruta_excel");
@@ -336,24 +337,21 @@ public class VerBD {
                 cell.setCellStyle(cellStyle);
                 cell = row.createCell(8);
                 
-                
                 /*
-				Date fechaExtraccion = new Date (resultSet.getTimestamp("fecha_extraccion").getTime());
-                CellStyle cellStyle = workbook.createCellStyle();
-                CreationHelper createHelper = workbook.getCreationHelper();
-                cellStyle.setDataFormat(
-                    createHelper.createDataFormat().getFormat("dd/mm/yyyy"));
-                cellStyle.setAlignment(HorizontalAlignment.CENTER);
-                cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);
-                Font font = workbook.createFont();
-                font.setFontName("Arial Narrow");
-                font.setFontHeightInPoints((short) 10);
-                cellStyle.setFont(font);
-                cell.setCellValue(fechaExtraccion);
-                cell.setCellStyle(cellStyle);
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                String date = sdf.format(resultSet.getDate(8));
+                cell.setCellValue(date);
                 */
-                cell.setCellValue(" ");
                 
+                
+				Date fechaExtraccion = new Date (resultSet.getTimestamp("fecha_extraccion").getTime());
+                //CellStyle cellStyle = workbook.createCellStyle();
+				/*DateFormat df = new SimpleDateFormat("dd/MM/YYYY");
+			    cell.setCellValue(df.format(analisisAguaSeleccionado.getFechaExtraccion()));
+                cell.setCellValue(fechaExtraccion);*/
+                cell.setCellStyle(cellStyle);             
+                Timestamp fechaExtraccionSQL = new java.sql.Timestamp(resultSet.getTimestamp("fecha_extraccion").getTime());
+                cell.setCellValue(fechaExtraccionSQL);
                 
                 
                 cell = row.createCell(9);

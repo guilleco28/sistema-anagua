@@ -647,15 +647,19 @@ public class CrearInformeAguas {
 		nroAnalisis1 = new JComboBox();
 		nroAnalisis1.setBounds(190, 125, 130, 26);
 		miPanel.add(nroAnalisis1);
+		AutoCompletion.enable(nroAnalisis1);
 		nroAnalisis2 = new JComboBox();
 		nroAnalisis2.setBounds(370, 126, 130, 26);
 		miPanel.add(nroAnalisis2);
+		AutoCompletion.enable(nroAnalisis2);
 		nroAnalisis3 = new JComboBox();
 		nroAnalisis3.setBounds(550, 126, 130, 26);
 		miPanel.add(nroAnalisis3);
+		AutoCompletion.enable(nroAnalisis3);
 		nroAnalisis4 = new JComboBox();
 		nroAnalisis4.setBounds(730, 126, 130, 26);
 		miPanel.add(nroAnalisis4);
+		AutoCompletion.enable(nroAnalisis4);
 		for (AnalisisAgua analisisAgua : aguasDAO.obtenerTodosLosAnalisisAguas()){
 			if(analisisAgua.getNroAnalisis().equals("-- Sin especificar --") || (analisisAgua.getpH() != null && analisisAgua.getpH() != "")) {
 				nroAnalisis1.addItem(analisisAgua.getNroAnalisis());

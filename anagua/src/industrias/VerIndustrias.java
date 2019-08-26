@@ -30,9 +30,9 @@ public class VerIndustrias {
 	
 	public void verIndustrias() throws FileNotFoundException, IOException, SQLException {
 	
-		//p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties"));
+		p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties"));
 		//p.load(new FileReader("W:\\ANAGUA\\sistema-anagua\\config.properties"));
-		p.load(new FileReader("C:\\Users\\Guillermo\\Documents\\sistema-anagua\\config.properties"));
+		//p.load(new FileReader("C:\\Users\\Guillermo\\Documents\\sistema-anagua\\config.properties"));
 		BaseDeDatos baseDeDatos = new BaseDeDatos();
 		Connection con = baseDeDatos.abrirConexion();
 	    String rutaExcel = p.getProperty("ruta_excel_industrias");

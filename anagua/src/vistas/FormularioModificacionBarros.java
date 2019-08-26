@@ -230,6 +230,9 @@ public class FormularioModificacionBarros {
 				nroAnalisis.addItem(analisisBarro.getNroAnalisis());
 			}
 		}
+		
+		AutoCompletion.enable(nroAnalisis);
+		
 		nroAnalisis.addItemListener(new ItemListener(){
 			public void itemStateChanged(ItemEvent arg0){
 				AnalisisBarro analisisBarroSeleccionado = datosDAO.obtenerAnalisisBarroPorNumero(String.valueOf(nroAnalisis.getSelectedItem()));
@@ -720,9 +723,11 @@ public class FormularioModificacionBarros {
 				Industria industriaSeleccionada = industriasDAO.obtenerIndustriaPorNombre((String.valueOf(industria.getSelectedItem())));
 				departamento1.setText(industriaSeleccionada.getDepartamento());
 				localidad1.setText(industriaSeleccionada.getLocalidad());
-				descargaEn1.setText(industriaSeleccionada.getDescarga());				
+				descargaEn1.setText(industriaSeleccionada.getDescargaAbreviada());				
 			}
 		});
+		
+		AutoCompletion.enable(industria);
 		
 		departamento1 = new JTextField();
 		departamento1.setBounds(158, 45, 163, 26);
