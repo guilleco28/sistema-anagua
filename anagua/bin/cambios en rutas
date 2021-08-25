@@ -1,0 +1,10 @@
+Para cambiar de ambiente, deben cambiarse rutas en archivos:
+
+BaseDeDatos.java
+VerIndustrias.java
+ConexionAguas.java
+ExcelAguas.java
+ConexionBarros.java
+ExcelBarros.java
+VerBD.java
+

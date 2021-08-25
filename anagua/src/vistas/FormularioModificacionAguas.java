@@ -11,7 +11,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -32,6 +34,8 @@ import aguas.AnalisisAgua;
 import barros.AnalisisBarro;
 import industrias.Industria;
 import industrias.IndustriasDAO;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeEvent;
 
 public class FormularioModificacionAguas {
 
@@ -46,7 +50,7 @@ public class FormularioModificacionAguas {
 	private JComboBox nroAnalisis1;
 	private JTextField lugarExtraccion1;
 	private JTextField aspecto1;
-	private JTextField fechaExtraccion1;
+	private JDateChooser fchExtraccion;
 	private JTextField horaExtraccion1;
 	private JTextField extraidoPor1;
 	private JTextField pHIS1;
@@ -193,6 +197,10 @@ public class FormularioModificacionAguas {
 		descargaEn1.setColumns(10);
 		descargaEn1.setBounds(431, 45, 163, 26);
 		miPanel.add(descargaEn1);
+		
+		JDateChooser fchExtraccion = new JDateChooser(); 
+		fchExtraccion.setBounds(191, 215, 130, 26);
+		miPanel.add(fchExtraccion);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(6, 108, 588, 24);
@@ -516,11 +524,18 @@ public class FormularioModificacionAguas {
 				} else {
 					extraidoPor1.setBackground(Color.WHITE);
 				}
-				if(analisisAguaSeleccionado.getFechaExtraccion() == null) {
-					fechaExtraccion1.setText("");
-				} else {
+				if(analisisAguaSeleccionado.getFechaExtraccion() != null) {
 					DateFormat df = new SimpleDateFormat("dd/MM/YYYY");
-				    fechaExtraccion1.setText(df.format(analisisAguaSeleccionado.getFechaExtraccion()));
+					String formattedDate = df.format(analisisAguaSeleccionado.getFechaExtraccion());
+				    Date fechaParaDateChooser;
+					try {
+						fechaParaDateChooser = new SimpleDateFormat("dd/MM/yyyy").parse(formattedDate);
+						fchExtraccion.setDate(fechaParaDateChooser);
+					} catch (ParseException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}  
+
 				}
 				horaExtraccion1.setText(analisisAguaSeleccionado.getHoraExtraccion());
 				if(analisisAguaSeleccionado.getHoraExtraccion().equals("*")) {
@@ -887,23 +902,6 @@ public class FormularioModificacionAguas {
 		miPanel.add(extraidoPor1);
 		extraidoPor1.setColumns(10);
 		extraidoPor1.setHorizontalAlignment(JTextField.CENTER);
-		
-		fechaExtraccion1 = new JTextField();
-		fechaExtraccion1.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusLost(FocusEvent e) {
-				if (fechaExtraccion1.getText().equals("*")) {
-					fechaExtraccion1.setBackground(Color.YELLOW);
-				} else {
-					fechaExtraccion1.setBackground(Color.WHITE);
-				}
-			}
-		});
-		fechaExtraccion1.setBounds(191, 215, 130, 26);
-		miPanel.add(fechaExtraccion1); 
-		fechaExtraccion1.setColumns(10);
-		fechaExtraccion1.setHorizontalAlignment(JTextField.CENTER);
-		fechaExtraccion1.setEditable(false);
 		
 		horaExtraccion1 = new JTextField();
 		horaExtraccion1.addFocusListener(new FocusAdapter() {
@@ -2051,7 +2049,7 @@ public class FormularioModificacionAguas {
 					JOptionPane.showMessageDialog(null, "No es posible modificar un análisis validado. Debe desvalidarlo para poder modificarlo.");
 				} else {
 					AnalisisAgua analisisAgua = new AnalisisAgua(String.valueOf(nroAnalisis1.getSelectedItem()), String.valueOf(industria.getSelectedItem()), departamento1.getText(), localidad1.getText(), descargaEn1.getText(), lugarExtraccion1.getText(),
-							extraidoPor1.getText(), null, horaExtraccion1.getText(), aspecto1.getText(), pHIS1.getText(), pH1.getText(), temperatura1.getText(), caudal1.getText(), ODIS1.getText(), OD1.getText(),
+							extraidoPor1.getText(), fchExtraccion.getDate(), horaExtraccion1.getText(), aspecto1.getText(), pHIS1.getText(), pH1.getText(), temperatura1.getText(), caudal1.getText(), ODIS1.getText(), OD1.getText(),
 							DBO51.getText(), DBO5F1.getText(), DQO1.getText(), AceitesYGrasas1.getText(), SolidosTotales1.getText(), STV1.getText(), SST1.getText(), SSV1.getText(), SS101.getText(), SS301.getText(), SS601.getText(), amoniaco1.getText(), nitrato1.getText(), nitrogenoTotal1.getText(), fosforoTotal1.getText(),
 							cromo1.getText(), plomo1.getText(), zinc1.getText(), aluminio1.getText(), manganeso1.getText(), potasio1.getText(), alcalinidadTotal1.getText(), acidezVolatil1.getText(), alfa1.getText(), alfaPrima1.getText(),
 							bicarbonato1.getText(), salinidad1.getText(), turbiedad1.getText(), conductividad1.getText(), sulfuro1.getText(), sulfato1.getText(), fenoles1.getText(), tensoactivos1.getText(), cloroResidual1.getText(),
@@ -2125,6 +2123,7 @@ public class FormularioModificacionAguas {
 		miPanel.setPreferredSize(new Dimension(600, 1880));		
 		scrollPane.setViewportView(miPanel);
 		
+		
+		
 	}
-
 }

@@ -25,7 +25,7 @@ import industrias.IndustriasDAO;
 public class ModificarIndustria {
 
 	private JFrame frame;
-	private JComboBox nombre;
+	private JComboBox txtBoxNombre;
 	private JTextField responsable;
 	private JTextField departamento;
 	private JTextField localidad;
@@ -37,6 +37,7 @@ public class ModificarIndustria {
 	private JTextField descargaAbreviada;
 	private JTextField descarga;
 	private IndustriasDAO industriasDAO = new IndustriasDAO();
+	private JTextField nombre;
 
 	/**
 	 * Launch the application.
@@ -128,20 +129,21 @@ public class ModificarIndustria {
 		lblDescarga.setBounds(102, 480, 220, 31);
 		frame.getContentPane().add(lblDescarga);
 		
-		nombre = new JComboBox();
-		nombre.setFont(new Font("Tahoma", Font.PLAIN, 23));
-		nombre.setBounds(315, 80, 324, 32);
-		frame.getContentPane().add(nombre);
+		txtBoxNombre = new JComboBox();
+		txtBoxNombre.setFont(new Font("Tahoma", Font.PLAIN, 23));
+		txtBoxNombre.setBounds(315, 38, 324, 32);
+		frame.getContentPane().add(txtBoxNombre);
 		for (Industria industria : industriasDAO.obtenerIndustrias()){
-			nombre.addItem(industria.getCliente());			
+			txtBoxNombre.addItem(industria.getCliente());			
 			
 		}
 		
-		AutoCompletion.enable(nombre);
+		AutoCompletion.enable(txtBoxNombre);
 		
-		nombre.addItemListener(new ItemListener(){
+		txtBoxNombre.addItemListener(new ItemListener(){
 			public void itemStateChanged(ItemEvent arg0){
-				Industria industriaSeleccionada = industriasDAO.obtenerIndustriaPorNombre((String.valueOf(nombre.getSelectedItem())));
+				Industria industriaSeleccionada = industriasDAO.obtenerIndustriaPorNombre((String.valueOf(txtBoxNombre.getSelectedItem())));
+				nombre.setText(industriaSeleccionada.getCliente());
 				responsable.setText(industriaSeleccionada.getResponsable());
 				departamento.setText(industriaSeleccionada.getDepartamento());
 				localidad.setText(industriaSeleccionada.getLocalidad());
@@ -219,16 +221,16 @@ public class ModificarIndustria {
 		btnModificarIndustria.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Industria industriaVieja = industriasDAO.obtenerIndustriaPorNombre(String.valueOf(nombre.getSelectedItem()));
+				Industria industriaVieja = industriasDAO.obtenerIndustriaPorNombre(String.valueOf(txtBoxNombre.getSelectedItem()));
 				int id = industriaVieja.getId();
-				Industria industriaModificada = new Industria (id, String.valueOf(nombre.getSelectedItem()), responsable.getText(), departamento.getText(), localidad.getText(), direccion.getText(), telefono.getText(), claveAcceso.getText(), contacto.getText(), rubro.getText(), descargaAbreviada.getText(), descarga.getText());
+				Industria industriaModificada = new Industria (id, nombre.getText(), responsable.getText(), departamento.getText(), localidad.getText(), direccion.getText(), telefono.getText(), claveAcceso.getText(), contacto.getText(), rubro.getText(), descargaAbreviada.getText(), descarga.getText());
 				try {
 					industriasDAO.modificarIndustria(industriaModificada);
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				JOptionPane.showMessageDialog(null, "Se modificó correctamente la industria "+String.valueOf(nombre.getSelectedItem()));
+				JOptionPane.showMessageDialog(null, "Se modificó correctamente la industria "+String.valueOf(txtBoxNombre.getSelectedItem()));
 			}
 		});
 		btnModificarIndustria.setFont(new Font("Tahoma", Font.PLAIN, 25));
@@ -246,9 +248,19 @@ public class ModificarIndustria {
 		btnVolver.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		btnVolver.setBounds(720, 426, 158, 85);
 		frame.getContentPane().add(btnVolver);
+		
+		nombre = new JTextField();
+		nombre.setFont(new Font("Tahoma", Font.PLAIN, 23));
+		nombre.setColumns(10);
+		nombre.setBounds(315, 78, 324, 37);
+		frame.getContentPane().add(nombre);
+		
+		JLabel lblIndustria = new JLabel("Industria");
+		lblIndustria.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		lblIndustria.setBounds(102, 38, 220, 31);
+		frame.getContentPane().add(lblIndustria);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		
 	}
-
 }

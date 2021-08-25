@@ -124,7 +124,7 @@ public class IndustriasDAO {
 			oConnection = baseDeDatos.abrirConexion();
 
 			String query = "UPDATE industrias SET responsable = ?, departamento = ?, localidad = ?, direccion = ?, telefono = ?,"
-					+ "clave_de_acceso_web = ?, contacto = ?, rubro = ?, descarga_abreviada = ?, descarga = ? WHERE cliente = ?";
+					+ "clave_de_acceso_web = ?, contacto = ?, rubro = ?, descarga_abreviada = ?, descarga = ?, cliente = ? WHERE id = ?";
 			
 			preparedStmt = (PreparedStatement) oConnection.prepareStatement(query);
 			
@@ -139,6 +139,7 @@ public class IndustriasDAO {
 			preparedStmt.setString(9, industria.getDescargaAbreviada());
 			preparedStmt.setString(10, industria.getDescarga());
 			preparedStmt.setString(11, industria.getCliente());
+			preparedStmt.setInt(12, industria.getId());
 			
 			preparedStmt.execute();
 			preparedStmt.close();

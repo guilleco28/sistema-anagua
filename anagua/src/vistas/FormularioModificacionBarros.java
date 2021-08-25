@@ -21,6 +21,8 @@ import industrias.IndustriasDAO;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -43,7 +45,6 @@ public class FormularioModificacionBarros {
 	private JTextField estado1;
 	private JTextField lugarExtraccion1;
 	private JTextField extraidoPor1;
-	private JTextField fechaExtraccion1;
 	private JTextField horaExtraccion1;
 	private JTextField aspecto1;
 	private JTextField pH1;
@@ -233,6 +234,10 @@ public class FormularioModificacionBarros {
 		
 		AutoCompletion.enable(nroAnalisis);
 		
+		JDateChooser fchExtraccion = new JDateChooser(); 		
+		fchExtraccion.setBounds(191, 245, 130, 26);
+		frame.getContentPane().add(fchExtraccion);
+		
 		nroAnalisis.addItemListener(new ItemListener(){
 			public void itemStateChanged(ItemEvent arg0){
 				AnalisisBarro analisisBarroSeleccionado = datosDAO.obtenerAnalisisBarroPorNumero(String.valueOf(nroAnalisis.getSelectedItem()));
@@ -250,11 +255,17 @@ public class FormularioModificacionBarros {
 				} else {
 					extraidoPor1.setBackground(Color.WHITE);
 				}
-				if(analisisBarroSeleccionado.getFechaExtraccion() == null) {
-					fechaExtraccion1.setText("");
-				} else {
+				if(analisisBarroSeleccionado.getFechaExtraccion() != null) {
 					DateFormat df = new SimpleDateFormat("dd/MM/YYYY");
-				    fechaExtraccion1.setText(df.format(analisisBarroSeleccionado.getFechaExtraccion()));
+					String formattedDate = df.format(analisisBarroSeleccionado.getFechaExtraccion());
+				    Date fechaParaDateChooser;
+					try {
+						fechaParaDateChooser = new SimpleDateFormat("dd/MM/yyyy").parse(formattedDate);
+						fchExtraccion.setDate(fechaParaDateChooser);
+					} catch (ParseException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}  
 				}
 				horaExtraccion1.setText(analisisBarroSeleccionado.getHoraExtraccion());
 				if(analisisBarroSeleccionado.getHoraExtraccion().equals("*")) {
@@ -406,23 +417,6 @@ public class FormularioModificacionBarros {
 		frame.getContentPane().add(extraidoPor1);
 		extraidoPor1.setColumns(10);
 		extraidoPor1.setHorizontalAlignment(JTextField.CENTER);
-		
-		fechaExtraccion1 = new JTextField();
-		fechaExtraccion1.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusLost(FocusEvent e) {
-				if (fechaExtraccion1.getText().equals("*")) {
-					fechaExtraccion1.setBackground(Color.YELLOW);
-				} else {
-					fechaExtraccion1.setBackground(Color.WHITE);
-				}
-			}
-		});
-		fechaExtraccion1.setBounds(191, 245, 130, 26);
-		frame.getContentPane().add(fechaExtraccion1); 
-		fechaExtraccion1.setColumns(10);
-		fechaExtraccion1.setHorizontalAlignment(JTextField.CENTER);
-		fechaExtraccion1.setEditable(false);
 		
 		horaExtraccion1 = new JTextField();
 		horaExtraccion1.addFocusListener(new FocusAdapter() {
@@ -786,7 +780,7 @@ public class FormularioModificacionBarros {
 					JOptionPane.showMessageDialog(null, "No es posible modificar un análisis validado. Debe desvalidarlo para poder modificarlo.");
 				} else {
 					AnalisisBarro analisisBarro = new AnalisisBarro (String.valueOf(industria.getSelectedItem()), departamento1.getText(), localidad1.getText(), descargaEn1.getText(), String.valueOf(nroAnalisis.getSelectedItem()),
-							lugarExtraccion1.getText(), extraidoPor1.getText(), null, horaExtraccion1.getText(), aspecto1.getText(), pH1.getText(),
+							lugarExtraccion1.getText(), extraidoPor1.getText(), fchExtraccion.getDate(), horaExtraccion1.getText(), aspecto1.getText(), pH1.getText(),
 							solidosTotales1.getText(), humedad1.getText(), solidosTotalesVolatiles1.getText(), liquidosLibres1.getText(), sulfuro1.getText(),
 							cromoEnLixiviado1.getText(), plomoEnLixiviado1.getText(), materiaOrganica1.getText(), hidrocarburosTotales1.getText(), conductividad1.getText(),
 							relacionCN1.getText(), otros1.getText(), otros2.getText(), otros3.getText(), otros4.getText(), "En proceso");
@@ -806,7 +800,7 @@ public class FormularioModificacionBarros {
 			
 		});
 		
-		btnModificarAnlisis.setBounds(372, 265, 155, 48);
+		btnModificarAnlisis.setBounds(372, 310, 155, 48);
 		frame.getContentPane().add(btnModificarAnlisis);
 		
 		JButton btnVolver = new JButton("Volver");
@@ -817,7 +811,7 @@ public class FormularioModificacionBarros {
 				frame.dispose();
 			}
 		});
-		btnVolver.setBounds(372, 365, 155, 48);
+		btnVolver.setBounds(372, 428, 155, 48);
 		frame.getContentPane().add(btnVolver);		
 		
 

@@ -435,7 +435,7 @@ public class ExcelBarros {
 		
 		Row metodos1 = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+14);
 		metodos1.setHeightInPoints((float) 15.0);
-		metodos1.createCell(0).setCellValue("   (1)    Métodos extraídos del 'STANDARD METHODS FOR THE EXAMINATION OF WATER AND WASTEWATER' 22th edición 2012 ");
+		metodos1.createCell(0).setCellValue("   (1)    Métodos extraídos del 'STANDARD METHODS FOR THE EXAMINATION OF WATER AND WASTEWATER' 22th edición 2017 ");
 		metodos1.getCell(0).setCellStyle(styleMetodos);
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+14, determinacionesSinFijos.size()+14, 0, 9));
 		Row metodos2 = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+15);
@@ -452,16 +452,10 @@ public class ExcelBarros {
 		metodos4.setHeightInPoints((float) 15.0);
 		metodos4.createCell(0).setCellValue("   (4)    Métodos extraídos de - 'Manual de procedimientos analíticos para muestras ambientales'-DINAMA");
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+17, determinacionesSinFijos.size()+17, 0, 9));
-		metodos4.getCell(0).setCellStyle(styleMetodos);
-		Row metodos5 = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+18);
-		metodos5.setHeightInPoints((float) 15.0);
-		metodos5.createCell(0).setCellValue("   Nota: límites según decreto 253/79");
-		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+18, determinacionesSinFijos.size()+18, 0, 9));
-		metodos5.getCell(0).setCellStyle(styleMetodos);
-		
+		metodos4.getCell(0).setCellStyle(styleMetodos);		
 		
 		for (int i=1; i<10; i++) {
-			for (int j=determinacionesSinFijos.size()+14; j<=determinacionesSinFijos.size()+18; j++) {
+			for (int j=determinacionesSinFijos.size()+14; j<=determinacionesSinFijos.size()+17; j++) {
 				Row row1 = workbook.getSheet("Sheet0").getRow(j);
 				row1.createCell(i).setCellStyle(styleMetodos);
 			}

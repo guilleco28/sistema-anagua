@@ -2159,6 +2159,22 @@ public class FormularioIngresoBarros {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				ArrayList <AnalisisBarro> analisisAAgregar = new ArrayList <AnalisisBarro>();
+				if (nroAnalisis1.getText().contains(" ")) {
+					JOptionPane.showMessageDialog(null, "El número del análisis 1 contiene un espacio. Por favor remuévalo.");
+					return;
+				}
+				if (nroAnalisis2.getText().contains(" ")) {
+					JOptionPane.showMessageDialog(null, "El número del análisis 2 contiene un espacio. Por favor remuévalo.");
+					return;
+				}
+				if (nroAnalisis3.getText().contains(" ")) {
+					JOptionPane.showMessageDialog(null, "El número del análisis 3 contiene un espacio. Por favor remuévalo.");
+					return;
+				}
+				if (nroAnalisis4.getText().contains(" ")) {
+					JOptionPane.showMessageDialog(null, "El número del análisis 4 contiene un espacio. Por favor remuévalo.");
+					return;
+				}
 				if (!nroAnalisis1.getText().equals("")) {
 					AnalisisBarro analisisBarro1 = new AnalisisBarro (String.valueOf(industria.getSelectedItem()), departamento.getText(), localidad.getText(), descargaEn.getText(), nroAnalisis1.getText(),
 							lugarExtraccion1.getText(), extraidoPor1.getText(), fechaExtraccion.getDate(), horaExtraccion1.getText(), aspecto1.getText(), pH1.getText(),
@@ -2209,6 +2225,10 @@ public class FormularioIngresoBarros {
 		btnNewButton.setBounds(959, 340, 215, 114);
 		frame.getContentPane().add(btnNewButton);
 		ArrayList <Component> order = new ArrayList <Component>();
+		
+		/*
+		
+		//tabulacion horizontal
 		order.add(nroAnalisis1);
 		order.add(nroAnalisis2);
 		order.add(nroAnalisis3);
@@ -2298,7 +2318,9 @@ public class FormularioIngresoBarros {
 		order.add(otros43);	
 		order.add(otros44);	
 		
-		/*tabulacion vertical		
+		*/
+		
+		// tabulacion vertical		
 		order.add(nroAnalisis1);
 		order.add(lugarExtraccion1);
 		order.add(extraidoPor1);
@@ -2387,7 +2409,7 @@ public class FormularioIngresoBarros {
 		order.add(otros24);
 		order.add(otros34);
 		order.add(otros44);	
-		*/
+		
 		order.add(btnNewButton);
 		
 

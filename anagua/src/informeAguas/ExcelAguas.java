@@ -440,11 +440,14 @@ public class ExcelAguas {
 		separacion.setHeightInPoints((float) 8.0);
 		
 		CellStyle styleMetodos = setStyle(workbook, HorizontalAlignment.LEFT, VerticalAlignment.CENTER, "Arial", 9 , false, IndexedColors.WHITE, null, null, null, null);
+		CellStyle styleMetodoStandard = setStyle(workbook, HorizontalAlignment.LEFT, VerticalAlignment.CENTER, "Arial", 8 , false, IndexedColors.WHITE, null, null, null, null);
+		// styleMetodoStandard: Alejandro pidió font más chica para un método
+		
 		
 		Row metodos1 = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+14);
 		metodos1.setHeightInPoints((float) 15.0);
-		metodos1.createCell(0).setCellValue("   (*)    Métodos extraídos del 'STANDARD METHODS FOR THE EXAMINATION OF WATER AND WASTEWATER' 22th edición 2012 ");
-		metodos1.getCell(0).setCellStyle(styleMetodos);
+		metodos1.createCell(0).setCellValue("   (*)    Métodos extraídos del 'STANDARD METHODS FOR THE EXAMINATION OF WATER AND WASTEWATER' 23ª edición 2017 ");
+		metodos1.getCell(0).setCellStyle(styleMetodoStandard);
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+14, determinacionesSinFijos.size()+14, 0, 10));
 
 		
