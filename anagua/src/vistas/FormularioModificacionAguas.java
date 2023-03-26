@@ -26,7 +26,6 @@ import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import com.toedter.calendar.JDateChooser;
 
 import aguas.AguasDAO;
@@ -647,13 +646,13 @@ public class FormularioModificacionAguas {
 					SS301.setBackground(Color.WHITE);
 				}
 				SS601.setText(analisisAguaSeleccionado.getSs60());
-				if(analisisAguaSeleccionado.getSs10().equals("*")) {
+				if(analisisAguaSeleccionado.getSs60().equals("*")) {
 					SS601.setBackground(Color.YELLOW);
 				} else {
 					SS601.setBackground(Color.WHITE);
 				}
 				amoniaco1.setText(analisisAguaSeleccionado.getAmoniaco());
-				if(analisisAguaSeleccionado.getOtros4().equals("*")) {
+				if(analisisAguaSeleccionado.getAmoniaco().equals("*")) {
 					amoniaco1.setBackground(Color.YELLOW);
 				} else {
 					amoniaco1.setBackground(Color.WHITE);
@@ -2059,10 +2058,6 @@ public class FormularioModificacionAguas {
 						
 						aguasDAO.modificarAgua(analisisAgua);
 						JOptionPane.showMessageDialog(null, "Se modificó correctamente el análisis "+String.valueOf(nroAnalisis1.getSelectedItem()));
-												
-					} catch (MySQLIntegrityConstraintViolationException e1) {
-						// no tiene sentido, es UPDATE
-						e1.printStackTrace();
 					} catch (SQLException e1) {	
 						e1.printStackTrace();
 					} 

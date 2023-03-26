@@ -26,7 +26,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
+//import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 
 import barros.AnalisisBarro;
 import barros.DatosDAO;
@@ -632,7 +632,6 @@ public class CrearInformeBarros {
 		nroAnalisis2.addItemListener(new ItemListener(){
 			public void itemStateChanged(ItemEvent arg0){
 				AnalisisBarro analisisBarroSeleccionado = datosDAO.obtenerAnalisisBarroPorNumero(String.valueOf(nroAnalisis2.getSelectedItem()));
-				
 				lugarExtraccion2.setText(analisisBarroSeleccionado.getLugarExtraccion());
 				if (lugarExtraccion2.getText().equals("*")) {
 					lugarExtraccion2.setBackground(Color.YELLOW);
@@ -1168,13 +1167,6 @@ public class CrearInformeBarros {
 		otros12.setBounds(370, 665, 130, 26);
 		frame.getContentPane().add(otros12);
 		
-		lugarExtraccion2 = new JTextField();
-		lugarExtraccion2.setHorizontalAlignment(SwingConstants.CENTER);
-		lugarExtraccion2.setEditable(false);
-		lugarExtraccion2.setColumns(10);
-		lugarExtraccion2.setBounds(370, 155, 130, 26);
-		frame.getContentPane().add(lugarExtraccion2);
-		
 		textField = new JTextField();
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		textField.setEditable(false);
@@ -1570,13 +1562,11 @@ public class CrearInformeBarros {
 				
 				ArrayList <AnalisisBarro> analisisParaInforme = new ArrayList <AnalisisBarro>();
 				if (!String.valueOf(nroAnalisis1.getSelectedItem()).equals("-- Sin especificar --")){
-					//System.out.println(fechaExtraccion1.getText());
 					String dateString = fechaExtraccion1.getText();
 					DateFormat df = new SimpleDateFormat(pattern);
 					Date date = null;
 					try {
 						date = df.parse(dateString);
-						System.out.println(date);
 					} catch (ParseException e2) {
 						// TODO Auto-generated catch block
 						e2.printStackTrace();

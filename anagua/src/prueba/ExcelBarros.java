@@ -55,8 +55,10 @@ public class ExcelBarros {
 	public static void realizarInforme() throws SQLException {
 		try {
 			//System.out.println("entre");
-			p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties")); //para RED
+			//p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties")); //para RED
 			//p.load(new FileReader("C:\\Users\\Guillermo\\Documents\\sistema-anagua\\config.properties"));
+			String ruta_config_properties = "C:\\Users\\usuario\\Documents\\sistema-anagua\\config.properties";
+			p.load(new FileReader(ruta_config_properties));
 			rutaExcel = p.getProperty("ruta_excel_informe");
 			rutaLogo = p.getProperty("ruta_logo");
 			rutaFirma = p.getProperty("ruta_firma");
@@ -199,7 +201,7 @@ public class ExcelBarros {
 		ArrayList <Cell> titulosDatosEmpresa = new ArrayList <Cell>();
 		Row industria = sheet.createRow(6);
 		Cell stringIndustria = industria.createCell(2);
-		stringIndustria.setCellValue("INDUSTRIA:");
+		stringIndustria.setCellValue("CLIENTE:");
 		titulosDatosEmpresa.add(stringIndustria);
 		Row departamento = sheet.createRow(7);
 		Cell stringDepartamento = departamento.createCell(2);
@@ -435,7 +437,7 @@ public class ExcelBarros {
 		
 		Row metodos1 = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+14);
 		metodos1.setHeightInPoints((float) 15.0);
-		metodos1.createCell(0).setCellValue("   (1)    Métodos extraídos del 'STANDARD METHODS FOR THE EXAMINATION OF WATER AND WASTEWATER' 22th edición 2017 ");
+		metodos1.createCell(0).setCellValue("   (1)    Métodos extraídos del 'STANDARD METHODS FOR THE EXAMINATION OF WATER AND WASTEWATER' 23ª edición 2017 ");
 		metodos1.getCell(0).setCellStyle(styleMetodos);
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+14, determinacionesSinFijos.size()+14, 0, 9));
 		Row metodos2 = workbook.getSheet("Sheet0").createRow(determinacionesSinFijos.size()+15);
@@ -537,11 +539,11 @@ public class ExcelBarros {
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+28, determinacionesSinFijos.size()+28, 0, 3));
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+28, determinacionesSinFijos.size()+28, 4, 6));
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+28, determinacionesSinFijos.size()+28, 7, 9));
-		datosEmpresa.createCell(0).setCellValue("Juan Parra del Riego 1027");
+		datosEmpresa.createCell(0).setCellValue("Canelones 2262");
 		datosEmpresa.getCell(0).setCellStyle(styleTexto);
-		datosEmpresa.createCell(4).setCellValue("Tel: 27055200 int. 130");
+		datosEmpresa.createCell(4).setCellValue("Tel: 24035749");
 		datosEmpresa.getCell(4).setCellStyle(styleTexto);
-		datosEmpresa.createCell(7).setCellValue("EMAIL: anagua@pittamiglio.com.uy");
+		datosEmpresa.createCell(7).setCellValue("EMAIL: laboratorio@anagua.com.uy");
 		datosEmpresa.getCell(7).setCellStyle(styleTexto);
 	
 	}

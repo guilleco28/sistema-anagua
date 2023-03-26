@@ -27,7 +27,7 @@ import javax.swing.JSeparator;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
+//import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import com.toedter.calendar.JDateChooser;
 
 import aguas.*;
@@ -5481,8 +5481,8 @@ public class FormularioIngresoAguas {
 						aguasDAO.agregarAgua(analisisAAgregar.get(i));
 					}
 					JOptionPane.showMessageDialog(null, "Se agregaron "+analisisAAgregar.size()+" análisis al sistema correctamente.");
-				} catch (MySQLIntegrityConstraintViolationException e1) {
-					JOptionPane.showMessageDialog(null, "Usted está intentando agregar un análisis con un número ya existente en el sistema.");
+				//} catch (MySQLIntegrityConstraintViolationException e1) {
+				//	JOptionPane.showMessageDialog(null, "Usted está intentando agregar un análisis con un número ya existente en el sistema.");
 				} catch (SQLException e1) {
 					JOptionPane.showMessageDialog(null, "Se ha producido un error. Revise los datos que intenta ingresar.");
 					e1.printStackTrace();

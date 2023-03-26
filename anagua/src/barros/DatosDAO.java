@@ -12,14 +12,12 @@ import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
-
 import bd.BaseDeDatos;
 import industrias.Industria;
 
 public class DatosDAO {
 	
-	public void agregarBarro(AnalisisBarro analisisBarro) throws MySQLIntegrityConstraintViolationException, SQLException {
+	public void agregarBarro(AnalisisBarro analisisBarro) throws SQLException {
 		PreparedStatement preparedStmt;
 		BaseDeDatos baseDeDatos = new BaseDeDatos();
 		Connection oConnection = null;
@@ -72,7 +70,7 @@ public class DatosDAO {
 		}
 	}
 	
-	public void modificarBarro (AnalisisBarro analisisBarro) throws MySQLIntegrityConstraintViolationException, SQLException {
+	public void modificarBarro (AnalisisBarro analisisBarro) throws SQLException {
 		PreparedStatement preparedStmt;
 		BaseDeDatos baseDeDatos = new BaseDeDatos();
 		Connection oConnection = null;

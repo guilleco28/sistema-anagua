@@ -15,7 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
+//import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 
 import barros.AnalisisBarro;
 import barros.DatosDAO;
@@ -2212,8 +2212,8 @@ public class FormularioIngresoBarros {
 						datosDAO.agregarBarro(analisisAAgregar.get(i));
 					}
 					JOptionPane.showMessageDialog(null, "Se agregaron "+analisisAAgregar.size()+" análisis al sistema correctamente.");
-				} catch (MySQLIntegrityConstraintViolationException e1) {
-					JOptionPane.showMessageDialog(null, "Usted está intentando agregar un análisis con un número ya existente en el sistema.");
+				//} catch (MySQLIntegrityConstraintViolationException e1) {
+				//	JOptionPane.showMessageDialog(null, "Usted está intentando agregar un análisis con un número ya existente en el sistema.");
 				} catch (SQLException e1) {
 					JOptionPane.showMessageDialog(null, "Se ha producido un error. Revise los datos que intenta ingresar.");
 					e1.printStackTrace();

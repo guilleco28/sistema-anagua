@@ -7,14 +7,13 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 
 import barros.AnalisisBarro;
 import bd.BaseDeDatos;
 
 public class AguasDAO {
 	
-	public void agregarAgua (AnalisisAgua analisisAgua) throws MySQLIntegrityConstraintViolationException, SQLException {
+	public void agregarAgua (AnalisisAgua analisisAgua) throws SQLException {
 		PreparedStatement preparedStmt;
 		BaseDeDatos baseDeDatos = new BaseDeDatos();
 		Connection oConnection = null;
@@ -110,7 +109,7 @@ public class AguasDAO {
 		
 	}
 	
-	public void modificarAgua (AnalisisAgua analisisAgua) throws MySQLIntegrityConstraintViolationException, SQLException{
+	public void modificarAgua (AnalisisAgua analisisAgua) throws SQLException{
 		PreparedStatement preparedStmt;
 		BaseDeDatos baseDeDatos = new BaseDeDatos();
 		Connection oConnection = null;

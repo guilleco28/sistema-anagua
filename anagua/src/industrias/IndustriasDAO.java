@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 
 import barros.AnalisisBarro;
 import bd.BaseDeDatos;
@@ -115,7 +114,7 @@ public class IndustriasDAO {
 		return id;
 	}
 	
-	public void modificarIndustria (Industria industria) throws MySQLIntegrityConstraintViolationException, SQLException {
+	public void modificarIndustria (Industria industria) throws SQLException {
 		PreparedStatement preparedStmt;
 		BaseDeDatos baseDeDatos = new BaseDeDatos();
 		Connection oConnection = null;

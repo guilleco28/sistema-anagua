@@ -2,10 +2,11 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="C:/Users/Guillermo/Documents/sistema-anagua-nuevo/mysql-connector-java-5.1.42-bin.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Guillermo/Documents/sistema-anagua-nuevo/poi-3.17.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Guillermo/Documents/sistema-anagua-nuevo/jcalendar-1.4.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Guillermo/Desktop/RealizarInformeBarros.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Guillermo/Desktop/opencsv-4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Guillermo/Desktop/mysql-connector-java-8.0.20.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Guillermo/Desktop/mysql-connector-java-5.1.42-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

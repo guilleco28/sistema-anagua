@@ -804,13 +804,13 @@ public class CrearInformeAguas {
 					SS301.setBackground(colorPorDefecto);
 				}
 				SS601.setText(analisisAguaSeleccionado.getSs60());
-				if(analisisAguaSeleccionado.getSs10().equals("*")) {
+				if(analisisAguaSeleccionado.getSs60().equals("*")) {
 					SS601.setBackground(Color.YELLOW);
 				} else {
 					SS601.setBackground(colorPorDefecto);
 				}
 				amoniaco1.setText(analisisAguaSeleccionado.getAmoniaco());
-				if(analisisAguaSeleccionado.getOtros4().equals("*")) {
+				if(analisisAguaSeleccionado.getAmoniaco().equals("*")) {
 					amoniaco1.setBackground(Color.YELLOW);
 				} else {
 					amoniaco1.setBackground(colorPorDefecto);
@@ -2328,7 +2328,7 @@ public class CrearInformeAguas {
 					SS602.setBackground(colorPorDefecto);
 				}
 				amoniaco2.setText(analisisAguaSeleccionado.getAmoniaco());
-				if(analisisAguaSeleccionado.getOtros4().equals("*")) {
+				if(analisisAguaSeleccionado.getAmoniaco().equals("*")) {
 					amoniaco2.setBackground(Color.YELLOW);
 				} else {
 					amoniaco2.setBackground(colorPorDefecto);
@@ -3850,7 +3850,7 @@ public class CrearInformeAguas {
 					SS603.setBackground(colorPorDefecto);
 				}
 				amoniaco3.setText(analisisAguaSeleccionado.getAmoniaco());
-				if(analisisAguaSeleccionado.getOtros4().equals("*")) {
+				if(analisisAguaSeleccionado.getAmoniaco().equals("*")) {
 					amoniaco3.setBackground(Color.YELLOW);
 				} else {
 					amoniaco3.setBackground(colorPorDefecto);
@@ -5371,7 +5371,7 @@ public class CrearInformeAguas {
 					SS604.setBackground(colorPorDefecto);
 				}
 				amoniaco4.setText(analisisAguaSeleccionado.getAmoniaco());
-				if(analisisAguaSeleccionado.getOtros4().equals("*")) {
+				if(analisisAguaSeleccionado.getAmoniaco().equals("*")) {
 					amoniaco4.setBackground(Color.YELLOW);
 				} else {
 					amoniaco4.setBackground(colorPorDefecto);

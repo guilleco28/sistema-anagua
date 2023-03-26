@@ -12,7 +12,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 
 import barros.AnalisisBarro;
 import barros.DatosDAO;
@@ -788,10 +787,6 @@ public class FormularioModificacionBarros {
 						
 						datosDAO.modificarBarro(analisisBarro);
 						JOptionPane.showMessageDialog(null, "Se modificó correctamente el análisis "+String.valueOf(nroAnalisis.getSelectedItem()));
-												
-					} catch (MySQLIntegrityConstraintViolationException e1) {
-						// no tiene sentido, es UPDATE
-						e1.printStackTrace();
 					} catch (SQLException e1) {	
 						e1.printStackTrace();
 					} 

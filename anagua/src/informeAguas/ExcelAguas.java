@@ -49,8 +49,10 @@ public class ExcelAguas {
 	
 	public static void realizarInforme() throws SQLException {
 		try {
-			p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties")); //para RED
+			//p.load(new FileReader("\\\\192.168.1.7\\datos2\\ANAGUA\\sistema-anagua\\config.properties")); //para RED
 			//p.load(new FileReader("C:\\Users\\Guillermo\\Documents\\sistema-anagua\\config.properties")); //para LOCAL
+			String ruta_config_properties = "C:\\Users\\usuario\\Documents\\sistema-anagua\\config.properties";
+			p.load(new FileReader(ruta_config_properties));
 			rutaExcel = p.getProperty("ruta_excel");
 			rutaLogo = p.getProperty("ruta_logo");
 			rutaFirma = p.getProperty("ruta_firma");
@@ -152,7 +154,7 @@ public class ExcelAguas {
 		ArrayList <Cell> titulosDatosEmpresa = new ArrayList <Cell>();
 		Row industria = sheet.createRow(6);
 		Cell stringIndustria = industria.createCell(2);
-		stringIndustria.setCellValue("INDUSTRIA:");
+		stringIndustria.setCellValue("CLIENTE:");
 		titulosDatosEmpresa.add(stringIndustria);
 		Row departamento = sheet.createRow(7);
 		Cell stringDepartamento = departamento.createCell(2);
@@ -552,11 +554,11 @@ public class ExcelAguas {
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+24, determinacionesSinFijos.size()+24, 0, 3));
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+24, determinacionesSinFijos.size()+24, 4, 6));
 		workbook.getSheet("Sheet0").addMergedRegion(new CellRangeAddress(determinacionesSinFijos.size()+24, determinacionesSinFijos.size()+24, 7, 10));
-		datosEmpresa.createCell(0).setCellValue("Juan Parra del Riego 1027");
+		datosEmpresa.createCell(0).setCellValue("Canelones 2262");
 		datosEmpresa.getCell(0).setCellStyle(styleTexto);
-		datosEmpresa.createCell(4).setCellValue("       Tel: 27055200 int. 130");
+		datosEmpresa.createCell(4).setCellValue("       Tel: 24035749");
 		datosEmpresa.getCell(4).setCellStyle(styleTexto);
-		datosEmpresa.createCell(7).setCellValue("            EMAIL: anagua@pittamiglio.com.uy");
+		datosEmpresa.createCell(7).setCellValue("            EMAIL: laboratorio@anagua.com.uy");
 		datosEmpresa.getCell(7).setCellStyle(styleTexto);
 		
 	}
