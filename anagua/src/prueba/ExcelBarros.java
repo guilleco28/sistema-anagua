@@ -186,7 +186,7 @@ public class ExcelBarros {
 		Cell logo = row0.createCell(0);		
 
 
-		titulo.setCellValue("ANÁLISIS DE BARROS");
+		titulo.setCellValue("INFORME DE ANÁLISIS");
 		titulo.setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 14, true, null, null, null, null, null));
 		
 		sheet.addMergedRegion(CellRangeAddress.valueOf("C7:E7"));
@@ -403,6 +403,9 @@ public class ExcelBarros {
 			analisisSinFijos.add(analisisSFijos);
 		}
 		
+		System.out.println("determinacionesSinFijos:" + " " + determinacionesSinFijos);
+		System.out.println("analisisSinFijos:" + " " + analisisSinFijos);
+		
 		for (int i=13; i<determinacionesSinFijos.size()+13; i++) { //industria, depto, localidad y descarga en ya se escribieron. Hay que empezar de Row 13
 			
 			Row row = workbook.getSheet("Sheet0").createRow(i);
@@ -554,10 +557,11 @@ public class ExcelBarros {
 		ArrayList <ArrayList<String>> datosDeDeterminaciones = conexion.traerDatosDeDeterminaciones();
 		int[] blanco = {255, 255, 255};
 		//System.out.println(datosDeDeterminaciones);
-		for (int i=19; i<cantidadDeterminaciones+19; i++) {
+		for (int i=18; i<cantidadDeterminaciones+19; i++) {
 			//System.out.println("EN HOJA: "+sheet.getRow(i).getCell(0).getStringCellValue());
 			for (int j=0; j<datosDeDeterminaciones.size(); j++) {
 				//System.out.println("EN ARRAY: "+datosDeDeterminaciones.get(j).get(0));
+				System.out.println(sheet.getRow(i).getCell(0).getStringCellValue() + ": " + datosDeDeterminaciones.get(j).get(0));
 				if (sheet.getRow(i).getCell(0).getStringCellValue().equals(datosDeDeterminaciones.get(j).get(0))) {
 					//System.out.println("ENTRÉ AL IF");
 					sheet.getRow(i).createCell(3).setCellValue(datosDeDeterminaciones.get(j).get(1));

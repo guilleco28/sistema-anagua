@@ -139,7 +139,7 @@ public class ExcelAguas {
 		Cell titulo = row0.createCell(2);
 		Cell logo = row0.createCell(0);
 
-		titulo.setCellValue("ANÁLISIS DE AGUAS RESIDUALES");
+		titulo.setCellValue("INFORME DE ANÁLISIS");
 		titulo.setCellStyle(setStyle(workbook, HorizontalAlignment.CENTER, VerticalAlignment.CENTER, "Arial", 14, true, null, null, null, null, null));
 		
 		sheet.addMergedRegion(CellRangeAddress.valueOf("C7:E7"));

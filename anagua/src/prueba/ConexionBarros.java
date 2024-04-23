@@ -138,6 +138,8 @@ public class ConexionBarros {
 			datosDeEspecificaciones.add(temporal);
 		}
 		BD.cerrarConexion(conexion);
+		System.out.println("En ConexionBarros.traerDatosDeDeterminaciones():");
+		System.out.println(datosDeEspecificaciones);
 		return datosDeEspecificaciones;
 	}
 	

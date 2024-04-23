@@ -25,7 +25,6 @@ public class BaseDeDatos {
 			e.printStackTrace();
 		}
 		url = url+p.getProperty("bd")+"?useSSL=false";
-		System.out.println("url: "+url);
 		
 	}
 
